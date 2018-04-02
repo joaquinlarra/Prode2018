@@ -1,0 +1,119 @@
+/* CSS Document */
+@charset "utf-8";
+@import "header.css";
+@import "panels.css";
+@import "notifications.css";
+@import "forms.css";
+
+body
+{
+	font-family:Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	background:url(../images/bg_admin.png);
+}
+
+.tree_container{
+	width:400px;
+	float:left;
+}
+
+.tree_value_container{
+	clear:both;
+	float:left;
+	width:100%;
+}
+
+.tree_container li{
+	clear:both;
+}
+
+.tree_container label{
+	width:auto;
+}
+.tree_container input{
+	float:left;
+}
+
+.level_0{
+	
+}
+.level_1{ margin-left:20px; }
+.level_2{ margin-left:40px; } 
+.level_3{ margin-left:60px; } 
+
+.left{
+	float:left;
+	display:inline;
+	  width:50%;
+}
+
+.right{
+	float:right;
+	display:inline;
+	  width:50%;
+}
+
+.login_container{
+	width:25%; 
+	position:relative; 
+	margin:0 auto; 
+	margin-top:10%; 
+	padding:20px;
+	border:1px solid #CCC;
+}
+
+.login_container label{
+	font-weight:bold;
+	color:#1d353f;
+	font-size:12px;
+}
+
+.login_container input{
+	padding:5px;
+	font-size:12px;
+}
+
+.panel_header_no_bg{
+	font-size:18px;
+	font-weight:bold;
+	color:#1d353f;
+	margin:0px 0px 10px 0px;
+}
+
+#main_nav{
+	background:#1d353f;
+	border:0px !important;
+}
+
+#submit{
+	background: #233B45 url(images/ui-bg_inset-soft_45_0078ae_1x100.png) 50% 50% repeat-x; 
+	border: 1px solid #111F25;
+	font-weight: normal; 
+	color: #ffffff;
+	font-weight:bold;
+	cursor:pointer;
+}
+
+.width120{ width:120px; }
+
+#content{ padding:0.5%; width:99%; float:left;}
+
+#content div h1 { display:none; }
+
+#content .panel h1.ui-widget-header { display:block !important;}
+
+.hidden{ display: none;}
+
+.bold{ font-weight:bold;}
+
+.visible{ visibility:visible;}
+
+.invisible{ visibility:hidden;}
+
+.center{ text-align:center;}
+
+
+.float_right{ float:right; }
+
+.float_left{ float:left;}
+

@@ -1,0 +1,138 @@
+/* CSS Document */
+
+#top-menu
+{
+	position: relative;
+	top: -1px;
+}
+
+#top-menu label span
+{
+	padding: 1px !important;
+	height: 28px;
+	line-height: 27px;
+}
+
+#top-menu label span a
+{
+	padding: 8px 25px !important;
+		
+}
+
+
+#tab-menu
+{
+	float: right;
+	height:30px;
+	overflow:hidden;
+}
+
+#tab-menu label span
+{
+	padding: 1px !important;
+	height: 29px;
+	line-height: 27px;
+}
+
+#tab-menu label span a
+{
+	padding: 5px 15px !important;
+		
+}
+
+#breadcrumb
+{
+	margin-left: 5px;
+	margin-right: 5px;
+	border: 1px solid #CCC;
+	border-top: 0px !important;
+	padding-left: 10px;
+	height:24px;
+	background:#fafafa;
+}
+
+#breadcrumb span
+{
+	position: relative;
+	float:left;
+}
+
+#breadcrumb .separator
+{ 
+	margin-left: 0px;
+	margin-right: 10px;
+	background: url('../images/bc_separator.png');
+	width: 7px;
+	height: 23px;
+	float: left;
+}
+
+#breadcrumb a
+{
+    height:30px;
+    display:block;
+    background-repeat:no-repeat; 
+    background-position:right;
+    padding-right: 15px;
+    text-decoration: none;
+    color:#57A5B5;
+}
+
+#breadcrumb a:hover
+{
+	color:#F60;
+}
+
+#breadcrumb .bc_last
+{
+	font-weight:bold;
+}
+
+
+
+#top_menu_actions_container
+{
+	border:1px solid #bcbcbc;
+	border-bottom: 0px !important;
+	margin: 10px 5px 0px 5px;
+	background-color: #fefefe;
+}
+
+#top_menu_actions_container a
+{
+	text-decoration: none;
+}
+
+#top_menu_actions_container a .action_button
+{
+	float:left;
+	border-right: 1px solid #ccc;
+	border-bottom: 1px solid #ccc;	
+	line-height: 17px;
+	background-color: #fff;
+	color: #444;
+	font-weight: bold;
+	height: 20px;
+	line-height: 19px;
+	padding: 8px 20px;
+}
+
+#top_menu_actions_container a:hover .action_button 
+{
+	color: #57A5B5;
+	border-bottom: 1px solid #fafafa !important;
+}
+
+#top_menu_actions_container  a .selected 
+{
+	color: #57A5B5 !important;
+	background-color: #fafafa !important;
+	border-bottom: 1px solid #fafafa !important;	
+	
+}
+
+#top_menu_actions_container  a .action_button span
+{
+	float: left;
+	margin-right: 5px;	
+}

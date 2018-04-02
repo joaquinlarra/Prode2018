@@ -1,0 +1,67 @@
+@charset "utf-8";
+/* CSS Document */
+.config_panel{ margin-bottom:5px; float:left; width:100%; }
+.config_panel h1{ display:block !important; font-size: 22px; height: 30px; padding-left: 5px; background: #EAEAEA; line-height: 30px; border: 1px solid #CCC; float:left; width:99%; }
+.module{ cursor:pointer; }
+.module_container{ width:100%; float:left; margin-bottom:5px; }
+.config_items_container	{ padding:10px; float:left; padding:5px; border:1px solid #eaeaea; width:30%; }
+
+.config_items_container h2{ font-weight:bold; }
+.field_container h3{ background:#EAEAEA; padding-left:5px; font-weight:bold;}
+.fields_attrs_container{ margin-left:10px; }
+
+.relations_attrs_container{ float:left; width:100%; padding-left:5px;}
+.relation_container h3{ background:#EAEAEA; padding-left:5px; font-weight:bold; }
+.relations_fields_container h4{ padding-left:5px; font-weight:bold; font-weight:bold; background: #EAEAEA; line-height: 30px; margin-bottom: 10px; width: 98%; }
+.relations_fields_container h5{ padding-left:5px; background:#DEDEDE; }
+.relations_fields_attrs_container{ margin-left:10px; float:left; width:50%; }
+
+.default_container{ 
+	width:30%; 
+	float:left; 
+	font-size: 14px;
+	margin-top: 5px;
+	margin-bottom: 5px;
+	padding-left: 10px; 
+}
+.default_container strong{ font-weight:bold; }
+
+.datatable_actions_container{ margin-left: 10px; width: 98%; float: left; }
+.datatable_actions_container h2{ height: 30px; font-size: 16px; line-height: 30px; background: #EAEAEA; padding-left: 5px; margin-bottom: 9px; cursor:pointer; }
+
+.datatable_action_container{	
+	width: 32%;
+	padding-left:10px;
+	float: left;
+	margin-bottom:10px;
+}
+.datatable_attrs_container{ padding-left:10px;}
+
+.top_menu_data_container{ margin-left: 10px; width: 98%; float: left; }
+.top_menu_data_container h2{ height: 30px; font-size: 16px; line-height: 30px; background: #EAEAEA; padding-left: 5px; margin-bottom: 9px;  cursor:pointer;}
+
+.top_menu_actions_container{
+	width: 100%;
+	padding-left:10px;
+	float: left;
+}
+.top_menu_actions_container h4{ border-bottom:1px solid #CCC;}
+
+.main_model_tabs_container{  margin-left: 10px; width: 98%; float: left; }
+.main_model_tabs_container h2{ height: 30px; font-size: 16px; line-height: 30px; background: #EAEAEA; padding-left: 5px; margin-bottom: 9px; cursor:pointer; }
+.tab_container{  margin-left: 10px; width: 32%; float: left; margin-bottom:10px; }
+.main_model_tabs_attrs_container{ padding-left:10px; }
+  
+  
+.fields_container{  margin-left: 10px; width: 98%; float: left; }
+.fields_container h2{ height: 30px; font-size: 16px; line-height: 30px; background: #EAEAEA; padding-left: 5px; margin-bottom: 9px; cursor:pointer; }
+.field_container{ margin-left: 10px; width: 32%; float: left; }
+
+.top_menu_container{ float:left; width:32%; margin-bottom:10px; padding-left:10px; }
+
+.relations_container{ margin-left: 10px; width: 98%; float: left; margin-bottom:10px; }
+.relations_container h2{ height: 30px; font-size: 16px; line-height: 30px; background: #EAEAEA; padding-left: 5px; margin-bottom: 9px; cursor:pointer; }
+.relation_container{ margin-left: 10px; width: 98%; float: left; border:1px solid #CCC; margin-bottom:10px; }
+.relation_field_container{ float:left; width:32%; margin-left:10px; }
+
+.fields_items_container, .relations_items_container, .top_menu_data_items_container, .datatable_actions_items_container, .main_model_items_container{ float:left; display:none; width:100%; }
