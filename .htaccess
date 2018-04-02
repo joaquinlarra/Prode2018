@@ -4,7 +4,7 @@ RewriteEngine On
 
 
 
-RewriteCond $1 !^(index\.php|es\.php|images|robots\.txt|assets_fe|assets_be|assets_common|uploads|captcha|mantis)
+RewriteCond $1 !^(index\.php|es\.php|gitwebhook.php|images|robots\.txt|assets_fe|assets_be|assets_common|uploads|captcha|mantis)
 
 RewriteRule ^(.*)$ /index.php/$1 [L]
 
