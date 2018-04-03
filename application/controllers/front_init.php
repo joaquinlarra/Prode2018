@@ -181,7 +181,7 @@ class Front_init extends CI_Controller
 		}
 
 		
-		if(($company == "www") || ($company == "") || ($company == "local"))
+		if(($company == "www") || ($company == "") || ($company == "local") || ($company == "prode"))
 		{
 			//$this->data['no_company'] = 1;
 			$this->company_id = 1;
@@ -441,7 +441,7 @@ class Front_init extends CI_Controller
 		
 		$this->email->initialize($config);
 		
-		$this->email->from('registro@fantasyfutbol2014.com', 'Fantasy Futbol 2014');
+		$this->email->from('registro@prode2018.com', 'Prode 2018');
 		
 		$this->email->to($this->form_model->email);
 
@@ -453,7 +453,7 @@ class Front_init extends CI_Controller
 				<br><br>".lang('register-login-email')."
 				<br><br>".$this->company_model->username_field.": <b>".$this->form_model->username."</b><br>
 				<br><br>".lang('Contraseña').": <b>".$this->data['post']['password']."</b><br><br>
-				Fantasy Futbol 2014<br>--";
+				Prode 2018<br>--";
 		
 		$this->email->message($body);
 		

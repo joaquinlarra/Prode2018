@@ -361,10 +361,10 @@ $words['Liga General']['MX'] = "Liga General";
 $words['Liga General']['PR'] = "Tabela Geral";
 $words['Liga General']['US'] = "General League";
 
-$words['register-message']['AR'] = "<h3 align='center'>Tu registro se completó con exito</h3><p align='center'>Por favor ingresá a tu email y clickeá en el link de activación enviado por <b>registro@fantasyfutbol2014.com</b> para confirmar la cuenta</p><br>Chequeá tu carpeta de <b>correo no deseado o spam</b><br><br><a href='[[link_url]]pronosticos' class='btn btn-primary btn-block'>Ingresar</a>";
-$words['register-message']['MX'] = "<h3 align='center'>Tu registro se completó con exito</h3><p align='center'>Por favor ingresá a tu email y clickeá en el link de activación enviado por <b>registro@fantasyfutbol2014.com</b> para confirmar la cuenta</p><br>Mira en tu carpeta de <b>correo no deseado o spam</b><br><br><a href='[[link_url]]pronosticos' class='btn btn-primary btn-block'>Ingresar</a>";
-$words['register-message']['PR'] = "<h3 align='center'>Seu registro foi efetuado com sucesso</h3><p align='center'>Por favor, insira seu e-mail e clique no link de ativação enviado por <b>registro@fantasyfutbol2014.com</b> para confirmar a conta</p><br>Confira sua pasta de <b>spam</b><br><br><a href='[[link_url]]pronosticos' class='btn btn-primary btn-block'>Ingresar</a>";
-$words['register-message']['US'] = "<h3 align='center'>Registration successful</h3><p align='center'>Please check your email account and click on the activation link sent by <b>registro@fantasyfutbol2014.com</b>.</p><br>Check your <b>spam folder</b><br><br><a href='[[link_url]]pronosticos' class='btn btn-primary btn-block'>Log-in</a>";
+$words['register-message']['AR'] = "<h3 align='center'>Tu registro se completó con exito</h3><p align='center'>Por favor ingresá a tu email y clickeá en el link de activación enviado por <b>registro@prode2018.com</b> para confirmar la cuenta</p><br>Chequeá tu carpeta de <b>correo no deseado o spam</b><br><br><a href='[[link_url]]pronosticos' class='btn btn-primary btn-block'>Ingresar</a>";
+$words['register-message']['MX'] = "<h3 align='center'>Tu registro se completó con exito</h3><p align='center'>Por favor ingresá a tu email y clickeá en el link de activación enviado por <b>registro@prode2018.com</b> para confirmar la cuenta</p><br>Mira en tu carpeta de <b>correo no deseado o spam</b><br><br><a href='[[link_url]]pronosticos' class='btn btn-primary btn-block'>Ingresar</a>";
+$words['register-message']['PR'] = "<h3 align='center'>Seu registro foi efetuado com sucesso</h3><p align='center'>Por favor, insira seu e-mail e clique no link de ativação enviado por <b>registro@prode2018.com</b> para confirmar a conta</p><br>Confira sua pasta de <b>spam</b><br><br><a href='[[link_url]]pronosticos' class='btn btn-primary btn-block'>Ingresar</a>";
+$words['register-message']['US'] = "<h3 align='center'>Registration successful</h3><p align='center'>Please check your email account and click on the activation link sent by <b>registro@prode2018.com</b>.</p><br>Check your <b>spam folder</b><br><br><a href='[[link_url]]pronosticos' class='btn btn-primary btn-block'>Log-in</a>";
 // enviado
 $words['first-time-message-no-email']['AR'] = "<h3 align='center'>Tu registro se completó con exito</h3><br><a href='[[link_url]]pronosticos' class='btn btn-primary btn-block'>Ingresar</a>";
 $words['first-time-message-no-email']['MX'] = "<h3 align='center'>Tu registro se completó con exito</h3><br><a href='[[link_url]]pronosticos' class='btn btn-primary btn-block'>Ingresar</a>";
@@ -442,10 +442,10 @@ $words['no-players']['MX'] = "No hay posiciones por el momento";
 $words['no-players']['PR'] = "Não existe uma classificação atual";
 $words['no-players']['US'] = "There are no rankings to show";
 
-$words['subject-registro']['AR'] = "Completá tu registro a Fantasy Futbol 2014";
-$words['subject-registro']['MX'] = "Completá tu registro a Fantasy Futbol 2014";
-$words['subject-registro']['PR'] = "Preencha os seus dados para cadastrares no Fantasy Futbol 2014";
-$words['subject-registro']['US'] = "Complete your Fantasy Futbol 2014 suscription";
+$words['subject-registro']['AR'] = "Completá tu registro a Prode 2018";
+$words['subject-registro']['MX'] = "Completá tu registro a Prode 2018";
+$words['subject-registro']['PR'] = "Preencha os seus dados para cadastrares no Prode 2018";
+$words['subject-registro']['US'] = "Complete your Prode 2018 suscription";
 
 $words['body-registro']['AR'] = "Hola $1,<br><br>Confirmá tu cuenta de Fantasy Futbol haciendo click en el siguiente enlace.<br><br>";
 $words['body-registro']['MX'] = "Hola $1,<br><br>Confirma tu cuenta de Fantasy Futbol haciendo click en el siguiente enlace.<br><br>";
@@ -492,10 +492,10 @@ $words['olvide-clave']['MX'] = "Olvidé mi contraseña";
 $words['olvide-clave']['PR'] = "Esqueci minha senha";
 $words['olvide-clave']['US'] = "Forgot my password";
 
-$words['email-sent']['AR'] = "Se envió un email a $1 desde registro@fantasyfutbol2014.com. Chequeá que no esté en spam  y clickeá en el link que aparece allí para recuperar tu contraseña";
-$words['email-sent']['MX'] = "Se envió un email a $1 desde registro@fantasyfutbol2014.com. Checa que no esté en spam  y clickeá en el link que aparece allí para recuperar tu contraseña";
-$words['email-sent']['PR'] = "Um e-mail foi enviado a $1 desde registro@fantasyfutbol2014.com. Confira a sua pasta de spam e clique no link para recuperar sua senha";
-$words['email-sent']['US'] = "Sent email to $1 from registro@fantasyfutbol2014.com. Check the message hasn't arrived at spam folder and Click on the recover link to recover your password";
+$words['email-sent']['AR'] = "Se envió un email a $1 desde registro@prode2018.com. Chequeá que no esté en spam  y clickeá en el link que aparece allí para recuperar tu contraseña";
+$words['email-sent']['MX'] = "Se envió un email a $1 desde registro@prode2018.com. Checa que no esté en spam  y clickeá en el link que aparece allí para recuperar tu contraseña";
+$words['email-sent']['PR'] = "Um e-mail foi enviado a $1 desde registro@prode2018.com. Confira a sua pasta de spam e clique no link para recuperar sua senha";
+$words['email-sent']['US'] = "Sent email to $1 from registro@prode2018.com. Check the message hasn't arrived at spam folder and Click on the recover link to recover your password";
 
 $words['no-record-found']['AR'] = "No se encontró una cuenta con ese $1. Por favor contáctase con su coordinador local  de  [[company_name]]";
 $words['no-record-found']['MX'] = "No se encontró una cuenta con ese $1. Por favor contáctase con su coordinador local  de  [[company_name]]";
@@ -512,10 +512,10 @@ $words['recover-password-email']['MX'] = "Hola $1,<br><br>Clickee el link siguie
 $words['recover-password-email']['PR'] = "Oí $1,<br><br>CClique no seguinte link para recuperar sua senha.<br><br>";
 $words['recover-password-email']['US'] = "Hi $1,<br><br>Click on the next link to recover your password.<br><br>";
 
-$words['recover-password-email-2']['AR'] = "Si usted no pidió cambio de contraseña no haga click en el link.<br><br>Fantasy Futbol 2014 <br>--";
-$words['recover-password-email-2']['MX'] = "Si usted no pidió cambio de contraseña no haga click en el link.<br><br>Fantasy Futbol 2014 <br>--";
-$words['recover-password-email-2']['PR'] = "Se você não solicitou a mudança de senha, não clique no link.<br><br>Fantasy Futbol 2014 <br>--";
-$words['recover-password-email-2']['US'] = "If you didn't request for a password recovery ignore the link.<br><br>Fantasy Futbol 2014 <br>--";
+$words['recover-password-email-2']['AR'] = "Si usted no pidió cambio de contraseña no haga click en el link.<br><br>Prode 2018 <br>--";
+$words['recover-password-email-2']['MX'] = "Si usted no pidió cambio de contraseña no haga click en el link.<br><br>Prode 2018 <br>--";
+$words['recover-password-email-2']['PR'] = "Se você não solicitou a mudança de senha, não clique no link.<br><br>Prode 2018 <br>--";
+$words['recover-password-email-2']['US'] = "If you didn't request for a password recovery ignore the link.<br><br>Prode 2018 <br>--";
 
 $words['recover-failure']['AR'] = "&iexcl;Expiró el cambio de contraseña!";
 $words['recover-failure']['MX'] = "&iexcl;Expiró el cambio de contraseña!";
@@ -562,10 +562,10 @@ $words['account-confirmed']['MX'] = "<h4>&iexcl;Cuenta confirmada!</h4><br><br><
 $words['account-confirmed']['PR'] = "<h4>&iexcl;Conta confirmada!</h4><br><br><a class='btn btn-primary btn-block' href='[[link_url]]pronosticos'>Ingresar</a>";
 $words['account-confirmed']['US'] = "<h4>&iexcl;Account confirmed!</h4><br><br><a class='btn btn-primary btn-block' href='[[link_url]]pronosticos'>Enter</a>";
 
-$words['support-email']['AR'] = "si tenés alguna duda o inquietud podés escribir a <a href='mailto:soporte@fantasyfutbol2014.com'><b>soporte@fantasyfutbol2014.com</b></a>";
-$words['support-email']['MX'] = "si tienes alguna duda o inquietud puedes escribir a <a href='mailto:soporte@fantasyfutbol2014.com'><b>soporte@fantasyfutbol2014.com</b></a>";
-$words['support-email']['PR'] = "Se você tiver alguma dúvida pode escrever para <a href='mailto:soporte@fantasyfutbol2014.com'><b>soporte@fantasyfutbol2014.com</b></a>";
-$words['support-email']['US'] = "questions? <a href='mailto:soporte@fantasyfutbol2014.com'><b>soporte@fantasyfutbol2014.com</b></a>";
+$words['support-email']['AR'] = "si tenés alguna duda o inquietud podés escribir a <a href='mailto:soporte@prode2018.com'><b>soporte@prode2018.com</b></a>";
+$words['support-email']['MX'] = "si tienes alguna duda o inquietud puedes escribir a <a href='mailto:soporte@prode2018.com'><b>soporte@prode2018.com</b></a>";
+$words['support-email']['PR'] = "Se você tiver alguma dúvida pode escrever para <a href='mailto:soporte@prode2018.com'><b>soporte@prode2018.com</b></a>";
+$words['support-email']['US'] = "questions? <a href='mailto:soporte@prode2018.com'><b>soporte@prode2018.com</b></a>";
 
 $words['Nickname']['AR'] = "Apodo";
 $words['Nickname']['MX'] = "Apodo";

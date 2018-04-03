@@ -6,7 +6,7 @@ class Home extends Front_init
 	{	
 		parent::__construct();
 		$this->data['company_id'] = 1;
-		$this->data['company'] = "Adyouwish";
+		$this->data['company'] = "BambooDev";
 	}
 	
 	public function index()

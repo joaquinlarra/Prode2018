@@ -153,10 +153,10 @@ class Front_user extends Front_init
 		$config['mailtype'] = 'html';
 
 		$this->email->initialize($config);
-		$this->email->from('registro@fantasyfutbol2014.com','Fantasty Futbol 2014');
+		$this->email->from('registro@prode2018.com','Prode 2018');
 		$this->email->to($email);
 		
-		$this->email->subject('Fantasy Futbol 2014: '.lang('Recuperá tu clave'));
+		$this->email->subject('Prode 2018: '.lang('Recuperá tu clave'));
 		$this->email->message(var_lang("recover-password-email",$name)."<a href='".$forgot_link."'>".$forgot_link.".</a><br><br>".lang("recover-password-email-2"));
 		return $this->email->send();
 	}

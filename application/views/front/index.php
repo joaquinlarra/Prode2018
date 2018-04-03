@@ -16,7 +16,6 @@
                     	<div class="col-md-12" align="center"><h4><?= lang("INGRESO")?></h4>
                         <?
 						
-						
                         if($this->company_model->first_login)
 						{
 							?><small><?= lang("first-time-login")?> <?= $this->company_model->username_field?>
@@ -35,7 +34,7 @@
                          <?
 						if($no_company)
 						{
-							?><div align="center" style="margin:20px 0px">Debe entrar al link específico de su empresa.<br>EJ: <b>miempresa.fantasyfutbol2014.com</b></div><? 
+							?><div align="center" style="margin:20px 0px">Debe entrar al link específico de su empresa.<br>EJ: <b>miempresa.prode2018.com</b></div><? 
 						}
 						else
 						{
