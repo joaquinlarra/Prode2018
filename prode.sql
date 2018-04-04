@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Generation Time: Apr 02, 2018 at 07:08 PM
+-- Generation Time: Apr 03, 2018 at 09:40 PM
 -- Server version: 5.6.35
 -- PHP Version: 7.0.22
 
@@ -20,7 +20,6 @@ SET time_zone = "+00:00";
 -- Table structure for table `bitauth_assoc`
 --
 
-DROP TABLE IF EXISTS `bitauth_assoc`;
 CREATE TABLE `bitauth_assoc` (
   `assoc_id` int(10) UNSIGNED NOT NULL,
   `user_id` int(10) UNSIGNED NOT NULL,
@@ -45,7 +44,8 @@ INSERT INTO `bitauth_assoc` (`assoc_id`, `user_id`, `group_id`) VALUES
 (142, 34, 3),
 (143, 1, 3),
 (144, 35, 2),
-(145, 36, 3);
+(145, 36, 3),
+(146, 37, 3);
 
 -- --------------------------------------------------------
 
@@ -53,7 +53,6 @@ INSERT INTO `bitauth_assoc` (`assoc_id`, `user_id`, `group_id`) VALUES
 -- Table structure for table `bitauth_groups`
 --
 
-DROP TABLE IF EXISTS `bitauth_groups`;
 CREATE TABLE `bitauth_groups` (
   `group_id` int(10) UNSIGNED NOT NULL,
   `name` varchar(48) CHARACTER SET latin1 NOT NULL,
@@ -76,7 +75,6 @@ INSERT INTO `bitauth_groups` (`group_id`, `name`, `description`, `roles`) VALUES
 -- Table structure for table `bitauth_logins`
 --
 
-DROP TABLE IF EXISTS `bitauth_logins`;
 CREATE TABLE `bitauth_logins` (
   `login_id` int(10) UNSIGNED NOT NULL,
   `ip_address` bigint(20) NOT NULL,
@@ -174,7 +172,9 @@ INSERT INTO `bitauth_logins` (`login_id`, `ip_address`, `user_id`, `time`, `succ
 (82, 0, 1, '2018-04-02 16:25:30', 1),
 (83, 0, 3, '2018-04-02 16:25:48', 0),
 (84, 0, 3, '2018-04-02 16:26:04', 1),
-(85, 0, 36, '2018-04-02 18:52:51', 1);
+(85, 0, 36, '2018-04-02 18:52:51', 1),
+(86, 0, 3, '2018-04-03 19:26:57', 1),
+(87, 0, 37, '2018-04-03 19:58:48', 1);
 
 -- --------------------------------------------------------
 
@@ -182,7 +182,6 @@ INSERT INTO `bitauth_logins` (`login_id`, `ip_address`, `user_id`, `time`, `succ
 -- Table structure for table `bitauth_userdata`
 --
 
-DROP TABLE IF EXISTS `bitauth_userdata`;
 CREATE TABLE `bitauth_userdata` (
   `userdata_id` int(10) UNSIGNED NOT NULL,
   `user_id` int(10) UNSIGNED NOT NULL
@@ -201,7 +200,6 @@ INSERT INTO `bitauth_userdata` (`userdata_id`, `user_id`) VALUES
 -- Table structure for table `bitauth_users`
 --
 
-DROP TABLE IF EXISTS `bitauth_users`;
 CREATE TABLE `bitauth_users` (
   `user_id` int(11) UNSIGNED NOT NULL,
   `username` varchar(32) NOT NULL,
@@ -249,10 +247,11 @@ CREATE TABLE `bitauth_users` (
 --
 
 INSERT INTO `bitauth_users` (`user_id`, `username`, `fullname`, `site`, `email`, `password`, `password_last_set`, `password_never_expires`, `remember_me`, `activation_code`, `groups_names`, `group_id`, `bio`, `facebook`, `twitter`, `instagram`, `product_id`, `active`, `forgot_code`, `forgot_generated`, `enabled`, `image_file_name`, `file_manager_id`, `last_login`, `last_login_ip`, `date_created`, `country`, `province_id`, `province`, `region`, `department`, `branch`, `company`, `displayname`, `company_id`, `user_language`, `branch_id`, `department_id`, `email_confirmed`) VALUES
-(3, 'admin', 'Admin tester', '', 'admin@admin.com', '$2a$08$Cjs8JFqtmOAf1RCi2zeuPeFoD.e1vyf3RvX6KOVkyWKcrrKQtZzEW', '2018-04-02 16:25:57', 0, '41f3fb1ac4570eed307cb0b622c90228978dcd8a', '', 'Administrador', 1, '', '', '', '', 0, 1, '', '2018-04-02 16:25:52', 1, '', 0, '2018-04-02 16:26:04', 0, '2012-09-28 16:27:01', 'argentina', 0, '0', 'capital federal', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(3, 'admin', 'Admin tester', '', 'admin@admin.com', '$2a$08$Cjs8JFqtmOAf1RCi2zeuPeFoD.e1vyf3RvX6KOVkyWKcrrKQtZzEW', '2018-04-02 16:25:57', 0, '41f3fb1ac4570eed307cb0b622c90228978dcd8a', '', 'Administrador', 1, '', '', '', '', 0, 1, '', '2018-04-02 16:25:52', 1, '', 0, '2018-04-03 19:26:57', 0, '2012-09-28 16:27:01', 'argentina', 0, '0', 'capital federal', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
 (1, 'joaquin', 'Joaquin Astelarra', '', 'joaquinastelarra@gmail.com', '$2a$08$FV9wecuUZBV0dcEXrNctGOJsiZk.SDGbCZn8XpGt8VZfqVRvMNzjG', '2018-04-02 16:25:23', 0, '', '', 'Jugador', 3, '', '', '', '', 0, 1, '', '2018-04-02 16:25:13', 1, '', 18, '2018-04-02 16:25:30', 0, '2013-12-30 15:03:35', 'argentina', 0, '', '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
 (35, '8DeFe', '8DeFebrero', '', '', '$2a$08$rONxTWtzJlR0nMXsyLkhverRaqPlZf9dOUJAnQHwMQtva5dBMcwq2', '2018-04-02 18:51:25', 0, '', '', '', 2, '', '', '', '', 0, 1, '', '0000-00-00 00:00:00', 1, '', 0, '0000-00-00 00:00:00', 0, '2018-04-02 18:51:25', '', 0, '', '', '', '', '8DeFebrero', '', 1, '', 0, 0, 0),
-(36, 'joaquinastelarra@gmail.com', '', '', 'joaquinastelarra@gmail.com', '$2a$08$/kLSoDw5qKKGaB7lse7Mj.Nf/Y9q/WCnBMQgbOZxcQoX5zaHvDpq2', '2018-04-02 18:52:51', 0, '', '', 'Jugador', 3, 'Gusta futbol y sistemas', '', '', '', 0, 1, '', '0000-00-00 00:00:00', 1, '', 0, '2018-04-02 18:52:51', 0, '2018-04-02 18:52:51', '', 0, '', '', '', '', '8DeFebrero', 'yeken', 1, '', 0, 0, 0);
+(36, 'joaquinastelarra@gmail.com', '', '', 'joaquinastelarra@gmail.com', '$2a$08$/kLSoDw5qKKGaB7lse7Mj.Nf/Y9q/WCnBMQgbOZxcQoX5zaHvDpq2', '2018-04-02 18:52:51', 0, '', '', 'Jugador', 3, 'Gusta futbol y sistemas', '', '', '', 0, 1, '', '0000-00-00 00:00:00', 1, '', 0, '2018-04-02 18:52:51', 0, '2018-04-02 18:52:51', '', 0, '', '', '', '', '8DeFebrero', 'yeken', 1, '', 0, 0, 0),
+(37, 'joaquin@chiefsupply.com', '', '', 'joaquin@chiefsupply.com', '$2a$08$BGDRkOmRcj3DbWVk1cMFTeW8I3W3Fy8uNk1xjjosZBZgGIeNCIstG', '2018-04-03 19:58:48', 0, '', '', 'Jugador', 3, 'me gusta el futbol y las minas', '', '', '', 0, 1, '', '0000-00-00 00:00:00', 1, '', 0, '2018-04-03 19:58:48', 0, '2018-04-03 19:58:47', 'argentina', 0, '', '', '', '', '8DeFebrero', 'yeken', 1, 'US', 0, 0, 1);
 
 -- --------------------------------------------------------
 
@@ -260,7 +259,6 @@ INSERT INTO `bitauth_users` (`user_id`, `username`, `fullname`, `site`, `email`,
 -- Table structure for table `companies`
 --
 
-DROP TABLE IF EXISTS `companies`;
 CREATE TABLE `companies` (
   `company_id` int(11) UNSIGNED NOT NULL,
   `name` varchar(255) NOT NULL,
@@ -319,7 +317,6 @@ INSERT INTO `companies` (`company_id`, `name`, `description`, `namespace`, `poin
 -- Table structure for table `companies_deleted`
 --
 
-DROP TABLE IF EXISTS `companies_deleted`;
 CREATE TABLE `companies_deleted` (
   `company_id` int(11) UNSIGNED NOT NULL,
   `name` varchar(255) NOT NULL,
@@ -337,7 +334,6 @@ CREATE TABLE `companies_deleted` (
 -- Table structure for table `configurations`
 --
 
-DROP TABLE IF EXISTS `configurations`;
 CREATE TABLE `configurations` (
   `configuration_id` int(11) NOT NULL,
   `address` varchar(250) NOT NULL,
@@ -368,7 +364,6 @@ INSERT INTO `configurations` (`configuration_id`, `address`, `telephone`, `text_
 -- Table structure for table `contacts`
 --
 
-DROP TABLE IF EXISTS `contacts`;
 CREATE TABLE `contacts` (
   `contact_id` int(11) UNSIGNED NOT NULL,
   `fb_uid` bigint(20) NOT NULL,
@@ -404,7 +399,6 @@ INSERT INTO `contacts` (`contact_id`, `fb_uid`, `name`, `email`, `province_id`, 
 -- Table structure for table `files`
 --
 
-DROP TABLE IF EXISTS `files`;
 CREATE TABLE `files` (
   `file_id` int(11) UNSIGNED NOT NULL,
   `file` varchar(255) NOT NULL,
@@ -460,7 +454,6 @@ INSERT INTO `files` (`file_id`, `file`, `file_name`, `type`, `code`, `ext`, `dat
 -- Table structure for table `file_managers`
 --
 
-DROP TABLE IF EXISTS `file_managers`;
 CREATE TABLE `file_managers` (
   `file_manager_id` int(11) UNSIGNED NOT NULL,
   `file_manager` varchar(255) NOT NULL,
@@ -546,7 +539,6 @@ INSERT INTO `file_managers` (`file_manager_id`, `file_manager`, `date_created`) 
 -- Table structure for table `file_managers_files`
 --
 
-DROP TABLE IF EXISTS `file_managers_files`;
 CREATE TABLE `file_managers_files` (
   `file_manager_id` int(11) UNSIGNED NOT NULL,
   `file_id` int(11) UNSIGNED NOT NULL,
@@ -610,7 +602,6 @@ INSERT INTO `file_managers_files` (`file_manager_id`, `file_id`, `tag`, `order`)
 -- Table structure for table `friends_leagues`
 --
 
-DROP TABLE IF EXISTS `friends_leagues`;
 CREATE TABLE `friends_leagues` (
   `league_id` int(11) UNSIGNED NOT NULL,
   `name` varchar(255) NOT NULL,
@@ -626,7 +617,6 @@ CREATE TABLE `friends_leagues` (
 -- Table structure for table `friends_leagues_users`
 --
 
-DROP TABLE IF EXISTS `friends_leagues_users`;
 CREATE TABLE `friends_leagues_users` (
   `league_id` int(11) UNSIGNED NOT NULL,
   `league` varchar(255) NOT NULL,
@@ -641,7 +631,6 @@ CREATE TABLE `friends_leagues_users` (
 -- Table structure for table `logs`
 --
 
-DROP TABLE IF EXISTS `logs`;
 CREATE TABLE `logs` (
   `ip_address` int(10) UNSIGNED NOT NULL,
   `user_id` int(11) UNSIGNED NOT NULL,
@@ -658,7 +647,6 @@ CREATE TABLE `logs` (
 -- Table structure for table `matches`
 --
 
-DROP TABLE IF EXISTS `matches`;
 CREATE TABLE `matches` (
   `match_id` int(11) UNSIGNED NOT NULL,
   `phase` enum('zone','8','4','semi','3y4','final') NOT NULL,
@@ -692,54 +680,54 @@ CREATE TABLE `matches` (
 --
 
 INSERT INTO `matches` (`match_id`, `phase`, `penalties`, `bet`, `tournament_id`, `tournament`, `zone`, `phase_order`, `team1_id`, `team1_name`, `team1_abbr_name`, `team1_flag`, `team1_goals`, `team2_id`, `team2_name`, `team2_abbr_name`, `team2_flag`, `team2_goals`, `result`, `location`, `date_played`, `file_manager_id`, `active`, `date_created`, `tournament_date`) VALUES
-(1, 'zone', '', '1/3|9/2|11', 1, 'Mundial 2014', 'Grupo A', 0, 13, 'Brazil', 'Bra', 'https://www.adyouwish.com/fantasy/uploads/files/17_1385512279_Brazil.png', 0, 15, 'Croacia', 'Cro', 'https://www.adyouwish.com/fantasy/uploads/files/19_1385512324_Croatia.png', 0, -2, 'São Paulo', '2014-06-12 17:00:00', 0, 1, '2014-01-14 15:08:58', NULL),
-(2, 'zone', '', '9.19|10.33|5.33', 1, 'Mundial 2014', 'Grupo A', 0, 38, 'México', 'Mex', 'https://www.adyouwish.com/fantasy/uploads/files/42_1385522458_Mexico.png', 0, 25, 'Camerún', 'Cam', 'https://www.adyouwish.com/fantasy/uploads/files/29_1385513135_Cameroon.png', 1, -2, 'Natal', '2014-06-13 13:00:00', 0, 1, '2014-01-14 15:10:36', NULL),
-(3, 'zone', '', '3.55|4.5|6.32', 1, 'Mundial 2014', 'Grupo A', 0, 13, 'Brazil', 'Bra', 'https://www.adyouwish.com/fantasy/uploads/files/17_1385512279_Brazil.png', 0, 38, 'México', 'Mex', 'https://www.adyouwish.com/fantasy/uploads/files/42_1385522458_Mexico.png', 0, -2, 'Fortaleza', '2014-06-17 16:00:00', 0, 1, '2014-01-14 15:12:32', NULL),
-(4, 'zone', '', '3.3|4.3|1.3', 1, 'Mundial 2014', 'Grupo A', 0, 25, 'Camerún', 'Cam', 'https://www.adyouwish.com/fantasy/uploads/files/29_1385513135_Cameroon.png', 0, 15, 'Croacia', 'Cro', 'https://www.adyouwish.com/fantasy/uploads/files/19_1385512324_Croatia.png', 0, -2, 'Manaos', '2014-06-18 18:00:00', 0, 1, '2014-01-14 15:13:20', NULL),
-(5, 'zone', '', '2.44|4.12|1.10', 1, 'Mundial 2014', 'Grupo A', 0, 25, 'Camerún', 'Cam', 'https://www.adyouwish.com/fantasy/uploads/files/29_1385513135_Cameroon.png', 0, 13, 'Brazil', 'Bra', 'https://www.adyouwish.com/fantasy/uploads/files/17_1385512279_Brazil.png', 0, -2, 'Brasilia', '2014-06-23 17:00:00', 0, 1, '2014-01-14 15:13:53', NULL),
-(6, 'zone', '', '', 1, 'Mundial 2014', 'Grupo A', 0, 15, 'Croacia', 'Cro', 'https://www.adyouwish.com/fantasy/uploads/files/19_1385512324_Croatia.png', 0, 38, 'México', 'Mex', 'https://www.adyouwish.com/fantasy/uploads/files/42_1385522458_Mexico.png', 0, -2, 'Recife', '2014-06-23 17:00:00', 0, 1, '2014-01-14 15:17:05', NULL),
-(7, 'zone', '', '', 1, 'Mundial 2014', 'Grupo B', 0, 11, 'España', 'Esp', 'https://www.adyouwish.com/fantasy/uploads/files/15_1385512225_Spain.png', 0, 22, 'Holanda', 'Hol', 'https://www.adyouwish.com/fantasy/uploads/files/26_1385512485_Netherlands.png', 0, -2, 'Salvador', '2014-06-13 16:00:00', 0, 1, '2014-01-14 15:18:27', NULL),
-(8, 'zone', '', '', 1, 'Mundial 2014', 'Grupo B', 0, 28, 'Chile', 'Chi', 'https://www.adyouwish.com/fantasy/uploads/files/32_1385513358_Chile.png', 0, 31, 'Australia', 'Aus', 'https://www.adyouwish.com/fantasy/uploads/files/35_1385519835_Australia.png', 0, -2, 'Cuiabá', '2014-06-13 18:00:00', 0, 1, '2014-01-14 15:19:13', NULL),
-(9, 'zone', '', '', 1, 'Mundial 2014', 'Grupo B', 0, 11, 'España', 'Esp', 'https://www.adyouwish.com/fantasy/uploads/files/15_1385512225_Spain.png', 0, 28, 'Chile', 'Chi', 'https://www.adyouwish.com/fantasy/uploads/files/32_1385513358_Chile.png', 0, -2, 'Río de Janeiro', '2014-06-18 16:00:00', 0, 1, '2014-01-14 15:19:45', NULL),
-(10, 'zone', '', '', 1, 'Mundial 2014', 'Grupo B', 0, 31, 'Australia', 'Aus', 'https://www.adyouwish.com/fantasy/uploads/files/35_1385519835_Australia.png', 0, 22, 'Holanda', 'Hol', 'https://www.adyouwish.com/fantasy/uploads/files/26_1385512485_Netherlands.png', 0, -2, 'Porto Alegre', '2014-06-18 13:00:00', 0, 1, '2014-01-14 15:20:18', NULL),
-(11, 'zone', '', '', 1, 'Mundial 2014', 'Grupo B', 0, 31, 'Australia', 'Aus', 'https://www.adyouwish.com/fantasy/uploads/files/35_1385519835_Australia.png', 0, 11, 'España', 'Esp', 'https://www.adyouwish.com/fantasy/uploads/files/15_1385512225_Spain.png', 0, -2, 'Curitiba', '2014-06-23 13:00:00', 0, 1, '2014-01-14 15:20:45', NULL),
-(12, 'zone', '', '', 1, 'Mundial 2014', 'Grupo B', 0, 22, 'Holanda', 'Hol', 'https://www.adyouwish.com/fantasy/uploads/files/26_1385512485_Netherlands.png', 0, 28, 'Chile', 'Chi', 'https://www.adyouwish.com/fantasy/uploads/files/32_1385513358_Chile.png', 0, -2, 'São Paulo', '2014-06-23 13:00:00', 0, 1, '2014-01-14 15:21:56', NULL),
-(13, 'zone', '', '', 1, 'Mundial 2014', 'Grupo C', 0, 10, 'Colombia', 'Col', 'https://www.adyouwish.com/fantasy/uploads/files/14_1385512211_Colombia.png', 0, 16, 'Grecia', 'Gre', 'https://www.adyouwish.com/fantasy/uploads/files/20_1385512343_Greece.png', 0, -2, 'Belo Horizonte', '2014-06-14 13:00:00', 0, 1, '2014-01-14 15:22:29', NULL),
-(14, 'zone', '', '', 1, 'Mundial 2014', 'Grupo C', 0, 29, 'Costa de Marfil', 'CdM', 'https://www.adyouwish.com/fantasy/uploads/files/33_1385513370_Cote-dIvoire.png', 0, 37, 'Japón', 'Jap', 'https://www.adyouwish.com/fantasy/uploads/files/41_1385522447_Japan.png', 0, -2, 'Recife', '2014-06-14 22:00:00', 0, 1, '2014-01-14 15:23:03', NULL),
-(15, 'zone', '', '', 1, 'Mundial 2014', 'Grupo C', 0, 10, 'Colombia', 'Col', 'https://www.adyouwish.com/fantasy/uploads/files/14_1385512211_Colombia.png', 0, 29, 'Costa de Marfil', 'CdM', 'https://www.adyouwish.com/fantasy/uploads/files/33_1385513370_Cote-dIvoire.png', 0, -2, 'Brasilia', '2014-06-19 13:00:00', 0, 1, '2014-01-14 15:23:36', NULL),
-(16, 'zone', '', '', 1, 'Mundial 2014', 'Grupo C', 0, 37, 'Japón', 'Jap', 'https://www.adyouwish.com/fantasy/uploads/files/41_1385522447_Japan.png', 0, 16, 'Grecia', 'Gre', 'https://www.adyouwish.com/fantasy/uploads/files/20_1385512343_Greece.png', 0, -2, 'Natal', '2014-06-19 19:00:00', 0, 1, '2014-01-14 15:24:09', NULL),
-(17, 'zone', '', '', 1, 'Mundial 2014', 'Grupo C', 0, 37, 'Japón', 'Jap', 'https://www.adyouwish.com/fantasy/uploads/files/41_1385522447_Japan.png', 0, 10, 'Colombia', 'Col', 'https://www.adyouwish.com/fantasy/uploads/files/14_1385512211_Colombia.png', 0, -2, 'Cuiabá', '2014-06-24 16:00:00', 0, 1, '2014-01-14 15:24:58', NULL),
-(18, 'zone', '', '', 1, 'Mundial 2014', 'Grupo C', 0, 16, 'Grecia', 'Gre', 'https://www.adyouwish.com/fantasy/uploads/files/20_1385512343_Greece.png', 0, 29, 'Costa de Marfil', 'CdM', 'https://www.adyouwish.com/fantasy/uploads/files/33_1385513370_Cote-dIvoire.png', 0, -2, 'Fortaleza', '2014-06-24 17:00:00', 0, 1, '2014-01-14 15:25:29', NULL),
-(19, 'zone', '', '', 1, 'Mundial 2014', 'Grupo D', 0, 17, 'Uruguay', 'Uru', 'https://www.adyouwish.com/fantasy/uploads/files/21_1385512361_Uruguay.png', 0, 33, 'Costa Rica', 'CRC', 'https://www.adyouwish.com/fantasy/uploads/files/37_1385522372_Costa-Rica.png', 0, -2, 'Fortaleza', '2014-06-14 16:00:00', 0, 1, '2014-01-14 15:26:23', NULL),
-(20, 'zone', '', '', 1, 'Mundial 2014', 'Grupo D', 0, 21, 'Inglaterra', 'Ing', 'https://www.adyouwish.com/fantasy/uploads/files/25_1385512461_England.png', 0, 18, 'Italia', 'Ita', 'https://www.adyouwish.com/fantasy/uploads/files/22_1385512372_Italy.png', 0, -2, 'Manaos', '2014-06-14 18:00:00', 0, 1, '2014-01-14 15:27:05', NULL),
-(21, 'zone', '', '', 1, 'Mundial 2014', 'Grupo D', 0, 17, 'Uruguay', 'Uru', 'https://www.adyouwish.com/fantasy/uploads/files/21_1385512361_Uruguay.png', 0, 21, 'Inglaterra', 'Ing', 'https://www.adyouwish.com/fantasy/uploads/files/25_1385512461_England.png', 0, -2, 'São Paulo', '2014-06-19 16:00:00', 0, 1, '2014-01-14 15:27:42', NULL),
-(22, 'zone', '', '', 1, 'Mundial 2014', 'Grupo D', 0, 18, 'Italia', 'Ita', 'https://www.adyouwish.com/fantasy/uploads/files/22_1385512372_Italy.png', 0, 33, 'Costa Rica', 'CRC', 'https://www.adyouwish.com/fantasy/uploads/files/37_1385522372_Costa-Rica.png', 0, -2, 'Recife', '2014-06-20 13:00:00', 0, 1, '2014-01-14 15:28:11', NULL),
-(23, 'zone', '', '', 1, 'Mundial 2014', 'Grupo D', 0, 18, 'Italia', 'Ita', 'https://www.adyouwish.com/fantasy/uploads/files/22_1385512372_Italy.png', 0, 17, 'Uruguay', 'Uru', 'https://www.adyouwish.com/fantasy/uploads/files/21_1385512361_Uruguay.png', 0, -2, 'Natal', '2014-06-24 13:00:00', 0, 1, '2014-01-14 15:28:44', NULL),
-(24, 'zone', '', '', 1, 'Mundial 2014', 'Grupo D', 0, 33, 'Costa Rica', 'CRC', 'https://www.adyouwish.com/fantasy/uploads/files/37_1385522372_Costa-Rica.png', 0, 21, 'Inglaterra', 'Ing', 'https://www.adyouwish.com/fantasy/uploads/files/25_1385512461_England.png', 0, -2, 'Belo Horizonte', '2014-06-24 13:00:00', 0, 1, '2014-01-14 15:29:13', NULL),
-(25, 'zone', '', '', 1, 'Mundial 2014', 'Grupo E', 0, 19, 'Suiza', 'Sui', 'https://www.adyouwish.com/fantasy/uploads/files/23_1385512392_Switzerland.png', 0, 26, 'Ecuador', 'Ecu', 'https://www.adyouwish.com/fantasy/uploads/files/30_1385513279_Ecuador.png', 0, -2, 'Brasilia', '2014-06-15 13:00:00', 0, 1, '2014-01-14 15:30:09', NULL),
-(26, 'zone', '', '', 1, 'Mundial 2014', 'Grupo E', 0, 12, 'Francia', 'Fra', 'https://www.adyouwish.com/fantasy/uploads/files/16_1385512241_France.png', 0, 35, 'Honduras', 'Hon', 'https://www.adyouwish.com/fantasy/uploads/files/39_1385522402_Honduras.png', 0, -2, 'Porto Alegre', '2014-06-15 16:00:00', 0, 1, '2014-01-14 15:30:38', NULL),
-(27, 'zone', '', '', 1, 'Mundial 2014', 'Grupo E', 0, 19, 'Suiza', 'Sui', 'https://www.adyouwish.com/fantasy/uploads/files/23_1385512392_Switzerland.png', 0, 12, 'Francia', 'Fra', 'https://www.adyouwish.com/fantasy/uploads/files/16_1385512241_France.png', 0, -2, 'Salvador', '2014-06-20 16:00:00', 0, 1, '2014-01-14 15:31:29', NULL),
-(28, 'zone', '', '', 1, 'Mundial 2014', 'Grupo E', 0, 35, 'Honduras', 'Hon', 'https://www.adyouwish.com/fantasy/uploads/files/39_1385522402_Honduras.png', 0, 26, 'Ecuador', 'Ecu', 'https://www.adyouwish.com/fantasy/uploads/files/30_1385513279_Ecuador.png', 0, -2, 'Curitiba', '2014-06-20 19:00:00', 0, 1, '2014-01-14 15:31:56', NULL),
-(29, 'zone', '', '', 1, 'Mundial 2014', 'Grupo E', 0, 35, 'Honduras', 'Hon', 'https://www.adyouwish.com/fantasy/uploads/files/39_1385522402_Honduras.png', 0, 19, 'Suiza', 'Sui', 'https://www.adyouwish.com/fantasy/uploads/files/23_1385512392_Switzerland.png', 0, -2, 'Manaos', '2014-06-25 16:00:00', 0, 1, '2014-01-14 15:32:24', NULL),
-(30, 'zone', '', '', 1, 'Mundial 2014', 'Grupo E', 0, 26, 'Ecuador', 'Ecu', 'https://www.adyouwish.com/fantasy/uploads/files/30_1385513279_Ecuador.png', 0, 12, 'Francia', 'Fra', 'https://www.adyouwish.com/fantasy/uploads/files/16_1385512241_France.png', 0, -2, 'Río de Janeiro', '2014-06-25 17:00:00', 0, 1, '2014-01-14 15:32:54', NULL),
-(31, 'zone', '', '', 1, 'Mundial 2014', 'Grupo F', 0, 8, 'Argentina', 'Arg', 'https://www.adyouwish.com/fantasy/uploads/files/12_1385512190_Argentina.png', 0, 14, 'Bosnia', 'Bos', 'https://www.adyouwish.com/fantasy/uploads/files/18_1385512316_Bosnia-and-Herzegovina.png', 0, -2, 'Río de Janeiro', '2014-06-15 19:00:00', 0, 1, '2014-01-14 15:33:43', NULL),
-(32, 'zone', '', '', 1, 'Mundial 2014', 'Grupo F', 0, 36, 'Irán', 'Ira', 'https://www.adyouwish.com/fantasy/uploads/files/40_1385522412_Iran.png', 0, 30, 'Nigeria', 'Nig', 'https://www.adyouwish.com/fantasy/uploads/files/34_1385513414_Nigeria.png', 0, -2, 'Curitiba', '2014-06-16 16:00:00', 0, 1, '2014-01-14 15:34:12', NULL),
-(34, 'zone', '', '', 1, 'Mundial 2014', 'Grupo F', 0, 8, 'Argentina', 'Arg', 'https://www.adyouwish.com/fantasy/uploads/files/12_1385512190_Argentina.png', 0, 36, 'Irán', 'Ira', 'https://www.adyouwish.com/fantasy/uploads/files/40_1385522412_Iran.png', 0, -2, 'Belo Horizonte', '2014-06-21 13:00:00', 0, 1, '2014-01-14 15:34:40', NULL),
-(35, 'zone', '', '', 1, 'Mundial 2014', 'Grupo F', 0, 30, 'Nigeria', 'Nig', 'https://www.adyouwish.com/fantasy/uploads/files/34_1385513414_Nigeria.png', 0, 14, 'Bosnia', 'Bos', 'https://www.adyouwish.com/fantasy/uploads/files/18_1385512316_Bosnia-and-Herzegovina.png', 0, -2, 'Cuiabá', '2014-06-21 18:00:00', 0, 1, '2014-01-14 15:35:17', NULL),
-(36, 'zone', '', '', 1, 'Mundial 2014', 'Grupo F', 0, 30, 'Nigeria', 'Nig', 'https://www.adyouwish.com/fantasy/uploads/files/34_1385513414_Nigeria.png', 0, 8, 'Argentina', 'Arg', 'https://www.adyouwish.com/fantasy/uploads/files/12_1385512190_Argentina.png', 0, -2, 'Porto Alegre', '2014-06-25 13:00:00', 0, 1, '2014-01-14 15:35:45', NULL),
-(37, 'zone', '', '', 1, 'Mundial 2014', 'Grupo F', 0, 14, 'Bosnia', 'Bos', 'https://www.adyouwish.com/fantasy/uploads/files/18_1385512316_Bosnia-and-Herzegovina.png', 0, 36, 'Irán', 'Ira', 'https://www.adyouwish.com/fantasy/uploads/files/40_1385522412_Iran.png', 0, -2, 'Salvador', '2014-06-25 13:00:00', 0, 1, '2014-01-14 15:36:13', NULL),
-(38, 'zone', '', '', 1, 'Mundial 2014', 'Grupo G', 0, 39, 'Alemania', 'Ale', 'https://www.adyouwish.com/fantasy/uploads/files/43_1387311198_Germany.png', 0, 23, 'Portugal', 'Por', 'https://www.adyouwish.com/fantasy/uploads/files/27_1385512495_Portugal.png', 0, -2, 'Salvador', '2014-06-16 13:00:00', 0, 1, '2014-01-14 15:36:39', NULL),
-(39, 'zone', '', '', 1, 'Mundial 2014', 'Grupo G', 0, 27, 'Ghana', 'Gha', 'https://www.adyouwish.com/fantasy/uploads/files/31_1385513300_Ghana.png', 0, 34, 'Estados Unidos', 'USA', 'https://www.adyouwish.com/fantasy/uploads/files/38_1385522394_United-States.png', 0, -2, 'Natal', '2014-06-16 19:00:00', 0, 1, '2014-01-14 15:38:02', NULL),
-(40, 'zone', '', '', 1, 'Mundial 2014', 'Grupo G', 0, 39, 'Alemania', 'Ale', 'https://www.adyouwish.com/fantasy/uploads/files/43_1387311198_Germany.png', 0, 27, 'Ghana', 'Gha', 'https://www.adyouwish.com/fantasy/uploads/files/31_1385513300_Ghana.png', 0, -2, 'Fortaleza', '2014-06-21 16:00:00', 0, 1, '2014-01-14 15:38:34', NULL),
-(41, 'zone', '', '', 1, 'Mundial 2014', 'Grupo G', 0, 34, 'Estados Unidos', 'USA', 'https://www.adyouwish.com/fantasy/uploads/files/38_1385522394_United-States.png', 0, 23, 'Portugal', 'Por', 'https://www.adyouwish.com/fantasy/uploads/files/27_1385512495_Portugal.png', 0, -2, 'Manaos', '2014-06-22 18:00:00', 0, 1, '2014-01-14 15:39:10', NULL),
-(42, 'zone', '', '', 1, 'Mundial 2014', 'Grupo G', 0, 34, 'Estados Unidos', 'USA', 'https://www.adyouwish.com/fantasy/uploads/files/38_1385522394_United-States.png', 0, 39, 'Alemania', 'Ale', 'https://www.adyouwish.com/fantasy/uploads/files/43_1387311198_Germany.png', 0, -2, 'Recife', '2014-06-26 13:00:00', 0, 1, '2014-01-14 15:39:39', NULL),
-(43, 'zone', '', '', 1, 'Mundial 2014', 'Grupo G', 0, 23, 'Portugal', 'Por', 'https://www.adyouwish.com/fantasy/uploads/files/27_1385512495_Portugal.png', 0, 27, 'Ghana', 'Gha', 'https://www.adyouwish.com/fantasy/uploads/files/31_1385513300_Ghana.png', 0, -2, 'Brasilia', '2014-06-26 13:00:00', 0, 1, '2014-01-14 15:40:03', NULL),
-(44, 'zone', '', '', 1, 'Mundial 2014', 'Grupo H', 0, 9, 'Bélgica', 'Bel', 'https://www.adyouwish.com/fantasy/uploads/files/13_1385512198_Belgium.png', 0, 24, 'Algeria', 'Alg', 'https://www.adyouwish.com/fantasy/uploads/files/28_1385512527_Algeria.png', 0, -2, 'Belo Horizonte', '2014-06-17 13:00:00', 0, 1, '2014-01-14 15:40:32', NULL),
-(45, 'zone', '', '', 1, 'Mundial 2014', 'Grupo H', 0, 20, 'Rusia', 'Rus', 'https://www.adyouwish.com/fantasy/uploads/files/24_1385512408_Russia.png', 0, 32, 'Corea del Sur', 'Cor', 'https://www.adyouwish.com/fantasy/uploads/files/36_1385521662_South-Korea.png', 0, -2, 'Cuiabá', '2014-06-17 18:00:00', 0, 1, '2014-01-14 15:40:58', NULL),
-(46, 'zone', '', '', 1, 'Mundial 2014', 'Grupo H', 0, 9, 'Bélgica', 'Bel', 'https://www.adyouwish.com/fantasy/uploads/files/13_1385512198_Belgium.png', 0, 20, 'Rusia', 'Rus', 'https://www.adyouwish.com/fantasy/uploads/files/24_1385512408_Russia.png', 0, -2, 'Río de Janeiro', '2014-06-22 13:00:00', 0, 1, '2014-01-14 15:41:28', NULL),
-(47, 'zone', '', '', 1, 'Mundial 2014', 'Grupo H', 0, 32, 'Corea del Sur', 'Cor', 'https://www.adyouwish.com/fantasy/uploads/files/36_1385521662_South-Korea.png', 0, 24, 'Algeria', 'Alg', 'https://www.adyouwish.com/fantasy/uploads/files/28_1385512527_Algeria.png', 0, -2, 'Porto Alegre', '2014-06-22 16:00:00', 0, 1, '2014-01-14 15:42:00', NULL),
-(48, 'zone', '', '', 1, 'Mundial 2014', 'Grupo H', 0, 32, 'Corea del Sur', 'Cor', 'https://www.adyouwish.com/fantasy/uploads/files/36_1385521662_South-Korea.png', 0, 9, 'Bélgica', 'Bel', 'https://www.adyouwish.com/fantasy/uploads/files/13_1385512198_Belgium.png', 0, -2, 'São Paulo', '2014-06-26 17:00:00', 0, 1, '2014-01-14 15:42:27', NULL),
-(49, 'zone', '', '', 1, 'Mundial 2014', 'Grupo H', 0, 24, 'Algeria', 'Alg', 'https://www.adyouwish.com/fantasy/uploads/files/28_1385512527_Algeria.png', 0, 20, 'Rusia', 'Rus', 'https://www.adyouwish.com/fantasy/uploads/files/24_1385512408_Russia.png', 0, -2, 'Curitiba', '2014-06-26 17:00:00', 0, 1, '2014-01-14 15:42:54', NULL);
+(1, 'zone', '', '1/3|9/2|11', 1, 'Mundial 2014', 'Grupo A', 0, 13, 'Brazil', 'Bra', 'http://local.prode2018.com/uploads/files/17_1385512279_Brazil.png', 0, 15, 'Croacia', 'Cro', 'http://local.prode2018.com/uploads/files/19_1385512324_Croatia.png', 0, -2, 'São Paulo', '2014-06-12 17:00:00', 0, 1, '2014-01-14 15:08:58', NULL),
+(2, 'zone', '', '9.19|10.33|5.33', 1, 'Mundial 2014', 'Grupo A', 0, 38, 'México', 'Mex', 'http://local.prode2018.com/uploads/files/42_1385522458_Mexico.png', 0, 25, 'Camerún', 'Cam', 'http://local.prode2018.com/uploads/files/29_1385513135_Cameroon.png', 1, -2, 'Natal', '2014-06-13 13:00:00', 0, 1, '2014-01-14 15:10:36', NULL),
+(3, 'zone', '', '3.55|4.5|6.32', 1, 'Mundial 2014', 'Grupo A', 0, 13, 'Brazil', 'Bra', 'http://local.prode2018.com/uploads/files/17_1385512279_Brazil.png', 0, 38, 'México', 'Mex', 'http://local.prode2018.com/uploads/files/42_1385522458_Mexico.png', 0, -2, 'Fortaleza', '2014-06-17 16:00:00', 0, 1, '2014-01-14 15:12:32', NULL),
+(4, 'zone', '', '3.3|4.3|1.3', 1, 'Mundial 2014', 'Grupo A', 0, 25, 'Camerún', 'Cam', 'http://local.prode2018.com/uploads/files/29_1385513135_Cameroon.png', 0, 15, 'Croacia', 'Cro', 'http://local.prode2018.com/uploads/files/19_1385512324_Croatia.png', 0, -2, 'Manaos', '2014-06-18 18:00:00', 0, 1, '2014-01-14 15:13:20', NULL),
+(5, 'zone', '', '2.44|4.12|1.10', 1, 'Mundial 2014', 'Grupo A', 0, 25, 'Camerún', 'Cam', 'http://local.prode2018.com/uploads/files/29_1385513135_Cameroon.png', 0, 13, 'Brazil', 'Bra', 'http://local.prode2018.com/uploads/files/17_1385512279_Brazil.png', 0, -2, 'Brasilia', '2014-06-23 17:00:00', 0, 1, '2014-01-14 15:13:53', NULL),
+(6, 'zone', '', '', 1, 'Mundial 2014', 'Grupo A', 0, 15, 'Croacia', 'Cro', 'http://local.prode2018.com/uploads/files/19_1385512324_Croatia.png', 0, 38, 'México', 'Mex', 'http://local.prode2018.com/uploads/files/42_1385522458_Mexico.png', 0, -2, 'Recife', '2014-06-23 17:00:00', 0, 1, '2014-01-14 15:17:05', NULL),
+(7, 'zone', '', '', 1, 'Mundial 2014', 'Grupo B', 0, 11, 'España', 'Esp', 'http://local.prode2018.com/uploads/files/15_1385512225_Spain.png', 0, 22, 'Holanda', 'Hol', 'http://local.prode2018.com/uploads/files/26_1385512485_Netherlands.png', 0, -2, 'Salvador', '2014-06-13 16:00:00', 0, 1, '2014-01-14 15:18:27', NULL),
+(8, 'zone', '', '', 1, 'Mundial 2014', 'Grupo B', 0, 28, 'Chile', 'Chi', 'http://local.prode2018.com/uploads/files/32_1385513358_Chile.png', 0, 31, 'Australia', 'Aus', 'http://local.prode2018.com/uploads/files/35_1385519835_Australia.png', 0, -2, 'Cuiabá', '2014-06-13 18:00:00', 0, 1, '2014-01-14 15:19:13', NULL),
+(9, 'zone', '', '', 1, 'Mundial 2014', 'Grupo B', 0, 11, 'España', 'Esp', 'http://local.prode2018.com/uploads/files/15_1385512225_Spain.png', 0, 28, 'Chile', 'Chi', 'http://local.prode2018.com/uploads/files/32_1385513358_Chile.png', 0, -2, 'Río de Janeiro', '2014-06-18 16:00:00', 0, 1, '2014-01-14 15:19:45', NULL),
+(10, 'zone', '', '', 1, 'Mundial 2014', 'Grupo B', 0, 31, 'Australia', 'Aus', 'http://local.prode2018.com/uploads/files/35_1385519835_Australia.png', 0, 22, 'Holanda', 'Hol', 'http://local.prode2018.com/uploads/files/26_1385512485_Netherlands.png', 0, -2, 'Porto Alegre', '2014-06-18 13:00:00', 0, 1, '2014-01-14 15:20:18', NULL),
+(11, 'zone', '', '', 1, 'Mundial 2014', 'Grupo B', 0, 31, 'Australia', 'Aus', 'http://local.prode2018.com/uploads/files/35_1385519835_Australia.png', 0, 11, 'España', 'Esp', 'http://local.prode2018.com/uploads/files/15_1385512225_Spain.png', 0, -2, 'Curitiba', '2014-06-23 13:00:00', 0, 1, '2014-01-14 15:20:45', NULL),
+(12, 'zone', '', '', 1, 'Mundial 2014', 'Grupo B', 0, 22, 'Holanda', 'Hol', 'http://local.prode2018.com/uploads/files/26_1385512485_Netherlands.png', 0, 28, 'Chile', 'Chi', 'http://local.prode2018.com/uploads/files/32_1385513358_Chile.png', 0, -2, 'São Paulo', '2014-06-23 13:00:00', 0, 1, '2014-01-14 15:21:56', NULL),
+(13, 'zone', '', '', 1, 'Mundial 2014', 'Grupo C', 0, 10, 'Colombia', 'Col', 'http://local.prode2018.com/uploads/files/14_1385512211_Colombia.png', 0, 16, 'Grecia', 'Gre', 'http://local.prode2018.com/uploads/files/20_1385512343_Greece.png', 0, -2, 'Belo Horizonte', '2014-06-14 13:00:00', 0, 1, '2014-01-14 15:22:29', NULL),
+(14, 'zone', '', '', 1, 'Mundial 2014', 'Grupo C', 0, 29, 'Costa de Marfil', 'CdM', 'http://local.prode2018.com/uploads/files/33_1385513370_Cote-dIvoire.png', 0, 37, 'Japón', 'Jap', 'http://local.prode2018.com/uploads/files/41_1385522447_Japan.png', 0, -2, 'Recife', '2014-06-14 22:00:00', 0, 1, '2014-01-14 15:23:03', NULL),
+(15, 'zone', '', '', 1, 'Mundial 2014', 'Grupo C', 0, 10, 'Colombia', 'Col', 'http://local.prode2018.com/uploads/files/14_1385512211_Colombia.png', 0, 29, 'Costa de Marfil', 'CdM', 'http://local.prode2018.com/uploads/files/33_1385513370_Cote-dIvoire.png', 0, -2, 'Brasilia', '2014-06-19 13:00:00', 0, 1, '2014-01-14 15:23:36', NULL),
+(16, 'zone', '', '', 1, 'Mundial 2014', 'Grupo C', 0, 37, 'Japón', 'Jap', 'http://local.prode2018.com/uploads/files/41_1385522447_Japan.png', 0, 16, 'Grecia', 'Gre', 'http://local.prode2018.com/uploads/files/20_1385512343_Greece.png', 0, -2, 'Natal', '2014-06-19 19:00:00', 0, 1, '2014-01-14 15:24:09', NULL),
+(17, 'zone', '', '', 1, 'Mundial 2014', 'Grupo C', 0, 37, 'Japón', 'Jap', 'http://local.prode2018.com/uploads/files/41_1385522447_Japan.png', 0, 10, 'Colombia', 'Col', 'http://local.prode2018.com/uploads/files/14_1385512211_Colombia.png', 0, -2, 'Cuiabá', '2014-06-24 16:00:00', 0, 1, '2014-01-14 15:24:58', NULL),
+(18, 'zone', '', '', 1, 'Mundial 2014', 'Grupo C', 0, 16, 'Grecia', 'Gre', 'http://local.prode2018.com/uploads/files/20_1385512343_Greece.png', 0, 29, 'Costa de Marfil', 'CdM', 'http://local.prode2018.com/uploads/files/33_1385513370_Cote-dIvoire.png', 0, -2, 'Fortaleza', '2014-06-24 17:00:00', 0, 1, '2014-01-14 15:25:29', NULL),
+(19, 'zone', '', '', 1, 'Mundial 2014', 'Grupo D', 0, 17, 'Uruguay', 'Uru', 'http://local.prode2018.com/uploads/files/21_1385512361_Uruguay.png', 0, 33, 'Costa Rica', 'CRC', 'http://local.prode2018.com/uploads/files/37_1385522372_Costa-Rica.png', 0, -2, 'Fortaleza', '2014-06-14 16:00:00', 0, 1, '2014-01-14 15:26:23', NULL),
+(20, 'zone', '', '', 1, 'Mundial 2014', 'Grupo D', 0, 21, 'Inglaterra', 'Ing', 'http://local.prode2018.com/uploads/files/25_1385512461_England.png', 0, 18, 'Italia', 'Ita', 'http://local.prode2018.com/uploads/files/22_1385512372_Italy.png', 0, -2, 'Manaos', '2014-06-14 18:00:00', 0, 1, '2014-01-14 15:27:05', NULL),
+(21, 'zone', '', '', 1, 'Mundial 2014', 'Grupo D', 0, 17, 'Uruguay', 'Uru', 'http://local.prode2018.com/uploads/files/21_1385512361_Uruguay.png', 0, 21, 'Inglaterra', 'Ing', 'http://local.prode2018.com/uploads/files/25_1385512461_England.png', 0, -2, 'São Paulo', '2014-06-19 16:00:00', 0, 1, '2014-01-14 15:27:42', NULL),
+(22, 'zone', '', '', 1, 'Mundial 2014', 'Grupo D', 0, 18, 'Italia', 'Ita', 'http://local.prode2018.com/uploads/files/22_1385512372_Italy.png', 0, 33, 'Costa Rica', 'CRC', 'http://local.prode2018.com/uploads/files/37_1385522372_Costa-Rica.png', 0, -2, 'Recife', '2014-06-20 13:00:00', 0, 1, '2014-01-14 15:28:11', NULL),
+(23, 'zone', '', '', 1, 'Mundial 2014', 'Grupo D', 0, 18, 'Italia', 'Ita', 'http://local.prode2018.com/uploads/files/22_1385512372_Italy.png', 0, 17, 'Uruguay', 'Uru', 'http://local.prode2018.com/uploads/files/21_1385512361_Uruguay.png', 0, -2, 'Natal', '2014-06-24 13:00:00', 0, 1, '2014-01-14 15:28:44', NULL),
+(24, 'zone', '', '', 1, 'Mundial 2014', 'Grupo D', 0, 33, 'Costa Rica', 'CRC', 'http://local.prode2018.com/uploads/files/37_1385522372_Costa-Rica.png', 0, 21, 'Inglaterra', 'Ing', 'http://local.prode2018.com/uploads/files/25_1385512461_England.png', 0, -2, 'Belo Horizonte', '2014-06-24 13:00:00', 0, 1, '2014-01-14 15:29:13', NULL),
+(25, 'zone', '', '', 1, 'Mundial 2014', 'Grupo E', 0, 19, 'Suiza', 'Sui', 'http://local.prode2018.com/uploads/files/23_1385512392_Switzerland.png', 0, 26, 'Ecuador', 'Ecu', 'http://local.prode2018.com/uploads/files/30_1385513279_Ecuador.png', 0, -2, 'Brasilia', '2014-06-15 13:00:00', 0, 1, '2014-01-14 15:30:09', NULL),
+(26, 'zone', '', '', 1, 'Mundial 2014', 'Grupo E', 0, 12, 'Francia', 'Fra', 'http://local.prode2018.com/uploads/files/16_1385512241_France.png', 0, 35, 'Honduras', 'Hon', 'http://local.prode2018.com/uploads/files/39_1385522402_Honduras.png', 0, -2, 'Porto Alegre', '2014-06-15 16:00:00', 0, 1, '2014-01-14 15:30:38', NULL),
+(27, 'zone', '', '', 1, 'Mundial 2014', 'Grupo E', 0, 19, 'Suiza', 'Sui', 'http://local.prode2018.com/uploads/files/23_1385512392_Switzerland.png', 0, 12, 'Francia', 'Fra', 'http://local.prode2018.com/uploads/files/16_1385512241_France.png', 0, -2, 'Salvador', '2014-06-20 16:00:00', 0, 1, '2014-01-14 15:31:29', NULL),
+(28, 'zone', '', '', 1, 'Mundial 2014', 'Grupo E', 0, 35, 'Honduras', 'Hon', 'http://local.prode2018.com/uploads/files/39_1385522402_Honduras.png', 0, 26, 'Ecuador', 'Ecu', 'http://local.prode2018.com/uploads/files/30_1385513279_Ecuador.png', 0, -2, 'Curitiba', '2014-06-20 19:00:00', 0, 1, '2014-01-14 15:31:56', NULL),
+(29, 'zone', '', '', 1, 'Mundial 2014', 'Grupo E', 0, 35, 'Honduras', 'Hon', 'http://local.prode2018.com/uploads/files/39_1385522402_Honduras.png', 0, 19, 'Suiza', 'Sui', 'http://local.prode2018.com/uploads/files/23_1385512392_Switzerland.png', 0, -2, 'Manaos', '2014-06-25 16:00:00', 0, 1, '2014-01-14 15:32:24', NULL),
+(30, 'zone', '', '', 1, 'Mundial 2014', 'Grupo E', 0, 26, 'Ecuador', 'Ecu', 'http://local.prode2018.com/uploads/files/30_1385513279_Ecuador.png', 0, 12, 'Francia', 'Fra', 'http://local.prode2018.com/uploads/files/16_1385512241_France.png', 0, -2, 'Río de Janeiro', '2014-06-25 17:00:00', 0, 1, '2014-01-14 15:32:54', NULL),
+(31, 'zone', '', '', 1, 'Mundial 2014', 'Grupo F', 0, 8, 'Argentina', 'Arg', 'http://local.prode2018.com/uploads/files/12_1385512190_Argentina.png', 0, 14, 'Bosnia', 'Bos', 'http://local.prode2018.com/uploads/files/18_1385512316_Bosnia-and-Herzegovina.png', 0, -2, 'Río de Janeiro', '2014-06-15 19:00:00', 0, 1, '2014-01-14 15:33:43', NULL),
+(32, 'zone', '', '', 1, 'Mundial 2014', 'Grupo F', 0, 36, 'Irán', 'Ira', 'http://local.prode2018.com/uploads/files/40_1385522412_Iran.png', 0, 30, 'Nigeria', 'Nig', 'http://local.prode2018.com/uploads/files/34_1385513414_Nigeria.png', 0, -2, 'Curitiba', '2014-06-16 16:00:00', 0, 1, '2014-01-14 15:34:12', NULL),
+(34, 'zone', '', '', 1, 'Mundial 2014', 'Grupo F', 0, 8, 'Argentina', 'Arg', 'http://local.prode2018.com/uploads/files/12_1385512190_Argentina.png', 0, 36, 'Irán', 'Ira', 'http://local.prode2018.com/uploads/files/40_1385522412_Iran.png', 0, -2, 'Belo Horizonte', '2014-06-21 13:00:00', 0, 1, '2014-01-14 15:34:40', NULL),
+(35, 'zone', '', '', 1, 'Mundial 2014', 'Grupo F', 0, 30, 'Nigeria', 'Nig', 'http://local.prode2018.com/uploads/files/34_1385513414_Nigeria.png', 0, 14, 'Bosnia', 'Bos', 'http://local.prode2018.com/uploads/files/18_1385512316_Bosnia-and-Herzegovina.png', 0, -2, 'Cuiabá', '2014-06-21 18:00:00', 0, 1, '2014-01-14 15:35:17', NULL),
+(36, 'zone', '', '', 1, 'Mundial 2014', 'Grupo F', 0, 30, 'Nigeria', 'Nig', 'http://local.prode2018.com/uploads/files/34_1385513414_Nigeria.png', 0, 8, 'Argentina', 'Arg', 'http://local.prode2018.com/uploads/files/12_1385512190_Argentina.png', 0, -2, 'Porto Alegre', '2014-06-25 13:00:00', 0, 1, '2014-01-14 15:35:45', NULL),
+(37, 'zone', '', '', 1, 'Mundial 2014', 'Grupo F', 0, 14, 'Bosnia', 'Bos', 'http://local.prode2018.com/uploads/files/18_1385512316_Bosnia-and-Herzegovina.png', 0, 36, 'Irán', 'Ira', 'http://local.prode2018.com/uploads/files/40_1385522412_Iran.png', 0, -2, 'Salvador', '2014-06-25 13:00:00', 0, 1, '2014-01-14 15:36:13', NULL),
+(38, 'zone', '', '', 1, 'Mundial 2014', 'Grupo G', 0, 39, 'Alemania', 'Ale', 'http://local.prode2018.com/uploads/files/43_1387311198_Germany.png', 0, 23, 'Portugal', 'Por', 'http://local.prode2018.com/uploads/files/27_1385512495_Portugal.png', 0, -2, 'Salvador', '2014-06-16 13:00:00', 0, 1, '2014-01-14 15:36:39', NULL),
+(39, 'zone', '', '', 1, 'Mundial 2014', 'Grupo G', 0, 27, 'Ghana', 'Gha', 'http://local.prode2018.com/uploads/files/31_1385513300_Ghana.png', 0, 34, 'Estados Unidos', 'USA', 'http://local.prode2018.com/uploads/files/38_1385522394_United-States.png', 0, -2, 'Natal', '2014-06-16 19:00:00', 0, 1, '2014-01-14 15:38:02', NULL),
+(40, 'zone', '', '', 1, 'Mundial 2014', 'Grupo G', 0, 39, 'Alemania', 'Ale', 'http://local.prode2018.com/uploads/files/43_1387311198_Germany.png', 0, 27, 'Ghana', 'Gha', 'http://local.prode2018.com/uploads/files/31_1385513300_Ghana.png', 0, -2, 'Fortaleza', '2014-06-21 16:00:00', 0, 1, '2014-01-14 15:38:34', NULL),
+(41, 'zone', '', '', 1, 'Mundial 2014', 'Grupo G', 0, 34, 'Estados Unidos', 'USA', 'http://local.prode2018.com/uploads/files/38_1385522394_United-States.png', 0, 23, 'Portugal', 'Por', 'http://local.prode2018.com/uploads/files/27_1385512495_Portugal.png', 0, -2, 'Manaos', '2014-06-22 18:00:00', 0, 1, '2014-01-14 15:39:10', NULL),
+(42, 'zone', '', '', 1, 'Mundial 2014', 'Grupo G', 0, 34, 'Estados Unidos', 'USA', 'http://local.prode2018.com/uploads/files/38_1385522394_United-States.png', 0, 39, 'Alemania', 'Ale', 'http://local.prode2018.com/uploads/files/43_1387311198_Germany.png', 0, -2, 'Recife', '2014-06-26 13:00:00', 0, 1, '2014-01-14 15:39:39', NULL),
+(43, 'zone', '', '', 1, 'Mundial 2014', 'Grupo G', 0, 23, 'Portugal', 'Por', 'http://local.prode2018.com/uploads/files/27_1385512495_Portugal.png', 0, 27, 'Ghana', 'Gha', 'http://local.prode2018.com/uploads/files/31_1385513300_Ghana.png', 0, -2, 'Brasilia', '2014-06-26 13:00:00', 0, 1, '2014-01-14 15:40:03', NULL),
+(44, 'zone', '', '', 1, 'Mundial 2014', 'Grupo H', 0, 9, 'Bélgica', 'Bel', 'http://local.prode2018.com/uploads/files/13_1385512198_Belgium.png', 0, 24, 'Algeria', 'Alg', 'http://local.prode2018.com/uploads/files/28_1385512527_Algeria.png', 0, -2, 'Belo Horizonte', '2014-06-17 13:00:00', 0, 1, '2014-01-14 15:40:32', NULL),
+(45, 'zone', '', '', 1, 'Mundial 2014', 'Grupo H', 0, 20, 'Rusia', 'Rus', 'http://local.prode2018.com/uploads/files/24_1385512408_Russia.png', 0, 32, 'Corea del Sur', 'Cor', 'http://local.prode2018.com/uploads/files/36_1385521662_South-Korea.png', 0, -2, 'Cuiabá', '2014-06-17 18:00:00', 0, 1, '2014-01-14 15:40:58', NULL),
+(46, 'zone', '', '', 1, 'Mundial 2014', 'Grupo H', 0, 9, 'Bélgica', 'Bel', 'http://local.prode2018.com/uploads/files/13_1385512198_Belgium.png', 0, 20, 'Rusia', 'Rus', 'http://local.prode2018.com/uploads/files/24_1385512408_Russia.png', 0, -2, 'Río de Janeiro', '2014-06-22 13:00:00', 0, 1, '2014-01-14 15:41:28', NULL),
+(47, 'zone', '', '', 1, 'Mundial 2014', 'Grupo H', 0, 32, 'Corea del Sur', 'Cor', 'http://local.prode2018.com/uploads/files/36_1385521662_South-Korea.png', 0, 24, 'Algeria', 'Alg', 'http://local.prode2018.com/uploads/files/28_1385512527_Algeria.png', 0, -2, 'Porto Alegre', '2014-06-22 16:00:00', 0, 1, '2014-01-14 15:42:00', NULL),
+(48, 'zone', '', '', 1, 'Mundial 2014', 'Grupo H', 0, 32, 'Corea del Sur', 'Cor', 'http://local.prode2018.com/uploads/files/36_1385521662_South-Korea.png', 0, 9, 'Bélgica', 'Bel', 'http://local.prode2018.com/uploads/files/13_1385512198_Belgium.png', 0, -2, 'São Paulo', '2014-06-26 17:00:00', 0, 1, '2014-01-14 15:42:27', NULL),
+(49, 'zone', '', '', 1, 'Mundial 2014', 'Grupo H', 0, 24, 'Algeria', 'Alg', 'http://local.prode2018.com/uploads/files/28_1385512527_Algeria.png', 0, 20, 'Rusia', 'Rus', 'http://local.prode2018.com/uploads/files/24_1385512408_Russia.png', 0, -2, 'Curitiba', '2014-06-26 17:00:00', 0, 1, '2014-01-14 15:42:54', NULL);
 
 -- --------------------------------------------------------
 
@@ -747,7 +735,6 @@ INSERT INTO `matches` (`match_id`, `phase`, `penalties`, `bet`, `tournament_id`,
 -- Table structure for table `matches_bk`
 --
 
-DROP TABLE IF EXISTS `matches_bk`;
 CREATE TABLE `matches_bk` (
   `match_id` int(11) UNSIGNED NOT NULL,
   `tournament_id` int(11) NOT NULL,
@@ -832,7 +819,6 @@ INSERT INTO `matches_bk` (`match_id`, `tournament_id`, `tournament`, `zone`, `zo
 -- Table structure for table `participations`
 --
 
-DROP TABLE IF EXISTS `participations`;
 CREATE TABLE `participations` (
   `participation_id` int(11) NOT NULL,
   `contact_id` int(11) UNSIGNED NOT NULL,
@@ -850,7 +836,6 @@ CREATE TABLE `participations` (
 -- Table structure for table `participations_fb_app_requests`
 --
 
-DROP TABLE IF EXISTS `participations_fb_app_requests`;
 CREATE TABLE `participations_fb_app_requests` (
   `fb_request_app_id` bigint(20) NOT NULL,
   `fb_uid` bigint(20) NOT NULL,
@@ -863,7 +848,6 @@ CREATE TABLE `participations_fb_app_requests` (
 -- Table structure for table `participations_partners`
 --
 
-DROP TABLE IF EXISTS `participations_partners`;
 CREATE TABLE `participations_partners` (
   `participation_id` int(11) UNSIGNED NOT NULL,
   `fb_uid` bigint(20) NOT NULL,
@@ -879,7 +863,6 @@ CREATE TABLE `participations_partners` (
 -- Table structure for table `products`
 --
 
-DROP TABLE IF EXISTS `products`;
 CREATE TABLE `products` (
   `product_id` int(11) UNSIGNED NOT NULL,
   `name` varchar(255) NOT NULL,
@@ -898,7 +881,6 @@ CREATE TABLE `products` (
 -- Table structure for table `products_deleted`
 --
 
-DROP TABLE IF EXISTS `products_deleted`;
 CREATE TABLE `products_deleted` (
   `product_id` int(11) UNSIGNED NOT NULL,
   `name` varchar(255) NOT NULL,
@@ -930,7 +912,6 @@ CREATE TABLE `products_deleted` (
 -- Table structure for table `prognostics`
 --
 
-DROP TABLE IF EXISTS `prognostics`;
 CREATE TABLE `prognostics` (
   `prognostic_id` int(11) NOT NULL,
   `tournament_id` int(11) NOT NULL,
@@ -987,7 +968,6 @@ INSERT INTO `prognostics` (`prognostic_id`, `tournament_id`, `tournament`, `matc
 -- Table structure for table `provinces`
 --
 
-DROP TABLE IF EXISTS `provinces`;
 CREATE TABLE `provinces` (
   `province_id` int(11) UNSIGNED NOT NULL,
   `name` varchar(255) NOT NULL,
@@ -1030,7 +1010,6 @@ INSERT INTO `provinces` (`province_id`, `name`, `province_order`) VALUES
 -- Table structure for table `scores`
 --
 
-DROP TABLE IF EXISTS `scores`;
 CREATE TABLE `scores` (
   `user_id` int(11) UNSIGNED NOT NULL,
   `username` varchar(255) NOT NULL,
@@ -1061,10 +1040,19 @@ INSERT INTO `scores` (`user_id`, `username`, `points`, `results`, `exact_results
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `scores_go`
+--
+
+CREATE TABLE `scores_go` (
+  `go` tinyint(1) UNSIGNED NOT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `teams`
 --
 
-DROP TABLE IF EXISTS `teams`;
 CREATE TABLE `teams` (
   `team_id` int(11) UNSIGNED NOT NULL,
   `name` varchar(255) NOT NULL,
@@ -1091,39 +1079,39 @@ CREATE TABLE `teams` (
 --
 
 INSERT INTO `teams` (`team_id`, `name`, `abbr_name`, `zone`, `description`, `team_flag`, `file_manager_id`, `active`, `date_created`, `creator_id`, `creator_name`, `pj`, `pg`, `pe`, `pp`, `pts`, `qualyfied`, `final_pos`) VALUES
-(12, 'Francia', 'Fra', 'Grupo E', '', 'https://www.adyouwish.com/fantasy/uploads/files/16_1385512241_France.png', 38, 1, '2014-01-14 12:15:55', 3, '', NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(9, 'Bélgica', 'Bel', 'Grupo H', '', 'https://www.adyouwish.com/fantasy/uploads/files/13_1385512198_Belgium.png', 35, 1, '2014-01-14 12:14:51', 3, '', NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(8, 'Argentina', 'Arg', 'Grupo F', '', 'https://www.adyouwish.com/fantasy/uploads/files/12_1385512190_Argentina.png', 34, 1, '2014-01-14 12:14:35', 3, '', NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(13, 'Brazil', 'Bra', 'Grupo A', '', 'https://www.adyouwish.com/fantasy/uploads/files/17_1385512279_Brazil.png', 39, 1, '2014-01-14 12:16:07', 3, '', NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(11, 'España', 'Esp', 'Grupo B', '', 'https://www.adyouwish.com/fantasy/uploads/files/15_1385512225_Spain.png', 37, 1, '2014-01-14 12:15:42', 3, '', NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(10, 'Colombia', 'Col', 'Grupo C', '', 'https://www.adyouwish.com/fantasy/uploads/files/14_1385512211_Colombia.png', 36, 1, '2014-01-14 12:15:07', 3, '', NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(14, 'Bosnia', 'Bos', 'Grupo F', '', 'https://www.adyouwish.com/fantasy/uploads/files/18_1385512316_Bosnia-and-Herzegovina.png', 40, 1, '2014-01-14 12:16:25', 3, '', NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(15, 'Croacia', 'Cro', 'Grupo A', '', 'https://www.adyouwish.com/fantasy/uploads/files/19_1385512324_Croatia.png', 41, 1, '2014-01-14 12:16:43', 3, '', NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(16, 'Grecia', 'Gre', 'Grupo C', '', 'https://www.adyouwish.com/fantasy/uploads/files/20_1385512343_Greece.png', 42, 1, '2014-01-14 12:16:56', 3, '', NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(17, 'Uruguay', 'Uru', 'Grupo D', '', 'https://www.adyouwish.com/fantasy/uploads/files/21_1385512361_Uruguay.png', 43, 1, '2014-01-14 12:17:17', 3, '', NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(18, 'Italia', 'Ita', 'Grupo D', '', 'https://www.adyouwish.com/fantasy/uploads/files/22_1385512372_Italy.png', 44, 1, '2014-01-14 12:17:43', 3, '', NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(19, 'Suiza', 'Sui', 'Grupo E', '', 'https://www.adyouwish.com/fantasy/uploads/files/23_1385512392_Switzerland.png', 45, 1, '2014-01-14 12:17:57', 3, '', NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(20, 'Rusia', 'Rus', 'Grupo H', '', 'https://www.adyouwish.com/fantasy/uploads/files/24_1385512408_Russia.png', 46, 1, '2014-01-14 12:19:56', 3, '', NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(21, 'Inglaterra', 'Ing', 'Grupo D', '', 'https://www.adyouwish.com/fantasy/uploads/files/25_1385512461_England.png', 47, 1, '2014-01-14 12:21:25', 3, '', NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(22, 'Holanda', 'Hol', 'Grupo B', '', 'https://www.adyouwish.com/fantasy/uploads/files/26_1385512485_Netherlands.png', 48, 1, '2014-01-14 12:22:14', 3, '', NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(23, 'Portugal', 'Por', 'Grupo G', '', 'https://www.adyouwish.com/fantasy/uploads/files/27_1385512495_Portugal.png', 49, 1, '2014-01-14 12:22:42', 3, '', NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(24, 'Algeria', 'Alg', 'Grupo H', '', 'https://www.adyouwish.com/fantasy/uploads/files/28_1385512527_Algeria.png', 50, 1, '2014-01-14 12:22:52', 3, '', NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(25, 'Camerún', 'Cam', 'Grupo A', '', 'https://www.adyouwish.com/fantasy/uploads/files/29_1385513135_Cameroon.png', 51, 1, '2014-01-14 12:23:04', 3, '', NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(26, 'Ecuador', 'Ecu', 'Grupo E', '', 'https://www.adyouwish.com/fantasy/uploads/files/30_1385513279_Ecuador.png', 52, 1, '2014-01-14 12:23:16', 3, '', NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(27, 'Ghana', 'Gha', 'Grupo G', '', 'https://www.adyouwish.com/fantasy/uploads/files/31_1385513300_Ghana.png', 53, 1, '2014-01-14 12:23:32', 3, '', NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(28, 'Chile', 'Chi', 'Grupo B', '', 'https://www.adyouwish.com/fantasy/uploads/files/32_1385513358_Chile.png', 54, 1, '2014-01-14 12:23:46', 3, '', NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(29, 'Costa de Marfil', 'CdM', 'Grupo C', '', 'https://www.adyouwish.com/fantasy/uploads/files/33_1385513370_Cote-dIvoire.png', 55, 1, '2014-01-14 12:24:00', 3, '', NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(30, 'Nigeria', 'Nig', 'Grupo F', '', 'https://www.adyouwish.com/fantasy/uploads/files/34_1385513414_Nigeria.png', 56, 1, '2014-01-14 12:24:24', 3, '', NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(31, 'Australia', 'Aus', 'Grupo B', '', 'https://www.adyouwish.com/fantasy/uploads/files/35_1385519835_Australia.png', 57, 1, '2014-01-14 12:24:35', 3, '', NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(32, 'Corea del Sur', 'Cor', 'Grupo H', '', 'https://www.adyouwish.com/fantasy/uploads/files/36_1385521662_South-Korea.png', 58, 1, '2014-01-14 12:24:47', 3, '', NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(33, 'Costa Rica', 'CRC', 'Grupo D', '', 'https://www.adyouwish.com/fantasy/uploads/files/37_1385522372_Costa-Rica.png', 59, 1, '2014-01-14 12:25:00', 3, '', NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(34, 'Estados Unidos', 'USA', 'Grupo G', '', 'https://www.adyouwish.com/fantasy/uploads/files/38_1385522394_United-States.png', 60, 1, '2014-01-14 12:25:14', 3, '', NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(35, 'Honduras', 'Hon', 'Grupo E', '', 'https://www.adyouwish.com/fantasy/uploads/files/39_1385522402_Honduras.png', 61, 1, '2014-01-14 12:25:24', 3, '', NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(36, 'Irán', 'Ira', 'Grupo F', '', 'https://www.adyouwish.com/fantasy/uploads/files/40_1385522412_Iran.png', 62, 1, '2014-01-14 12:25:36', 3, '', NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(37, 'Japón', 'Jap', 'Grupo C', '', 'https://www.adyouwish.com/fantasy/uploads/files/41_1385522447_Japan.png', 63, 1, '2014-01-14 12:25:46', 3, '', NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(38, 'México', 'Mex', 'Grupo A', '', 'https://www.adyouwish.com/fantasy/uploads/files/42_1385522458_Mexico.png', 64, 1, '2014-01-14 12:25:56', 3, '', NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(39, 'Alemania', 'Ale', 'Grupo G', '', 'https://www.adyouwish.com/fantasy/uploads/files/43_1387311198_Germany.png', 65, 1, '2014-01-14 12:26:06', 3, '', NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(40, 'Costa Rica', 'CRC', 'Grupo D', '', 'https://www.adyouwish.com/fantasy/uploads/files/37_1385522372_Costa-Rica.png', 59, 1, '2014-01-14 12:25:00', 3, '', NULL, NULL, NULL, NULL, NULL, NULL, NULL);
+(12, 'Francia', 'Fra', 'Grupo E', '', 'http://local.prode2018.com/uploads/files/16_1385512241_France.png', 38, 1, '2014-01-14 12:15:55', 3, '', NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(9, 'Bélgica', 'Bel', 'Grupo H', '', 'http://local.prode2018.com/uploads/files/13_1385512198_Belgium.png', 35, 1, '2014-01-14 12:14:51', 3, '', NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(8, 'Argentina', 'Arg', 'Grupo F', '', 'http://local.prode2018.com/uploads/files/12_1385512190_Argentina.png', 34, 1, '2014-01-14 12:14:35', 3, '', NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(13, 'Brazil', 'Bra', 'Grupo A', '', 'http://local.prode2018.com/uploads/files/17_1385512279_Brazil.png', 39, 1, '2014-01-14 12:16:07', 3, '', NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(11, 'España', 'Esp', 'Grupo B', '', 'http://local.prode2018.com/uploads/files/15_1385512225_Spain.png', 37, 1, '2014-01-14 12:15:42', 3, '', NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(10, 'Colombia', 'Col', 'Grupo C', '', 'http://local.prode2018.com/uploads/files/14_1385512211_Colombia.png', 36, 1, '2014-01-14 12:15:07', 3, '', NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(14, 'Bosnia', 'Bos', 'Grupo F', '', 'http://local.prode2018.com/uploads/files/18_1385512316_Bosnia-and-Herzegovina.png', 40, 1, '2014-01-14 12:16:25', 3, '', NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(15, 'Croacia', 'Cro', 'Grupo A', '', 'http://local.prode2018.com/uploads/files/19_1385512324_Croatia.png', 41, 1, '2014-01-14 12:16:43', 3, '', NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(16, 'Grecia', 'Gre', 'Grupo C', '', 'http://local.prode2018.com/uploads/files/20_1385512343_Greece.png', 42, 1, '2014-01-14 12:16:56', 3, '', NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(17, 'Uruguay', 'Uru', 'Grupo D', '', 'http://local.prode2018.com/uploads/files/21_1385512361_Uruguay.png', 43, 1, '2014-01-14 12:17:17', 3, '', NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(18, 'Italia', 'Ita', 'Grupo D', '', 'http://local.prode2018.com/uploads/files/22_1385512372_Italy.png', 44, 1, '2014-01-14 12:17:43', 3, '', NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(19, 'Suiza', 'Sui', 'Grupo E', '', 'http://local.prode2018.com/uploads/files/23_1385512392_Switzerland.png', 45, 1, '2014-01-14 12:17:57', 3, '', NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(20, 'Rusia', 'Rus', 'Grupo H', '', 'http://local.prode2018.com/uploads/files/24_1385512408_Russia.png', 46, 1, '2014-01-14 12:19:56', 3, '', NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(21, 'Inglaterra', 'Ing', 'Grupo D', '', 'http://local.prode2018.com/uploads/files/25_1385512461_England.png', 47, 1, '2014-01-14 12:21:25', 3, '', NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(22, 'Holanda', 'Hol', 'Grupo B', '', 'http://local.prode2018.com/uploads/files/26_1385512485_Netherlands.png', 48, 1, '2014-01-14 12:22:14', 3, '', NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(23, 'Portugal', 'Por', 'Grupo G', '', 'http://local.prode2018.com/uploads/files/27_1385512495_Portugal.png', 49, 1, '2014-01-14 12:22:42', 3, '', NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(24, 'Algeria', 'Alg', 'Grupo H', '', 'http://local.prode2018.com/uploads/files/28_1385512527_Algeria.png', 50, 1, '2014-01-14 12:22:52', 3, '', NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(25, 'Camerún', 'Cam', 'Grupo A', '', 'http://local.prode2018.com/uploads/files/29_1385513135_Cameroon.png', 51, 1, '2014-01-14 12:23:04', 3, '', NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(26, 'Ecuador', 'Ecu', 'Grupo E', '', 'http://local.prode2018.com/uploads/files/30_1385513279_Ecuador.png', 52, 1, '2014-01-14 12:23:16', 3, '', NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(27, 'Ghana', 'Gha', 'Grupo G', '', 'http://local.prode2018.com/uploads/files/31_1385513300_Ghana.png', 53, 1, '2014-01-14 12:23:32', 3, '', NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(28, 'Chile', 'Chi', 'Grupo B', '', 'http://local.prode2018.com/uploads/files/32_1385513358_Chile.png', 54, 1, '2014-01-14 12:23:46', 3, '', NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(29, 'Costa de Marfil', 'CdM', 'Grupo C', '', 'http://local.prode2018.com/uploads/files/33_1385513370_Cote-dIvoire.png', 55, 1, '2014-01-14 12:24:00', 3, '', NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(30, 'Nigeria', 'Nig', 'Grupo F', '', 'http://local.prode2018.com/uploads/files/34_1385513414_Nigeria.png', 56, 1, '2014-01-14 12:24:24', 3, '', NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(31, 'Australia', 'Aus', 'Grupo B', '', 'http://local.prode2018.com/uploads/files/35_1385519835_Australia.png', 57, 1, '2014-01-14 12:24:35', 3, '', NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(32, 'Corea del Sur', 'Cor', 'Grupo H', '', 'http://local.prode2018.com/uploads/files/36_1385521662_South-Korea.png', 58, 1, '2014-01-14 12:24:47', 3, '', NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(33, 'Costa Rica', 'CRC', 'Grupo D', '', 'http://local.prode2018.com/uploads/files/37_1385522372_Costa-Rica.png', 59, 1, '2014-01-14 12:25:00', 3, '', NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(34, 'Estados Unidos', 'USA', 'Grupo G', '', 'http://local.prode2018.com/uploads/files/38_1385522394_United-States.png', 60, 1, '2014-01-14 12:25:14', 3, '', NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(35, 'Honduras', 'Hon', 'Grupo E', '', 'http://local.prode2018.com/uploads/files/39_1385522402_Honduras.png', 61, 1, '2014-01-14 12:25:24', 3, '', NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(36, 'Irán', 'Ira', 'Grupo F', '', 'http://local.prode2018.com/uploads/files/40_1385522412_Iran.png', 62, 1, '2014-01-14 12:25:36', 3, '', NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(37, 'Japón', 'Jap', 'Grupo C', '', 'http://local.prode2018.com/uploads/files/41_1385522447_Japan.png', 63, 1, '2014-01-14 12:25:46', 3, '', NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(38, 'México', 'Mex', 'Grupo A', '', 'http://local.prode2018.com/uploads/files/42_1385522458_Mexico.png', 64, 1, '2014-01-14 12:25:56', 3, '', NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(39, 'Alemania', 'Ale', 'Grupo G', '', 'http://local.prode2018.com/uploads/files/43_1387311198_Germany.png', 65, 1, '2014-01-14 12:26:06', 3, '', NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(40, 'Costa Rica', 'CRC', 'Grupo D', '', 'http://local.prode2018.com/uploads/files/37_1385522372_Costa-Rica.png', 59, 1, '2014-01-14 12:25:00', 3, '', NULL, NULL, NULL, NULL, NULL, NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -1131,7 +1119,6 @@ INSERT INTO `teams` (`team_id`, `name`, `abbr_name`, `zone`, `description`, `tea
 -- Table structure for table `teams_deleted`
 --
 
-DROP TABLE IF EXISTS `teams_deleted`;
 CREATE TABLE `teams_deleted` (
   `team_id` int(11) UNSIGNED NOT NULL,
   `name` varchar(255) NOT NULL,
@@ -1162,7 +1149,6 @@ INSERT INTO `teams_deleted` (`team_id`, `name`, `description`, `file_manager_id`
 -- Table structure for table `testt`
 --
 
-DROP TABLE IF EXISTS `testt`;
 CREATE TABLE `testt` (
   `bhgh` text NOT NULL,
   `index_id` int(11) UNSIGNED NOT NULL,
@@ -1188,7 +1174,6 @@ CREATE TABLE `testt` (
 -- Table structure for table `tournaments`
 --
 
-DROP TABLE IF EXISTS `tournaments`;
 CREATE TABLE `tournaments` (
   `tournament_id` int(11) UNSIGNED NOT NULL,
   `name` varchar(255) NOT NULL,
@@ -1213,7 +1198,6 @@ INSERT INTO `tournaments` (`tournament_id`, `name`, `description`, `file_manager
 -- Table structure for table `tournaments_teams`
 --
 
-DROP TABLE IF EXISTS `tournaments_teams`;
 CREATE TABLE `tournaments_teams` (
   `tournament_id` int(11) UNSIGNED NOT NULL,
   `team_id` int(11) NOT NULL
@@ -1225,7 +1209,6 @@ CREATE TABLE `tournaments_teams` (
 -- Table structure for table `wall`
 --
 
-DROP TABLE IF EXISTS `wall`;
 CREATE TABLE `wall` (
   `comment_id` int(11) UNSIGNED NOT NULL,
   `comment` text NOT NULL,
@@ -1242,7 +1225,30 @@ CREATE TABLE `wall` (
 
 INSERT INTO `wall` (`comment_id`, `comment`, `user_id`, `username`, `date_created`, `company_id`, `active`) VALUES
 (1, '<h1>Premios del la fecha 1</h1>\r\n\r\n<div class=\"col-md-4 col-sm-6\">\r\n<div class=\"badge-comment\">\r\n<h2>El Mejor de la fecha</h2>\r\n<img src=\"http://www.adyouwish.com/fantasy/assets_fe/img/badges/200x200/mejor.png\">\r\n<div class=\"username\">Emiliano Zolá</div>\r\n</div>\r\n</div>\r\n<div class=\"col-md-4 col-sm-6\">\r\n<div class=\"badge-comment\">\r\n<h2>El peor de la fecha</h2>\r\n<img src=\"http://www.adyouwish.com/fantasy/assets_fe/img/badges/200x200/peor.png\">\r\n<div class=\"username\">Maxi Gonzalez</div>\r\n</div>\r\n</div>\r\n<div class=\"col-md-4 col-sm-6\">\r\n<div class=\"badge-comment\">\r\n<h2>El antifútbol</h2>\r\n<img src=\"http://www.adyouwish.com/fantasy/assets_fe/img/badges/200x200/antifutbol.png\">\r\n<div class=\"username\">Jorge Vargas</div>\r\n</div>\r\n</div>', 0, '', '2014-04-01 13:00:00', 1, 1),
-(2, 'Mejor de la fecha!!! que bien!', 2, 'Emiliano Zolá', '2014-04-01 16:56:38', 1, 1);
+(2, 'Mejor de la fecha!!! que bien!', 2, 'Emiliano Zolá', '2014-04-01 16:56:38', 1, 1),
+(3, 'HOLA. Que Buen Post', 37, '', '2018-04-03 20:44:02', 1, 1);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `wall_comments`
+--
+
+CREATE TABLE `wall_comments` (
+  `comment_id` int(11) UNSIGNED NOT NULL,
+  `post_id` int(11) UNSIGNED NOT NULL,
+  `user_id` int(11) UNSIGNED NOT NULL,
+  `username` varchar(255) NOT NULL,
+  `comment` varchar(255) NOT NULL,
+  `date_created` datetime NOT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `wall_comments`
+--
+
+INSERT INTO `wall_comments` (`comment_id`, `post_id`, `user_id`, `username`, `comment`, `date_created`) VALUES
+(1, 1, 37, '', 'mmmm... funciona esto?', '2018-04-03 20:43:43');
 
 --
 -- Indexes for dumped tables
@@ -1467,6 +1473,12 @@ ALTER TABLE `wall`
   ADD KEY `company_id` (`company_id`);
 
 --
+-- Indexes for table `wall_comments`
+--
+ALTER TABLE `wall_comments`
+  ADD PRIMARY KEY (`comment_id`);
+
+--
 -- AUTO_INCREMENT for dumped tables
 --
 
@@ -1474,7 +1486,7 @@ ALTER TABLE `wall`
 -- AUTO_INCREMENT for table `bitauth_assoc`
 --
 ALTER TABLE `bitauth_assoc`
-  MODIFY `assoc_id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=146;
+  MODIFY `assoc_id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=147;
 --
 -- AUTO_INCREMENT for table `bitauth_groups`
 --
@@ -1484,7 +1496,7 @@ ALTER TABLE `bitauth_groups`
 -- AUTO_INCREMENT for table `bitauth_logins`
 --
 ALTER TABLE `bitauth_logins`
-  MODIFY `login_id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=86;
+  MODIFY `login_id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=88;
 --
 -- AUTO_INCREMENT for table `bitauth_userdata`
 --
@@ -1494,7 +1506,7 @@ ALTER TABLE `bitauth_userdata`
 -- AUTO_INCREMENT for table `bitauth_users`
 --
 ALTER TABLE `bitauth_users`
-  MODIFY `user_id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=37;
+  MODIFY `user_id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=38;
 --
 -- AUTO_INCREMENT for table `companies`
 --
@@ -1594,4 +1606,9 @@ ALTER TABLE `tournaments_teams`
 -- AUTO_INCREMENT for table `wall`
 --
 ALTER TABLE `wall`
-  MODIFY `comment_id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `comment_id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+--
+-- AUTO_INCREMENT for table `wall_comments`
+--
+ALTER TABLE `wall_comments`
+  MODIFY `comment_id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;

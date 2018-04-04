@@ -388,6 +388,7 @@ class Home extends Front_init
 		{
 			$this->data['error'] = lang("processing-scores");
 			$this->load->view("front/scores.php",$this->data);	
+			return;
 		}
 				
 		if($this->company_model->dept_league)
