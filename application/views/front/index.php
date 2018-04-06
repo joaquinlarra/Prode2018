@@ -34,7 +34,7 @@
                          <?
 						if($no_company)
 						{
-							?><div align="center" style="margin:20px 0px">Debe entrar al link específico de su empresa.<br>EJ: <b>miempresa.prode2018.com</b></div><? 
+							?><div align="center" style="margin:20px 0px">Debe entrar al link específico de su prode.<br>EJ: <b>clubdeamigos.prode2018.com</b></div><? 
 						}
 						else
 						{
