@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css?family=Khand|Roboto');
 
 body {
-  background: url('../img/background.jpg') no-repeat center;
+  background: url('../img/background-russia-2018.png') repeat-y center;
   background-size: cover;
   font-family: 'Roboto', sans-serif;
 }
