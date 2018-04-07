@@ -180,11 +180,14 @@
 			}
 			else
 			{
+				//NO BETS
+				/*
 				?>
 				<td colspan="2" class="bet-col" title="<?= lang("Gana")?> <?= $match['team1_name']?>"><?= $bets[0] ? "%".$bets[0]: "-"?></td>
                 <td class="bet-col" title="<?= lang("Empate")?>"><?= $bets[1] ? "%".$bets[1]: "-"?></td>
                 <td colspan="2" class="bet-col" title="<?= lang("Gana")?> <?= $match['team2_name']?>"><?= $bets[2] ? "%".$bets[2]: "-"?></td>
-				<?				
+				<?
+				*/				
 			}
 			?>
             
