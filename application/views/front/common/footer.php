@@ -1,4 +1,3 @@
-
 	<div class="container-fluid" id="bg-footer">
 		<div class="container">
 			<div class="col-md-12">
@@ -66,8 +65,7 @@
 			
 	</script>
 	<?
-	if($section == 'home')
-	{
+	if ($section == 'home' || $section == 'comprar' ){
 	?>
 		<script src="<?= $link_url?>assets_common/js/jquery.form.js"></script>
         <script>

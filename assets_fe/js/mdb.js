@@ -628,19 +628,7 @@ WOW.prototype.doSync = function (node) {
 
 };
 'use strict';
-
-/* SCROLLING NAVBAR */
-
-var OFFSET_TOP = 50;
-var TRANSITION_DURATION = 1500;
-
-$(window).scroll(function () {
-	if ($('.navbar').offset().top > OFFSET_TOP) {
-		$('.scrolling-navbar').addClass("top-nav-collapse");
-	} else {
-		$('.scrolling-navbar').removeClass("top-nav-collapse");
-	}
-});/*!
+/*!
  * Waves v0.7.5
  * http://fian.my.id/Waves
  *

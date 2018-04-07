@@ -11,6 +11,48 @@ h1, h2, h3, h4, h5, h6{
 	text-transform: uppercase;
 }
 
+/* HOME PAGE */
+
+.index-page{ 
+
+}
+
+.index-page .col-index-header h1{
+	font-size:66px;
+}
+
+.col-index-header{
+	color:white;
+	text-align:center;
+	margin-bottom: 30px;
+    margin-top: 80px;
+}
+
+.col-index-header a{
+	margin-top:20px;
+	font-size:20px;
+}
+
+.btn-primary{
+	padding: 15px;
+    font-size: 12px;
+}
+
+.btn-green, .btn-green input{
+	font-size: 12px;
+	background: green !important;
+	text-transform: uppercase;
+}
+
+/* FORGOT PASSWORD */
+.forgot-password .panel-primary{
+	margin-top: 60px;
+	margin-bottom: 100px;
+}
+
+    padding: 15px;
+    font-size: 12px;
+
 .main-menu
 {
 	 background:#c80b42;
@@ -22,6 +64,11 @@ h1, h2, h3, h4, h5, h6{
 {
 	border: 1px solid; 
 	border-color: #8BB5DE;
+	background: transparent;
+}
+.panel-primary .panel-heading{
+	font-family: 'Khand', sans-serif;
+	font-size:24px;
 }
 .main-navbar .min-link > a
 {
@@ -245,6 +292,11 @@ h1, h2, h3, h4, h5, h6{
 {
 	text-align: center;
 	text-transform:uppercase;
+}
+
+.form-signin .form-control{
+	padding-left: 10px;
+	font-size: 14px;
 }
 
 .full-width

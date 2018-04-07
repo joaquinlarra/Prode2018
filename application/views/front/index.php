@@ -1,17 +1,14 @@
 ﻿<? include(dirname(__FILE__)."/common/header_mini.php")?>
-<div class="container">
+<div class="container index-page">
     <div class="row">
-        <div class="col-md-7" style="color:white;">
-            <h1>Armá tu prode!</h1>
-            <h3>Fácil, intuitivo y divertido</h3>
-            <p>Organizá tu prode de una manera sencilla y facil. Los partidos ya se encuentran cargados, simplemente tenes que realizarles una invitación a quienes quieras que participen y ya empiezan a jugar.</p>
+        <div class="col-md-12 col-index-header">
+            <h1>ARMÁ TU PRODE PARA ESTE MUNDIAL</h1>
+            <br>
+            <a href="<?=base_url().'comprar'?>" class="btn btn-green">Comprar cuenta</a>
+            <br><br><br>
+            <h2>HACE EL MEJOR PRONOSTICO Y DIVERTITE CON TUS AMIGOS</h2>
+            <br>
         </div>
-        <div class="col-md-5" style="color:white;">
-            <h2>Jugá desde tu celular</h2>
-        </div>
-    </div>
-    <div class="row">
-        <div class="col-md-12">&nbsp;</div>
     </div>
     <div class="row">
 		<div class="<?= $this->company_model->register ? "col-md-offset-2 col-md-8" : "col-md-offset-3 col-md-6 col-sm-offset-2 col-sm-8"?>">
@@ -21,12 +18,14 @@
                 if($this->company_model->main_image)
 				{
 					?><img src="<?=$this->company_model->main_image?>" border="0" /><?	
-				}
+				}else{
+                    ?>INGRESÁ SI YA TENES CUENTA<?
+                }
 				?>
                 </div>
                 <div class="panel-body">   	
                     <div class="row">
-                    	<div class="col-md-12" align="center"><h4><?= lang("INGRESA")?></h4>
+                    	<div class="col-md-12">
                         <?
 						
                         if($this->company_model->first_login)
@@ -47,7 +46,7 @@
                          <?
 						if($no_company)
 						{
-							?><div align="center" style="margin:20px 0px">Debe entrar al link específico de su empresa.<br>EJ: <b>miempresa.prode2018.com</b></div><? 
+							?><div align="center" style="margin:20px 0px">Debe entrar al link específico de su prode.<br>EJ: <b>clubdeamigos.prode2018.com</b></div><? 
 						}
 						else
 						{
@@ -65,7 +64,7 @@
                                         <input name="remember_me" id="remember_me" type="checkbox" value="remember-me"> <?= lang("Guardar sesión")?>
                                     </label>
                                 </div>
-                                    <button type="submit" name="submit" class="btn btn-primary btn-block"><?= lang("Ingresar")?></button>
+                                    <button type="submit" name="submit" class="btn btn-green btn-block"><?= lang("Ingresar")?></button>
                             </form>
                             <a class="pull-right" href="<?= $link_url?>olvide-mi-clave"><?= lang('olvide-clave')?></a>
                             <?
@@ -83,7 +82,7 @@
 						{
 						?>
                             <div class="col-md-6 col-sm-6">
-                                <h3><?= lang("email-register")?></h3>
+                                <label><?= lang("email-register")?></label>
                                 <form method="POST" id="register-form" class="form-signin ajax_form" action="<?= $link_url.'front_user/register'?>" accept-charset="UTF-8">
                                     <div id="error" style="display:none" class="alert alert-danger"></div>
                                     <?
@@ -105,7 +104,7 @@
                                     <?
 									}
 									?>
-                                    <input type="submit" class="btn btn-success btn-block" value="<?= lang("Ingresar")?>">
+                                    <button type="submit" name="submit" class="btn btn-green btn-block"><?= lang("Ingresar")?></button>
                                 </form>
                             </div>
                 		<?
@@ -121,4 +120,4 @@
 		</div>
     </div>
 </div>
-<? include(dirname(__FILE__)."/common/footer.php")?>
+<? require(dirname(__FILE__)."/common/footer.php")?>

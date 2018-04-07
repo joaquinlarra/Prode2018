@@ -1,5 +1,5 @@
 <? include(dirname(__FILE__)."/common/header_mini.php")?>
-<div class="container">
+<div class="container forgot-password">
 	<div class="row">
 		<div class="col-md-offset-3 col-md-6 col-sm-offset-2 col-sm-8">
              <div class="panel panel-primary">
@@ -8,12 +8,14 @@
                 if($this->company_model->main_image)
 				{
 					?><img src="<?=$this->company_model->main_image?>" border="0" /><?	
-				}
+				}else{ 
+                    ?><?= lang("Recuperá tu clave")?><?
+                }
 				?>
                 </div>
                 <div class="panel-body">   	
                     <div class="row">
-                    	<div class="col-md-12" align="center" id="recover-header"><h4><?= lang("Recuperá tu clave")?><br><small><?= lang("recover-pass-desc")?></small></h4>
+                    	<div class="col-md-12" align="center" id="recover-header"><h4><h5><?= lang("recover-pass-desc")?></small></h5>
                         <div class="alert alert-danger" id="error" style="display:none"></div>
                         </div>
                     	<div class="col-md-12" id="recover-content">
