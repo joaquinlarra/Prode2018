@@ -70,28 +70,21 @@ class Front_init extends CI_Controller
 
 		
 		$this->data['fields'] = array(	
-										
-										'email' => array('label' => lang('Email'),
-														'type' => 'text',
-														'validation' => 'valid_email|required',
-														'visibility' => 'profile|edit_profile|first_login|register'
-										),
-										/*
-										'username' => array(	'label' => lang('Email'),
+										'username' => array(	'label' => lang('Usuario'),
 															'type' => 'text',
 															'validation' => '',
 															'disabled' => 'true',
 															'visibility' => 'profile|first_login|register'
 															),
-										*/
 										'displayname' => array(	'label' => lang('Nickname'),
 															'type' => 'text',
-															'validation' => 'required',
+															'validation' => '',
 															'visibility' => 'profile|edit_profile|first_login|register'
 															),
 										'fullname' => array(	'label' => lang('Nombre Completo'),
 															'type' => 'text',
-															'validation' => 'required',
+															'validation' => '',
+															'disabled' => 'true',
 															'visibility' => 'profile|edit_profile|first_login|register'
 															),
 										'password' => array('label' => lang('Contraseña'),
@@ -104,9 +97,12 @@ class Front_init extends CI_Controller
 														'validation' => 'required',
 														'visibility' => 'profile|first_login|register|forgot_pass'
 														),
-										/*				
-										
-										*/
+										'email' => array('label' => lang('email'),
+															'type' => 'text',
+															'validation' => 'valid_email',
+															'visibility' => 'profile|edit_profile|first_login|register'
+															),
+
 										);
 		
 		if($this->company_model->branch_league)
@@ -405,8 +401,7 @@ class Front_init extends CI_Controller
 												$this->form_model->set_field("active",1);
 												$this->form_model->set_field("enabled",1);
 											}
-											$this->form_model->set_field("username",$this->data['post']['email']);
-											
+											$this->form_model->set_field("username",$this->session->userdata('register_email'));
 											$this->form_model->set_field("group_id",3);
 											$this->form_model->set_field("groups_names","Jugador");
 											$this->form_model->set_field("company_id",$this->company_model->get_id());

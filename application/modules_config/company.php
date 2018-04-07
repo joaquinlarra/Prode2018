@@ -23,38 +23,37 @@ $config['modules'][$module_name]['fields'] = array(
 															'description' => "Ej: miempresa. No puede contener espacios",
 															'visibility' => 'save|details|list'
 														),
-										
 										'no_logos' => array('label' => 'Quitar logos FF2014',
 															'type' => 'checkbox',
 															'value' => 0,
 															'validation' => '',
 															'description' => "Quita la marca fantasy futbol.",
-															'visibility' => ''
+															'visibility' => 'save|details'
 															),
 										'multi_lang' => array('label' => 'Multilenguaje',
 															'type' => 'checkbox',
 															'value' => 0,
 															'validation' => '',
 															'description' => "Habilita selector de idioma.",
-															'visibility' => ''
+															'visibility' => 'save|details'
 															),
 										'bio' => array('label' => 'Bio',
 															'type' => 'checkbox',
 															'value' => 0,
 															'validation' => '',
 															'description' => "Habilita el campo bio",
-															'visibility' => ''
+															'visibility' => 'save|details'
 															),
 										'fantasy_logo' => array(	'label' => 'Logo Fantasy',
 																	'type' => 'image',
 																	'tag' => 'fantasy_logo',
 																	'validation' => '',
-																	'visibility' => '',
+																	'visibility' => 'details|save',
 																	),
 										'fantasy_logo_url' => array(	'label' => 'Logo Fantasy URL',
 																	'type' => 'text',
 																	'validation' => '',
-																	'visibility' => '',
+																	'visibility' => 'details|save',
 																	),
 										
 										'username_field' => array(	'label' => 'Campo de usuario',
@@ -69,41 +68,41 @@ $config['modules'][$module_name]['fields'] = array(
 															'value' => 1,
 															'validation' => '',
 															'description' => "Habilitar usuarios para comenzar el torneo.",
-															'visibility' => 'save|details'
+															'visibility' => 'save|details|list'
 															),
 										'register' => array('label' => 'Habilitar registros',
 															'type' => 'checkbox',
-															'value' => 1,
+															'value' => 0,
 															'validation' => '',
 															'description' => "Se habilitará el registro de usuarios",
-															'visibility' => 'save|details'
+															'visibility' => 'save|details|list'
 															),
 										'confirm_email' => array('label' => 'Confirmar Email',
-															'type' => 'hidden',
+															'type' => 'checkbox',
 															'value' => 1,
 															'validation' => '',
 															'description' => "Se habilitará al usuario solo si confirmó la cuenta",
-															'visibility' => ''
+															'visibility' => 'save|details|list'
 															),
 										'register_domain' => array('label' => 'Dominio exclusivo de registro',
 															'type' => 'text',
 															
 															'validation' => '',
 															'description' => "Ej: miempresa.com.ar. Si no tiene dejar en blanco",
-															'visibility' => ''
+															'visibility' => 'save|details'
 															),
 										'first_login' => array('label' => 'Primer ingreso',
 															'type' => 'checkbox',
 															'value' => 0,
 															'validation' => '',
 															'description' => "No pedirá clave al primer ingreso.",
-															'visibility' => ''
+															'visibility' => 'save|details|list'
 															),									
 										'first_login_text'=> array(	'label' => 'Texto primer ingreso',
 															'type' => 'textarea',
 															'class' => 'summernote',
 															'validation' => 'Referencia de que hacer si no existe en la base u otro asunto relacionado al primer ingreso',
-															'visibility' => ''
+															'visibility' => 'save|details'
 														),
 										/*'description'=> array(	'label' => 'Descripción',
 															'type' => 'textarea',
@@ -136,46 +135,46 @@ $config['modules'][$module_name]['fields'] = array(
 																	'type' => 'textarea',
 																	'class' => 'summernote',
 																	'validation' => '',
-																	'visibility' => '',
+																	'visibility' => 'details|save',
 																	),
 										
 										'how_to_image' => array(	'label' => 'Imagen Como jugar',
 																	'type' => 'image',
 																	'tag' => 'how_to_image',
 																	'validation' => '',
-																	'visibility' => '',
+																	'visibility' => 'details|save',
 																	),
 										'how_to_image_MX' => array(	'label' => 'Imagen Como jugar (MX)',
 																	'type' => 'image',
 																	'tag' => 'how_to_image_MX',
 																	'validation' => '',
-																	'visibility' => '',
+																	'visibility' => 'details|save',
 																	),
 										'how_to_image_PR' => array(	'label' => 'Imagen Como jugar (PR)',
 																	'type' => 'image',
 																	'tag' => 'how_to_image_PR',
 																	'validation' => '',
-																	'visibility' => '',
+																	'visibility' => 'details|save',
 																	),
 										'how_to_image_US' => array(	'label' => 'Imagen Como jugar (US)',
 																	'type' => 'image',
 																	'tag' => 'how_to_image_US',
 																	'validation' => '',
-																	'visibility' => '',
+																	'visibility' => 'details|save',
 																	),
 										'banner_header' => array('label' => 'Banner Header',
 															'type' => 'image',
 															'tag' => 'banner_header',
 															'validation' => '',
 															'description' => "468px x 60px",
-															'visibility' => ''
+															'visibility' => 'save|details'
 														),
 										'bg_image' => array('label' => 'Imagen fondo',
 															'type' => 'image',
 															'tag' => 'bg_image',
 															'validation' => '',
 															'description' => "",
-															'visibility' => ''
+															'visibility' => 'save|details'
 														),
 										'points_match' => array(	'label' => 'Puntos por partido',
 															'type' => 'text',
@@ -209,7 +208,7 @@ $config['modules'][$module_name]['fields'] = array(
 															'value' => 0,
 															'validation' => '',
 															'description' => "Se incluría apuesta por preclasificados",
-															'visibility' => ''
+															'visibility' => 'save|details|list'
 															),
 										'qualys_team_points' => array(	'label' => 'Puntos Pre Clasif',
 															'type' => 'text',
@@ -217,49 +216,49 @@ $config['modules'][$module_name]['fields'] = array(
 															
 															'validation' => '',
 															'description' => "Si acierta 1 equipo preclasificado obtendrá X puntos. Debe estar activa la preclasificación. Valor sugerido: 1",
-															'visibility' => ''
+															'visibility' => 'save|details'
 															),
 										'qualys_close_date' => array(	'label' => 'Fecha de cierre clasificados',
 															'type' => 'date_time',
 															'value' => '2014-06-17 23:00:00',
 															'validation' => '',
 															'description' => "Fecha en la que se cierra la elección de pre clasificados",
-															'visibility' => ''
+															'visibility' => 'save|details|list'
 															),
 										'winners' => array(	'label' => 'Ganadores',
 															'type' => 'checkbox',
 															'value' => 0,
 															'validation' => '',
 															'description' => "Se incluría apuesta por ganadores 1er 2do y 3er puesto del torneo",
-															'visibility' => ''
+															'visibility' => 'save|details|list'
 															),
 										'winners_points' => array(	'label' => 'Puntos por Ganador',
 															'type' => 'text',
 															'value' => 5,
 															'validation' => '',
 															'description' => "Puntos por ganadores 1er 2do y 3er puesto del torneo. Valor sugerido: 5",
-															'visibility' => ''
+															'visibility' => 'save|details'
 															),
 										'winners_close_date' => array(	'label' => 'Fecha de cierre ganadores',
 															'type' => 'date_time',
 															'value' => '2014-06-26 23:00:00',
 															'validation' => '',
 															'description' => "Fecha en la que se cierra la elección de ganadores",
-															'visibility' => ''
+															'visibility' => 'save|details|list'
 															),
 										'badges' => array(	'label' => 'Badges',
 															'type' => 'checkbox',
 															'value' => 1,
 															'validation' => '',
 															'description' => "Se incluirán los badges en el juego",
-															'visibility' => ''
+															'visibility' => 'save|details|list'
 															),
 										'badges_points' => array(	'label' => 'Punto badge',
 															'type' => 'text',
 															'value' => 15,
 															'validation' => '',
 															'description' => "Puntos que otorga un badge normalmente. Los especiales incluyen un multiplador (ej: valor normal 15, valor especial 15*4/3 = 20",
-															'visibility' => ''
+															'visibility' => 'save|details'
 															),
 										'patriot_seller'=> array(	'label' => 'Vende patria',
 															'type' => 'checkbox',
@@ -273,46 +272,46 @@ $config['modules'][$module_name]['fields'] = array(
 															'value' => 1,
 															'validation' => '',
 															'description' => "Se incluirá el badge super patriota",
-															'visibility' => ''
+															'visibility' => 'save|details'
 															),
 										'friends_league' => array(	'label' => 'Amigos',
 															'type' => 'checkbox',
 															'value' => 1,
 															'validation' => '',
 															'description' => "Habilita la liga de amigos",
-															'visibility' => ''
+															'visibility' => 'save|details'
 															),
 										'dept_league' => array(	'label' => 'Departamentos',
 															'type' => 'checkbox',
-															'value' => 0,
+															'value' => 1,
 															'validation' => '',
 															'description' => "Habilita la liga por departamentos",
-															'visibility' => ''
+															'visibility' => 'save|details'
 															),
 										'branch_league' => array(	'label' => 'Sucursales',
 															'type' => 'checkbox',
-															'value' => 0,
+															'value' => 1,
 															'validation' => '',
 															'description' => "Habilita la liga por sucursales",
-															'visibility' => ''
+															'visibility' => 'save|details'
 															),
 										'branch_name' 	=> array(	'label' => 'Nombre Sucursal',
 																	'type' => 'text',
 																	'validation' => '',
 																	'description' => "Nombre que se le da a las sucursales (oficinas, paises, etc)",
-																	'visibility' => ''
+																	'visibility' => 'save|details'
 																	),
 										'branch_league_name' 	=> array(	'label' => 'Nombre Liga Sucursales',
 																	'type' => 'text',
 																	'validation' => '',
 																	'description' => "Nombre que se le da a la liga intersucursales",
-																	'visibility' => ''
+																	'visibility' => 'save|details'
 																	),
 										'tyc_doc' => array(	'label' => 'Terminos y Condiciones',
 																	'type' => 'file',
 																	'tag' => 'tyc_doc',
 																	'validation' => '',
-																	'visibility' => '',
+																	'visibility' => 'details|save',
 																	),
 										'active'	=> array(	'label' => 'Activo',
 																'type' => 'checkbox',

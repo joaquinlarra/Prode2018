@@ -1,0 +1,39 @@
+.comprar-col-left {
+    color:white;
+}
+.comprar-col-left h1 {
+    margin-top:80px;
+    font-size:66px;
+    color:white;
+}
+.comprar-col-left p {
+    margin-top:20px;
+    font-size:18px;
+    font-family: 'Roboto';
+}
+.comprar-col-right{
+    padding-top: 100px;
+}
+.comprar-col-right h1{
+    font-size: 40px;
+}
+.comprar-col-imgs{
+    margin-top: 50px;
+    text-align:center;
+}
+.comprar-col-demo{
+    padding-top: 60px;
+}
+.comprar-col-demo .btn{
+    background: green !important;
+    font-size: 14px;
+    text-transform: capitalize;
+}
+.comprar-col-demo .form-signin .form-control{
+    padding-left: 7px;
+    font-size: 12px;
+}
+
+input:-webkit-autofill, textarea:-webkit-autofill, select:-webkit-autofill {
+    background: transparent;
+}

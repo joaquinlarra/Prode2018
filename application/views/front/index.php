@@ -1,6 +1,19 @@
 ﻿<? include(dirname(__FILE__)."/common/header_mini.php")?>
 <div class="container">
-	<div class="row">
+    <div class="row">
+        <div class="col-md-7" style="color:white;">
+            <h1>Armá tu prode!</h1>
+            <h3>Fácil, intuitivo y divertido</h3>
+            <p>Organizá tu prode de una manera sencilla y facil. Los partidos ya se encuentran cargados, simplemente tenes que realizarles una invitación a quienes quieras que participen y ya empiezan a jugar.</p>
+        </div>
+        <div class="col-md-5" style="color:white;">
+            <h2>Jugá desde tu celular</h2>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12">&nbsp;</div>
+    </div>
+    <div class="row">
 		<div class="<?= $this->company_model->register ? "col-md-offset-2 col-md-8" : "col-md-offset-3 col-md-6 col-sm-offset-2 col-sm-8"?>">
              <div class="panel panel-primary">
                 <div class="panel-heading" align="center">
@@ -13,7 +26,7 @@
                 </div>
                 <div class="panel-body">   	
                     <div class="row">
-                    	<div class="col-md-12" align="center"><h4><?= lang("INGRESO")?></h4>
+                    	<div class="col-md-12" align="center"><h4><?= lang("INGRESA")?></h4>
                         <?
 						
                         if($this->company_model->first_login)
@@ -34,7 +47,7 @@
                          <?
 						if($no_company)
 						{
-							?><div align="center" style="margin:20px 0px">Debe entrar al link específico de su prode.<br>EJ: <b>clubdeamigos.prode2018.com</b></div><? 
+							?><div align="center" style="margin:20px 0px">Debe entrar al link específico de su empresa.<br>EJ: <b>miempresa.prode2018.com</b></div><? 
 						}
 						else
 						{

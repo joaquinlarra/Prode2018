@@ -14,6 +14,12 @@ class Home extends Front_init
 		$this->data['section'] = "home";
 		$this->load->view("front/index.php", $this->data);
 	}
+
+	public function comprar()
+	{
+		$this->data['section'] = "comprar";
+		$this->load->view("front/comprar.php", $this->data);
+	}
 	
 	public function logout()
 	{
