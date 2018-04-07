@@ -5,6 +5,10 @@ body {
   font-family: 'Roboto', sans-serif;
 }
 
+form input {
+  font-size: 16px !important;
+}
+
 h1,
 h2,
 h3,
