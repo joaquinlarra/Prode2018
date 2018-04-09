@@ -158,7 +158,7 @@
 					}
 					else
 					{
-						?><p>FALTA CARGAR</p><?	
+						?><p class="please-load-match">FALTA CARGAR</p><?	
 					}
 				}
 				?>
