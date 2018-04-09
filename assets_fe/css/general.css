@@ -302,9 +302,11 @@ font-size: 12px;
 
 .zone-table .team2 img {
   margin-left: 2%;
+  max-height: 40px;
 }
 .zone-table .team1 img {
   margin-right: 2%;
+  max-height: 40px;
 }
 
 .dropdown-menu > li > a:hover {
@@ -555,6 +557,24 @@ font-size: 12px;
   margin: 10px;
 }
 
+.group-team-name-2
+{
+  font-size: 12px;
+  font-weight: normal;
+  text-align: right;
+  color: #acacac;
+}
+
+.group-team-name-1
+{
+  font-size: 12px;
+  font-weight: normal;
+  text-align: left;
+  color: #acacac;
+}
+
+
+
 .zone-table .table-division {
   background: none;
   height: 15px;
@@ -566,7 +586,7 @@ font-size: 12px;
 .zone-table .teamname {
   text-transform: uppercase;
   font-weight: bold;
-  font-size: 12px;
+  font-size: 17px;
 }
 
 .team-results-table .results-header {

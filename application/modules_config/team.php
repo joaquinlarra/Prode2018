@@ -63,12 +63,14 @@ $config['modules'][$module_name]['fields'] = array(
 																'class' => 'title',
 																'visibility' => 'save|details|list'
 																),						
+										/*
 										'main_image' => array(	'label' => 'Logo Equipo',
 																	'type' => 'image',
 																	'tag' => 'main_image',
 																	'validation' => '',
 																	'visibility' => 'details|save',
 																	),
+										*/
 										'zone' => array( 'label' => 'Grupo / Zona',
 													'type' => 'select',
 													'options' => array(
