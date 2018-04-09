@@ -34,5 +34,4 @@ Temporary Items
 # Logs and databases #
 ######################
 *.log
-*.sql
 *.sqlite
