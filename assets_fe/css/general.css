@@ -303,10 +303,12 @@ font-size: 12px;
 .zone-table .team2 img {
   margin-left: 2%;
   max-height: 40px;
+  border: 2px solid #e1e1e1;
 }
 .zone-table .team1 img {
   margin-right: 2%;
   max-height: 40px;
+  border: 2px solid #e1e1e1;
 }
 
 .dropdown-menu > li > a:hover {
@@ -486,6 +488,7 @@ font-size: 12px;
 .zone-table .middle-col {
   background: #dfdfdf;
   text-align: center;
+  font-size: 11px;
 }
 
 .zone-table .stats-info {

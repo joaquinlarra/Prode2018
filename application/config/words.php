@@ -457,8 +457,8 @@ $words['invalid-captcha']['MX'] = "Captcha inválido.";
 $words['invalid-captcha']['PR'] = "Captcha inválido.";
 $words['invalid-captcha']['US'] = "Invalid captcha.";
 
-$words['complete-bets']['AR'] = "Indicá junto a cada país la cantidad de goles que crees va a anotar cada equipo.";
-$words['complete-bets']['MX'] = "Indica junto a cada país la cantidad de goles que crees va a anotar cada equipo.";
+$words['complete-bets']['AR'] = "Indicá junto a cada equipo la cantidad de goles que crees va a anotar.";
+$words['complete-bets']['MX'] = "Indica junto a cada equipo la cantidad de goles que crees va a anotar.";
 $words['complete-bets']['PR'] = "Coloque junto a cada país os gols que você acredita que cada equipe irá marcar.";
 $words['complete-bets']['US'] = "Select the amount of goals for each match.";
 

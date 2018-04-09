@@ -660,15 +660,15 @@
 					$("#middle-col-"+match_id).html("<small>FALTA CARGAR</small>");
 				}
 				
-				function disable_match(match_id)
+				function disable_match(match_id,message)
 				{
 					$("#input-goals-1-"+match_id).prop('disabled', true);
 					$("#input-goals-2-"+match_id).prop('disabled', true);
 					
-					$("#middle-col-"+match_id).html('<div class="spinner"><div class="double-bounce1"></div><div class="double-bounce2"></div></div>');				
+					$("#middle-col-"+match_id).html('<small>Guardando...</div><div class="spinner"><div class="double-bounce1"></div><div class="double-bounce2"></div></div>');				
 					
 					setTimeout(function() {
-						$("#middle-col-"+match_id).html('<small><?= lang('Guardado')?></small><br><span class="btn btn-success btn-edit-match" match_id="'+match_id+'" onclick="enable_match('+match_id+')"><?= lang('editar')?></span>');				
+						$("#middle-col-"+match_id).html('<span>'+message+'</span><br><span class="btn btn-success btn-edit-match" match_id="'+match_id+'" onclick="enable_match('+match_id+')"><?= lang('editar')?></span>');				
 					}, 1100);
 					
 				}
@@ -700,7 +700,20 @@
 					if(result > -2)
 					{
 						$.ajax({url: "<?= $link_url?>front_user/auto_save/"+match_code+"/"+match_id+"/"+goals1+"/"+goals2+"/"+result});
-						disable_match(match_id);
+						var message = "Guardado";
+						if(result == -1)
+						{
+							message = "Gana "+$("#match-name-"+match_id+"-1").html();	
+						}
+						if(result == 0)
+						{
+							message = "Empate";	
+						}
+						if(result == 1)
+						{
+							message = "Gana "+$("#match-name-"+match_id+"-2").html();
+						}
+						disable_match(match_id,message);
 					}
 				});
 				
