@@ -61,11 +61,11 @@
 		{
 			switch($matches_completed[$match['match_id']]['result'])
 			{
-				case -1: $matches_completed[$match['match_id']]['bet_message'] = "Gana ".$match['team1_name'];
+				case -1: $matches_completed[$match['match_id']]['bet_message'] = "Gana <b>".$match['team1_name']."</b>";
 						break;
-				case 0: $matches_completed[$match['match_id']]['bet_message'] = "Empate";
+				case 0: $matches_completed[$match['match_id']]['bet_message'] = "<b>Empate</b>";
 						break;
-				case 1: $matches_completed[$match['match_id']]['bet_message'] = "Gana ".$match['team2_name'];
+				case 1: $matches_completed[$match['match_id']]['bet_message'] = "Gana <b>".$match['team2_name']."</b>";
 						break;
 				
 			}

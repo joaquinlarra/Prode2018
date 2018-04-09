@@ -703,7 +703,7 @@
 						var message = "Guardado";
 						if(result == -1)
 						{
-							message = "Gana "+$("#match-name-"+match_id+"-1").html();	
+							message = "Gana <b>"+$("#match-name-"+match_id+"-1").html()+"</b>";	
 						}
 						if(result == 0)
 						{
@@ -711,7 +711,7 @@
 						}
 						if(result == 1)
 						{
-							message = "Gana "+$("#match-name-"+match_id+"-2").html();
+							message = "Gana <b>"+$("#match-name-"+match_id+"-2").html()+"</b>";
 						}
 						disable_match(match_id,message);
 					}
