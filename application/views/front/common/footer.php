@@ -679,7 +679,7 @@
 					enable_match(match_id);
 				});
 	
-				$(".input-goals").keyup(function(){
+				$(".input-goals").change(function(){
 					var value = $(this).val();	
 					if(!(value % 1 === 0))
 					{
