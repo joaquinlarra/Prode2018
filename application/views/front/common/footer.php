@@ -657,6 +657,7 @@
 				function enable_match(match_id){
 					$("#input-goals-1-"+match_id).prop('disabled', false).val("");
 					$("#input-goals-2-"+match_id).prop('disabled', false).val("");
+					$("#input-goals-1-"+match_id).focus();
 					$("#middle-col-"+match_id).html("<small>FALTA CARGAR</small>");
 				}
 				

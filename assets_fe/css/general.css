@@ -9,6 +9,11 @@ form input {
   font-size: 16px !important;
 }
 
+input[type=number]:disabled{
+  color:gray;
+  font-weight:bold;
+}
+
 h1,
 h2,
 h3,
@@ -69,7 +74,6 @@ h6 {
   color: #ff3333;
   font-weight: bold;
 }
-
 
 .panel-primary {
   border: 1px solid;
@@ -298,6 +302,7 @@ h6 {
   padding-left: 0px;
   padding-right: 0px;
   text-align: center;
+  color: black; 
 }
 
 .zone-table .team2 {
@@ -305,13 +310,15 @@ h6 {
 }
 
 .zone-table .team2 img {
-  margin-left: 2%;
+  margin-left: 5%;
   max-height: 40px;
+  max-width: 40px;
   border: 2px solid #e1e1e1;
 }
 .zone-table .team1 img {
-  margin-right: 2%;
+  margin-right: 5%;
   max-height: 40px;
+  max-width: 40px;
   border: 2px solid #e1e1e1;
 }
 
@@ -374,6 +381,11 @@ h6 {
 .teamname.team1 p {
   width: 100%;
   float: left;
+  margin-top: 5px;
+}
+
+.teamname.team2 p {
+  margin-top: 5px;
 }
 
 .match-result {
@@ -382,16 +394,10 @@ h6 {
 
 .zone-table .date-info {
   font-size: 11px;
-  color: #b1b1b1;
-  text-align: left;
-  width: 100%;
-  line-height: 15px !important;
-  max-width: 150px;
-  font-weight: normal;
-}
-.zone-table .date-info b{
-  font-size: 13px;
-  color: #7a7;
+  color: #060;
+  text-align: center;
+  width: 8%;
+  line-height: 30px !important;
 }
 
 .zone-table .zone-info {
@@ -618,6 +624,7 @@ h6 {
   height: 20px;
   font-size: 12px;
   width: 20px;
+  font-weight: bold;
 }
 
 .team-results-table .team2 {
@@ -626,6 +633,10 @@ h6 {
 
 .zone-table .results-header:hover {
   text-align: center;
+}
+
+.team-results-table .teamname.team1 p, .team-results-table .teamname.team2 p{
+  font-size:12px;
 }
 
 .zone-table .stats-mobile {

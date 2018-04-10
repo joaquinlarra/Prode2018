@@ -127,14 +127,15 @@
         </tr>
         <tr id="matchrow-<?= $match['match_id']?>" match-code="<?= $match_code?>" class="matchrow" zone="<?= $zone?>" matchname="<?= $match['team1_abbr_name']?> vs <?= $match['team2_abbr_name']?>">
             <td class="zone-info hidden-xs">
-            	<?= strtoupper($match['zone'])?>
+            	<?= strtoupper($match['zone'])?><br>
 				<div class="date-info">
-				<b><?= $this->session->userdata('lang') == 'MX' ? (int)(dateFormat($match['date_played'],"G")-2):dateFormat($match['date_played'],"G")?>:<?= dateFormat($match['date_played'],"i")?>hs</b>
-				<br><i><?= $match['location']?></i>
+				<?= $this->session->userdata('lang') == 'MX' ? (int)(dateFormat($match['date_played'],"G")-2):dateFormat($match['date_played'],"G")?>:<?= dateFormat($match['date_played'],"i")?>hs
 				</div>
 			</td>
+            <td class="date-info hidden-xs">
+            </td>
             <td class="input-match matchrow-1-<?= $match['match_id']?> <?= $class_col_1?>">
-           		<input <?= $no_complete || $match_completed ? "disabled='disabled'" : ""?> type="text" maxlength="1" id="input-goals-1-<?= $match['match_id']?>" match_id="<?= $match['match_id']?>" class="form-control input-goals" value="<?= isset($matches_completed[$match['match_id']]['team1_goals']) ? $matches_completed[$match['match_id']]['team1_goals'] : ""?>" name="match[<?= $match['match_id']?>][team1]">
+           		<input <?= $no_complete || $match_completed ? "disabled='disabled'" : ""?> type="number" maxlength="1" id="input-goals-1-<?= $match['match_id']?>" match_id="<?= $match['match_id']?>" class="form-control input-goals" value="<?= isset($matches_completed[$match['match_id']]['team1_goals']) ? $matches_completed[$match['match_id']]['team1_goals'] : ""?>" name="match[<?= $match['match_id']?>][team1]">
             </td>
             <td class="teamname team1 matchrow-1-<?= $match['match_id']?> <?= $class_col_1?>" title="<?= $match['team1_name']?>">
                 <p class="hidden-xs"><img  id="match-img-<?= $match['match_id']?>-1" src="<?= $match['team1_flag']?>" title="<?= $match['team1_name']?>" class="img-rounded team1-flag"><?= $match['team1_abbr_name']?>
@@ -170,7 +171,7 @@
 				<div class="group-team-name-2" id="match-name-<?= $match['match_id']?>-2"><?= $match['team2_name']?></div>
 			</td>
             <td class="input-match matchrow-2-<?= $match['match_id']?> <?= $class_col_2?>">
-                <input <?= $no_complete || $match_completed ? "disabled='disabled'" : ""?> type="text" maxlength="1" id="input-goals-2-<?= $match['match_id']?>" match_id="<?= $match['match_id']?>" class="form-control input-goals" value="<?= isset($matches_completed[$match['match_id']]['team2_goals']) ? $matches_completed[$match['match_id']]['team2_goals'] : ""?>" name="match[<?= $match['match_id']?>][team2]">
+                <input <?= $no_complete || $match_completed ? "disabled='disabled'" : ""?> type="number" maxlength="1" id="input-goals-2-<?= $match['match_id']?>" match_id="<?= $match['match_id']?>" class="form-control input-goals" value="<?= isset($matches_completed[$match['match_id']]['team2_goals']) ? $matches_completed[$match['match_id']]['team2_goals'] : ""?>" name="match[<?= $match['match_id']?>][team2]">
             </td>
         </tr>
 		<!--
