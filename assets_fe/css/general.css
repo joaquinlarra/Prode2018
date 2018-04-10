@@ -1,5 +1,19 @@
 @import url('https://fonts.googleapis.com/css?family=Khand|Roboto');
 
+@font-face {
+  font-family: 'Dusha';
+  src: url('../fonts/DushaV5-Regular.eot');
+  src: local('Dusha V5 Regular'), local('DushaV5-Regular'),
+      url('../fonts/DushaV5-Regular.eot?#iefix') format('embedded-opentype'),
+      url('../fonts/DushaV5-Regular.woff2') format('woff2'),
+      url('../fonts/DushaV5-Regular.woff') format('woff'),
+      url('../fonts/DushaV5-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+
+
 body {
   background: url('../img/background-russia-2018.png') repeat-y center;
   font-family: 'Roboto', sans-serif;
@@ -20,7 +34,7 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: 'Khand', sans-serif;
+  font-family: 'Dusha', sans-serif;
   text-transform: uppercase;
 }
 
@@ -74,6 +88,7 @@ h6 {
   color: #ff3333;
   font-weight: bold;
 }
+
 
 .panel-primary {
   border: 1px solid;
@@ -394,10 +409,16 @@ h6 {
 
 .zone-table .date-info {
   font-size: 11px;
-  color: #060;
-  text-align: center;
-  width: 8%;
-  line-height: 30px !important;
+  color: #b1b1b1;
+  text-align: left;
+  width: 100%;
+  line-height: 15px !important;
+  max-width: 150px;
+  font-weight: normal;
+}
+.zone-table .date-info b{
+  font-size: 13px;
+  color: #7a7;
 }
 
 .zone-table .zone-info {
