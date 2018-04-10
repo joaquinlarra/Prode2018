@@ -127,13 +127,12 @@
         </tr>
         <tr id="matchrow-<?= $match['match_id']?>" match-code="<?= $match_code?>" class="matchrow" zone="<?= $zone?>" matchname="<?= $match['team1_abbr_name']?> vs <?= $match['team2_abbr_name']?>">
             <td class="zone-info hidden-xs">
-            	<?= strtoupper($match['zone'])?><br>
+            	<?= strtoupper($match['zone'])?>
 				<div class="date-info">
-				<?= $this->session->userdata('lang') == 'MX' ? (int)(dateFormat($match['date_played'],"G")-2):dateFormat($match['date_played'],"G")?>:<?= dateFormat($match['date_played'],"i")?>hs
+				<b><?= $this->session->userdata('lang') == 'MX' ? (int)(dateFormat($match['date_played'],"G")-2):dateFormat($match['date_played'],"G")?>:<?= dateFormat($match['date_played'],"i")?>hs</b>
+				<br><i><?= $match['location']?></i>
 				</div>
 			</td>
-            <td class="date-info hidden-xs">
-            </td>
             <td class="input-match matchrow-1-<?= $match['match_id']?> <?= $class_col_1?>">
            		<input <?= $no_complete || $match_completed ? "disabled='disabled'" : ""?> type="text" maxlength="1" id="input-goals-1-<?= $match['match_id']?>" match_id="<?= $match['match_id']?>" class="form-control input-goals" value="<?= isset($matches_completed[$match['match_id']]['team1_goals']) ? $matches_completed[$match['match_id']]['team1_goals'] : ""?>" name="match[<?= $match['match_id']?>][team1]">
             </td>

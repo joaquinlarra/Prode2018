@@ -70,6 +70,7 @@ h6 {
   font-weight: bold;
 }
 
+
 .panel-primary {
   border: 1px solid;
   border-color: #8bb5de;
@@ -381,10 +382,16 @@ h6 {
 
 .zone-table .date-info {
   font-size: 11px;
-  color: #060;
-  text-align: center;
-  width: 8%;
-  line-height: 30px !important;
+  color: #b1b1b1;
+  text-align: left;
+  width: 100%;
+  line-height: 15px !important;
+  max-width: 150px;
+  font-weight: normal;
+}
+.zone-table .date-info b{
+  font-size: 13px;
+  color: #7a7;
 }
 
 .zone-table .zone-info {
