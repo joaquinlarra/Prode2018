@@ -104,6 +104,10 @@ h6 {
   font-family: 'Khand', sans-serif;
   font-size: 24px;
 }
+
+.panel-primary .panel-heading img {
+  max-height: 80px;
+}
 .main-navbar .min-link > a {
   font-size: 12px;
   color: #380b12;
