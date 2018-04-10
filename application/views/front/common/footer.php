@@ -658,7 +658,7 @@
 					$("#input-goals-1-"+match_id).prop('disabled', false).val("");
 					$("#input-goals-2-"+match_id).prop('disabled', false).val("");
 					$("#input-goals-1-"+match_id).focus();
-					$("#middle-col-"+match_id).html("<p class='please-load-match'>FALTA CARGAR</p>");
+					$("#middle-col-"+match_id).html("<small>FALTA CARGAR</small>");
 				}
 				
 				function disable_match(match_id,message)
@@ -679,7 +679,7 @@
 					enable_match(match_id);
 				});
 	
-				$(".input-goals").change(function(){
+				$(".input-goals").focusout(function(){
 					var value = $(this).val();	
 					if(!(value % 1 === 0))
 					{
