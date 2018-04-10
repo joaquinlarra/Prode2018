@@ -110,7 +110,7 @@ h6 {
 }
 .main-navbar .min-link > a {
   font-size: 12px;
-  color: #380b12;
+  color: white;
 }
 
 .panel-heading {
@@ -320,6 +320,7 @@ h6 {
   max-width: 50px;
   height: 10px;
   text-align: center;
+  vertical-align: middle !important;
 }
 
 .input-match input {
@@ -534,8 +535,12 @@ h6 {
   background: #dfdfdf;
   text-align: center;
   font-size: 11px;
+  vertical-align: middle;
 }
-
+.zone-table .middle-col span:first-child {
+  padding-bottom: 12px;
+  display: inline-block;
+}
 .zone-table .middle-col span b {
   font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande',
     'Lucida Sans', Arial, sans-serif;
