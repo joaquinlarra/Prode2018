@@ -532,6 +532,12 @@ h6 {
   font-size: 11px;
 }
 
+.zone-table .middle-col span b {
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande',
+    'Lucida Sans', Arial, sans-serif;
+  font-weight: bold;
+}
+
 .zone-table .stats-info {
   background: #f1f1f1;
   color: #fff;
