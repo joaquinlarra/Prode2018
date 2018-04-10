@@ -6,7 +6,7 @@
         <div class="col-md-12">
         <table class="table pull-lefts table-responsive team-positions-table table-condensed full-width">
           <tr>
-          	<th colspan="6"><?= $zone?></th>
+          	<th colspan="6"><h5><?= $zone?></h5></th>
           </tr>
           <tr id="table-header"><td><?= lang("Equipo")?></td><td>PJ</td><td>PG</td><td>PE</td><td>PP</td><td>Pts</td></tr>
 	<?
@@ -21,7 +21,7 @@
             <div class="col-md-12 col-sm-12">
             <table class="table pull-left team-positions-table table-responsive table-condensed full-width">
               <tr>
-                <th colspan="6"><?= $zone?></th>
+                <th colspan="6"><h5><?= $zone?></h5></th>
               </tr>
               <tr id="table-header"><td>Equipo</td><td>PJ</td><td>PG</td><td>PE</td><td>PP</td><td>Pts</td></tr>
 		<?	

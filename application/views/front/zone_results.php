@@ -6,7 +6,7 @@
         <div class="col-md-12">
         <table class="table pull-left team-results-table table-responsive table-condensed full-width">
           <tr>
-          	<th colspan="5"  class="results-header"><?= $zone?></th>
+          	<th colspan="5"  class="results-header"><h5><?= $zone?></h5></th>
           </tr>
 	<?
     foreach($matches_zone as $match)
@@ -20,7 +20,7 @@
             <div class="col-md-12 col-sm-12">
             <table class="table pull-left team-results-table table-responsive table-condensed full-width">
               <tr>
-                <th colspan="5" class="results-header"><?= $zone?></th>
+                <th colspan="5" class="results-header"><h5><?= $zone?></h5></th>
               </tr>
 		<?	
         }
