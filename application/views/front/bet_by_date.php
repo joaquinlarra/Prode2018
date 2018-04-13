@@ -50,7 +50,7 @@
 			$match_completed = true;
 		}
 		$no_complete = 0;
-		$no_complete = minDiff($match['date_played'],$today) < 30 ? true : false;
+		$no_complete = minDiff($match['date_played'],$today) < 0 ? true : false;
 		$match_ended = false;
 		if(($match['result'] != -2) && $no_complete)
 		{
@@ -235,37 +235,7 @@
             </div>
 			
         </div>
-        <?
-        if($section == "bet_completed")
-		{
-			?><div class="clearfix"></div>
-            <a href="<?= $link_url?>pronosticos" class="btn btn-primary btn-lg btn-block"><?= lang("editar")?></a><?	
-		}
-		else
-		{
-			?>
-            <div class="clearfix"></div>
-            <button type="button" class="btn btn-primary btn-lg btn-block" id="submit-btn"><?= lang("Guardar")?></button><?
-		}
-		?>
-        </form>
-        <div class="modal fade" id="missing-matches-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-            <div class="modal-dialog">
-                <div class="modal-content">
-                  <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                    <h4 class="modal-title" id="myModalLabel">&iexcl;<?= lang("Faltan estos resultados")?>!</h4>
-                  </div>
-                  <div class="modal-body" id="missing-matches"></div>
-				<div class="alert alert-info"><?= lang("30-min-prog")?></div>	
-
-                  <div class="modal-footer">
-                  	<button type="button" class="btn btn-primary" data-dismiss="modal" id="complete-later">Ok</button>
-                    <button type="button" class="btn btn-default "  data-dismiss="modal"><?= lang("Completar ahora")?></button>
-                  </div>
-                </div><!-- /.modal-content -->
-            </div><!-- /.modal-dialog -->
-        </div><!-- /.modal -->        
+        </form>        
     </div>
 </div>
 <? include(dirname(__FILE__)."/common/footer.php")?>

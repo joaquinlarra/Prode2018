@@ -1,10 +1,10 @@
 <?
 if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
-$words['Pronosticos']['AR'] = "Pronosticos";
-$words['Pronosticos']['MX'] = "Pronosticos";
-$words['Pronosticos']['PR'] = "Previsões";
-$words['Pronosticos']['US'] = "Predictions";
+$words['Pronosticos']['AR'] = "PRONÓSTICOS";
+$words['Pronosticos']['MX'] = "PRONÓSTICOS";
+$words['Pronosticos']['PR'] = "PREVISÕES";
+$words['Pronosticos']['US'] = "PREDICTIONS";
 
 $words['Posiciones']['AR'] = "Posiciones";
 $words['Posiciones']['MX'] = "Posiciones";

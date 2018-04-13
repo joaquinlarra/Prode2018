@@ -9,7 +9,6 @@
 				}?>
                 <small><?= lang('support-email')?></small>
                 </div>
-				<div class="pull-right"><a href="http://www.bamboodev.team">bamboodev.team</a></div>
 			</div>
 		</div>
 	</div>

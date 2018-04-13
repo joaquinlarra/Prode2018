@@ -228,6 +228,7 @@ class Home extends Front_init
 		}
 		$this->data['section'] = 'bet';
 		$phases = array();
+		/*
 		if($this->company_model->qualys)
 		{
 			$phases[] = "qualys";	
@@ -236,6 +237,7 @@ class Home extends Front_init
 		{
 			$phases[] = "starter";	
 		}
+		*/
 		$phases[] = "initial";
 		if(!$phase)
 		{

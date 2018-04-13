@@ -40,7 +40,7 @@ else
 				$match_completed = true;
 			}
 			$no_complete = 0;
-			$no_complete = minDiff($match['date_played'],$today) < 30 ? true : false;
+			$no_complete = minDiff($match['date_played'],$today) < 0 ? true : false;
 			$match_ended = false;
 			if(($match['result'] != -2) && $no_complete)
 			{
