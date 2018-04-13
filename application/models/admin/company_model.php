@@ -37,6 +37,8 @@ class Company_model extends Simple_data_model
 								'super_patriot',
 								'wall',
 								'custom_css',
+								'email_owners',
+								'contact_email',
 								'dept_league',
 								'friends_league',
 								'branch_league',

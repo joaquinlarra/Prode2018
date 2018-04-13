@@ -116,6 +116,7 @@ class Home extends Front_init
 		$this->index();
 	}
 
+/*
 	public function badges()
 	{
 		$this->redirect_login();
@@ -138,7 +139,7 @@ class Home extends Front_init
 		
 		$this->load->view("front/badges.php", $this->data);
 	}
-	
+*/	
 	public function get_teams_positions()
 	{
 		$this->redirect_login();

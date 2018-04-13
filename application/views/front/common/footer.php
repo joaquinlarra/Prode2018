@@ -5,7 +5,7 @@
                 <?
                 if($this->company_model->footer_image)
 				{
-					?><img src="<?= $this->company_model->footer_image?>"><?	
+					?><img src="<?= $this->company_model->footer_image?>" id="company-logo-footer"><?	
 				}?>
                 <small><?= lang('support-email')?></small>
                 </div>
