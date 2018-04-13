@@ -4,7 +4,35 @@
         <div class="col-md-12 col-index-header">
             <h1>ARMÁ TU PRODE PARA ESTE MUNDIAL</h1>
             <br>
+            <!--
             <a href="<?=base_url().'comprar'?>" class="btn btn-green">Comprar cuenta</a>
+            -->
+            <div class="panel panel-primary">
+            <div class="panel-heading" align="center">Crea tu PRODE para vos y tu grupo</div>
+            <div class="panel-body">   	
+                
+                <div class="row">
+                <div class="alert alert-danger" id="company-error" style="display:none"></div>
+                </div>    
+                    <form method="POST" id="company-create-form" class="form-signin ajax_form" action="<?=$link_url.'check-company-availability'?>" accept-charset="UTF-8">
+                        
+                            <div class="col-xs-6 col-sm-5 col-md-5 col-lg-5">
+                                
+                                <input type="text" id="namespace" class="form-control" name="namespace">
+                                
+                            </div>
+                            <div class="col-xs-6 col-sm-4 col-md-4 col-lg-4">
+                                <p style="font-size:19px; color:#111111;text-align:left">.prode2018.com</p>
+                            </div>
+                            <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3">
+                            <button type="submit" name="submit" class="btn btn-green btn-block"><?= lang("CREAR")?>
+                            </div>
+                        
+                    </form>
+                    </div>
+                </div>
+            </div>
+            </div>
             <br><br><br>
             <h2>HACE EL MEJOR PRONOSTICO Y DIVERTITE CON TUS AMIGOS</h2>
             <br>

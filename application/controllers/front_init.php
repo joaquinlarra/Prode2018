@@ -104,9 +104,30 @@ class Front_init extends CI_Controller
 														'validation' => 'required',
 														'visibility' => 'profile|first_login|register|forgot_pass'
 														),
+
 										/*				
-										
+										COMPANY FIELDS
 										*/
+										'namespace' => array(	'label' => lang('Nombre del Grupo'),
+															'type' => 'text',
+															'validation' => 'required|alpha_dash',
+															'visibility' => 'company_register',
+															'description' => "Ej: <b>labandaloca</b>. No puede contener espacios",
+															),
+										'country'=> array(	'label' => 'País',
+															'type' => 'select',
+															'options' => array(0 => array("value" => "AR", "label" => "Argentina"),
+																				1 => array("value" => "MX", "label" => "México"),
+																				),
+															'validation' => '',
+															'visibility' => 'company_register'
+														),
+										'main_image' => array(	'label' => 'Logo',
+														'type' => 'image',
+														'tag' => 'main_image',
+														'validation' => '',
+														'visibility' => 'company_register|company_edit',
+														),
 										);
 		
 		if($this->company_model->branch_league)
@@ -514,6 +535,17 @@ class Front_init extends CI_Controller
 			}
 		}		
 	}		
+
+	public function check_company_availability()
+	{
+		$data['valid'] = 0;
+		$data['message'] = "hooaaaaa";
+		echo json_encode($data);
+	}
+
+
+
 }
+
 
 ?>

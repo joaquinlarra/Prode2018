@@ -379,7 +379,7 @@ class Home extends Front_init
 		
 		$this->load->view("front/profile_edit.php",$this->data);
 	}
-	
+
 	public function scores($type = "", $id = "", $name = "",$offset = 0)
 	{
 		

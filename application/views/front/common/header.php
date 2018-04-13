@@ -23,11 +23,11 @@
 		{
 		background: #010D27 url('<?= $this->company_model->bg_image?>') top center repeat-y;
 		}
-        </style><?	
+        </style><?
 	}
-	if($this->company_model->colors)
+	if($this->company_model->custom_css)
 	{
-		echo "<style>".$this->company_model->colors."</style>";	
+		echo "<style>".$this->company_model->custom_css."</style>";	
 	}
 	?>
   </head>
@@ -35,29 +35,22 @@
     <div class="header">
       <div class="container">
         <div class="row">
-          <div class="col-md-5 col-sm-6 hidden-xs" style="padding-top:10px; padding-bottom:10px">
+          <div class="col-md-12" style="padding-top:10px; padding-bottom:10px">
             <a href="<?=$link_url?>pronosticos">
             	
             	<?
                 if($this->company_model->main_image)
 				{
-					?><img src="<?=$this->company_model->main_image?>" border="0" /><?	
+					?><img src="<?=$this->company_model->main_image?>" id="company-logo-header"  border="0" /><?	
 				}
-				?>
-            </a>
-          </div>
-          <div class="col-xs-12 visible-xs" align="center" style="padding-bottom:10px">
-            <a href="<?=$link_url?>pronosticos">
-            	
-            	<?
-                if($this->company_model->main_image)
+				if(!$this->company_model->no_logos)
 				{
-					?><img src="<?=$this->company_model->main_image?>" border="0" /><?	
+					?><img src="<?=$link_url?>assets_fe/img/logo.png" id="prode-logo-header" /><?
 				}
 				?>
             </a>
           </div>
-          <div class="col-md-7 col-sm-6 head-title hidden-xs" style="text-align:right">
+          <div class="col-md-7 col-sm-6 col-xs-6 head-title" style="text-align:right">
 			<?
 			if($this->company_model->fantasy_logo)
 			{
@@ -94,13 +87,13 @@
     	<div class="container">
             <div class="collapse navbar-collapse" id="menu-items">
                 <ul class="nav navbar-nav main-navbar navbar-left">
-                    <li><a <? if($section=='bet'){?>class="active"<? } ?> href="<?=$link_url?>pronosticos"><?= lang('Pronósticos')?></a></li>
-                    <li><a <? if($section=='scores'){?>class="active"<? } ?> href="<?=$link_url?>posiciones"><?= lang('Posiciones')?></a></li>
+                    <li><a <? if($section=='bet'){?>class="active"<? } ?> href="<?=$link_url?>pronosticos"><?= strtoupper(lang('Pronosticos'))?></a></li>
+                    <li><a <? if($section=='scores'){?>class="active"<? } ?> href="<?=$link_url?>posiciones"><?= strtoupper(lang('Posiciones'))?></a></li>
                  	<?
                     if($this->company_model->wall)
 					{
 					?>
-                    	<li><a  <? if($section=='wall'){?>class="active"<? } ?>href="<?=$link_url?>muro"><?= lang('Muro')?></a></li>
+                    	<li><a  <? if($section=='wall'){?>class="active"<? } ?>href="<?=$link_url?>muro"><?= strtoupper(lang('Muro'))?></a></li>
                 	<?
 					}
 					
@@ -131,14 +124,6 @@
                 </ul>
                 <ul class="nav navbar-nav main-navbar navbar-right">   
                     <li class="min-link"><a <? if($section=='how-to'){?>class="active"<? } ?> href="<?=$link_url?>como-jugar"><?= lang('Cómo jugar')?></a></li>
-                    <?
-                    if($this->company_model->badges)
-					{
-					?>
-                    	<li class="min-link"><a  <? if($section=='badges'){?>class="active"<? } ?>href="<?=$link_url?>badges"><?= lang('Badges')?></a></li>
-					<?
-					}
-					?>
                     <li class="dropdown">
                         <a class="dropdown-toggle" href="#" data-toggle="dropdown"><?= $shortname?> <span class="glyphicon glyphicon-user"></span><strong class="caret"></strong></a>
                         <ul class="dropdown-menu" role="menu">
@@ -149,14 +134,14 @@
                    	<?
 					if($this->company_model->multi_lang)
 					{
+						$lang = $this->bitauth->user_language == "AR"? "ES" : ($this->bitauth->user_language == "US" ? "EN" :$this->bitauth->user_language);   
 					?>
 						<li class="dropdown">
-                        <a class="dropdown-toggle" href="#" data-toggle="dropdown"><small><?= $this->bitauth->user_language ? $this->bitauth->user_language : $this->company_model->country?></small><strong class="caret"></strong></a>
+                        <a class="dropdown-toggle" href="#" data-toggle="dropdown"><small><?= $lang?></small><strong class="caret"></strong></a>
                         <ul class="dropdown-menu" role="menu">
-                           <li><a href="<?= $link_url?>cambiar-idioma/AR">ARGENTINO (AR)</a></li>
-                            <li><a href="<?= $link_url?>cambiar-idioma/MX">MEXICANO (MX)</a></li>
+                           <li><a href="<?= $link_url?>cambiar-idioma/AR">ESPAÑOL (ES)</a></li>
                             <li><a href="<?= $link_url?>cambiar-idioma/PR">PORTUGUES (PR)</a></li>
-                            <li><a href="<?= $link_url?>cambiar-idioma/US">ENGLISH (US)</a></li>
+                            <li><a href="<?= $link_url?>cambiar-idioma/US">ENGLISH (EN)</a></li>
                         </ul>
                   	</li> 
                         

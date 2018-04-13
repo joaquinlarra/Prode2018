@@ -11,7 +11,6 @@
 
     <link href="<?=$link_url?>assets_fe/css/bootstrap-theme.css" rel="stylesheet">
     <link href="<?=$link_url?>assets_fe/css/bootstrap.css" rel="stylesheet">
-		<link href="<?=$link_url?>assets_fe/css/mdb.css" rel="stylesheet">
 		<link href="<?=$link_url?>assets_fe/css/comprar.css" rel="stylesheet">
     <link href="<?=$link_url?>assets_fe/css/fonts.css" rel="stylesheet">
     <link href="<?=$link_url?>assets_fe/css/spinner.css" rel="stylesheet">

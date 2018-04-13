@@ -73,6 +73,7 @@ h6 {
 
 .btn-green,
 .btn-green input {
+  color: #ffffff;
   font-size: 12px;
   background: green !important;
   text-transform: uppercase;
@@ -85,9 +86,9 @@ h6 {
 }
 
 .main-menu {
-  background: #c80b42;
-  border-top: 1px solid #980b22;
-  border-bottom: 1px solid #980b22;
+  background: #B41B1F;
+  border-top: 1px solid #B41B1F;
+  border-bottom: 1px solid #B41B1F;
 }
 
 .please-load-match {
@@ -922,4 +923,10 @@ user-found td:hover {
   text-align: center;
   text-transform: uppercase;
   font-size: 20px;
+}
+
+
+#prode-logo-header, #company-logo-header
+{
+  max-height: 50px;
 }
