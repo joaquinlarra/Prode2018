@@ -83,7 +83,7 @@
         </div>
       </div>
     </div>
-    <div class="main-menu">
+    <div class="main-menu" id="sticker">
     	<div class="container">
             <div class="collapse navbar-collapse" id="menu-items">
                 <ul class="nav navbar-nav main-navbar navbar-left">

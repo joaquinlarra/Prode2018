@@ -19,6 +19,7 @@
 	<script src="<?= $link_url?>assets_fe/js/jquery.js"></script>
 	<script src="<?= $link_url?>assets_fe/js/main.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/intro.js/2.7.0/intro.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.sticky/1.0.4/jquery.sticky.min.js"></script>
     <script src="<?= $link_url?>assets_fe/js/bootstrap.min.js"></script>
 	<script src="<?= $link_url?>assets_fe/js/mdb.js"></script>
     <script src="<?= $link_url?>assets_fe/js/jquery.parallax-1.1.3.js" type="text/javascript"></script>
