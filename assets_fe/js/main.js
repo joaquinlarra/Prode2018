@@ -1,3 +1,5 @@
 $(document).ready(function () {
-  introJs().start()
+  var tour = introJs()
+
+  tour.setOptions({ doneLabel: 'Listo', showBullets: false }).start()
 })
