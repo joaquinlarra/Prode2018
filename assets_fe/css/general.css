@@ -21,6 +21,10 @@ form input {
   font-size: 16px !important;
 }
 
+.introjs-helperNumberLayer {
+  font-size: 0px !important;
+}
+
 input[type="number"]::-webkit-outer-spin-button,
 input[type="number"]::-webkit-inner-spin-button {
   -webkit-appearance: none;
@@ -86,9 +90,9 @@ h6 {
 }
 
 .main-menu {
-  background: #B41B1F;
-  border-top: 1px solid #B41B1F;
-  border-bottom: 1px solid #B41B1F;
+  background: #b41b1f;
+  border-top: 1px solid #b41b1f;
+  border-bottom: 1px solid #b41b1f;
 }
 
 .please-load-match {
@@ -925,8 +929,8 @@ user-found td:hover {
   font-size: 20px;
 }
 
-
-#prode-logo-header, #company-logo-header, #company-logo-footer
-{
+#prode-logo-header,
+#company-logo-header,
+#company-logo-footer {
   max-height: 50px;
 }
