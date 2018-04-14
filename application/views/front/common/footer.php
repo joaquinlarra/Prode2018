@@ -12,11 +12,13 @@
 			</div>
 		</div>
 	</div>
-	
+
     <!-- Bootstrap core JavaScript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
 	<script src="<?= $link_url?>assets_fe/js/jquery.js"></script>
+	<script src="<?= $link_url?>assets_fe/js/main.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/intro.js/2.7.0/intro.min.js"></script>
     <script src="<?= $link_url?>assets_fe/js/bootstrap.min.js"></script>
 	<script src="<?= $link_url?>assets_fe/js/mdb.js"></script>
     <script src="<?= $link_url?>assets_fe/js/jquery.parallax-1.1.3.js" type="text/javascript"></script>

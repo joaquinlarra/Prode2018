@@ -8,10 +8,10 @@
     <meta name="keywords" content="<?=$page_keywords?>">
     <meta name="author" content="">
     <link rel="shortcut icon" href="<?=base_url()?>assets_fe/ico/favicon.png">
-	<META NAME="ROBOTS" CONTENT="NOINDEX, NOFOLLOW">
+
     <link href="<?=$link_url?>assets_fe/css/bootstrap-theme.css" rel="stylesheet">
     <link href="<?=$link_url?>assets_fe/css/bootstrap.css" rel="stylesheet">
-	<!-- <link href="<?=$link_url?>assets_fe/css/mdb.css" rel="stylesheet"> -->
+	<link href="https://cdnjs.cloudflare.com/ajax/libs/intro.js/2.7.0/introjs.min.css" rel="stylesheet">
     <link href="<?=$link_url?>assets_fe/css/fonts.css" rel="stylesheet">
     <link href="<?=$link_url?>assets_fe/css/spinner.css" rel="stylesheet">
     <link href="<?=$link_url?>assets_fe/css/general.css" rel="stylesheet">
@@ -123,7 +123,7 @@
 					?>
                 </ul>
                 <ul class="nav navbar-nav main-navbar navbar-right">   
-                    <li class="min-link"><a <? if($section=='how-to'){?>class="active"<? } ?> href="<?=$link_url?>como-jugar"><?= lang('Cómo jugar')?></a></li>
+                    <li class="min-link" <? if($user-first-login){ echo 'data-intro="Te recomendamos visitar la seccion de "Como jugar" antes de emepzar a jugar.'; } ?> ><a <? if($section=='how-to'){?>class="active"<? } ?> href="<?=$link_url?>como-jugar"><?= lang('Cómo jugar')?></a></li>
                     <li class="dropdown">
                         <a class="dropdown-toggle" href="#" data-toggle="dropdown"><?= $shortname?> <span class="glyphicon glyphicon-user"></span><strong class="caret"></strong></a>
                         <ul class="dropdown-menu" role="menu">

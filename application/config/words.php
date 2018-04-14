@@ -277,9 +277,9 @@ $words['Completar registro']['PR'] = "Completar registro";
 $words['Completar registro']['US'] = "Complete profile";
 
 $words['infografia']['AR'] = "infografia";
-$words['infografia']['MX'] = "infografia-mex";
-$words['infografia']['PR'] = "infografia-pr";
-$words['infografia']['US'] = "infografia-en";
+$words['infografia']['MX'] = "infografia_mex";
+$words['infografia']['PR'] = "infografia";
+$words['infografia']['US'] = "infography";
 
 $words['INGRESO']['AR'] = "INGRESO";
 $words['INGRESO']['MX'] = "INGRESO";
