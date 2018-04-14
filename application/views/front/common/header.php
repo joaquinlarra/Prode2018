@@ -123,7 +123,7 @@
 					?>
                 </ul>
                 <ul class="nav navbar-nav main-navbar navbar-right">   
-                    <li class="min-link" <? print_r($user-first-login);?> <? if($user-first-login == 0){ echo 'data-intro="Te recomendamos visitar la seccion de "Como jugar" antes de emepzar a jugar.'; } ?> ><a <? if($section=='how-to'){?>class="active"<? } ?> href="<?=$link_url?>como-jugar"><?= lang('Cómo jugar')?></a></li>
+                    <li class="min-link" <? if($user-first-login == 0){ echo 'data-intro="Te recomendamos visitar la seccion de "Como jugar" antes de emepzar a jugar.'; } ?> ><a <? if($section=='how-to'){?>class="active"<? } ?> href="<?=$link_url?>como-jugar"><?= lang('Cómo jugar')?></a></li>
                     <li class="dropdown">
                         <a class="dropdown-toggle" href="#" data-toggle="dropdown"><?= $shortname?> <span class="glyphicon glyphicon-user"></span><strong class="caret"></strong></a>
                         <ul class="dropdown-menu" role="menu">
