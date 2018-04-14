@@ -873,5 +873,20 @@ $words['Muro']['MX'] = "Muro";
 $words['Muro']['PR'] = "Muro";
 $words['Muro']['US'] = "Wall";
 
+$words['Ingresa el nombre de tu prode']['AR'] = "Ingresa el nombre de tu prode";
+$words['Ingresa el nombre de tu prode']['MX'] = "Ingresa el nombre de tu prode";
+$words['Ingresa el nombre de tu prode']['PR'] = "Digite o nome do seu prode";
+$words['Ingresa el nombre de tu prode']['US'] = "Enter the name of your prode";
+
+$words['Ese nombre no está disponible. Intenta con otro']['AR'] = "Ese nombre no está disponible. Intenta con otro";
+$words['Ese nombre no está disponible. Intenta con otro']['MX'] = "Ese nombre no está disponible. Intenta con otro";
+$words['Ese nombre no está disponible. Intenta con otro']['PR'] = "Esse nome não está disponível. Tente outro";
+$words['Ese nombre no está disponible. Intenta con otro']['US'] = "That name is not available. Try another";
+
+$words['El nombre no es válido']['AR'] = "El nombre no es válido";
+$words['El nombre no es válido']['MX'] = "El nombre no es válido";
+$words['El nombre no es válido']['PR'] = "El nombre no es válido";
+$words['El nombre no es válido']['US'] = "El nombre no es válido";
+
 $config['words'] = $words;
 ?>

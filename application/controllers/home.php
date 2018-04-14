@@ -36,7 +36,15 @@ class Home extends Front_init
 		$result = $this->db->query($sql)->result_array();
 		$this->data['login_user']['username'] = $this->session->userdata('register_email');
 		$this->data['login_user']['email'] = $this->data['login_user']['username'];
-		$this->load->view("front/register.php", $this->data);			
+		$this->load->view("front/register.php", $this->data);
+	}
+
+	public function complete_company_register()
+	{
+		$this->load->library('simple_captcha');
+		$this->data['section'] = "complete_register";
+		$this->data['register_company']['namespace'] = $this->session->userdata('namespace');
+		$this->load->view("front/register_company.php", $this->data);			
 	}
 	
 	public function language($lang)

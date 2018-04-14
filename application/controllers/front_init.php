@@ -76,11 +76,16 @@ class Front_init extends CI_Controller
 
 		
 		$this->data['fields'] = array(	
+										'namespace' => array(	'label' => lang('Nombre del Grupo'),
+											'type' => 'text',
+											'validation' => 'required|alpha_dash',
+											'visibility' => 'register_company'
+										),
 										
 										'email' => array('label' => lang('Email'),
 														'type' => 'text',
 														'validation' => 'valid_email|required',
-														'visibility' => 'profile|edit_profile|first_login|register'
+														'visibility' => 'profile|edit_profile|first_login|register|register_company'
 										),
 										/*
 										'username' => array(	'label' => lang('Email'),
@@ -90,36 +95,31 @@ class Front_init extends CI_Controller
 															'visibility' => 'profile|first_login|register'
 															),
 										*/
+										
 										'displayname' => array(	'label' => lang('Nickname'),
 															'type' => 'text',
 															'validation' => 'required',
-															'visibility' => 'profile|edit_profile|first_login|register'
+															'visibility' => 'profile|edit_profile|first_login|register|register_company'
 															),
 										'fullname' => array(	'label' => lang('Nombre Completo'),
 															'type' => 'text',
 															'validation' => 'required',
-															'visibility' => 'profile|edit_profile|first_login|register'
+															'visibility' => 'profile|edit_profile|first_login|register|register_company'
 															),
 										'password' => array('label' => lang('Contraseña'),
 														'type' => 'password',
 														'validation' => 'required|matches[passconf]',
-														'visibility' => 'profile|first_login|register|forgot_pass'
+														'visibility' => 'profile|first_login|register|forgot_pass|register_company'
 														),
 										'passconf' => array('label' => lang('Repetir contraseña'),
 														'type' => 'password',
 														'validation' => 'required',
-														'visibility' => 'profile|first_login|register|forgot_pass'
+														'visibility' => 'profile|first_login|register|forgot_pass|register_company'
 														),
 
 										/*				
 										COMPANY FIELDS
 										*/
-										'namespace' => array(	'label' => lang('Nombre del Grupo'),
-															'type' => 'text',
-															'validation' => 'required|alpha_dash',
-															'visibility' => 'company_register',
-															'description' => "Ej: <b>labandaloca</b>. No puede contener espacios",
-															),
 										'country'=> array(	'label' => 'País',
 															'type' => 'select',
 															'options' => array(0 => array("value" => "AR", "label" => "Argentina"),
@@ -358,6 +358,18 @@ class Front_init extends CI_Controller
 									$row = $this->db->query($sql)->row();
 									$this->form_model->get($row->user_id);
 									break;
+				case 'register_company':	
+									$this->load->model("user_model","form_model");
+									if(!$this->session->userdata('register_email'))
+									{
+										$output['error'] = lang("no-prev-id");
+										echo json_encode($output);
+										return;
+									}
+									$sql = "SELECT * FROM bitauth_users WHERE username = '".addslashes($this->session->userdata('register_email'))."' AND company_id = '".$this->company_model->get_id()."'";
+									$row = $this->db->query($sql)->row();
+									$this->form_model->get($row->user_id);
+									break;
 				case 'edit_profile':
 									$this->load->model("user_model","form_model");
 									$this->form_model->get($this->bitauth->user_id);
@@ -421,7 +433,6 @@ class Front_init extends CI_Controller
 											$output['message'] = lang('first-time-message-no-email');
 											break;
 						case 'register':	
-						
 											if($this->company_model->confirm_email)
 											{
 												$this->form_model->set_field("active",0);
@@ -448,7 +459,11 @@ class Front_init extends CI_Controller
 											$this->bitauth->login($this->form_model->username,$this->data['post']['password']);
 											$this->send_register_email();
 											$output['message'] = lang("register-message");
-											break;	
+											break;
+						case 'register_company':
+									$this->send_creation_email();
+									$output['message'] = lang("creation-message");
+									break;
 					}
 					
 					$this->post_validate_save();
@@ -462,7 +477,38 @@ class Front_init extends CI_Controller
 		}
 		echo json_encode($output);
 	}	
-	
+
+	protected function send_creation_email()
+	{
+		$this->load->library('email');
+		
+		$config['protocol'] = 'mail';
+		$config['charset'] = 'utf-8';
+		$config['mailtype'] = 'html';
+		
+		$this->email->initialize($config);
+		
+		$this->email->from('tuprode@prode2018.com', 'Prode 2018');
+		
+		$this->email->to($this->form_model->email);
+
+		$this->email->subject(lang("subject-registro"));
+		
+		$confirm_link = $this->data['link_url']."crear-cuenta/".$this->get_creation_code($this->form_model->get_id());
+
+		$body= var_lang('body-registro',$this->form_model->fullname)."<a href='".$confirm_link."'>".$confirm_link."</a>
+				<br><br>".lang('register-login-email')."
+				<br><br>Código: <b>".$this->get_confirm_code($this->form_model->get_id())."</b><br>
+				<br><br>".$this->company_model->username_field.": <b>".$this->form_model->username."</b><br>
+				<br><br>".lang('Contraseña').": <b>".$this->data['post']['password']."</b><br><br>
+				Prode ".date('Y')."<br>--";
+		
+		$this->email->message($body);
+		
+		$this->email->send();
+			
+	}
+
 	protected function send_register_email()
 	{
 		$this->load->library('email');
@@ -485,7 +531,7 @@ class Front_init extends CI_Controller
 				<br><br>".lang('register-login-email')."
 				<br><br>".$this->company_model->username_field.": <b>".$this->form_model->username."</b><br>
 				<br><br>".lang('Contraseña').": <b>".$this->data['post']['password']."</b><br><br>
-				Prode 2018<br>--";
+				Prode ".date('Y')."<br>--";
 		
 		$this->email->message($body);
 		
@@ -493,6 +539,11 @@ class Front_init extends CI_Controller
 			
 	}
 	
+	protected function get_creation_code($id)
+	{
+		return $id."-".substr(base64_encode($id."fantastic 2013 vv ++ ??"),0,10);
+	}
+
 	protected function get_confirm_code($id)
 	{
 		return $id."-".substr(base64_encode($id."fantastic 2013 vv ++ ??"),0,10);
@@ -540,12 +591,36 @@ class Front_init extends CI_Controller
 				}	
 			}
 		}		
-	}		
+	}
+
+	public function is_company_available($namespace)
+	{
+		$sql = "SELECT * FROM companies WHERE namespace = '{$namespace}'";
+		return !$this->db->query($sql)->num_rows();
+	}
 
 	public function check_company_availability()
 	{
-		$data['valid'] = 0;
-		$data['message'] = "hooaaaaa";
+		$this->data['post'] = $this->input->post();
+		
+		$this->form_validation->set_rules('namespace', 'namespace', 'alpha_dash');
+
+		if (empty($this->data['post']['namespace'])) {
+			$data['valid'] = 0;
+			$data['message'] = lang("Ingresa el nombre de tu prode");
+			
+		} else if (!$this->form_validation->run()) {
+			$data['valid'] = 0;
+			$data['message'] = lang("El nombre no es válido");
+		} else if ($this->form_validation->run() && !$this->is_company_available($this->data['post']['namespace']) ) {
+			$data['message'] = lang('Ese nombre no está disponible. Intenta con otro');
+			$data['valid'] = 0;
+		}else if( $this->form_validation->run() && $this->is_company_available($this->data['post']['namespace']) ) {
+			$data['valid'] = 1;
+			$data['namespace'] = $this->data['post']['namespace'];
+			$this->session->set_userdata('namespace', $data['namespace']);	
+			$this->session->set_userdata('test', $data['namespace']);	
+		}
 		echo json_encode($data);
 	}
 

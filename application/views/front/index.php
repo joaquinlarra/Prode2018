@@ -14,7 +14,7 @@
                 <div class="row">
                 <div class="alert alert-danger" id="company-error" style="display:none"></div>
                 </div>    
-                    <form method="POST" id="company-create-form" class="form-signin ajax_form" action="<?=$link_url.'check-company-availability'?>" accept-charset="UTF-8">
+                    <form method="POST" id="company-availability" class="form-signin ajax_form" action="<?=$link_url.'check-company-availability'?>" accept-charset="UTF-8">
                         
                             <div class="col-xs-6 col-sm-5 col-md-5 col-lg-5">
                                 

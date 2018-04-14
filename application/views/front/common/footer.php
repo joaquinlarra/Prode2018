@@ -67,34 +67,27 @@
 			
 	</script>
 	<?
-	if ($section == 'home' || $section == 'comprar' ){
+	if ($section == 'home' || $section == 'comprar' ) {
 	?>
 		<script src="<?= $link_url?>assets_common/js/jquery.form.js"></script>
         <script>
-        $('#company-create-form').ajaxForm({
-                	// dataType identifies the expected content type of the server response 
-                    dataType:  'json', 
-                    // success identifies the function to invoke when the server response 
-                    // has been received 
-                    success:   validate_company_form 
-                });
-                
+        $('#company-availability').ajaxForm({
+			// dataType identifies the expected content type of the server response 
+			dataType:  'json', 
+			// success identifies the function to invoke when the server response 
+			// has been received 
+			success:   validate_company_form 
+		});
+     
 		function validate_company_form(data) {
 			$('#error').hide();
 			if(data.valid)
 			{
-				if(data.first_register)
-				{
-					window.location.href = "<?= $link_url?>primer-ingreso";	
-				}
-				else
-				{
-					window.location.href = "<?= $link_url?>posiciones";
-				}
+				window.location.href = "<?= $link_url?>crear-prode";
 			}
 			else
 			{
-			  	$('#company-error').html("error");
+			  	$('#company-error').html(data.message);
 				$('#company-error').fadeIn();	
 			}
 		};
@@ -228,6 +221,38 @@
 				});	
 			}
 			};
+
+
+        $('#company-create-form').ajaxForm({
+			// dataType identifies the expected content type of the server response 
+			dataType:  'json', 
+			// success identifies the function to invoke when the server response 
+			// has been received 
+			success:   company_create_form 
+		});
+     
+	 
+		function company_create_form(data) {
+			$('.register_company_msg_error').hide();
+			if(data.valid)
+			{
+				$('#company-create-form').hide();
+				$('#company-create-message').show(data.message)
+			}
+			else
+			{
+				$.each(data.errors, function(key, value) {
+					if(value){
+						$('#register_company_error_' + key ).html( value ).fadeIn();
+					}
+				});	
+
+			  	$('#prode-create-form-error').html(data.message);
+				$('#prode-create-form-error').fadeIn();	
+			}
+
+			
+		};
         </script>
 	<?	
 	}

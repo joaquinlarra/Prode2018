@@ -61,6 +61,7 @@ $route['editar-cuenta'] = "home/edit_profile/";
 $route['empresa/(:any)'] = "home/company/$1";
 $route['primer-ingreso'] = "home/first_login/";
 $route['completar-registro'] = "home/complete_register/";
+$route['crear-prode'] = "home/complete_company_register/";
 $route['log-in'] = "home/login/";
 $route['log-out'] = "home/logout/";
 $route['olvide-mi-clave'] = "front_user/forgot_password/";

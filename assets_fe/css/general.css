@@ -934,3 +934,8 @@ user-found td:hover {
 #company-logo-footer {
   max-height: 50px;
 }
+
+.register_msg_error{
+  padding:8px 10px;
+  margin-top: 8px;
+}
