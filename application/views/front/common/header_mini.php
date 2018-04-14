@@ -8,7 +8,7 @@
     <meta name="keywords" content="<?=$page_keywords?>">
     <meta name="author" content="">
     <link rel="shortcut icon" href="<?=base_url()?>assets_fe/ico/favicon.png">
-
+		<META NAME="ROBOTS" CONTENT="NOINDEX, NOFOLLOW">
     <link href="<?=$link_url?>assets_fe/css/bootstrap-theme.css" rel="stylesheet">
     <link href="<?=$link_url?>assets_fe/css/bootstrap.css" rel="stylesheet">
 		<link href="<?=$link_url?>assets_fe/css/comprar.css" rel="stylesheet">
