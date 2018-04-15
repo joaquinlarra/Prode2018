@@ -32,12 +32,6 @@ class Front_init extends CI_Controller
 			{
 				$this->bitauth->user_language = $this->session->userdata('chosen_lang');	
 			}
-			
-			if($this->session->userdata('user-first-login'))
-			{
-				$this->data['user-first-login'] = true;
-				$this->session->set_userdata('user-first-login', false);
-			}
 
 			if($this->bitauth->user_language)
 			{

@@ -123,7 +123,7 @@
 					?>
                 </ul>
                 <ul class="nav navbar-nav main-navbar navbar-right">   
-                    <li class="min-link" <? if($user-first-login == 0){ echo 'data-intro="Te recomendamos visitar la seccion de <i>Como jugar</i> antes de emepzar a jugar."'; } ?> >
+                    <li class="min-link" <? if($user_first_login){ echo 'data-intro="Clickea en <i>Como jugar</i> antes de emepzar!"'; } ?> >
 						<a <? if($section=='how-to'){?>class="active"<? } ?> href="<?=$link_url?>como-jugar"><?= lang('Cómo jugar')?></a>
 					</li>
                     <li class="dropdown">

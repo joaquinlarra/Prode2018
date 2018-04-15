@@ -333,17 +333,10 @@ class Bitauth
 			->where('success', 1)
 			->get($this->_table['logins']);
 			
-		if($query && $query->num_rows())
-		{
-			$this->session->set_userdata('user-first-login', false);	
-		}
-		else
-		{
-			$this->session->set_userdata('user-first-login', true);
-		}
-			
-			
-			
+			if($query && !$query->num_rows())
+			{
+				$this->session->set_userdata('user-first-login', '1');
+			}
 			
 			$data = array(
 				'ip_address' => ip2long($_SERVER['REMOTE_ADDR']),

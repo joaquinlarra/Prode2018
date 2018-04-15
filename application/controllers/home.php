@@ -393,6 +393,11 @@ class Home extends Front_init
 
 	public function scores($type = "", $id = "", $name = "",$offset = 0)
 	{
+		if($this->session->userdata('user-first-login'))
+		{
+			$this->data['user_first_login'] = true;
+			$this->session->unset_userdata('user-first-login');
+		}
 		
 		$this->redirect_login();
 		$this->data['section'] = "scores";
