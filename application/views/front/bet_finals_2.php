@@ -23,7 +23,7 @@
 <div id="section-header" class="container-fluid">
 	<div class="container">
     	<div class="row">
-        	<div class="col-md-12"><h1 class="pull-left"><?= lang("Pronósticos")?></h1><div class="pull-right hidden-xs" style="margin-top:10px"><img src="<?= base_url()?>assets_fe/img/<?= lang("recorda")?>.png"></div></div>
+        	<div class="col-md-12"><h1 class="pull-left"><?= lang("Pronosticos")?></h1><div class="pull-right hidden-xs" style="margin-top:10px"><img src="<?= base_url()?>assets_fe/img/<?= lang("recorda")?>.png"></div></div>
         </div>
     </div>
 </div>

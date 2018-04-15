@@ -61,11 +61,11 @@
 		{
 			switch($matches_completed[$match['match_id']]['result'])
 			{
-				case -1: $matches_completed[$match['match_id']]['bet_message'] = "Gana <b>".$match['team1_name']."</b>";
+				case -1: $matches_completed[$match['match_id']]['bet_message'] = lang('Gana')." <b>".$match['team1_name']."</b>";
 						break;
-				case 0: $matches_completed[$match['match_id']]['bet_message'] = "<b>Empate</b>";
+				case 0: $matches_completed[$match['match_id']]['bet_message'] = "<b>".lang('Empate')."</b>";
 						break;
-				case 1: $matches_completed[$match['match_id']]['bet_message'] = "Gana <b>".$match['team2_name']."</b>";
+				case 1: $matches_completed[$match['match_id']]['bet_message'] = lang('Gana')." <b>".$match['team2_name']."</b>";
 						break;
 				
 			}
@@ -157,7 +157,7 @@
 					}
 					else
 					{
-						?><p class="please-load-match">FALTA CARGAR</p><?	
+						?><p class="please-load-match"><?= lang('FALTA CARGAR')?></p><?	
 					}
 				}
 				?>

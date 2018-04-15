@@ -838,5 +838,21 @@ $words['El nombre no es válido']['MX'] = "El nombre no es válido";
 $words['El nombre no es válido']['PR'] = "El nombre no es válido";
 $words['El nombre no es válido']['US'] = "El nombre no es válido";
 
+$words['FALTA CARGAR']['AR'] = "<- CARGAR ->";
+$words['FALTA CARGAR']['MX'] = "<- CARGAR ->";
+$words['FALTA CARGAR']['PR'] = "<- COMPLETE ->";
+$words['FALTA CARGAR']['US'] = "<- FILL IN ->";
+
+
+
+
+
+
+
+
+
+
+
+
 $config['words'] = $words;
 ?>
