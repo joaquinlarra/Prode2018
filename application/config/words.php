@@ -6,14 +6,14 @@ $words['Pronosticos']['MX'] = "PRONÓSTICOS";
 $words['Pronosticos']['PR'] = "PREVISÕES";
 $words['Pronosticos']['US'] = "PREDICTIONS";
 
-$words['Posiciones']['AR'] = "Posiciones";
-$words['Posiciones']['MX'] = "Posiciones";
-$words['Posiciones']['PR'] = "Tabela";
-$words['Posiciones']['US'] = "Ranking";
+$words['Posiciones']['AR'] = "POSICIONES";
+$words['Posiciones']['MX'] = "POSICIONES";
+$words['Posiciones']['PR'] = "POSIÇÕES";
+$words['Posiciones']['US'] = "RANKING";
 
 $words['Muro']['AR'] = "Muro";
 $words['Muro']['MX'] = "Muro";
-$words['Muro']['PR'] = "Muro";
+$words['Muro']['PR'] = "Postagens";
 $words['Muro']['US'] = "Wall";
 
 $words['Cómo jugar']['AR'] = "Cómo jugar";
@@ -39,12 +39,12 @@ $words['Salir']['US'] = "Log out";
 $words['leave-comment']['AR'] = "Dejá tu comentario...";
 $words['leave-comment']['MX'] = "Deja tu comentario...";
 $words['leave-comment']['PR'] = "Deixe seu comentário...";
-$words['leave-comment']['US'] = "Comment";
+$words['leave-comment']['US'] = "Add a comment...";
 
-$words['first-comment']['AR'] = "Sé el primero en comentar.";
-$words['first-comment']['MX'] = "Sé el primero en comentar.";
-$words['first-comment']['PR'] = "Seja o primeiro a comentar.";
-$words['first-comment']['US'] = "Be the first to comment.";
+$words['first-comment']['AR'] = "Sé el primero en comentar!";
+$words['first-comment']['MX'] = "Sé el primero en comentar!";
+$words['first-comment']['PR'] = "Seja o primeiro a comentar!";
+$words['first-comment']['US'] = "Be the first to comment!";
 
 $words['select-country']['AR'] = "Selecciona el País";
 $words['select-country']['MX'] = "Selecciona el País";
@@ -58,7 +58,7 @@ $words['Guardado']['US'] = "Saved";
 
 $words['editar']['AR'] = "editar";
 $words['editar']['MX'] = "editar";
-$words['editar']['PR'] = "editar";
+$words['editar']['PR'] = "edite";
 $words['editar']['US'] = "edit";
 
 $words['y']['AR'] = "y";
@@ -723,60 +723,10 @@ $words['politica-privacidad']['MX'] = "Aviso de privacidad";
 $words['politica-privacidad']['PR'] = "Política de Privacidade";
 $words['politica-privacidad']['US'] = "Privacy Policy";
 
-$words['qualy-no-refund']['AR'] = "Muro";
-$words['qualy-no-refund']['MX'] = "Muro";
-$words['qualy-no-refund']['PR'] = "Muro";
-$words['qualy-no-refund']['US'] = "Wall";
-
-$words['Muro']['AR'] = "&iexcl;No se pueden modificar los preclasificados! La fecha límite era hasta el $1";
-$words['Muro']['MX'] = "&iexcl;No puedes modificar los preclasificados! La fecha límite era hasta el $1";
-$words['Muro']['PR'] = "&iexcl;No puedes modificar los preclasificados! La fecha límite era hasta el $1";
-$words['Muro']['US'] = "&iexcl;You can't modify prequalyfied teams! Due date was $1";
-
-$words['choose-all-qualys']['AR'] = "Tenés que completar los 16 preclasificados.";
-$words['choose-all-qualys']['MX'] = "Debes completar los 16 preclasificados.";
-$words['choose-all-qualys']['PR'] = "Você deve selecionar os 16 pré-classificados.";
-$words['choose-all-qualys']['US'] = "You must complete the 16 pre-qualyfied teams.";
-
-$words['qualys-no-repeat']['AR'] = "No podés elegir el mismo equipo como 1°er y 2°do clasificado.";
-$words['qualys-no-repeat']['MX'] = "No puedes elegir el mismo equipo como 1°er y 2°do clasificado.";
-$words['qualys-no-repeat']['PR'] = "Você não pode selecionar a mesma equipe como 1o e 2o classificado.";
-$words['qualys-no-repeat']['US'] = "You can't choose the same team as 1st and 2nd pre-qualyfied.";
-
-$words['qualy-success']['AR'] = "Tu pronóstico de preclasificados fue guardado con éxito.";
-$words['qualy-success']['MX'] = "Tu pronóstico de preclasificados fue guardado con éxito.";
-$words['qualy-success']['PR'] = "Os seus palpites de pré-classificados foram guardados com sucesso. Boa sorte!";
-$words['qualy-success']['US'] = "Your pre-qualyfied predictions were saved successfully.";
-
 $words['Equipo']['AR'] = "Equipo";
 $words['Equipo']['MX'] = "Equipo";
 $words['Equipo']['PR'] = "Equipe";
 $words['Equipo']['US'] = "Team";
-
-$words['winners-no-refund']['AR'] = "&iexcl;No se pueden modificar los ganadores! La fecha límite era hasta el $1";
-$words['winners-no-refund']['MX'] = "&iexcl;No se pueden modificar los ganadores! La fecha límite era hasta el $1";
-$words['winners-no-refund']['PR'] = "&iexcl;No se pueden modificar los ganadores! La fecha límite era hasta el $1";
-$words['winners-no-refund']['US'] = "&iexcl;You can't modify the winners! Due date was $1";
-
-$words['winners-all-three']['AR'] = "Tenés que completar los 3 ganadores.";
-$words['winners-all-three']['MX'] = "Debes completar los 3 ganadores.";
-$words['winners-all-three']['PR'] = "Você deve selecionar as 3 seleções ganhadoras.";
-$words['winners-all-three']['US'] = "You must choose all 3 winners.";
-
-$words['winners-diff']['AR'] = "Tenés que elegir a 3 equipos diferentes.";
-$words['winners-diff']['MX'] = "Debes elegir 3 equipos diferentes.";
-$words['winners-diff']['PR'] = "Você deve selecionar 3 seleções diferentes para cada posição.";
-$words['winners-diff']['US'] = "You must select 3 different teams.";
-
-$words['winners-error']['AR'] = "Hubo un error. Por favor volvé a elegir a los equipos.";
-$words['winners-error']['MX'] = "Hubo un error. Por favor vuelve a elegir a los equipos.";
-$words['winners-error']['PR'] = "Hubo un error. Por favor vuelve a elegir a los equipos.";
-$words['winners-error']['US'] = "Error: please select teams again.";
-
-$words['winners-save-ok']['AR'] = "Tu pronóstico de ganadores fue guardado con éxito.";
-$words['winners-save-ok']['MX'] = "Tu pronóstico de ganadores fue guardado con éxito.";
-$words['winners-save-ok']['PR'] = "Seu palpite dos ganhadores do torneio foi salvo com sucesso. Boa sorte!";
-$words['winners-save-ok']['US'] = "Your winners predictions were saved successfully.";
 
 $words['Resultados Adivinados']['AR'] = "Resultados Adivinados";
 $words['Resultados Adivinados']['MX'] = "Resultados Adivinados";
@@ -788,10 +738,10 @@ $words['Resultados Exactos Adivinados']['MX'] = "Resultados Exactos Adivinados";
 $words['Resultados Exactos Adivinados']['PR'] = "Resultados Exatos Certos";
 $words['Resultados Exactos Adivinados']['US'] = "Resultados Exactos Adivinados";
 
-$words['wall-share-happiness']['AR'] = "&iexcl;Compartí la experiencia Fantasy Futbol con tus compañeros!";
-$words['wall-share-happiness']['MX'] = "&iexcl;Comparte la experiencia Fantasy Futbol con tus compañeros!";
-$words['wall-share-happiness']['PR'] = "&iexcl;Compartilhe a experiência Fantasy Futebol com seus colegas!";
-$words['wall-share-happiness']['US'] = "&iexcl;Share the Fantasy Futbol experience with your coleagues!";
+$words['wall-share-happiness']['AR'] = "&iexcl;Compartí la experiencia Prode con tus compañeros!";
+$words['wall-share-happiness']['MX'] = "&iexcl;Comparte la experiencia Prode con tus compañeros!";
+$words['wall-share-happiness']['PR'] = "&iexcl;Compartilhe a experiência Prode com seus colegas!";
+$words['wall-share-happiness']['US'] = "&iexcl;Share the Prode experience with your coleagues!";
 
 $words['share-comment']['AR'] = "&iquest;ganaste el partido pasado? Compartí tu alegría acá.";
 $words['share-comment']['MX'] = "&iquest;Cuantos puntos has sumado? Comparte tu alegría aquí.";
