@@ -35,7 +35,7 @@
     <div class="header">
       <div class="container">
         <div class="row">
-          <div class="col-md-12" style="padding-top:10px; padding-bottom:10px">
+          <div class="col-md-6 col-xs-6 col-sm-6" style="padding-top:10px; padding-bottom:10px">
             <a href="<?=$link_url?>pronosticos">
             	
             	<?
@@ -50,7 +50,7 @@
 				?>
             </a>
           </div>
-          <div class="col-md-7 col-sm-6 col-xs-6 head-title" style="text-align:right">
+          <div class="col-md-6 col-sm-6 col-xs-6 head-title" style="text-align:right">
 			<?
 			if($this->company_model->fantasy_logo)
 			{
@@ -68,17 +68,13 @@
 				}
 			}
 			?>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-md-12">
-            <div class="navbar-header">
-              <button type="button" class="navbar-toggle pull-right" data-toggle="collapse" data-target="#menu-items">
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-              </button>            
-            </div>
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle pull-right" style="margin-top:20px;" data-toggle="collapse" data-target="#menu-items">
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</button>
+			</div>
           </div>
         </div>
       </div>

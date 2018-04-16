@@ -413,8 +413,13 @@ h6 {
   margin-top: 5px;
 }
 
+.teamname.team1 p.visible-xs{
+  text-align:center;
+}
+
 .teamname.team2 p {
   margin-top: 5px;
+  text-align:center;
 }
 
 .match-result {
@@ -624,14 +629,14 @@ h6 {
 .group-team-name-2 {
   font-size: 12px;
   font-weight: normal;
-  text-align: right;
+  text-align: center;
   color: #acacac;
 }
 
 .group-team-name-1 {
   font-size: 12px;
   font-weight: normal;
-  text-align: left;
+  text-align: center;
   color: #acacac;
 }
 
@@ -921,6 +926,7 @@ user-found td:hover {
   .col-finals .finals-table .finals-separator {
     height: 257px;
   }
+
 }
 
 .finals-panel h2 {
