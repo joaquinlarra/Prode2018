@@ -43,6 +43,7 @@ class Home extends Front_init
 	{
 		$this->load->library('simple_captcha');
 		$this->data['section'] = "complete_register";
+		$this->data['register_company']['namespace_disabled'] = $this->session->userdata('namespace');
 		$this->data['register_company']['namespace'] = $this->session->userdata('namespace');
 		$this->load->view("front/register_company.php", $this->data);			
 	}

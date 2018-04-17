@@ -237,8 +237,21 @@
 			$('.register_company_msg_error').hide();
 			if(data.valid)
 			{
-				$('#company-create-form').hide();
-				$('#company-create-message').show(data.message)
+				if (data.error) {
+					$('#register-content').hide();
+					$('#register-header').hide();
+					$('#prode-create-form-error').html(data.message + ' <br><br>Redireccionado al home...');
+					window.setTimeout(function() {
+						window.location.href = data.redirect_url;
+					}, 4000);
+				} else {
+					$('#register-content').hide();
+					$('#register-header').hide();
+					$('#prode-create-form-error').html(data.message + ' <br><br>Redireccionado al home...');
+					window.setTimeout(function() {
+						window.location.href = data.redirect_url;
+					}, 4000);
+				}
 			}
 			else
 			{

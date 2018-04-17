@@ -7,16 +7,6 @@
         </div>
     </div>
 </div>
-
-<div id="section-nav" class="container-fluid">
-	<div class="container">
-    	<div class="row">
-        	<div class="col-md-12" style="color: #fff; padding-top:10px; padding-bottom:10px">
-        	<?= lang('wall-share-happiness')?>
-            </div>
-        </div>
-    </div>
-</div>
 <div class="container main-content">
 	<div class="col-md-12">
 		<div class="panel panel-primary">
