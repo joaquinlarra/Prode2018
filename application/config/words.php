@@ -365,6 +365,12 @@ $words['register-message']['AR'] = "<h3 align='center'>Tu registro se completó 
 $words['register-message']['MX'] = "<h3 align='center'>Tu registro se completó con exito</h3><p align='center'>Por favor ingresá a tu email y clickeá en el link de activación enviado por <b>registro@prode2018.com</b> para confirmar la cuenta</p><br>Mira en tu carpeta de <b>correo no deseado o spam</b><br><br><a href='[[link_url]]pronosticos' class='btn btn-primary btn-block'>Ingresar</a>";
 $words['register-message']['PR'] = "<h3 align='center'>Seu registro foi efetuado com sucesso</h3><p align='center'>Por favor, insira seu e-mail e clique no link de ativação enviado por <b>registro@prode2018.com</b> para confirmar a conta</p><br>Confira sua pasta de <b>spam</b><br><br><a href='[[link_url]]pronosticos' class='btn btn-primary btn-block'>Ingresar</a>";
 $words['register-message']['US'] = "<h3 align='center'>Registration successful</h3><p align='center'>Please check your email account and click on the activation link sent by <b>registro@prode2018.com</b>.</p><br>Check your <b>spam folder</b><br><br><a href='[[link_url]]pronosticos' class='btn btn-primary btn-block'>Log-in</a>";
+
+$words['creation-message']['AR'] = "<h3 align='center'>Tu registro se completó con exito</h3>";
+$words['creation-message']['MX'] = "<h3 align='center'>Tu registro se completó con exito</h3>";
+$words['creation-message']['PR'] = "<h3 align='center'>Seu registro foi efetuado com sucesso</h3>";
+$words['creation-message']['US'] = "<h3 align='center'>Registration successful</h3>";
+
 // enviado
 $words['first-time-message-no-email']['AR'] = "<h3 align='center'>Tu registro se completó con exito</h3><br><a href='[[link_url]]pronosticos' class='btn btn-primary btn-block'>Ingresar</a>";
 $words['first-time-message-no-email']['MX'] = "<h3 align='center'>Tu registro se completó con exito</h3><br><a href='[[link_url]]pronosticos' class='btn btn-primary btn-block'>Ingresar</a>";
@@ -451,6 +457,11 @@ $words['body-registro']['AR'] = "Hola $1,<br><br>Confirmá tu cuenta de Fantasy 
 $words['body-registro']['MX'] = "Hola $1,<br><br>Confirma tu cuenta de Fantasy Futbol haciendo click en el siguiente enlace.<br><br>";
 $words['body-registro']['PR'] = "Oí $1,<br><br>Verifique a sua conta no Fantasy Futbol fazendo clique no seguinte link.<br><br>";
 $words['body-registro']['US'] = "Hi $1,<br><br>Confirm your Fantasy Futbol account by following the link.<br><br>";
+
+$words['body-creation']['AR'] = "Hola $1,<br><br>Ya tenes tu prode creado. Invita a tus amigos utilizando el siguiente enlace.<br><br>";
+$words['body-creation']['MX'] = "Hola $1,<br><br>Ya tenes tu prode creado. Invita a tus amigos utilizando el siguiente enlace.<br><br>";
+$words['body-creation']['PR'] = "Oí $1,<br><br>Você já tem seu prode criado. Convide seus amigos com o seguinte link.<br><br>";
+$words['body-creation']['US'] = "Hi $1,<br><br>You already have your created prode. Invite your friends with the following link.<br><br>";
 
 $words['invalid-captcha']['AR'] = "Captcha inválido.";
 $words['invalid-captcha']['MX'] = "Captcha inválido.";
