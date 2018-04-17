@@ -21,16 +21,18 @@
 </div>
 <div class="container main-content">
 	<div class="row paralax">
-    <h3 class="page-title"><?= lang("complete-bets")?></h3>
+    <div class="col-xs-12">
+		<h3 class="page-title"><?= lang("complete-bets")?></h3>
+	</div>
 	<?
 	if($saved)
 	{
 		?>
 		<div class="col-md-12">
-		<div class="alert alert-success alert-dismissable">
-			<button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
-			<?= $message?>
-		</div>
+			<div class="alert alert-success alert-dismissable">
+				<button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+				<?= $message?>
+			</div>
 		</div>
 		<?	
 	}

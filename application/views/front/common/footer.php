@@ -20,8 +20,9 @@
 	<script src="<?= $link_url?>assets_fe/js/main.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/intro.js/2.7.0/intro.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.sticky/1.0.4/jquery.sticky.min.js"></script>
-    <script src="<?= $link_url?>assets_fe/js/bootstrap.min.js"></script>
-	<script src="<?= $link_url?>assets_fe/js/mdb.js"></script>
+	<!-- Latest compiled and minified JavaScript -->
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+	<!-- <script src="<?= $link_url?>assets_fe/js/mdb.js"></script> -->
     <script src="<?= $link_url?>assets_fe/js/jquery.parallax-1.1.3.js" type="text/javascript"></script>
 	<script>
         //Animation init
@@ -714,7 +715,7 @@
 					$("#input-goals-1-"+match_id).prop('disabled', false).val("");
 					$("#input-goals-2-"+match_id).prop('disabled', false).val("");
 					$("#input-goals-1-"+match_id).focus();
-					$("#middle-col-"+match_id).html("<p class='please-load-match'><?= lang('FALTA CARGAR')?></p>");
+					$("#middle-col-"+match_id).html("<p class='please-load-match'>FALTA CARGAR</p>");
 				}
 				
 				function disable_match(match_id,message)
