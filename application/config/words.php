@@ -201,10 +201,10 @@ $words['Empate']['MX'] = "Empate";
 $words['Empate']['PR'] = "Empate";
 $words['Empate']['US'] = "Draw";
 
-$words['Resultados']['AR'] = "Resultados";
-$words['Resultados']['MX'] = "Resultados";
-$words['Resultados']['PR'] = "Resultados";
-$words['Resultados']['US'] = "Results";
+$words['Resultados']['AR'] = "RESULTADOS";
+$words['Resultados']['MX'] = "RESULTADOS";
+$words['Resultados']['PR'] = "RESULTADOS";
+$words['Resultados']['US'] = "RESULTS";
 
 $words['Faltan estos resultados']['AR'] = "Faltan estos resultados";
 $words['Faltan estos resultados']['MX'] = "Faltan estos resultados";
@@ -365,12 +365,6 @@ $words['register-message']['AR'] = "<h3 align='center'>Tu registro se completó 
 $words['register-message']['MX'] = "<h3 align='center'>Tu registro se completó con exito</h3><p align='center'>Por favor ingresá a tu email y clickeá en el link de activación enviado por <b>registro@prode2018.com</b> para confirmar la cuenta</p><br>Mira en tu carpeta de <b>correo no deseado o spam</b><br><br><a href='[[link_url]]pronosticos' class='btn btn-primary btn-block'>Ingresar</a>";
 $words['register-message']['PR'] = "<h3 align='center'>Seu registro foi efetuado com sucesso</h3><p align='center'>Por favor, insira seu e-mail e clique no link de ativação enviado por <b>registro@prode2018.com</b> para confirmar a conta</p><br>Confira sua pasta de <b>spam</b><br><br><a href='[[link_url]]pronosticos' class='btn btn-primary btn-block'>Ingresar</a>";
 $words['register-message']['US'] = "<h3 align='center'>Registration successful</h3><p align='center'>Please check your email account and click on the activation link sent by <b>registro@prode2018.com</b>.</p><br>Check your <b>spam folder</b><br><br><a href='[[link_url]]pronosticos' class='btn btn-primary btn-block'>Log-in</a>";
-
-$words['creation-message']['AR'] = "<h3 align='center'>Tu registro se completó con exito</h3>";
-$words['creation-message']['MX'] = "<h3 align='center'>Tu registro se completó con exito</h3>";
-$words['creation-message']['PR'] = "<h3 align='center'>Seu registro foi efetuado com sucesso</h3>";
-$words['creation-message']['US'] = "<h3 align='center'>Registration successful</h3>";
-
 // enviado
 $words['first-time-message-no-email']['AR'] = "<h3 align='center'>Tu registro se completó con exito</h3><br><a href='[[link_url]]pronosticos' class='btn btn-primary btn-block'>Ingresar</a>";
 $words['first-time-message-no-email']['MX'] = "<h3 align='center'>Tu registro se completó con exito</h3><br><a href='[[link_url]]pronosticos' class='btn btn-primary btn-block'>Ingresar</a>";
@@ -457,11 +451,6 @@ $words['body-registro']['AR'] = "Hola $1,<br><br>Confirmá tu cuenta de Fantasy 
 $words['body-registro']['MX'] = "Hola $1,<br><br>Confirma tu cuenta de Fantasy Futbol haciendo click en el siguiente enlace.<br><br>";
 $words['body-registro']['PR'] = "Oí $1,<br><br>Verifique a sua conta no Fantasy Futbol fazendo clique no seguinte link.<br><br>";
 $words['body-registro']['US'] = "Hi $1,<br><br>Confirm your Fantasy Futbol account by following the link.<br><br>";
-
-$words['body-creation']['AR'] = "Hola $1,<br><br>Ya tenes tu prode creado. Invita a tus amigos utilizando el siguiente enlace.<br><br>";
-$words['body-creation']['MX'] = "Hola $1,<br><br>Ya tenes tu prode creado. Invita a tus amigos utilizando el siguiente enlace.<br><br>";
-$words['body-creation']['PR'] = "Oí $1,<br><br>Você já tem seu prode criado. Convide seus amigos com o seguinte link.<br><br>";
-$words['body-creation']['US'] = "Hi $1,<br><br>You already have your created prode. Invite your friends with the following link.<br><br>";
 
 $words['invalid-captcha']['AR'] = "Captcha inválido.";
 $words['invalid-captcha']['MX'] = "Captcha inválido.";
@@ -819,10 +808,10 @@ $words['Final']['MX'] = "Final";
 $words['Final']['PR'] = "Final";
 $words['Final']['US'] = "Final";
 
-$words['no confirmado']['AR'] = "no confirmado";
-$words['no confirmado']['MX'] = "no confirmado";
-$words['no confirmado']['PR'] = "no confirmado";
-$words['no confirmado']['US'] = "not confirmed";
+$words['no confirmado']['AR'] = "A DEFINIR";
+$words['no confirmado']['MX'] = "A DEFINIR";
+$words['no confirmado']['PR'] = "A DEFINIR";
+$words['no confirmado']['US'] = "TBD";
 
 $words['penalties-rule']['AR'] = "Para el cálculo del puntaje no serán tenidos en cuenta los penales. El puntaje será determinado en función del resultado final tras 90 minutos o en su caso tras 120 minutos.";
 $words['penalties-rule']['MX'] = "Recuerda ¡NO TOMAR EN CUENTA LOS PENALES!  El puntaje será determinado en función del resultado final de los 90 o 120 minutos disputados.";
@@ -856,7 +845,25 @@ $words['FALTA CARGAR']['US'] = "<- FILL IN ->";
 
 
 
+$words['PJ']['AR'] = "PJ";
+$words['PJ']['MX'] = "PJ";
+$words['PJ']['PR'] = "PJ";
+$words['PJ']['US'] = "MP";
 
+$words['PG']['AR'] = "PG";
+$words['PG']['MX'] = "PG";
+$words['PG']['PR'] = "PG";
+$words['PG']['US'] = "MW";
+
+$words['PE']['AR'] = "PE";
+$words['PE']['MX'] = "PE";
+$words['PE']['PR'] = "PE";
+$words['PE']['US'] = "MT";
+
+$words['PP']['AR'] = "PP";
+$words['PP']['MX'] = "PP";
+$words['PP']['PR'] = "PP";
+$words['PP']['US'] = "ML";
 
 
 

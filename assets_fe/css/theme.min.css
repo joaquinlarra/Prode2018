@@ -2,7 +2,9 @@ header {
   background: #1f446a;
   padding: 12px 0;
 }
-
+.navToggler {
+  display: none;
+}
 header .headerInner {
   display: flex;
   flex-direction: row;
@@ -16,6 +18,11 @@ header .headerInner .logos a {
   align-items: center;
 }
 
+header .headerInner .navs .navToggle {
+  font-size: 25px;
+  color: white;
+  cursor: pointer;
+}
 header .headerInner .navs {
   flex: 1;
   display: flex;
@@ -24,6 +31,10 @@ header .headerInner .navs {
   justify-content: space-between;
 }
 
+header .headerInner .navs .rightNav {
+  display: flex;
+  flex-direction: row;
+}
 header .headerInner .navs .rightNav a {
   margin: 0 5px;
 }
@@ -47,19 +58,42 @@ header .headerInner .navs .rightNav div.dropdown {
 
 /* Small Devices, Tablets */
 @media only screen and (max-width: 768px) {
+  .navToggler {
+    display: inherit;
+  }
+  .matches-stats-tabs .nav-tabs {
+    display: flex;
+  }
   header .headerInner .navs .rightNav {
     position: fixed;
     top: 0;
-    right: 0;
+    right: -100%;
     width: 25%;
     height: 100%;
-    display: none;
+    display: flex;
     flex-direction: column;
     align-items: flex-start;
     justify-content: flex-start;
     background: #1f446a;
     z-index: 9999;
     padding: 15px;
+
+    -webkit-transition: all 0.25s ease-in-out;
+    -moz-transition: all 0.25s ease-in-out;
+    -ms-transition: all 0.25s ease-in-out;
+    -o-transition: all 0.25s ease-in-out;
+    transition: all 0.25s ease-in-out;
+  }
+
+  header .headerInner .navs .rightNav .closeNav {
+    font-size: 25px;
+    color: white;
+    margin-bottom: 20px;
+    display: block;
+  }
+
+  header .headerInner .navs .rightNav.open {
+    right: 0;
   }
 
   header .headerInner .navs .rightNav a {

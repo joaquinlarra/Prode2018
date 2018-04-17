@@ -5,4 +5,9 @@ $(document).ready(function () {
 
     $('#sticker').sticky({ topSpacing: 0, zIndex: 9999 })
   }
+
+  $('.navToggler').click(function () {
+    $('#rightNav').toggleClass('open')
+    console.log('estoy')
+  })
 })

@@ -66,19 +66,8 @@ class Company_model extends Simple_data_model
 			$this->default_user_model->create();
 			$this->set_field("default_user_id",$this->default_user_model->get_id());
 			$this->update();	
-		}	
-	}
-
-	public function get_url()
-	{
-		return 'http://'.$this->company_model->namespace.'.prode2018.com';
-	}
-
-	public function get_register_code()
-	{
-		$date = new DateTime($this->company_model->date_created);
-		$code =  $date->format('ms');
-		return ($code);
+		}
+		
 	}
 
 }

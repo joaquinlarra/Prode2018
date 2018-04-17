@@ -70,11 +70,10 @@ class Front_init extends CI_Controller
 
 		
 		$this->data['fields'] = array(	
-										'namespace_disabled' => array(	'label' => lang('Nombre del Grupo'),
-												'type' => 'text',
-												'validation' => '',
-												'disabled' => true,
-												'visibility' => 'register_company'
+										'namespace' => array(	'label' => lang('Nombre del Grupo'),
+											'type' => 'text',
+											'validation' => 'required|alpha_dash',
+											'visibility' => 'register_company'
 										),
 										
 										'email' => array('label' => lang('Email'),
@@ -115,12 +114,6 @@ class Front_init extends CI_Controller
 										/*				
 										COMPANY FIELDS
 										*/
-										
-										'namespace' => array(	'label' => lang('Nombre del Grupo'),
-											'type' => 'hidden',
-											'validation' => 'required|alpha_dash',
-											'visibility' => 'register_company'
-										),
 										'country'=> array(	'label' => 'País',
 															'type' => 'select',
 															'options' => array(0 => array("value" => "AR", "label" => "Argentina"),
@@ -355,14 +348,21 @@ class Front_init extends CI_Controller
 										echo json_encode($output);
 										return;
 									}
-									$sql = "SELECT * FROM bitauth_users WHERE username = '".addslashes($this->session->userdata('register_email'))."' 
-												AND company_id = '".$this->company_model->get_id()."'";
+									$sql = "SELECT * FROM bitauth_users WHERE username = '".addslashes($this->session->userdata('register_email'))."' AND company_id = '".$this->company_model->get_id()."'";
 									$row = $this->db->query($sql)->row();
 									$this->form_model->get($row->user_id);
 									break;
 				case 'register_company':	
-									/* register company utils */
 									$this->load->model("user_model","form_model");
+									if(!$this->session->userdata('register_email'))
+									{
+										$output['error'] = lang("no-prev-id");
+										echo json_encode($output);
+										return;
+									}
+									$sql = "SELECT * FROM bitauth_users WHERE username = '".addslashes($this->session->userdata('register_email'))."' AND company_id = '".$this->company_model->get_id()."'";
+									$row = $this->db->query($sql)->row();
+									$this->form_model->get($row->user_id);
 									break;
 				case 'edit_profile':
 									$this->load->model("user_model","form_model");
@@ -381,9 +381,7 @@ class Front_init extends CI_Controller
 			if(!isset($output['valid']) || $output['valid'])
 			{
 				
-				if ($page != 'register_company'){
-					$this->form_model->set($this->data['post']);
-				}
+				$this->form_model->set($this->data['post']);
 				/*
 				if(is_array($_FILES))
 				{
@@ -391,7 +389,7 @@ class Front_init extends CI_Controller
 					$this->file_manager->upload($this->file_fields);
 				}
 				*/
-				if($page == 'register_company' || $this->form_model->save())
+				if($this->form_model->save())
 				{
 					$output['valid'] = 1;
 					switch($page)
@@ -457,33 +455,9 @@ class Front_init extends CI_Controller
 											$output['message'] = lang("register-message");
 											break;
 						case 'register_company':
-											$this->company_model->set_field("namespace", $this->input->post('namespace'));
-											$this->company_model->set_field("name", $this->input->post('namespace'));
-											$this->company_model->set_field("active", 1);
-											$this->company_model->save();
-											$this->company_model->get_register_code();
-
-											$this->form_model->set_field("active",1);
-											$this->form_model->set_field("enabled",1);
-											$this->form_model->set_field("username",$this->data['post']['email']);
-
-											$this->form_model->set_field("group_id", 3);
-											$this->form_model->set_field("groups_names", "Jugador");
-											$this->form_model->set_field("company_id", $this->company_model->get_id());
-											$this->form_model->set_field("company",$this->company_model->name);
-											$pass = $this->bitauth->hash_password($this->data['post']['password']);
-											$last_set = $this->bitauth->timestamp();
-											$this->form_model->set_field("password",$pass);
-											$this->form_model->set_field("password_last_set",$last_set);
-											
-											$this->form_model->update();
-											$this->bitauth->logout();
-											$this->bitauth->login($this->form_model->username,$this->data['post']['password']);
-											$this->send_register_email();
-											$this->send_creation_email($this->company_model->get_register_code());
-											$output['redirect_url'] = $this->company_model->get_url();
-											$output['message'] = lang("creation-message");											
-											break;
+									$this->send_creation_email();
+									$output['message'] = lang("creation-message");
+									break;
 					}
 					
 					$this->post_validate_save();
@@ -512,13 +486,15 @@ class Front_init extends CI_Controller
 		
 		$this->email->to($this->form_model->email);
 
-		$this->email->subject(lang("subject-creation"));
+		$this->email->subject(lang("subject-registro"));
 		
-		$company_link = $this->company_model->get_url().'/ingresa?'.$this->company_model->get_register_code();
+		$confirm_link = $this->data['link_url']."crear-cuenta/".$this->get_creation_code($this->form_model->get_id());
 
-		$body= var_lang('body-creation',$this->form_model->fullname)."<a href='".$company_link."'>".$company_link."</a>
+		$body= var_lang('body-registro',$this->form_model->fullname)."<a href='".$confirm_link."'>".$confirm_link."</a>
 				<br><br>".lang('register-login-email')."
-				<br><br>Código para invitar amigos: <b>".$this->company_model->get_register_code()."</b><br>
+				<br><br>Código: <b>".$this->get_confirm_code($this->form_model->get_id())."</b><br>
+				<br><br>".$this->company_model->username_field.": <b>".$this->form_model->username."</b><br>
+				<br><br>".lang('Contraseña').": <b>".$this->data['post']['password']."</b><br><br>
 				Prode ".date('Y')."<br>--";
 		
 		$this->email->message($body);
@@ -559,7 +535,7 @@ class Front_init extends CI_Controller
 	
 	protected function get_creation_code($id)
 	{
-		return substr(base64_encode($id),0,5);
+		return $id."-".substr(base64_encode($id."fantastic 2013 vv ++ ??"),0,10);
 	}
 
 	protected function get_confirm_code($id)

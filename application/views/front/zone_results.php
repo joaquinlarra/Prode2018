@@ -1,26 +1,27 @@
 <? 
-	$zone = "Grupo A";
+	$zone = "";
 ?>
 
 	<div class="row">
-        <div class="col-md-12">
-        <table class="table pull-left team-results-table table-responsive table-condensed full-width">
-          <tr>
-          	<th colspan="5"  class="results-header"><h5><?= $zone?></h5></th>
-          </tr>
+
 	<?
     foreach($matches_zone as $match)
     {
         if($zone != $match['zone'])
         {
+            if($zone != '')
+            {
+                echo '</table></div>'; 
+            }
+            
             $zone = $match['zone'];
-			?>
-            </table>
-            </div>
+            $zone_title = explode(" ",$zone);
+            
+            ?>
             <div class="col-md-12 col-sm-12">
             <table class="table pull-left team-results-table table-responsive table-condensed full-width">
               <tr>
-                <th colspan="5" class="results-header"><h5><?= $zone?></h5></th>
+                <th colspan="5" class="results-header"><h5><?= lang($zone_title[0])." ".$zone_title[1]?></h5></th>
               </tr>
 		<?	
         }
