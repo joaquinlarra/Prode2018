@@ -240,8 +240,7 @@ class Home extends Front_init
 		$phases[] = "initial";
 		if(!$phase)
 		{
-			$phase = $this->session->userdata('starter_used') ? "final" : $phases[0];
-			$this->session->set_userdata('starter_used',true);
+			$phase = "initial";
 		}
 
 		switch($phase)

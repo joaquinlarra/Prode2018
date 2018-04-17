@@ -201,10 +201,10 @@ $words['Empate']['MX'] = "Empate";
 $words['Empate']['PR'] = "Empate";
 $words['Empate']['US'] = "Draw";
 
-$words['Resultados']['AR'] = "Resultados";
-$words['Resultados']['MX'] = "Resultados";
-$words['Resultados']['PR'] = "Resultados";
-$words['Resultados']['US'] = "Results";
+$words['Resultados']['AR'] = "RESULTADOS";
+$words['Resultados']['MX'] = "RESULTADOS";
+$words['Resultados']['PR'] = "RESULTADOS";
+$words['Resultados']['US'] = "RESULTS";
 
 $words['Faltan estos resultados']['AR'] = "Faltan estos resultados";
 $words['Faltan estos resultados']['MX'] = "Faltan estos resultados";
@@ -808,10 +808,10 @@ $words['Final']['MX'] = "Final";
 $words['Final']['PR'] = "Final";
 $words['Final']['US'] = "Final";
 
-$words['no confirmado']['AR'] = "no confirmado";
-$words['no confirmado']['MX'] = "no confirmado";
-$words['no confirmado']['PR'] = "no confirmado";
-$words['no confirmado']['US'] = "not confirmed";
+$words['no confirmado']['AR'] = "A DEFINIR";
+$words['no confirmado']['MX'] = "A DEFINIR";
+$words['no confirmado']['PR'] = "A DEFINIR";
+$words['no confirmado']['US'] = "TBD";
 
 $words['penalties-rule']['AR'] = "Para el cálculo del puntaje no serán tenidos en cuenta los penales. El puntaje será determinado en función del resultado final tras 90 minutos o en su caso tras 120 minutos.";
 $words['penalties-rule']['MX'] = "Recuerda ¡NO TOMAR EN CUENTA LOS PENALES!  El puntaje será determinado en función del resultado final de los 90 o 120 minutos disputados.";
@@ -845,7 +845,25 @@ $words['FALTA CARGAR']['US'] = "<- FILL IN ->";
 
 
 
+$words['PJ']['AR'] = "PJ";
+$words['PJ']['MX'] = "PJ";
+$words['PJ']['PR'] = "PJ";
+$words['PJ']['US'] = "MP";
 
+$words['PG']['AR'] = "PG";
+$words['PG']['MX'] = "PG";
+$words['PG']['PR'] = "PG";
+$words['PG']['US'] = "MW";
+
+$words['PE']['AR'] = "PE";
+$words['PE']['MX'] = "PE";
+$words['PE']['PR'] = "PE";
+$words['PE']['US'] = "MT";
+
+$words['PP']['AR'] = "PP";
+$words['PP']['MX'] = "PP";
+$words['PP']['PR'] = "PP";
+$words['PP']['US'] = "ML";
 
 
 
