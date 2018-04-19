@@ -291,10 +291,10 @@ $words['first-time-login']['MX'] = "Si es la primera vez que ingresas, solo capt
 $words['first-time-login']['PR'] = "Se este é o seu primeiro acesso, insira somente o ";
 $words['first-time-login']['US'] = "First time? Log in without password.";
 
-$words['email-register']['AR'] = "ó registrate con tu email";
-$words['email-register']['MX'] = "ó registrate con tu email";
-$words['email-register']['PR'] = "Ou se registre com seu e-mail";
-$words['email-register']['US'] = "or register with your email";
+$words['email-register']['AR'] = "REGISTRATE CON TU EMAIL";
+$words['email-register']['MX'] = "REGISTRATE CON TU EMAIL";
+$words['email-register']['PR'] = "REGISTRE COM SEU EMAIL";
+$words['email-register']['US'] = "REGISTER WITH YOUR EMAIL";
 
 $words['Guardar sesión']['AR'] = "Guardar sesión";
 $words['Guardar sesión']['MX'] = "Guardar sesión";
