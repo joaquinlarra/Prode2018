@@ -8,11 +8,11 @@
     <meta name="keywords" content="<?=$page_keywords?>">
     <meta name="author" content="">
     <link rel="shortcut icon" href="<?=base_url()?>assets_fe/ico/favicon.png">
-	<META NAME="ROBOTS" CONTENT="NOINDEX, NOFOLLOW">
-    <!-- Latest compiled and minified CSS -->
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-	<link href="<?=$link_url?>assets_fe/css/theme.min.css" rel="stylesheet">
-	<link href="<?=$link_url?>assets_fe/css/fonts.css" rel="stylesheet">
+
+    <link href="<?=$link_url?>assets_fe/css/bootstrap-theme.css" rel="stylesheet">
+    <link href="<?=$link_url?>assets_fe/css/bootstrap.css" rel="stylesheet">
+	<link href="<?=$link_url?>assets_fe/css/mdb.css" rel="stylesheet">
+    <link href="<?=$link_url?>assets_fe/css/fonts.css" rel="stylesheet">
     <link href="<?=$link_url?>assets_fe/css/spinner.css" rel="stylesheet">
     <link href="<?=$link_url?>assets_fe/css/general.css" rel="stylesheet">
     <?
@@ -23,99 +23,147 @@
 		{
 		background: #010D27 url('<?= $this->company_model->bg_image?>') top center repeat-y;
 		}
-        </style><?
+        </style><?	
 	}
-	if($this->company_model->custom_css)
+	if($this->company_model->colors)
 	{
-		echo "<style>".$this->company_model->custom_css."</style>";	
+		echo "<style>".$this->company_model->colors."</style>";	
 	}
 	?>
   </head>
   <body>
-  <header id="sticker">
-	<div class="container">
-		<div class="row">
-			<div class="col-xs-12">
-				<div class="headerInner">
-					<div class="logos">
-						<a href="<?=$link_url?>pronosticos">
-							<?
-							if($this->company_model->main_image)
-							{
-								?><img src="<?=$this->company_model->main_image?>" id="company-logo-header"  class="img-responsive" /><?	
-							}
-							if(!$this->company_model->no_logos)
-							{
-								?><img src="<?=$link_url?>assets_fe/img/logo.png" id="prode-logo-header" /><?
-							}
-							?>
-						</a>
-					</div>
+    <div class="header">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-5 col-sm-6 hidden-xs" style="padding-top:10px; padding-bottom:10px">
+            <a href="<?=$link_url?>pronosticos">
+            	
+            	<?
+                if($this->company_model->main_image)
+				{
+					?><img src="<?=$this->company_model->main_image?>" border="0" /><?	
+				}
+				?>
+            </a>
+          </div>
+          <div class="col-xs-12 visible-xs" align="center" style="padding-bottom:10px">
+            <a href="<?=$link_url?>pronosticos">
+            	
+            	<?
+                if($this->company_model->main_image)
+				{
+					?><img src="<?=$this->company_model->main_image?>" border="0" /><?	
+				}
+				?>
+            </a>
+          </div>
+          <div class="col-md-7 col-sm-6 head-title hidden-xs" style="text-align:right">
+			<?
+			if($this->company_model->fantasy_logo)
+			{
+				?>
+				<a href="<?= $this->company_model->fantasy_logo_url ? $this->company_model->fantasy_logo_url : $link_url?>" target="_blank">
+					<img src="<?=$this->company_model->fantasy_logo?>" border="0" style="margin:10px 0px 5px 0px; width:100%; max-width:400px"/>
+				</a>
+				<?
+			}
+			else
+			{
+				if($this->company_model->no_logos)
+				{
+					?><div style="height:25px"></div><?
+				}
+			}
+			?>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-12">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle pull-right" data-toggle="collapse" data-target="#menu-items">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>            
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="main-menu">
+    	<div class="container">
+            <div class="collapse navbar-collapse" id="menu-items">
+                <ul class="nav navbar-nav main-navbar navbar-left">
+                    <li><a <? if($section=='bet'){?>class="active"<? } ?> href="<?=$link_url?>pronosticos"><?= lang('Pronósticos')?></a></li>
+                    <li><a <? if($section=='scores'){?>class="active"<? } ?> href="<?=$link_url?>posiciones"><?= lang('Posiciones')?></a></li>
+                 	<?
+                    if($this->company_model->wall)
+					{
+					?>
+                    	<li><a  <? if($section=='wall'){?>class="active"<? } ?>href="<?=$link_url?>muro"><?= lang('Muro')?></a></li>
+                	<?
+					}
 					
-					<div class="navs">
-						<div class="leftNav">
-							<div class="btn-group" role="group">
-								<a href="<?=$link_url?>pronosticos" class="btn btn-primary <?= $section == 'bet' ? 'active' : '' ?>">
-									<?= strtoupper(lang('Pronosticos'))?>
-								</a>
-								<a href="<?=$link_url?>posiciones" class="btn btn-primary <?= $section == 'scores' ? 'active' : '' ?>">
-									<?= strtoupper(lang('Posiciones'))?>
-								</a>
-								<?
-									if($this->company_model->wall){
-										?>
-											<a href="<?=$link_url?>muro" class="btn btn-primary <?= $section == 'wall' ? 'active' : '' ?>">
-												<?= strtoupper(lang('Muro'))?>
-											</a>
-										<?
-									}
+					if($this->company_model->friends_league)
+					{
+						?>
+						<li class="dropdown">
+                        <a class="dropdown-toggle <?= $section == "friends_league" ? "active" : ""?>" href="#" data-toggle="dropdown" ><?= lang("Liga de amigos")?><?= $friends_league_notifications['total'] ? " <span class='badge'>".$friends_league_notifications['total']."</span>" : ""?><strong class="caret"></strong></a>
+                        <ul class="dropdown-menu" role="menu">
+                        <li><a href="<?= $link_url?>crear-liga-de-amigos" class="sum-league"><b><?= strtoupper(lang("CREAR LIGA"))?></b></a></li>
+                        <li><a href="<?= $link_url?>unirse-liga-de-amigos" class="sum-league"><b><?= lang("UNIRSE A UNA LIGA")?></b></a></li>
+						<?
+						if(is_array($friends_league))
+						{
+							foreach($friends_league as $league)
+							{
 								?>
-							</div>
-						</div>
-
-						<span class="glyphicon glyphicon-align-justify navToggle navToggler"></span>
-
-						<div class="rightNav" id="rightNav">
-							<span class="glyphicon glyphicon-menu-right closeNav navToggler"></span>
-							<a <? if($user_first_login){ echo 'data-intro="Clickea en <i>Como jugar</i> antes de emepzar!"'; } ?> class="btn btn-info <?= $section == 'how-to' ? 'active' : '' ?>" href="<?=$link_url?>como-jugar">
-								<?= strtoupper(lang('Cómo jugar'))?>
-							</a>
-
-							<div class="dropdown">
-								<button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-									<?= strtoupper($shortname)?>
-									<span class="glyphicon glyphicon-user">
-									<span class="caret"></span>
-								</button>
-								<ul class="dropdown-menu" role="menu">
-									<li <? if($section=='usuario'){?>class="active"<? } ?>><a href="<?=$link_url?>mi-cuenta"><?= lang('Mi cuenta')?></a></li>
-									<li><a href="<?=$link_url?>log-out"><?= lang('Salir')?></a></li>
-								</ul>
-							</div>
-
-							<div class="dropdown">
-								<?
-								if($this->company_model->multi_lang){
-									$lang = $this->bitauth->user_language == "AR"? "ES" : ($this->bitauth->user_language == "US" ? "EN" :$this->bitauth->user_language);   
-								?>
-									<button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-										<?= strtoupper($lang)?>
-										<!-- <span class="glyphicon glyphicon-user"> -->
-										<span class="caret"></span>
-									</button>
-									<ul class="dropdown-menu" role="menu">
-										<li><a href="<?= $link_url?>cambiar-idioma/AR">ESPAÑOL (ES)</a></li>
-											<li><a href="<?= $link_url?>cambiar-idioma/PR">PORTUGUES (PR)</a></li>
-											<li><a href="<?= $link_url?>cambiar-idioma/US">ENGLISH (EN)</a></li>
-									</ul>	
+								<li><a href="<?= $link_url?>liga-de-amigos/<?= urlencode($league['league_id'])?>/<?= urlencode($league['league'])?>"><?= $league['league']?> <?= $friends_league_notifications[$league['league_id']] ? " <span class='badge pull-right'>".$friends_league_notifications[$league['league_id']]."</span>" : ""?></a></li>
 								<?	
-								}
-								?>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-  </header>
+							}
+						}
+						?>
+                    </ul>
+                </li>
+						<?	
+					}
+					?>
+                </ul>
+                <ul class="nav navbar-nav main-navbar navbar-right">   
+                    <li class="min-link"><a <? if($section=='how-to'){?>class="active"<? } ?> href="<?=$link_url?>como-jugar"><?= lang('Cómo jugar')?></a></li>
+                    <?
+                    if($this->company_model->badges)
+					{
+					?>
+                    	<li class="min-link"><a  <? if($section=='badges'){?>class="active"<? } ?>href="<?=$link_url?>badges"><?= lang('Badges')?></a></li>
+					<?
+					}
+					?>
+                    <li class="dropdown">
+                        <a class="dropdown-toggle" href="#" data-toggle="dropdown"><?= $shortname?> <span class="glyphicon glyphicon-user"></span><strong class="caret"></strong></a>
+                        <ul class="dropdown-menu" role="menu">
+                            <li <? if($section=='usuario'){?>class="active"<? } ?>><a href="<?=$link_url?>mi-cuenta"><?= lang('Mi cuenta')?></a></li>
+                    		<li><a href="<?=$link_url?>log-out"><?= lang('Salir')?></a></li>
+                        </ul>
+                  	</li> 
+                   	<?
+					if($this->company_model->multi_lang)
+					{
+					?>
+						<li class="dropdown">
+                        <a class="dropdown-toggle" href="#" data-toggle="dropdown"><small><?= $this->bitauth->user_language ? $this->bitauth->user_language : $this->company_model->country?></small><strong class="caret"></strong></a>
+                        <ul class="dropdown-menu" role="menu">
+                           <li><a href="<?= $link_url?>cambiar-idioma/AR">ARGENTINO (AR)</a></li>
+                            <li><a href="<?= $link_url?>cambiar-idioma/MX">MEXICANO (MX)</a></li>
+                            <li><a href="<?= $link_url?>cambiar-idioma/PR">PORTUGUES (PR)</a></li>
+                            <li><a href="<?= $link_url?>cambiar-idioma/US">ENGLISH (US)</a></li>
+                        </ul>
+                  	</li> 
+                        
+					<?	
+					}
+					?>  
+                </ul>
+            </div>
+        </div>
+    </div>

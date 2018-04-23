@@ -2,55 +2,27 @@
 <div class="container index-page">
     <div class="row">
         <div class="col-md-12 col-index-header">
-            
-            <?
-                if($this->company_model->main_image)
-				{
-					?><img src="<?=$this->company_model->main_image?>" border="0" style="max-height:150px" /><?	
-				}
-				?>
-            <h1>Prode <?= $this->company_model->name?></h1>
-            
-            <!--
+            <h1>ARMÁ TU PRODE PARA ESTE MUNDIAL</h1>
+            <br>
             <a href="<?=base_url().'comprar'?>" class="btn btn-green">Comprar cuenta</a>
-            -->
-            <!--
-            <div class="panel panel-primary">
-            <div class="panel-heading" align="center">Crea tu PRODE para vos y tu grupo</div>
-            <div class="panel-body">   	
-                
-                <div class="row">
-                <div class="alert alert-danger" id="company-error" style="display:none"></div>
-                </div>    
-                    <form method="POST" id="company-availability" class="form-signin ajax_form" action="<?=$link_url.'check-company-availability'?>" accept-charset="UTF-8">
-                        
-                            <div class="col-xs-6 col-sm-5 col-md-5 col-lg-5">
-                                
-                                <input type="text" id="namespace" class="form-control" name="namespace">
-                                
-                            </div>
-                            <div class="col-xs-6 col-sm-4 col-md-4 col-lg-4">
-                                <p style="font-size:19px; color:#111111;text-align:left">.prode2018.com</p>
-                            </div>
-                            <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3">
-                            <button type="submit" name="submit" class="btn btn-green btn-block"><?= lang("CREAR")?>
-                            </div>
-                        
-                    </form>
-                    </div>
-                </div>
-            </div>
-            </div>
             <br><br><br>
             <h2>HACE EL MEJOR PRONOSTICO Y DIVERTITE CON TUS AMIGOS</h2>
             <br>
-            -->
         </div>
     </div>
     <div class="row">
 		<div class="<?= $this->company_model->register ? "col-md-offset-2 col-md-8" : "col-md-offset-3 col-md-6 col-sm-offset-2 col-sm-8"?>">
              <div class="panel panel-primary">
-                
+                <div class="panel-heading" align="center">
+                <?
+                if($this->company_model->main_image)
+				{
+					?><img src="<?=$this->company_model->main_image?>" border="0" /><?	
+				}else{
+                    ?>INGRESÁ SI YA TENES CUENTA<?
+                }
+				?>
+                </div>
                 <div class="panel-body">   	
                     <div class="row">
                     	<div class="col-md-12">
@@ -79,9 +51,7 @@
 						else
 						{
 						 ?>
-                         <label><?= lang("INGRESÁ SI YA TENES CUENTA")?></label>
                             <form method="POST" id="login-form" class="form-signin ajax_form" action="<?=$link_url.'front_user/login'?>" accept-charset="UTF-8">
-                                
                                 <div class="form-group" style="margin-bottom:15px; text-align:left">
                                 <label for="username"><?= $this->company_model->username_field ? $this->company_model->username_field : "usuario"?></label><br><input type="text" id="username" class="form-control" name="username">
                                 </div>
@@ -134,7 +104,7 @@
                                     <?
 									}
 									?>
-                                    <button type="submit" name="submit" class="btn btn-green btn-block"><?= lang("Registrarse")?></button>
+                                    <button type="submit" name="submit" class="btn btn-green btn-block"><?= lang("Ingresar")?></button>
                                 </form>
                             </div>
                 		<?

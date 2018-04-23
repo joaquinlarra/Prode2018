@@ -25,6 +25,8 @@ class Company_model extends Simple_data_model
 								'users_activated',
 								'no_logos',
 								'description',
+								'points_match',
+								'points_exact_match',
 								'qualys',
 								'qualys_team_points',
 								'qualys_close_date',
@@ -36,9 +38,7 @@ class Company_model extends Simple_data_model
 								'patriot_seller',
 								'super_patriot',
 								'wall',
-								'custom_css',
-								'email_owners',
-								'contact_email',
+								'colors',
 								'dept_league',
 								'friends_league',
 								'branch_league',
@@ -66,19 +66,8 @@ class Company_model extends Simple_data_model
 			$this->default_user_model->create();
 			$this->set_field("default_user_id",$this->default_user_model->get_id());
 			$this->update();	
-		}	
-	}
-
-	public function get_url()
-	{
-		return 'http://'.$this->company_model->namespace.'.prode2018.com';
-	}
-
-	public function get_register_code()
-	{
-		$date = new DateTime($this->company_model->date_created);
-		$code =  $date->format('ms');
-		return ($code);
+		}
+		
 	}
 
 }

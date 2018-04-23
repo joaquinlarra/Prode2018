@@ -26,12 +26,14 @@
                     	<th><?= lang("Puesto")?></th>
                         <?
 						echo $players[0]['username'] ? "<th>".lang("Nombre")."</th>" : "";
+						echo $players[0]['department'] ? "<th>".lang("Departamento")."</th>" : "";
+						echo $this->company_model->branch_league ? "<th>".$this->company_model->branch_name."</th>" : "";
 						?>
                         <th style="text-align:right"><?= lang("Puntos")?></th><th title="<?= lang("Resultados Adivinados")?>" style="text-align:right">R<br><span class='glyphicon glyphicon-info-sign'></span></th><th  style="text-align:right" title="<?= lang("Resultados Exactos Adivinados")?>">RE<br><span class='glyphicon glyphicon-info-sign'></span></th>
                         <?
 						echo $this->company_model->qualys ? " <th  style='text-align:right' title='".lang("Pre Clasificados")."'>".lang("pre-qualy-label")."<br><span class='glyphicon glyphicon-info-sign'></span></th>" : "";
 						echo $this->company_model->winners ? " <th style='text-align:right' title='".lang("Ganadores del torneo")."'>".lang("winners-label")."<br><span class='glyphicon glyphicon-info-sign'></span></th>" : "";
-                        //echo $this->company_model->badges ? " <th>".lang("Badges")."</th>" : "";
+                        echo $this->company_model->badges ? " <th>".lang("Badges")."</th>" : "";
 						?>
                        
                     </tr>
@@ -53,6 +55,7 @@
                             	<td class="scores-position"><?= $i ?>°</td>
                                 <?
                                 echo $player['username'] ? "<td>".$player['username']."</td>" : "";
+								echo $player['department'] ? "<td>".$player['department']."</td>" : "";
 								echo $this->company_model->branch_league ? "<td>".$player['branch']."</td>" : "";
 								?>
                                 <td align="right"><b style="font-size:17px"><?= (int)$player['points']?></b></td>
@@ -67,14 +70,12 @@
 								{
 									?><td align="right"><?= (int)$player['winner_points']?></td><?	
 								}
-								/*
                                 if($this->company_model->badges)
 								{
 								?>
                                     <td>
                                     <?
-									
-									if(is_array($badges))
+                                    if(is_array($badges))
                                     {
                                         $show_badge = array();
                                         foreach($badges as $badge)
@@ -100,11 +101,10 @@
 											}
 										}
 										?><span class="badge pull-right"><?= $player['badges_points'] > 0 ? "+".$player['badges_points'] : $player['badges_points'] ?></span><?
-									}
-									?>
+									}?>
                                     </td>
 								<?	
-								}*/
+								}
 								?>
                                 
                             </tr>

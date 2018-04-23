@@ -6,7 +6,7 @@
 <div id="section-header" class="container-fluid">
 	<div class="container">
     	<div class="row">
-        	<div class="col-md-12"><h1 class="pull-left"><?= lang("Pronosticos")?></h1><div class="pull-right hidden-xs" style="margin-top:10px"><img src="<?= base_url()?>assets_fe/img/<?= lang("recorda")?>.png"></div></div>
+        	<div class="col-md-12"><h1 class="pull-left"><?= lang("Pronósticos")?></h1><div class="pull-right hidden-xs" style="margin-top:10px"><img src="<?= base_url()?>assets_fe/img/<?= lang("recorda")?>.png"></div></div>
         </div>
     </div>
 </div>
@@ -21,18 +21,16 @@
 </div>
 <div class="container main-content">
 	<div class="row paralax">
-    <div class="col-xs-12">
-		<h3 class="page-title"><?= lang("complete-bets")?></h3>
-	</div>
+    <h3 class="page-title"><?= lang("complete-bets")?></h3>
 	<?
 	if($saved)
 	{
 		?>
 		<div class="col-md-12">
-			<div class="alert alert-success alert-dismissable">
-				<button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
-				<?= $message?>
-			</div>
+		<div class="alert alert-success alert-dismissable">
+			<button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+			<?= $message?>
+		</div>
 		</div>
 		<?	
 	}
@@ -52,25 +50,12 @@
 			$match_completed = true;
 		}
 		$no_complete = 0;
-		$no_complete = minDiff($match['date_played'],$today) < 0 ? true : false;
+		$no_complete = minDiff($match['date_played'],$today) < 30 ? true : false;
 		$match_ended = false;
 		if(($match['result'] != -2) && $no_complete)
 		{
 			$match_ended = true;
 			$match_asserted = $matches_completed[$match['match_id']]['result'] == $match['result'] ? true: false;
-		}
-		else
-		{
-			switch($matches_completed[$match['match_id']]['result'])
-			{
-				case -1: $matches_completed[$match['match_id']]['bet_message'] = lang('Gana')." <b>".$match['team1_name']."</b>";
-						break;
-				case 0: $matches_completed[$match['match_id']]['bet_message'] = "<b>".lang('Empate')."</b>";
-						break;
-				case 1: $matches_completed[$match['match_id']]['bet_message'] = lang('Gana')." <b>".$match['team2_name']."</b>";
-						break;
-				
-			}
 		}
 		
 		$bets = explode("|",$match['bet']);
@@ -110,11 +95,8 @@
 			?>
 			
             <tr>
-			<tr class="table-division">
-			<td colspan="<?= $colspan?>"></td>
-		</tr>
-			<th colspan="<?= $colspan?>" class="hidden-xs"><h4><?= $date?></h4></th>
-            <th colspan="6" class="visible-xs" style="text-align:center"><h4><?= $date?></h4></th>
+			<th colspan="<?= $colspan?>" class="hidden-xs"><?= $date?></th>
+            <th colspan="6" class="visible-xs" style="text-align:center"><?= $date?></th>
 			</tr>
 		<?	
         }
@@ -130,20 +112,17 @@
         <tr id="matchrow-<?= $match['match_id']?>" match-code="<?= $match_code?>" class="matchrow" zone="<?= $zone?>" matchname="<?= $match['team1_abbr_name']?> vs <?= $match['team2_abbr_name']?>">
             <td class="zone-info hidden-xs">
             	<?= strtoupper($match['zone'])?>
-				<div class="date-info">
-				<b><?= $this->session->userdata('lang') == 'MX' ? (int)(dateFormat($match['date_played'],"G")-2):dateFormat($match['date_played'],"G")?>:<?= dateFormat($match['date_played'],"i")?>hs</b>
-				<br><i><?= $match['location']?></i>
-				</div>
-			</td>
+            </td>
+            <td class="date-info hidden-xs">
+            	<?= $this->session->userdata('lang') == 'MX' ? (int)(dateFormat($match['date_played'],"G")-2):dateFormat($match['date_played'],"G")?>:<?= dateFormat($match['date_played'],"i")?>hs
+            </td>
             <td class="input-match matchrow-1-<?= $match['match_id']?> <?= $class_col_1?>">
-           		<input <?= $no_complete || $match_completed ? "disabled='disabled'" : ""?> type="number" min="0" max="20" maxlength="1" id="input-goals-1-<?= $match['match_id']?>" match_id="<?= $match['match_id']?>" class="form-control input-goals" value="<?= isset($matches_completed[$match['match_id']]['team1_goals']) ? $matches_completed[$match['match_id']]['team1_goals'] : ""?>" name="match[<?= $match['match_id']?>][team1]">
+           		<input <?= $no_complete || $match_completed ? "disabled='disabled'" : ""?> type="text" maxlength="1" id="input-goals-1-<?= $match['match_id']?>" match_id="<?= $match['match_id']?>" class="form-control input-goals" value="<?= isset($matches_completed[$match['match_id']]['team1_goals']) ? $matches_completed[$match['match_id']]['team1_goals'] : ""?>" name="match[<?= $match['match_id']?>][team1]">
             </td>
             <td class="teamname team1 matchrow-1-<?= $match['match_id']?> <?= $class_col_1?>" title="<?= $match['team1_name']?>">
-                <p class="hidden-xs"><img  id="match-img-<?= $match['match_id']?>-1" src="<?= $match['team1_flag']?>" title="<?= $match['team1_name']?>" class="img-rounded team1-flag"><?= $match['team1_abbr_name']?>
-				</p>
-                <p class="visible-xs"><img id="match-img-<?= $match['match_id']?>-1" src="<?= $match['team1_flag']?>" title="<?= $match['team1_name']?>" class="img-rounded team1-flag" style="height:35px"><?= $match['team1_abbr_name']?></p>
-				<div class="group-team-name-1" id="match-name-<?= $match['match_id']?>-1"><?= $match['team1_name']?></div>
-			</td>
+                <p class="hidden-xs"><img src="<?= $match['team1_flag']?>" title="<?= $match['team1_name']?>" class="img-rounded team1-flag"><?= $match['team1_abbr_name']?></p>
+                <small class="visible-xs"><img src="<?= $match['team1_flag']?>" title="<?= $match['team1_name']?>" class="img-rounded team1-flag" style="width:28px"><br><?= $match['team1_abbr_name']?></small>
+            </td>
             <td class="middle-col" id="middle-col-<?= $match['match_id']?>">
             	
             	<?
@@ -155,30 +134,23 @@
 				{
 					if($match_completed && !$no_complete)
 					{
-						?><span><?= $matches_completed[$match['match_id']]['bet_message']?></span><br><span class="btn btn-success btn-edit-match" match_id="<?= $match['match_id']?>"><?= lang("editar")?></span><?	
+						?><small><?= lang("Guardado")?></small><br><span class="btn btn-success btn-edit-match" match_id="<?= $match['match_id']?>"><?= lang("editar")?></span><?	
 					}
 					else
 					{
-						?><p class="please-load-match"><?= lang('FALTA CARGAR')?></p><?	
+						?>-<?	
 					}
 				}
 				?>
             </td>
             <td class="teamname team2 matchrow-2-<?= $match['match_id']?> <?= $class_col_2?>"  title="<?= $match['team2_name']?>">
-                <p class="hidden-xs hidden-sm">
-				<?= $match['team2_abbr_name']?><img  id="match-img-<?= $match['match_id']?>-2" src="<?= $match['team2_flag']?>" title="<?= $match['team2_name']?>" class="img-rounded team1-flag">
-				</p>
-				<p class="visible-sm">
-				<img  id="match-img-<?= $match['match_id']?>-2" src="<?= $match['team2_flag']?>" title="<?= $match['team2_name']?>" class="img-rounded team1-flag"><?= $match['team2_abbr_name']?>
-				</p>
-                <p class="visible-xs"><?= $match['team2_abbr_name']?><img src="<?= $match['team2_flag']?>"  id="match-img-<?= $match['match_id']?>-2" class="img-rounded team1-flag" title="<?= $match['team2_name']?>" style="width:28px"></p>
-				<div class="group-team-name-2" id="match-name-<?= $match['match_id']?>-2"><?= $match['team2_name']?></div>
-			</td>
+                <p class="hidden-xs"><?= $match['team2_abbr_name']?><img src="<?= $match['team2_flag']?>" title="<?= $match['team2_name']?>" class="img-rounded team1-flag"></p>
+                <small class="visible-xs"><img src="<?= $match['team2_flag']?>" class="img-rounded team1-flag" title="<?= $match['team2_name']?>" style="width:28px"><br><?= $match['team2_abbr_name']?></small>
+            </td>
             <td class="input-match matchrow-2-<?= $match['match_id']?> <?= $class_col_2?>">
-                <input <?= $no_complete || $match_completed ? "disabled='disabled'" : ""?> type="number" min="0" max="20" maxlength="1" id="input-goals-2-<?= $match['match_id']?>" match_id="<?= $match['match_id']?>" class="form-control input-goals" value="<?= isset($matches_completed[$match['match_id']]['team2_goals']) ? $matches_completed[$match['match_id']]['team2_goals'] : ""?>" name="match[<?= $match['match_id']?>][team2]">
+                <input <?= $no_complete || $match_completed ? "disabled='disabled'" : ""?> type="text" maxlength="1" id="input-goals-2-<?= $match['match_id']?>" match_id="<?= $match['match_id']?>" class="form-control input-goals" value="<?= isset($matches_completed[$match['match_id']]['team2_goals']) ? $matches_completed[$match['match_id']]['team2_goals'] : ""?>" name="match[<?= $match['match_id']?>][team2]">
             </td>
         </tr>
-		<!--
         <tr class="stats-info" style="background:none">
         	<td colspan="2" class="hidden-xs"></td>
            	<?
@@ -208,19 +180,18 @@
 			}
 			else
 			{
-				//NO BETS
-				/*
 				?>
 				<td colspan="2" class="bet-col" title="<?= lang("Gana")?> <?= $match['team1_name']?>"><?= $bets[0] ? "%".$bets[0]: "-"?></td>
                 <td class="bet-col" title="<?= lang("Empate")?>"><?= $bets[1] ? "%".$bets[1]: "-"?></td>
                 <td colspan="2" class="bet-col" title="<?= lang("Gana")?> <?= $match['team2_name']?>"><?= $bets[2] ? "%".$bets[2]: "-"?></td>
-				<?
-				*/				
+				<?				
 			}
 			?>
             
         </tr>
-		-->
+        <tr class="table-division">
+			<td colspan="<?= $colspan?>"></td>
+		</tr>
         <?
 		}
 		?>
@@ -237,7 +208,37 @@
             </div>
 			
         </div>
-        </form>        
+        <?
+        if($section == "bet_completed")
+		{
+			?><div class="clearfix"></div>
+            <a href="<?= $link_url?>pronosticos" class="btn btn-primary btn-lg btn-block"><?= lang("editar")?></a><?	
+		}
+		else
+		{
+			?>
+            <div class="clearfix"></div>
+            <button type="button" class="btn btn-primary btn-lg btn-block" id="submit-btn"><?= lang("Guardar")?></button><?
+		}
+		?>
+        </form>
+        <div class="modal fade" id="missing-matches-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                    <h4 class="modal-title" id="myModalLabel">&iexcl;<?= lang("Faltan estos resultados")?>!</h4>
+                  </div>
+                  <div class="modal-body" id="missing-matches"></div>
+				<div class="alert alert-info"><?= lang("30-min-prog")?></div>	
+
+                  <div class="modal-footer">
+                  	<button type="button" class="btn btn-primary" data-dismiss="modal" id="complete-later">Ok</button>
+                    <button type="button" class="btn btn-default "  data-dismiss="modal"><?= lang("Completar ahora")?></button>
+                  </div>
+                </div><!-- /.modal-content -->
+            </div><!-- /.modal-dialog -->
+        </div><!-- /.modal -->        
     </div>
 </div>
 <? include(dirname(__FILE__)."/common/footer.php")?>

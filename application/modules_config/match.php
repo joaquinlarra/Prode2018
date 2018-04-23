@@ -10,13 +10,12 @@ $config['modules'][$module_name] = array(
 										 );
 
 $config['modules'][$module_name]['fields'] = array(
-										/*
 										'bet' => array( 'label' => 'Apuestas',
 													'type' => 'text',
 													'description' => "paga equipo1|empate|paga equipo 2 (ej: 4/3|2|5/3)",
 													'visibility' => 'details|list|save',
 													),
-										*/
+										
 										'tournament_id' => array( 'label' => 'Torneo',
 													'type' => 'select',
 													'validation' => 'required',

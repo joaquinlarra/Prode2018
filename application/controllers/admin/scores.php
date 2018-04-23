@@ -10,8 +10,7 @@ class Scores extends ADMIN_Controller
 		}	
 		
 	}
-
-	/*
+	
 	public function update_qualys()
 	{
 		$qualy_teams = array(	"13","38", //a
@@ -41,7 +40,7 @@ class Scores extends ADMIN_Controller
 		vd("Scores actualizado");
 		
 	}
-	
+
 	public function update_winners()
 	{
 		$sql = "UPDATE prognostics_winners SET result = 0";
@@ -72,8 +71,7 @@ class Scores extends ADMIN_Controller
 		vd("finalizado");
 		
 	}
-	*/
-	
+		
 	public function set_score_table()
 	{
 		$sql = "INSERT IGNORE INTO scores (user_id, username, company, company_id, department,department_id, branch, branch_id)
@@ -81,7 +79,12 @@ class Scores extends ADMIN_Controller
 		$this->db->query($sql);
 		vd("Tabla de puntajes seteada.");
 	}
-
+	
+	public function calculate_badges()
+	{
+		$this->load->model("admin/user_badges_model","user_badges_model");
+		$this->user_badges_model->calculate_badges();	
+	}
 
 	public function update_scores()
 	{
@@ -109,6 +112,8 @@ class Scores extends ADMIN_Controller
 			
 			$this->prepare_match();
 			
+			//$this->user_badges_model->calculate_badges();	
+			
 			$sql = "UPDATE scores_update SET state = 'badges' WHERE match_id = '".$this->match_model->get_id()."'";
 			$this->db->query($sql);
 					
@@ -120,7 +125,7 @@ class Scores extends ADMIN_Controller
 		
 			vd("Generando puntos");
 			
-			$sql = "UPDATE scores SET points = results*3 + exact_results*5 + qualy_points + winner_points ";
+			$sql = "UPDATE scores SET points = results*3 + exact_results*5 + badges_points + qualy_points + winner_points ";
 			$this->db->query($sql);
 			vd("<span style='color:green'>Generación de puntos OK. Comenzando cierre...</span>");
 			$this->close_scores();

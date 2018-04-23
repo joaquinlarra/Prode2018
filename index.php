@@ -20,9 +20,6 @@ header('Content-Type: text/html; charset=utf-8');
  * NOTE: If you change these, also change the error_reporting() code below
  *
  */
-error_reporting(E_ALL ^ E_NOTICE);
-ini_set('display_errors', 1);
-
 	define('ENVIRONMENT', 'development');
 /*
  *---------------------------------------------------------------

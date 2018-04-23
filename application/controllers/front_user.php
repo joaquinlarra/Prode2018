@@ -12,7 +12,7 @@ class Front_user extends Front_init
 		$this->redirect_login();
 		$out['valid'] = false;
 		$this->load->model("admin/match_model","match_model");
-		if(!(int)$match_id || !$this->match_model->get((int)$match_id) || (minDiff($this->match_model->date_played,$this->data['today']) < 0) || $this->match_model->no_complete() || ($match_code != get_match_code($this->match_model->get_id(), $this->match_model->no_complete())))
+		if(!(int)$match_id || !$this->match_model->get((int)$match_id) || (minDiff($this->match_model->date_played,$this->data['today']) < 30) || $this->match_model->no_complete() || ($match_code != get_match_code($this->match_model->get_id(), $this->match_model->no_complete())))
 		{
 			echo json_encode($out);
 			return;	
