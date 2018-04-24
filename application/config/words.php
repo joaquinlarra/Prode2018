@@ -361,10 +361,10 @@ $words['Liga General']['MX'] = "Liga General";
 $words['Liga General']['PR'] = "Tabela Geral";
 $words['Liga General']['US'] = "General League";
 
-$words['register-message']['AR'] = "<h3 align='center'>Tu registro se completó con exito</h3><p align='center'>Por favor ingresá a tu email y clickeá en el link de activación enviado por <b>registro@prode2018.com</b> para confirmar la cuenta</p><br>Chequeá tu carpeta de <b>correo no deseado o spam</b><br><br><a href='[[link_url]]pronosticos' class='btn btn-primary btn-block'>Ingresar</a>";
-$words['register-message']['MX'] = "<h3 align='center'>Tu registro se completó con exito</h3><p align='center'>Por favor ingresá a tu email y clickeá en el link de activación enviado por <b>registro@prode2018.com</b> para confirmar la cuenta</p><br>Mira en tu carpeta de <b>correo no deseado o spam</b><br><br><a href='[[link_url]]pronosticos' class='btn btn-primary btn-block'>Ingresar</a>";
-$words['register-message']['PR'] = "<h3 align='center'>Seu registro foi efetuado com sucesso</h3><p align='center'>Por favor, insira seu e-mail e clique no link de ativação enviado por <b>registro@prode2018.com</b> para confirmar a conta</p><br>Confira sua pasta de <b>spam</b><br><br><a href='[[link_url]]pronosticos' class='btn btn-primary btn-block'>Ingresar</a>";
-$words['register-message']['US'] = "<h3 align='center'>Registration successful</h3><p align='center'>Please check your email account and click on the activation link sent by <b>registro@prode2018.com</b>.</p><br>Check your <b>spam folder</b><br><br><a href='[[link_url]]pronosticos' class='btn btn-primary btn-block'>Log-in</a>";
+$words['register-message']['AR'] = "<h3 align='center'>Tu registro se completó con exito</h3><p align='center'>Por favor ingresá a tu email y clickeá en el link de activación enviado por <b>info@prode2018.com</b> para confirmar la cuenta</p><br>Chequeá tu carpeta de <b>correo no deseado o spam</b><br><br><a href='[[link_url]]pronosticos' class='btn btn-primary btn-block'>Ingresar</a>";
+$words['register-message']['MX'] = "<h3 align='center'>Tu registro se completó con exito</h3><p align='center'>Por favor ingresá a tu email y clickeá en el link de activación enviado por <b>info@prode2018.com</b> para confirmar la cuenta</p><br>Mira en tu carpeta de <b>correo no deseado o spam</b><br><br><a href='[[link_url]]pronosticos' class='btn btn-primary btn-block'>Ingresar</a>";
+$words['register-message']['PR'] = "<h3 align='center'>Seu registro foi efetuado com sucesso</h3><p align='center'>Por favor, insira seu e-mail e clique no link de ativação enviado por <b>info@prode2018.com</b> para confirmar a conta</p><br>Confira sua pasta de <b>spam</b><br><br><a href='[[link_url]]pronosticos' class='btn btn-primary btn-block'>Ingresar</a>";
+$words['register-message']['US'] = "<h3 align='center'>Registration successful</h3><p align='center'>Please check your email account and click on the activation link sent by <b>info@prode2018.com</b>.</p><br>Check your <b>spam folder</b><br><br><a href='[[link_url]]pronosticos' class='btn btn-primary btn-block'>Log-in</a>";
 
 $words['creation-message']['AR'] = "<h3 align='center'>Tu registro se completó con exito</h3>";
 $words['creation-message']['MX'] = "<h3 align='center'>Tu registro se completó con exito</h3>";
@@ -503,10 +503,10 @@ $words['olvide-clave']['MX'] = "Olvidé mi contraseña";
 $words['olvide-clave']['PR'] = "Esqueci minha senha";
 $words['olvide-clave']['US'] = "Forgot my password";
 
-$words['email-sent']['AR'] = "Se envió un email a $1 desde registro@prode2018.com. Chequeá que no esté en spam  y clickeá en el link que aparece allí para recuperar tu contraseña";
-$words['email-sent']['MX'] = "Se envió un email a $1 desde registro@prode2018.com. Checa que no esté en spam  y clickeá en el link que aparece allí para recuperar tu contraseña";
-$words['email-sent']['PR'] = "Um e-mail foi enviado a $1 desde registro@prode2018.com. Confira a sua pasta de spam e clique no link para recuperar sua senha";
-$words['email-sent']['US'] = "Sent email to $1 from registro@prode2018.com. Check the message hasn't arrived at spam folder and Click on the recover link to recover your password";
+$words['email-sent']['AR'] = "Se envió un email a $1 desde info@prode2018.com. Chequeá que no esté en spam  y clickeá en el link que aparece allí para recuperar tu contraseña";
+$words['email-sent']['MX'] = "Se envió un email a $1 desde info@prode2018.com. Checa que no esté en spam  y clickeá en el link que aparece allí para recuperar tu contraseña";
+$words['email-sent']['PR'] = "Um e-mail foi enviado a $1 desde info@prode2018.com. Confira a sua pasta de spam e clique no link para recuperar sua senha";
+$words['email-sent']['US'] = "Sent email to $1 from info@prode2018.com. Check the message hasn't arrived at spam folder and Click on the recover link to recover your password";
 
 $words['no-record-found']['AR'] = "No se encontró una cuenta con ese $1. Por favor contáctase con su coordinador local  de  [[company_name]]";
 $words['no-record-found']['MX'] = "No se encontró una cuenta con ese $1. Por favor contáctase con su coordinador local  de  [[company_name]]";

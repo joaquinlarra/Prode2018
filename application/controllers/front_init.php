@@ -537,7 +537,7 @@ class Front_init extends CI_Controller
 		
 		$this->email->initialize($config);
 		
-		$this->email->from('registro@prode2018.com', 'Prode 2018');
+		$this->email->from('info@prode2018.com', 'Prode 2018');
 		
 		$this->email->to($this->form_model->email);
 

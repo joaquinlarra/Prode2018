@@ -153,7 +153,7 @@ class Front_user extends Front_init
 		$config['mailtype'] = 'html';
 
 		$this->email->initialize($config);
-		$this->email->from('registro@prode2018.com','Prode 2018');
+		$this->email->from('info@prode2018.com','Prode 2018');
 		$this->email->to($email);
 		
 		$this->email->subject('Prode 2018: '.lang('Recuperá tu clave'));
