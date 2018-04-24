@@ -1046,3 +1046,9 @@ user-found td:hover {
   padding: 8px 10px;
   margin-top: 8px;
 }
+
+.grey-label
+{
+  font-size: 14px;
+  color: #939393;
+}

@@ -93,7 +93,7 @@ class admin_forms {
 		$val = str_replace('"','\'',$this->prev_val);
 		if($this->label_in_input)
 		{
-			$str .= "<div class='col-sm-12 col-md-10'>";	
+			$str .= "<div class='col-sm-12 col-md-12'>";	
 			$str .=	"<input type='".$this->field_attrs['type']."' id='".$this->field_name."' ".$this->common_attrs." value=\"".$val."\"/ placeholder='".$this->field_attrs['label']."'>";
 			$str .= $this->description? "<div class='clearfix'></div><small>".$this->description."</small>" : "";
 			$str .= "</div>";
@@ -101,8 +101,8 @@ class admin_forms {
 		}
 		else
 		{
-			$str = "<label for='".$this->field_name."' class='col-md-2 col-sm-12 control-label'>".$this->field_attrs['label']."</label>";
-			$str .= "<div class='col-sm-12 col-md-10'>";	
+			$str = "<label for='".$this->field_name."' class='col-md-3 col-sm-12 control-label'>".$this->field_attrs['label']."</label>";
+			$str .= "<div class='col-sm-12 col-md-9'>";	
 			$str .=	"<input type='".$this->field_attrs['type']."' id='".$this->field_name."' ".$this->common_attrs." value=\"".$val."\"/>";
 			$str .= $this->description? "<div class='clearfix'></div><small>".$this->description."</small>" : "";
 			$str .= "</div>";
@@ -152,8 +152,8 @@ class admin_forms {
 	
 	protected function _password()
 	{
-		$str = "<label for='".$this->field_name."' class='col-md-2 col-sm-12 control-label'>".$this->field_attrs['label']."</label>";
-		$str .= "<div class='col-sm-12 col-md-10'>";	
+		$str = "<label for='".$this->field_name."' class='col-md-3 col-sm-12 control-label'>".$this->field_attrs['label']."</label>";
+		$str .= "<div class='col-sm-12 col-md-9'>";	
 		$str .=	"<input type='".$this->field_attrs['type']."' id='".$this->field_name."' ".$this->common_attrs."/>";
 		$str .= $this->description? "<div class='clearfix'></div><small>".$this->description."</small>" : "";
 		$str .= "</div>";
@@ -162,7 +162,7 @@ class admin_forms {
 		
 	protected function _image_gallery()
 	{
-		$str .= "<label for='".$this->field_name."' class='col-md-2 col-sm-12 control-label'>Seleccionar imagen</label>";
+		$str .= "<label for='".$this->field_name."' class='col-md-3 col-sm-12 control-label'>Seleccionar imagen</label>";
 		$str .= "<span class='form_input'>";
 		$str .= "<div>".$img."<input type='file' id='".$this->field_name."' ".$this->common_attrs." value='".$this->prev_val."'/></div>";
 		$str .= $this->description? "<div class='clearfix'></div><small>".$this->description."</small>" : "";
@@ -182,9 +182,9 @@ class admin_forms {
 						break;
 		}
 		
-		$str = "<label for='".$this->field_name."' class='col-md-2 col-sm-12 control-label'>".$this->field_attrs['label']."</label>";
+		$str = "<label for='".$this->field_name."' class='col-md-3 col-sm-12 control-label'>".$this->field_attrs['label']."</label>";
 		$str .= "<span class='form_input'>";
-		$str .= "<div class='col-sm-12 col-md-10'>".selectDates($prev_val, $this->field_name, $this->field_attrs['class'],$this->field_attrs['offset_up'] ? $this->field_attrs['offset_up'] : 1,$this->field_attrs['offset_down'] ? $this->field_attrs['offset_down'] : 10);
+		$str .= "<div class='col-sm-12 col-md-9'>".selectDates($prev_val, $this->field_name, $this->field_attrs['class'],$this->field_attrs['offset_up'] ? $this->field_attrs['offset_up'] : 1,$this->field_attrs['offset_down'] ? $this->field_attrs['offset_down'] : 10);
 		$str .= $this->description? "<div class='clearfix'></div><small>".$this->description."</small>" : "";
 		$str .= "</div></span>";
 		return $str;
@@ -194,7 +194,7 @@ class admin_forms {
 	{
 		$this->common_attrs =  "name='".$this->field_name."' class='form-control datetimepicker ".($this->field_attrs['class'] ? $this->field_attrs['class'] : "")."' ".($this->field_attrs['style'] ? " style='".$this->field_attrs['style']."' " : "")." ".$this->field_attrs['attrs'];
 		$this->common_attrs .= $this->field_attrs['disabled'] ? "disabled='disabled'" : "";
-		$str = "<label for='".$this->field_name."' class='col-md-2 col-sm-12 control-label'>".$this->field_attrs['label']."</label>";
+		$str = "<label for='".$this->field_name."' class='col-md-3 col-sm-12 control-label'>".$this->field_attrs['label']."</label>";
 		$str .= "<span class='form_input'>";
 		$str .= '<div class="col-sm-12 col-md-3">
                      <input type="text"  id="'.$this->field_name.'" '.$this->common_attrs.' value="'.($this->prev_val && ($this->prev_val != '0000-00-00 00:00:00') ? dateFormat($this->prev_val,'d/m/Y G:i') : date('d/m/Y G:i')).'">
@@ -206,7 +206,7 @@ class admin_forms {
 	
 	protected function _radio()
 	{
-		$str = "<label for='".$this->field_name."' class='col-md-2 col-sm-12 control-label'>".$this->field_attrs['label']."</label>";
+		$str = "<label for='".$this->field_name."' class='col-md-3 col-sm-12 control-label'>".$this->field_attrs['label']."</label>";
 		$str .= "<span class='form_input'>";
 		$str .='<div  class="btn-group btn-group-sm col-sm-12 col-md-10" data-toggle="buttons">';
 		if(is_array($this->field_attrs['options']))
@@ -225,7 +225,7 @@ class admin_forms {
 	
 	protected function _checkbox()
 	{
-		$str = "<label for='".$this->field_name."' class='col-md-2 col-sm-12 control-label'>".$this->field_attrs['label']."</label>";
+		$str = "<label for='".$this->field_name."' class='col-md-3 col-sm-12 control-label'>".$this->field_attrs['label']."</label>";
 		$str .= '<div class="col-md-4 col-sm-12">';
 		$str .='<div  class="btn-group btn-group-sm btn-group-justified" data-toggle="buttons">';
 		$str .= "<label for='".$this->field_name."_1' class='btn btn-success ".($this->prev_val ? "active" : "")."' ><input type='radio' value='1'  id='".$this->field_name."_1'".$this->common_attrs." ".($this->prev_val ? "checked='checked'" : "")."/>Si</label>";
@@ -247,8 +247,8 @@ class admin_forms {
 		}
 		else
 		{
-			$str = "<label  class='col-md-2 col-sm-12 control-label' for='".$this->field_name."'>".$this->field_attrs['label']."</label>";
-			$str .= "<div class='form_control col-md-10 col-sm-12'>";
+			$str = "<label  class='col-md-3 col-sm-12 control-label' for='".$this->field_name."'>".$this->field_attrs['label']."</label>";
+			$str .= "<div class='form_control col-md-9 col-sm-12'>";
 			$str .=	"<textarea  id='".$this->field_name."' ".$this->common_attrs." >".$this->prev_val."</textarea>";
 			$str .= $this->description? "<div class='clearfix'></div><small>".$this->description."</small>" : "";
 			$str .= "</div>";
@@ -262,8 +262,8 @@ class admin_forms {
 
 	protected function _file()
 	{
-		$str = "<label class='col-md-2 col-sm-12 control-label'>".$this->field_attrs['label']."</label>";
-		$str .= "<div class='col-sm-12 col-md-10'>";
+		$str = "<label class='col-md-3 col-sm-12 control-label'>".$this->field_attrs['label']."</label>";
+		$str .= "<div class='col-sm-12 col-md-9'>";
 		if($this->prev_val)
 		{
 			$img = '<a href="'.$this->prev_val.'" target="_blank">'.$this->prev_val.'</a>';	
@@ -282,8 +282,8 @@ class admin_forms {
 	
 	protected function _video()
 	{	
-		$str = "<label for='".$this->field_name."' class='col-md-2 col-sm-12 control-label'>".$this->field_attrs['label']."</label>";
-		$str .= "<div class='col-sm-12 col-md-10'>";
+		$str = "<label for='".$this->field_name."' class='col-md-3 col-sm-12 control-label'>".$this->field_attrs['label']."</label>";
+		$str .= "<div class='col-sm-12 col-md-9'>";
 		$str .= "<div class='comment'>Título del video</div>";
 		$str .=	"<input type='text' id='".$this->field_name."_video_name' name='".$this->field_name."_video_name' value=\"".str_replace('"','\'',$this->prev_val['title'])."\"/>";
 		$str .= "<div class='comment'>Video Url</div>";
@@ -297,15 +297,15 @@ class admin_forms {
 		$val =  $this->prev_val ? str_replace('"','\'',$this->prev_val) : $this->field_attrs['value'];
 		if($this->label_in_input)
 		{
-			$str .= "<div class='col-sm-12 col-md-10'>";	
+			$str .= "<div class='col-sm-12 col-md-12'>";	
 			$str .=	"<input type='".$this->field_attrs['type']."' id='".$this->field_name."' ".$this->common_attrs." value=\"".$val."\"/ placeholder='".$this->field_attrs['label']."'>";
 			$str .= $this->description? "<div class='clearfix'></div><small>".$this->description."</small>" : "";
 			$str .= "</div>";		
 		}
 		else
 		{
-			$str = "<label for='".$this->field_name."' class='col-md-2 col-sm-12 control-label'>".$this->field_attrs['label']."</label>";
-			$str .= "<div class='col-sm-12 col-md-10'>";	
+			$str = "<label for='".$this->field_name."' class='col-md-3 col-sm-12 control-label'>".$this->field_attrs['label']."</label>";
+			$str .= "<div class='col-sm-12 col-md-9'>";	
 			$str .=	"<input type='".$this->field_attrs['type']."' id='".$this->field_name."' ".$this->common_attrs." value=\"".$val."\"/>";
 			$str .= $this->description? "<div class='clearfix'></div><small>".$this->description."</small>" : "";
 			$str .= "</div>";
@@ -330,9 +330,15 @@ class admin_forms {
 		}
 		if(!$this->label_in_input)
 		{
-			$str = "<label for='".$this->field_name."' class='col-md-2 col-sm-12 control-label'>".$this->field_attrs['label']."</label>";
+			$str = "<label for='".$this->field_name."' class='col-md-3 col-sm-12 control-label'>".$this->field_attrs['label']."</label>";
+			$str .= "<div class='col-sm-12 col-md-9'>";
 		}
-		$str .= "<div class='col-sm-12 col-md-10'>";
+		else
+		{
+			$str .= "<div class='col-sm-12 col-md-12'>";
+		}
+		
+		
 		$str .="<select  id='".$this->field_name."' ".$this->common_attrs.">";
 		
 		$str .= $this->field_attrs['zero_option'] ? "<option value=''>".$this->field_attrs['zero_option']."</option>" : "";
@@ -391,8 +397,8 @@ class admin_forms {
 			$this->field_attrs['department_label'] = $this->field_attrs['department_label'] ? $this->field_attrs['department_label'] : 'Localidad';
 			
 			$str .= "<div id='".$this->field_attrs['department_field_name']."_sub_box'>";	
-			$str .= "<label for='".$this->field_attrs['department_field_name']."' class='col-md-2 col-sm-12 control-label'>".$this->field_attrs['department_label']."</label>";
-			$str .= "<div class='col-sm-12 col-md-10'>";
+			$str .= "<label for='".$this->field_attrs['department_field_name']."' class='col-md-3 col-sm-12 control-label'>".$this->field_attrs['department_label']."</label>";
+			$str .= "<div class='col-sm-12 col-md-9'>";
 			$str .="<select  id='".$this->field_attrs['department_field_name']."'   name='".$this->field_attrs['department_field_name']."' disabled='disabled'>";
 			$str .= "<option value=''>seleccione provincia</option>";
 			$str .= "</select>";
@@ -450,8 +456,8 @@ class admin_forms {
 			$this->field_attrs['options'] = $opt;
 		}
 		
-		$str = "<label for='".$this->field_name."' class='col-md-2 col-sm-12 control-label'>".$this->field_attrs['label']."</label>";
-		$str .= "<div class='col-sm-12 col-md-10'>";
+		$str = "<label for='".$this->field_name."' class='col-md-3 col-sm-12 control-label'>".$this->field_attrs['label']."</label>";
+		$str .= "<div class='col-sm-12 col-md-9'>";
 		
 		if(is_array($this->field_attrs['options']))
 		{
@@ -475,8 +481,8 @@ class admin_forms {
 
 	protected function _image()
 	{
-		$str = "<label class='col-md-2 col-sm-12 control-label'>".$this->field_attrs['label']."</label>";
-		$str .= "<div class='col-sm-12 col-md-10'>";
+		$str = "<label class='col-md-3 col-sm-12 control-label'>".$this->field_attrs['label']."</label>";
+		$str .= "<div class='col-sm-12 col-md-9'>";
 		if($this->prev_val)
 		{
 			$img = '<a href="'.$this->prev_val.'" target="_blank"><img src="'.thumb_image($this->prev_val).'" class="form_image"></a> <span fieldname="'.$this->field_name.'" class="modify_file">Cambiar '.$this->field_attrs['label'].'</span>';	
@@ -557,8 +563,8 @@ class admin_forms {
 	protected function _address()
 	{
 		$str = "<script> gmaps_init();autocomplete_init(); </script>";
-		$str .= "<label for='".$this->field_name."' class='col-md-2 col-sm-12 control-label'>".$this->field_attrs['label']."</label>";
-		$str .= "<div class='col-sm-12 col-md-10'>";	
+		$str .= "<label for='".$this->field_name."' class='col-md-3 col-sm-12 control-label'>".$this->field_attrs['label']."</label>";
+		$str .= "<div class='col-sm-12 col-md-9'>";	
 		$str .=	"<input type='".$this->field_attrs['type']."' id='gmaps-input-address' ".$this->common_attrs." value=\"".str_replace('"','\'',$this->prev_val)."\"/>";
 		$str .= $this->description? "<div class='clearfix'></div><small>".$this->description."</small>" : "";
 		
