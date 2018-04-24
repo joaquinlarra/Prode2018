@@ -213,8 +213,7 @@ class Front_init extends CI_Controller
 			return;
 		}
 
-		
-		if(($company == "www") || ($company == "") || ($company == "local") || ($company == "prode"))
+		if(($company == "www") || ($company == "") || ($company == "localhost") || ($company == "prode"))
 		{
 			//$this->data['no_company'] = 1;
 			$this->company_id = 1;
@@ -612,10 +611,11 @@ class Front_init extends CI_Controller
 		}		
 	}
 
-	public function is_company_available($namespace)
+	public function is_company_available($code)
 	{
-		$sql = "SELECT * FROM companies WHERE namespace = '{$namespace}'";
-		return !$this->db->query($sql)->num_rows();
+		$this->get_company();
+		$companyCode = $this->company_model->get_register_code();
+		return ($companyCode === $code);
 	}
 
 	public function check_company_availability()
@@ -627,7 +627,6 @@ class Front_init extends CI_Controller
 		if (empty($this->data['post']['namespace'])) {
 			$data['valid'] = 0;
 			$data['message'] = lang("Ingresa el nombre de tu prode");
-			
 		} else if (!$this->form_validation->run()) {
 			$data['valid'] = 0;
 			$data['message'] = lang("El nombre no es válido");
@@ -638,6 +637,31 @@ class Front_init extends CI_Controller
 			$data['valid'] = 1;
 			$data['namespace'] = $this->data['post']['namespace'];
 			$this->session->set_userdata('namespace', $data['namespace']);	
+			$this->session->set_userdata('test', $data['namespace']);	
+		}
+		echo json_encode($data);
+	}
+
+	public function validate_code()
+	{
+		$this->data['post'] = $this->input->post();
+
+		$this->form_validation->set_rules('code', 'code', 'alpha_dash');
+		
+		if (empty($this->data['post']['code'])) {
+			$data['valid'] = 0;
+			$data['message'] = lang("No ingresaste ningún código");
+		} else if (!$this->form_validation->run()) {
+			$data['valid'] = 0;
+			$data['message'] = lang("El código ingresado no es válido");
+		} else if ($this->form_validation->run() && !$this->is_company_available($this->data['post']['code']) ) {
+			$data['message'] = lang('El código ingresado es incorrecto');
+			$data['valid'] = 0;
+		}else if( $this->form_validation->run() && $this->is_company_available($this->data['post']['code']) ) {
+			$data['valid'] = 1;
+			$data['code'] = $this->data['post']['code'];
+			$data['url'] = base_url().'';
+			$this->session->set_userdata('namespace', $data['namespace']);
 			$this->session->set_userdata('test', $data['namespace']);	
 		}
 		echo json_encode($data);

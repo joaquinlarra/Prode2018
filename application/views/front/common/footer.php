@@ -24,10 +24,6 @@
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 	<!-- <script src="<?= $link_url?>assets_fe/js/mdb.js"></script> -->
     <script src="<?= $link_url?>assets_fe/js/jquery.parallax-1.1.3.js" type="text/javascript"></script>
-	<script>
-        //Animation init
-		new WOW().init();
-	</script>
 	<?
     if(preg_match('/(?i)msie [1-9]/',$_SERVER['HTTP_USER_AGENT']))
 	{
@@ -90,6 +86,27 @@
 			{
 			  	$('#company-error').html(data.message);
 				$('#company-error').fadeIn();	
+			}
+		};
+
+		$('#check-code').ajaxForm({
+			// dataType identifies the expected content type of the server response 
+			dataType:  'json', 
+			// success identifies the function to invoke when the server response 
+			// has been received 
+			success:   validate_code_form 
+		});
+     
+		function validate_code_form(data) {
+			$('#company-code-error').hide();
+			if(data.valid)
+			{
+				window.location.href = data.url;
+			}
+			else
+			{
+			  	$('#company-code-error').html(data.message);
+				$('#company-code-error').fadeIn();	
 			}
 		};
 

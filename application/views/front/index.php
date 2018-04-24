@@ -9,51 +9,50 @@
 					?><img src="<?=$this->company_model->main_image?>" border="0" style="max-height:150px" /><?	
 				}
 				?>
-            <h1>Prode <?= $this->company_model->name?></h1>
+            <h1>Prode <?= $this->company_model->name?></h1><br>
             
             <!--
             <a href="<?=base_url().'comprar'?>" class="btn btn-green">Comprar cuenta</a>
             -->
-            <!--
+            
             <div class="panel panel-primary">
             <div class="panel-heading" align="center">Crea tu PRODE para vos y tu grupo</div>
             <div class="panel-body">   	
                 
                 <div class="row">
-                <div class="alert alert-danger" id="company-error" style="display:none"></div>
-                </div>    
-                    <form method="POST" id="company-availability" class="form-signin ajax_form" action="<?=$link_url.'check-company-availability'?>" accept-charset="UTF-8">
-                        
-                            <div class="col-xs-6 col-sm-5 col-md-5 col-lg-5">
-                                
-                                <input type="text" id="namespace" class="form-control" name="namespace">
-                                
-                            </div>
-                            <div class="col-xs-6 col-sm-4 col-md-4 col-lg-4">
-                                <p style="font-size:19px; color:#111111;text-align:left">.prode2018.com</p>
-                            </div>
-                            <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3">
-                            <button type="submit" name="submit" class="btn btn-green btn-block"><?= lang("CREAR")?>
-                            </div>
-                        
-                    </form>
+                <div class="col-md-12">
+                        <div class="alert alert-danger" id="company-error" style="display:none"></div>
                     </div>
+                </div>
+                <div class="row">
+                    <form method="POST" id="company-availability" class="form-signin ajax_form" action="<?=$link_url.'check-company-availability'?>" accept-charset="UTF-8">
+                        <div class="col-xs-6 col-sm-5 col-md-5 col-lg-5">
+                            <input type="text" id="namespace" class="form-control" name="namespace">
+                        </div>
+                        <div class="col-xs-6 col-sm-4 col-md-4 col-lg-4">
+                            <p style="font-size:19px; color:#111111;text-align:left">.prode2018.com</p>
+                        </div>
+                        <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3">
+                        <button type="submit" name="submit" class="btn btn-green btn-block"><?= lang("CREAR")?>
+                        </div>    
+                    </form>
                 </div>
             </div>
             </div>
+            </div>
             <br><br><br>
-            <h2>HACE EL MEJOR PRONOSTICO Y DIVERTITE CON TUS AMIGOS</h2>
+            <h2 class="white"><center>HACE EL MEJOR PRONOSTICO Y DIVERTITE CON TUS AMIGOS</center></h2>
             <br>
-            -->
         </div>
     </div>
     <div class="row">
 		<div class="<?= $this->company_model->register ? "col-md-offset-2 col-md-8" : "col-md-offset-3 col-md-6 col-sm-offset-2 col-sm-8"?>">
              <div class="panel panel-primary">
-                
-                <div class="panel-body">   	
+
+                <div class="panel-heading" align="center">Ingresá el código y empezá a participar</div>
+                <div class="panel-body">
                     <div class="row">
-                    	<div class="col-md-12">
+                    	<div class="col-md-12 <?=($this->company_model->first_login)?'':'hidden'?>">
                         <?
 						
                         if($this->company_model->first_login)
@@ -74,7 +73,27 @@
                          <?
 						if($no_company)
 						{
-							?><div align="center" style="margin:20px 0px">Debe entrar al link específico de su prode.<br>EJ: <b>clubdeamigos.prode2018.com</b></div><? 
+							?>  <div align="center">
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <div class="alert alert-danger" id="company-code-error" style="display:none"></div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <form method="POST" id="check-code" class="form-horizontal form-inline form-code ajax_form" action="<?=$link_url.'check-code'?>" accept-charset="UTF-8" role="form">
+                                            <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3">
+                                                <label class="pull-right" for="email">Código:</label>
+                                            </div>
+                                            <div class="col-xs-12 col-sm-6 col-md-5 col-lg-5">
+                                                <input type="text" id="code" class="form-control" name="code"  placeholder="Ingresá el código de tu grupo">
+                                            </div>
+                                            <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3 col-md-inset-1 col-lg-inset-1">
+                                                <button type="submit" name="submit" class="btn btn-green btn-block pull-left">Unirme al grupo</button>
+                                            </div>
+                                        </form>
+                                    </div>
+
+                                </div><? 
 						}
 						else
 						{

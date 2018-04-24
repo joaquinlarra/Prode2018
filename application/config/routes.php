@@ -73,6 +73,7 @@ $route['unirse-liga-de-amigos'] = "home/join_friends_league/";
 $route['liga-de-amigos/(:num)/(:any)'] = "home/friends_league/$1";
 $route['cambiar-idioma/(:any)'] = "home/language/$1";
 $route['check-company-availability'] = "home/check_company_availability";
+$route['check-code'] = "home/validate_code";
 
 
 $route['posiciones'] = "home/scores/0";
