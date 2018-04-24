@@ -65,12 +65,9 @@ header .headerInner .navs .rightNav div.dropdown {
     display: flex;
   }
   header .headerInner .logos {
-    width: 100%;
-    text-align: center;
+    flex-direction: column;
   }
-  header .headerInner .navs {
-    width: 100%;
-  }
+
   header .headerInner .navs .rightNav {
     position: fixed;
     top: 0;
