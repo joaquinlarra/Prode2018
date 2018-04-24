@@ -728,7 +728,7 @@ h6 {
   margin-top: 20px;
 }
 
-======= .group-team-name-2 {
+.group-team-name-2 {
   font-size: 12px;
   font-weight: normal;
   text-align: center;
@@ -1045,4 +1045,10 @@ user-found td:hover {
 .register_msg_error {
   padding: 8px 10px;
   margin-top: 8px;
+}
+
+.grey-label
+{
+  font-size: 14px;
+  color: #939393;
 }

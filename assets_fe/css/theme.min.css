@@ -1,8 +1,6 @@
 header {
   background: #1f446a;
   padding: 12px 0;
-  -webkit-box-shadow: 0 0 10px 0 rgba(0, 0, 0, .65);
-  box-shadow: 0 0 10px 0 rgba(0, 0, 0, .65);
 }
 .navToggler {
   display: none;
@@ -66,14 +64,11 @@ header .headerInner .navs .rightNav div.dropdown {
   .matches-stats-tabs .nav-tabs {
     display: flex;
   }
-  header .headerInner {
+  header .headerInner .logos {
     flex-direction: column;
-    align-items: unset;
   }
 
   header .headerInner .navs .rightNav {
-    -webkit-box-shadow: 0 0 10px 0 rgba(0, 0, 0, .65);
-    box-shadow: 0 0 10px 0 rgba(0, 0, 0, .65);
     position: fixed;
     top: 0;
     right: -100%;
