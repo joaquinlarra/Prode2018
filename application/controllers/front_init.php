@@ -213,7 +213,7 @@ class Front_init extends CI_Controller
 			return;
 		}
 
-		if(($company == "www") || ($company == "") || ($company == "localhost") || ($company == "prode"))
+		if(($company == "local") || ($company == "localhost") || ($company == "prode"))
 		{
 			//$this->data['no_company'] = 1;
 			$this->company_id = 1;

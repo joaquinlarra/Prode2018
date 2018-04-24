@@ -14,7 +14,7 @@
             <!--
             <a href="<?=base_url().'comprar'?>" class="btn btn-green">Comprar cuenta</a>
             -->
-            
+            <!--
             <div class="panel panel-primary">
             <div class="panel-heading" align="center">Crea tu PRODE para vos y tu grupo</div>
             <div class="panel-body">   	
@@ -43,6 +43,7 @@
             <br><br><br>
             <h2 class="white"><center>HACE EL MEJOR PRONOSTICO Y DIVERTITE CON TUS AMIGOS</center></h2>
             <br>
+            -->
         </div>
     </div>
     <div class="row">
