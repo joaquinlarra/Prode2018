@@ -64,11 +64,18 @@ header .headerInner .navs .rightNav div.dropdown {
   .matches-stats-tabs .nav-tabs {
     display: flex;
   }
+  header .headerInner .logos {
+    width: 100%;
+    text-align: center;
+  }
+  header .headerInner .navs {
+    width: 100%;
+  }
   header .headerInner .navs .rightNav {
     position: fixed;
     top: 0;
     right: -100%;
-    width: 25%;
+    width: 65%;
     height: 100%;
     display: flex;
     flex-direction: column;
