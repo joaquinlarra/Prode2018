@@ -36,7 +36,16 @@ class Home extends Front_init
 		$result = $this->db->query($sql)->result_array();
 		$this->data['login_user']['username'] = $this->session->userdata('register_email');
 		$this->data['login_user']['email'] = $this->data['login_user']['username'];
-		$this->load->view("front/register.php", $this->data);			
+		$this->load->view("front/register.php", $this->data);
+	}
+
+	public function complete_company_register()
+	{
+		$this->load->library('simple_captcha');
+		$this->data['section'] = "complete_register";
+		$this->data['register_company']['namespace_disabled'] = $this->session->userdata('namespace');
+		$this->data['register_company']['namespace'] = $this->session->userdata('namespace');
+		$this->load->view("front/register_company.php", $this->data);			
 	}
 	
 	public function language($lang)
@@ -116,6 +125,7 @@ class Home extends Front_init
 		$this->index();
 	}
 
+/*
 	public function badges()
 	{
 		$this->redirect_login();
@@ -138,7 +148,7 @@ class Home extends Front_init
 		
 		$this->load->view("front/badges.php", $this->data);
 	}
-	
+*/	
 	public function get_teams_positions()
 	{
 		$this->redirect_login();
@@ -227,19 +237,11 @@ class Home extends Front_init
 		}
 		$this->data['section'] = 'bet';
 		$phases = array();
-		if($this->company_model->qualys)
-		{
-			$phases[] = "qualys";	
-		}
-		if($this->company_model->winners)
-		{
-			$phases[] = "starter";	
-		}
+
 		$phases[] = "initial";
 		if(!$phase)
 		{
-			$phase = $this->session->userdata('starter_used') ? "final" : $phases[0];
-			$this->session->set_userdata('starter_used',true);
+			$phase = "initial";
 		}
 
 		switch($phase)
@@ -379,9 +381,14 @@ class Home extends Front_init
 		
 		$this->load->view("front/profile_edit.php",$this->data);
 	}
-	
+
 	public function scores($type = "", $id = "", $name = "",$offset = 0)
 	{
+		if($this->session->userdata('user-first-login'))
+		{
+			$this->data['user_first_login'] = true;
+			$this->session->unset_userdata('user-first-login');
+		}
 		
 		$this->redirect_login();
 		$this->data['section'] = "scores";

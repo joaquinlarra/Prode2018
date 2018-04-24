@@ -6,7 +6,9 @@
 <div id="section-header" class="container-fluid">
 	<div class="container">
     	<div class="row">
-        	<div class="col-md-12"><h1 class="pull-left"><?= lang("Pronósticos")?></h1><div class="pull-right hidden-xs" style="margin-top:10px"><img src="<?= base_url()?>assets_fe/img/<?= lang("recorda")?>.png"></div></div>
+        	<div class="col-md-12">
+                <h1 class="pull-left"><?= lang("Pronosticos")?></h1>
+            </div>
         </div>
     </div>
 </div>
@@ -38,7 +40,7 @@
         <div class="panel panel-primary finals-panel">
             <div class="panel-body">
                 <form action="<?= $link_url?>home/validate_matches_form/" method="post" enctype="multipart/form-data" id="prognostics-form">
-                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12 col-8vos">
+                <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12 col-8vos">
                     <h2><?= lang("8vos de final")?></h2>
                     <table class="table pull-left zone-table table-responsive table-condensed full-width">
                 <?
@@ -48,7 +50,7 @@
                 </table>
                 <div class="clearfix"></div>
                 </div>
-                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12  col-4tos">
+                <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12  col-4tos">
                     <h2><?= lang("4tos de final")?></h2>
                     <table class="table pull-left zone-table table-responsive table-condensed full-width">
                 <?
@@ -58,7 +60,7 @@
                 </table>
                 <div class="clearfix"></div>
                 </div>
-                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12  col-semi">
+                <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12  col-semi">
                     <h2><?= lang("Semifinal")?></h2>
                     <table class="table pull-left zone-table table-responsive table-condensed full-width">
                 <?
@@ -68,7 +70,7 @@
                 </table>
                 <div class="clearfix"></div>
                 </div>
-                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12 col-finals">
+                <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12 col-finals">
                     <h2><?= lang("Final")?></h2>
                     <table class="table pull-left zone-table table-responsive table-condensed full-width finals-table">
                     <?

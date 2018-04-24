@@ -32,7 +32,7 @@ class Front_init extends CI_Controller
 			{
 				$this->bitauth->user_language = $this->session->userdata('chosen_lang');	
 			}
-			
+
 			if($this->bitauth->user_language)
 			{
 				$this->session->set_userdata('lang',$this->bitauth->user_language);	
@@ -70,11 +70,17 @@ class Front_init extends CI_Controller
 
 		
 		$this->data['fields'] = array(	
+										'namespace_disabled' => array(	'label' => lang('Nombre del Grupo'),
+												'type' => 'text',
+												'validation' => '',
+												'disabled' => true,
+												'visibility' => 'register_company'
+										),
 										
 										'email' => array('label' => lang('Email'),
 														'type' => 'text',
 														'validation' => 'valid_email|required',
-														'visibility' => 'profile|edit_profile|first_login|register'
+														'visibility' => 'profile|edit_profile|first_login|register|register_company'
 										),
 										/*
 										'username' => array(	'label' => lang('Email'),
@@ -84,29 +90,51 @@ class Front_init extends CI_Controller
 															'visibility' => 'profile|first_login|register'
 															),
 										*/
+										
 										'displayname' => array(	'label' => lang('Nickname'),
 															'type' => 'text',
 															'validation' => 'required',
-															'visibility' => 'profile|edit_profile|first_login|register'
+															'visibility' => 'profile|edit_profile|first_login|register|register_company'
 															),
 										'fullname' => array(	'label' => lang('Nombre Completo'),
 															'type' => 'text',
 															'validation' => 'required',
-															'visibility' => 'profile|edit_profile|first_login|register'
+															'visibility' => 'profile|edit_profile|first_login|register|register_company'
 															),
 										'password' => array('label' => lang('Contraseña'),
 														'type' => 'password',
 														'validation' => 'required|matches[passconf]',
-														'visibility' => 'profile|first_login|register|forgot_pass'
+														'visibility' => 'profile|first_login|register|forgot_pass|register_company'
 														),
 										'passconf' => array('label' => lang('Repetir contraseña'),
 														'type' => 'password',
 														'validation' => 'required',
-														'visibility' => 'profile|first_login|register|forgot_pass'
+														'visibility' => 'profile|first_login|register|forgot_pass|register_company'
 														),
+
 										/*				
-										
+										COMPANY FIELDS
 										*/
+										
+										'namespace' => array(	'label' => lang('Nombre del Grupo'),
+											'type' => 'hidden',
+											'validation' => 'required|alpha_dash',
+											'visibility' => 'register_company'
+										),
+										'country'=> array(	'label' => 'País',
+															'type' => 'select',
+															'options' => array(0 => array("value" => "AR", "label" => "Argentina"),
+																				1 => array("value" => "MX", "label" => "México"),
+																				),
+															'validation' => '',
+															'visibility' => 'company_register'
+														),
+										'main_image' => array(	'label' => 'Logo',
+														'type' => 'image',
+														'tag' => 'main_image',
+														'validation' => '',
+														'visibility' => 'company_register|company_edit',
+														),
 										);
 		
 		if($this->company_model->branch_league)
@@ -327,9 +355,14 @@ class Front_init extends CI_Controller
 										echo json_encode($output);
 										return;
 									}
-									$sql = "SELECT * FROM bitauth_users WHERE username = '".addslashes($this->session->userdata('register_email'))."' AND company_id = '".$this->company_model->get_id()."'";
+									$sql = "SELECT * FROM bitauth_users WHERE username = '".addslashes($this->session->userdata('register_email'))."' 
+												AND company_id = '".$this->company_model->get_id()."'";
 									$row = $this->db->query($sql)->row();
 									$this->form_model->get($row->user_id);
+									break;
+				case 'register_company':	
+									/* register company utils */
+									$this->load->model("user_model","form_model");
 									break;
 				case 'edit_profile':
 									$this->load->model("user_model","form_model");
@@ -348,7 +381,9 @@ class Front_init extends CI_Controller
 			if(!isset($output['valid']) || $output['valid'])
 			{
 				
-				$this->form_model->set($this->data['post']);
+				if ($page != 'register_company'){
+					$this->form_model->set($this->data['post']);
+				}
 				/*
 				if(is_array($_FILES))
 				{
@@ -356,7 +391,7 @@ class Front_init extends CI_Controller
 					$this->file_manager->upload($this->file_fields);
 				}
 				*/
-				if($this->form_model->save())
+				if($page == 'register_company' || $this->form_model->save())
 				{
 					$output['valid'] = 1;
 					switch($page)
@@ -394,7 +429,6 @@ class Front_init extends CI_Controller
 											$output['message'] = lang('first-time-message-no-email');
 											break;
 						case 'register':	
-						
 											if($this->company_model->confirm_email)
 											{
 												$this->form_model->set_field("active",0);
@@ -421,7 +455,35 @@ class Front_init extends CI_Controller
 											$this->bitauth->login($this->form_model->username,$this->data['post']['password']);
 											$this->send_register_email();
 											$output['message'] = lang("register-message");
-											break;	
+											break;
+						case 'register_company':
+											$this->company_model->set_field("namespace", $this->input->post('namespace'));
+											$this->company_model->set_field("name", $this->input->post('namespace'));
+											$this->company_model->set_field("active", 1);
+											$this->company_model->save();
+											$this->company_model->get_register_code();
+
+											$this->form_model->set_field("active",1);
+											$this->form_model->set_field("enabled",1);
+											$this->form_model->set_field("username",$this->data['post']['email']);
+
+											$this->form_model->set_field("group_id", 3);
+											$this->form_model->set_field("groups_names", "Jugador");
+											$this->form_model->set_field("company_id", $this->company_model->get_id());
+											$this->form_model->set_field("company",$this->company_model->name);
+											$pass = $this->bitauth->hash_password($this->data['post']['password']);
+											$last_set = $this->bitauth->timestamp();
+											$this->form_model->set_field("password",$pass);
+											$this->form_model->set_field("password_last_set",$last_set);
+											
+											$this->form_model->update();
+											$this->bitauth->logout();
+											$this->bitauth->login($this->form_model->username,$this->data['post']['password']);
+											$this->send_register_email();
+											$this->send_creation_email($this->company_model->get_register_code());
+											$output['redirect_url'] = $this->company_model->get_url();
+											$output['message'] = lang("creation-message");											
+											break;
 					}
 					
 					$this->post_validate_save();
@@ -435,7 +497,36 @@ class Front_init extends CI_Controller
 		}
 		echo json_encode($output);
 	}	
-	
+
+	protected function send_creation_email()
+	{
+		$this->load->library('email');
+		
+		$config['protocol'] = 'mail';
+		$config['charset'] = 'utf-8';
+		$config['mailtype'] = 'html';
+		
+		$this->email->initialize($config);
+		
+		$this->email->from('tuprode@prode2018.com', 'Prode 2018');
+		
+		$this->email->to($this->form_model->email);
+
+		$this->email->subject(lang("subject-creation"));
+		
+		$company_link = $this->company_model->get_url().'/ingresa?'.$this->company_model->get_register_code();
+
+		$body= var_lang('body-creation',$this->form_model->fullname)."<a href='".$company_link."'>".$company_link."</a>
+				<br><br>".lang('register-login-email')."
+				<br><br>Código para invitar amigos: <b>".$this->company_model->get_register_code()."</b><br>
+				Prode ".date('Y')."<br>--";
+		
+		$this->email->message($body);
+		
+		$this->email->send();
+			
+	}
+
 	protected function send_register_email()
 	{
 		$this->load->library('email');
@@ -458,7 +549,7 @@ class Front_init extends CI_Controller
 				<br><br>".lang('register-login-email')."
 				<br><br>".$this->company_model->username_field.": <b>".$this->form_model->username."</b><br>
 				<br><br>".lang('Contraseña').": <b>".$this->data['post']['password']."</b><br><br>
-				Prode 2018<br>--";
+				Prode ".date('Y')."<br>--";
 		
 		$this->email->message($body);
 		
@@ -466,6 +557,11 @@ class Front_init extends CI_Controller
 			
 	}
 	
+	protected function get_creation_code($id)
+	{
+		return substr(base64_encode($id),0,5);
+	}
+
 	protected function get_confirm_code($id)
 	{
 		return $id."-".substr(base64_encode($id."fantastic 2013 vv ++ ??"),0,10);
@@ -513,7 +609,42 @@ class Front_init extends CI_Controller
 				}	
 			}
 		}		
-	}		
+	}
+
+	public function is_company_available($namespace)
+	{
+		$sql = "SELECT * FROM companies WHERE namespace = '{$namespace}'";
+		return !$this->db->query($sql)->num_rows();
+	}
+
+	public function check_company_availability()
+	{
+		$this->data['post'] = $this->input->post();
+		
+		$this->form_validation->set_rules('namespace', 'namespace', 'alpha_dash');
+
+		if (empty($this->data['post']['namespace'])) {
+			$data['valid'] = 0;
+			$data['message'] = lang("Ingresa el nombre de tu prode");
+			
+		} else if (!$this->form_validation->run()) {
+			$data['valid'] = 0;
+			$data['message'] = lang("El nombre no es válido");
+		} else if ($this->form_validation->run() && !$this->is_company_available($this->data['post']['namespace']) ) {
+			$data['message'] = lang('Ese nombre no está disponible. Intenta con otro');
+			$data['valid'] = 0;
+		}else if( $this->form_validation->run() && $this->is_company_available($this->data['post']['namespace']) ) {
+			$data['valid'] = 1;
+			$data['namespace'] = $this->data['post']['namespace'];
+			$this->session->set_userdata('namespace', $data['namespace']);	
+			$this->session->set_userdata('test', $data['namespace']);	
+		}
+		echo json_encode($data);
+	}
+
+
+
 }
+
 
 ?>

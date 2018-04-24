@@ -5,21 +5,24 @@
                 <?
                 if($this->company_model->footer_image)
 				{
-					?><img src="<?= $this->company_model->footer_image?>"><?	
+					?><img src="<?= $this->company_model->footer_image?>" id="company-logo-footer"><?	
 				}?>
                 <small><?= lang('support-email')?></small>
                 </div>
-				<div class="pull-right"><a href="http://www.bamboodev.team">bamboodev.team</a></div>
 			</div>
 		</div>
 	</div>
-	
+
     <!-- Bootstrap core JavaScript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
 	<script src="<?= $link_url?>assets_fe/js/jquery.js"></script>
-    <script src="<?= $link_url?>assets_fe/js/bootstrap.min.js"></script>
-	<script src="<?= $link_url?>assets_fe/js/mdb.js"></script>
+	<script src="<?= $link_url?>assets_fe/js/main.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/intro.js/2.7.0/intro.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.sticky/1.0.4/jquery.sticky.min.js"></script>
+	<!-- Latest compiled and minified JavaScript -->
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+	<!-- <script src="<?= $link_url?>assets_fe/js/mdb.js"></script> -->
     <script src="<?= $link_url?>assets_fe/js/jquery.parallax-1.1.3.js" type="text/javascript"></script>
 	<script>
         //Animation init
@@ -65,10 +68,32 @@
 			
 	</script>
 	<?
-	if ($section == 'home' || $section == 'comprar' ){
+	if ($section == 'home' || $section == 'comprar' ) {
 	?>
 		<script src="<?= $link_url?>assets_common/js/jquery.form.js"></script>
         <script>
+        $('#company-availability').ajaxForm({
+			// dataType identifies the expected content type of the server response 
+			dataType:  'json', 
+			// success identifies the function to invoke when the server response 
+			// has been received 
+			success:   validate_company_form 
+		});
+     
+		function validate_company_form(data) {
+			$('#error').hide();
+			if(data.valid)
+			{
+				window.location.href = "<?= $link_url?>crear-prode";
+			}
+			else
+			{
+			  	$('#company-error').html(data.message);
+				$('#company-error').fadeIn();	
+			}
+		};
+
+
         $('#login-form').ajaxForm({
                 	// dataType identifies the expected content type of the server response 
                     dataType:  'json', 
@@ -197,6 +222,51 @@
 				});	
 			}
 			};
+
+
+        $('#company-create-form').ajaxForm({
+			// dataType identifies the expected content type of the server response 
+			dataType:  'json', 
+			// success identifies the function to invoke when the server response 
+			// has been received 
+			success:   company_create_form 
+		});
+     
+	 
+		function company_create_form(data) {
+			$('.register_company_msg_error').hide();
+			if(data.valid)
+			{
+				if (data.error) {
+					$('#register-content').hide();
+					$('#register-header').hide();
+					$('#prode-create-form-error').html(data.message + ' <br><br>Redireccionado al home...');
+					window.setTimeout(function() {
+						window.location.href = data.redirect_url;
+					}, 4000);
+				} else {
+					$('#register-content').hide();
+					$('#register-header').hide();
+					$('#prode-create-form-error').html(data.message + ' <br><br>Redireccionado al home...');
+					window.setTimeout(function() {
+						window.location.href = data.redirect_url;
+					}, 4000);
+				}
+			}
+			else
+			{
+				$.each(data.errors, function(key, value) {
+					if(value){
+						$('#register_company_error_' + key ).html( value ).fadeIn();
+					}
+				});	
+
+			  	$('#prode-create-form-error').html(data.message);
+				$('#prode-create-form-error').fadeIn();	
+			}
+
+			
+		};
         </script>
 	<?	
 	}
@@ -657,18 +727,19 @@
 				function enable_match(match_id){
 					$("#input-goals-1-"+match_id).prop('disabled', false).val("");
 					$("#input-goals-2-"+match_id).prop('disabled', false).val("");
-					$("#middle-col-"+match_id).html("-");
+					$("#input-goals-1-"+match_id).focus();
+					$("#middle-col-"+match_id).html("<p class='please-load-match'><?= lang('FALTA CARGAR')?></p>");
 				}
 				
-				function disable_match(match_id)
+				function disable_match(match_id,message)
 				{
 					$("#input-goals-1-"+match_id).prop('disabled', true);
 					$("#input-goals-2-"+match_id).prop('disabled', true);
 					
-					$("#middle-col-"+match_id).html('<div class="spinner"><div class="double-bounce1"></div><div class="double-bounce2"></div></div>');				
+					$("#middle-col-"+match_id).html('<small>Guardando...</div><div class="spinner"><div class="double-bounce1"></div><div class="double-bounce2"></div></div>');				
 					
 					setTimeout(function() {
-						$("#middle-col-"+match_id).html('<small><?= lang('Guardado')?></small><br><span class="btn btn-success btn-edit-match" match_id="'+match_id+'" onclick="enable_match('+match_id+')"><?= lang('editar')?></span>');				
+						$("#middle-col-"+match_id).html('<span>'+message+'</span><br><span class="btn btn-success btn-edit-match" match_id="'+match_id+'" onclick="enable_match('+match_id+')"><?= lang('editar')?></span>');				
 					}, 1100);
 					
 				}
@@ -678,7 +749,7 @@
 					enable_match(match_id);
 				});
 	
-				$(".input-goals").keyup(function(){
+				$(".input-goals").focusout(function(){
 					var value = $(this).val();	
 					if(!(value % 1 === 0))
 					{
@@ -700,7 +771,20 @@
 					if(result > -2)
 					{
 						$.ajax({url: "<?= $link_url?>front_user/auto_save/"+match_code+"/"+match_id+"/"+goals1+"/"+goals2+"/"+result});
-						disable_match(match_id);
+						var message = "Guardado";
+						if(result == -1)
+						{
+							message = "Gana <b>"+$("#match-name-"+match_id+"-1").html()+"</b>";	
+						}
+						if(result == 0)
+						{
+							message = "Empate";	
+						}
+						if(result == 1)
+						{
+							message = "Gana <b>"+$("#match-name-"+match_id+"-2").html()+"</b>";
+						}
+						disable_match(match_id,message);
 					}
 				});
 				

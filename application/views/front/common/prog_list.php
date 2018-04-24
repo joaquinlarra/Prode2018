@@ -1,20 +1,4 @@
-<ul class="nav navbar-nav navbar-left">
-    <?
-    if($this->company_model->qualys)
-	{
-	?>
-    <li><a <? if($phase == 'qualys'){?>class="active"<? } ?> href="<?=$link_url?>pronostico-qualys"><?= lang("Pre-clasificados")?></a></li>
-    <?
-	}
-	?>
-    <li><a <? if($phase == 'initial'){?>class="active"<? } ?> href="<?=$link_url?>pronostico-fase-inicial"><?= lang("Fase inicial")?></a></li>
-    <li><a  <? if($phase == 'final'){?>class="active"<? } ?> href="<?=$link_url?>pronostico-fase-final"><?= lang("Fase final")?></a></li>
-	<?
-    if($this->company_model->winners)
-	{
-	?>
-    <li><a <? if($phase == 'starter'){?>class="active"<? } ?> href="<?=$link_url?>pronostico-ganadores"><?= lang("Ganadores")?></a></li>
-    <?
-	}
-	?>
-</ul>
+<div class="btn-group" role="group">
+    <a class="btn btn-primary <?= $phase == 'initial' ? 'active' : '' ?>" href="<?=$link_url?>pronostico-fase-inicial"><?= $phase == 'initial' ? '<i class="fas fa-futbol"></i>' : '' ?> <?= lang("Fase inicial")?></a>
+    <a  class="btn btn-primary <?= $phase == 'final' ? 'active' : '' ?>" href="<?=$link_url?>pronostico-fase-final"><?= $phase == 'final' ? '<i class="fas fa-futbol"></i>' : '' ?> <?= lang("Fase final")?></a>
+</div>

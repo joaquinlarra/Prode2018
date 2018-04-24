@@ -327,7 +327,17 @@ class Bitauth
 	{
 		if($this->_log_logins == TRUE)
 		{
-
+			$query = $this->db
+			->select('user_id')
+			->where('user_id = "'.(int)$user_id.'"')
+			->where('success', 1)
+			->get($this->_table['logins']);
+			
+			if($query && !$query->num_rows())
+			{
+				$this->session->set_userdata('user-first-login', '1');
+			}
+			
 			$data = array(
 				'ip_address' => ip2long($_SERVER['REMOTE_ADDR']),
 				'user_id' => (empty($user_id) ? 0 : $user_id),

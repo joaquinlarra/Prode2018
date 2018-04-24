@@ -477,13 +477,13 @@ function get_date($date)
 	{
 		case 'MX':
 		case 'AR':
-					$date = $dias[$lang][dateFormat($date,'w')]." ".dateFormat($date,'d')." de ".$meses[$lang][dateFormat($date,'n')-1]. " del ".dateFormat($date,'Y') ;
+					$date = $dias[$lang][dateFormat($date,'w')]." ".dateFormat($date,'d')." de ".$meses[$lang][dateFormat($date,'n')-1] ;
 					break;
 		case 'PR':
-					$date = $dias[$lang][dateFormat($date,'w')]." ".dateFormat($date,'d')." de ".$meses[$lang][dateFormat($date,'n')-1]. " de ".dateFormat($date,'Y') ;	
+					$date = $dias[$lang][dateFormat($date,'w')]." ".dateFormat($date,'d')." de ".$meses[$lang][dateFormat($date,'n')-1] ;	
 					break;
 		case 'US':
-					$date = $dias[$lang][dateFormat($date,'w')]." ".dateFormat($date,'d').", ".$meses[$lang][dateFormat($date,'n')-1]. " ".dateFormat($date,'Y') ;
+					$date = $dias[$lang][dateFormat($date,'w')]." ".dateFormat($date,'d').", ".$meses[$lang][dateFormat($date,'n')-1] ;
 	
 	}
 	return $date;
