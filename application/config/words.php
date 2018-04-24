@@ -16,10 +16,10 @@ $words['Muro']['MX'] = "Muro";
 $words['Muro']['PR'] = "Postagens";
 $words['Muro']['US'] = "Wall";
 
-$words['Cómo jugar']['AR'] = "CÓMO JUGAR";
-$words['Cómo jugar']['MX'] = "CÓMO JUGAR";
-$words['Cómo jugar']['PR'] = "CÓMO SE JOGA";
-$words['Cómo jugar']['US'] = "HOW TO PLAY";
+$words['Cómo jugar']['AR'] = "Cómo jugar";
+$words['Cómo jugar']['MX'] = "Cómo jugar";
+$words['Cómo jugar']['PR'] = "Cómo se joga";
+$words['Cómo jugar']['US'] = "How to play";
 
 $words['Badges']['AR'] = "Medallas";
 $words['Badges']['MX'] = "Medallas";

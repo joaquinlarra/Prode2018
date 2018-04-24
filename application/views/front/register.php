@@ -1,7 +1,7 @@
 ﻿<? include(dirname(__FILE__)."/common/header_mini.php")?>
 <div class="container">
 	<div class="row">
-		<div class="col-md-12">
+		<div class="col-md-offset-2 col-md-8">
              <div class="panel panel-primary">
                 <div class="panel-heading" align="center">
                 <?

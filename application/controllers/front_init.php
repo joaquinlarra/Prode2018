@@ -70,14 +70,14 @@ class Front_init extends CI_Controller
 
 		
 		$this->data['fields'] = array(	
-										'namespace_disabled' => array(	'label' => lang('Nombre del Grupo / Name of the group'),
+										'namespace_disabled' => array(	'label' => lang('Nombre del Grupo'),
 												'type' => 'text',
 												'validation' => '',
 												'disabled' => true,
 												'visibility' => 'register_company'
 										),
 										
-										'email' => array('label' => lang('Email<br> <span class="grey-label">Email</span>'),
+										'email' => array('label' => lang('Email'),
 														'type' => 'text',
 														'validation' => 'valid_email|required',
 														'visibility' => 'profile|edit_profile|first_login|register|register_company'
@@ -91,22 +91,22 @@ class Front_init extends CI_Controller
 															),
 										*/
 										
-										'displayname' => array(	'label' => lang('Apodo<br> <span class="grey-label">Nickname</span>'),
+										'displayname' => array(	'label' => lang('Nickname'),
 															'type' => 'text',
 															'validation' => 'required',
 															'visibility' => 'profile|edit_profile|first_login|register|register_company'
 															),
-										'fullname' => array(	'label' => lang('Nombre Completo<br> <span class="grey-label">Full Name</spam>'),
+										'fullname' => array(	'label' => lang('Nombre Completo'),
 															'type' => 'text',
 															'validation' => 'required',
 															'visibility' => 'profile|edit_profile|first_login|register|register_company'
 															),
-										'password' => array('label' => lang('Contraseña<br> <span class="grey-label">Password</span>'),
+										'password' => array('label' => lang('Contraseña'),
 														'type' => 'password',
 														'validation' => 'required|matches[passconf]',
 														'visibility' => 'profile|first_login|register|forgot_pass|register_company'
 														),
-										'passconf' => array('label' => lang('Repetir contraseña<br> <span class="grey-label">Repeat Password</span>'),
+										'passconf' => array('label' => lang('Repetir contraseña'),
 														'type' => 'password',
 														'validation' => 'required',
 														'visibility' => 'profile|first_login|register|forgot_pass|register_company'
@@ -121,14 +121,13 @@ class Front_init extends CI_Controller
 											'validation' => 'required|alpha_dash',
 											'visibility' => 'register_company'
 										),
-										'user_language'=> array(	'label' => 'Idioma<br> <span class="grey-label">Language</span>',
+										'country'=> array(	'label' => 'País',
 															'type' => 'select',
-															'options' => array(0 => array("value" => "AR", "label" => "Español"),
-																				1 => array("value" => "PR", "label" => "Portugues"),
-																				2 => array("value" => "US", "label" => "English"),
+															'options' => array(0 => array("value" => "AR", "label" => "Argentina"),
+																				1 => array("value" => "MX", "label" => "México"),
 																				),
 															'validation' => '',
-															'visibility' => 'company_register|register'
+															'visibility' => 'company_register'
 														),
 										'main_image' => array(	'label' => 'Logo',
 														'type' => 'image',
@@ -150,7 +149,7 @@ class Front_init extends CI_Controller
 														'visibility' => 'first_login|register|edit_profile'
 													);	
 		}
-		/*
+		
 		if($this->company_model->bio)
 		{
 			$this->data['fields']['bio'] = array(	'label' => lang('Bio'),
@@ -159,7 +158,7 @@ class Front_init extends CI_Controller
 													'visibility' => 'profile|edit_profile|first_login|register'
 												);	
 		}
-		*/
+		
 		$this->form_validation->set_message('matches', '%s '.lang("y").' %s '.lang("deben ser iguales"));
 		$this->form_validation->set_message('required', lang("complete-field"));
 		$this->form_validation->set_message('valid_email', lang("valid-email"));
