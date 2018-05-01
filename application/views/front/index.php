@@ -83,7 +83,7 @@
                                     <div class="row">
                                         <form method="POST" id="check-code" class="form-horizontal form-inline form-code ajax_form" action="<?=$link_url.'check-code'?>" accept-charset="UTF-8" role="form">
 
-                                            <div class="col-xs-6 col-sm-7 col-md-7 col-lg-6">
+                                            <div class="col-md-offset-1 col-sm-offset-1 col-lg-offset-1 col-xs-6 col-sm-7 col-md-7 col-lg-6">
                                                 <input type="text" id="code" class="form-control" name="code"  placeholder="# codigo">
                                             </div>
                                             <div class="col-xs-6 col-sm-4 col-md-4 col-lg-4 col-md-inset-1 col-lg-inset-1">
