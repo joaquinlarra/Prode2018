@@ -641,4 +641,10 @@ class Home extends Front_init
 		
 		$this->load->view("front/friends_league.php", $this->data);
 	}
+
+	public function promo_landing()
+	{
+
+		$this->load->view("front/promo-landing.php");
+	}
 }

@@ -39,6 +39,7 @@
 */
 $route['admin'] = "admin/user";
 $route['default_controller'] = "home";
+$route['promo-landing'] = "home/promo_landing";
 $route['404_override'] = '';
 $route['choose_friends/(:num)'] = "home/choose_friends/$1";
 $route['friends_invited'] = "home/friends_invited/";
