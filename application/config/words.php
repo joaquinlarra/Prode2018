@@ -573,10 +573,10 @@ $words['account-confirmed']['MX'] = "<h4>&iexcl;Cuenta confirmada!</h4><br><br><
 $words['account-confirmed']['PR'] = "<h4>&iexcl;Conta confirmada!</h4><br><br><a class='btn btn-primary btn-block' href='[[link_url]]pronosticos'>Ingresar</a>";
 $words['account-confirmed']['US'] = "<h4>&iexcl;Account confirmed!</h4><br><br><a class='btn btn-primary btn-block' href='[[link_url]]pronosticos'>Enter</a>";
 
-$words['support-email']['AR'] = "si tenés alguna duda o inquietud podés escribir a <a href='mailto:soporte@prode2018.com'><b>soporte@prode2018.com</b></a>";
-$words['support-email']['MX'] = "si tienes alguna duda o inquietud puedes escribir a <a href='mailto:soporte@prode2018.com'><b>soporte@prode2018.com</b></a>";
-$words['support-email']['PR'] = "Se você tiver alguma dúvida pode escrever para <a href='mailto:soporte@prode2018.com'><b>soporte@prode2018.com</b></a>";
-$words['support-email']['US'] = "questions? <a href='mailto:soporte@prode2018.com'><b>soporte@prode2018.com</b></a>";
+$words['support-email']['AR'] = "si tenés alguna duda o inquietud podés escribir a <a href='mailto:info@prode2018.com'><b>info@prode2018.com</b></a>";
+$words['support-email']['MX'] = "si tienes alguna duda o inquietud puedes escribir a <a href='mailto:info@prode2018.com'><b>info@prode2018.com</b></a>";
+$words['support-email']['PR'] = "Se você tiver alguma dúvida pode escrever para <a href='mailto:info@prode2018.com'><b>info@prode2018.com</b></a>";
+$words['support-email']['US'] = "questions? <a href='mailto:info@prode2018.com'><b>info@prode2018.com</b></a>";
 
 $words['Nickname']['AR'] = "Apodo";
 $words['Nickname']['MX'] = "Apodo";
