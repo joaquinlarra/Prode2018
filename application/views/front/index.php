@@ -82,13 +82,11 @@
                                     </div>
                                     <div class="row">
                                         <form method="POST" id="check-code" class="form-horizontal form-inline form-code ajax_form" action="<?=$link_url.'check-code'?>" accept-charset="UTF-8" role="form">
-                                            <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3">
-                                                <label class="pull-right" for="email">Código:</label>
+
+                                            <div class="col-xs-6 col-sm-7 col-md-7 col-lg-6">
+                                                <input type="text" id="code" class="form-control" name="code"  placeholder="# codigo">
                                             </div>
-                                            <div class="col-xs-12 col-sm-6 col-md-5 col-lg-5">
-                                                <input type="text" id="code" class="form-control" name="code"  placeholder="Ingresá el código de tu grupo">
-                                            </div>
-                                            <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3 col-md-inset-1 col-lg-inset-1">
+                                            <div class="col-xs-6 col-sm-4 col-md-4 col-lg-4 col-md-inset-1 col-lg-inset-1">
                                                 <button type="submit" name="submit" class="btn btn-green btn-block pull-left">Unirme al grupo</button>
                                             </div>
                                         </form>
