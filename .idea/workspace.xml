@@ -2,8 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6be8e79c-ddd2-4f79-9258-0a91d37c7b31" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/front/common/footer.php" afterPath="$PROJECT_DIR$/application/views/front/common/footer.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/front/common/header.php" afterPath="$PROJECT_DIR$/application/views/front/common/header.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/front/common/header_mini.php" afterPath="$PROJECT_DIR$/application/views/front/common/header_mini.php" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -54,7 +54,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="front_init.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="front_init.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/application/controllers/front_init.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="395">
@@ -71,14 +71,34 @@
           </provider>
         </entry>
       </file>
+      <file leaf-file-name="header.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/application/views/front/common/header.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="60">
+              <caret line="4" column="56" lean-forward="false" selection-start-line="4" selection-start-column="56" selection-end-line="4" selection-end-column="56" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="header_mini.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/application/views/front/common/header_mini.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="60">
+              <caret line="4" column="56" lean-forward="false" selection-start-line="4" selection-start-column="56" selection-end-line="4" selection-end-column="56" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
     </leaf>
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>local</find>
       <find>keyu</find>
       <find>check-code</find>
       <find>offset</find>
+      <find>local</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -90,6 +110,8 @@
         <option value="$PROJECT_DIR$/application/views/front/index.php" />
         <option value="$PROJECT_DIR$/application/controllers/front_init.php" />
         <option value="$PROJECT_DIR$/application/views/front/common/footer.php" />
+        <option value="$PROJECT_DIR$/application/views/front/common/header.php" />
+        <option value="$PROJECT_DIR$/application/views/front/common/header_mini.php" />
       </list>
     </option>
   </component>
@@ -253,12 +275,12 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1525198249127</updated>
-      <workItem from="1525198251277" duration="4392000" />
+      <workItem from="1525198251277" duration="4671000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="4392000" />
+    <option name="totallyTimeSpent" value="4671000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1920" height="1200" extended-state="0" />
@@ -336,6 +358,22 @@
             <marker date="1525204912472" expanded="true" signature="21329:21419" ph="SELECT * FRO... friends_leagues_users" />
             <marker date="1525204912472" expanded="true" signature="21508:21577" ph="SELECT * FRO... friends_leagues" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/views/front/common/header_mini.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="4" column="56" lean-forward="false" selection-start-line="4" selection-start-column="56" selection-end-line="4" selection-end-column="56" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/views/front/common/header.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="4" column="56" lean-forward="false" selection-start-line="4" selection-start-column="56" selection-end-line="4" selection-end-column="56" />
+          <folding />
         </state>
       </provider>
     </entry>
