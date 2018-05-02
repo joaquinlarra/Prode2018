@@ -615,6 +615,7 @@ class Front_init extends CI_Controller
 	{
 		$this->get_company();
 		$companyCode = $this->company_model->get_register_code();
+		hola($companyCode);
 		return ($companyCode === $code);
 	}
 

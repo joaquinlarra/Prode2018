@@ -78,7 +78,7 @@ class Company_model extends Simple_data_model
 	{
 		$date = new DateTime($this->company_model->date_created);
 		$this->get_id();
-		$code =  $date->format('m').$this->get_id();
+		$code =  $date->format('i').$this->get_id();
 		return ($code);
 	}
 
