@@ -296,6 +296,11 @@ $words['email-register']['MX'] = "REGISTRATE CON TU EMAIL";
 $words['email-register']['PR'] = "REGISTRE COM SEU EMAIL";
 $words['email-register']['US'] = "REGISTER WITH YOUR EMAIL";
 
+$words['code-register']['AR'] = "REGISTRATE CON TU CÓDIGO";
+$words['code-register']['MX'] = "REGISTRATE CON TU CÓDIGO";
+$words['code-register']['PR'] = "REGISTRE COM SEU CODE";
+$words['code-register']['US'] = "REGISTER WITH YOUR CODE";
+
 $words['Guardar sesión']['AR'] = "Guardar sesión";
 $words['Guardar sesión']['MX'] = "Guardar sesión";
 $words['Guardar sesión']['PR'] = "Continuar conectado";

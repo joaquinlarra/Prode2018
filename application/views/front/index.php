@@ -50,7 +50,7 @@
 		<div class="<?= $this->company_model->register ? "col-md-offset-2 col-md-8" : "col-md-offset-3 col-md-6 col-sm-offset-2 col-sm-8"?>">
              <div class="panel panel-primary">
 
-                <div class="panel-heading" align="center">Ingresá el código y empezá a participar</div>
+                <div class="panel-heading" align="center">Ingresá el código de registro </div>
                 <div class="panel-body">
                     <div class="row">
                     	<div class="col-md-12 <?=($this->company_model->first_login)?'':'hidden'?>">
@@ -130,8 +130,29 @@
 						{
 						?>
                             <div class="col-md-6 col-sm-6">
-                                <label><?= lang("email-register")?></label>
-                                <form method="POST" id="register-form" class="form-signin ajax_form" action="<?= $link_url.'front_user/register'?>" accept-charset="UTF-8">
+                                <label><?= lang("code-register")?></label>
+
+                                <div align="center">
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <div class="alert alert-danger" id="company-code-error" style="display:none"></div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <form method="POST" id="check-code" class="form-horizontal form-inline form-code ajax_form" action="<?=$link_url.'check-code'?>" accept-charset="UTF-8" role="form">
+
+                                            <br ><div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                                                <input type="text" id="code" class="form-control" name="code"  placeholder="# codigo">
+                                            </div>
+                                            <br >
+                                            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 ">
+                                                <button type="submit" name="submit" class="btn btn-green btn-block pull-left">Unirme al grupo</button>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+
+                                <!--<form method="POST" id="register-form" class="form-signin ajax_form" action="<?= $link_url.'front_user/register'?>" accept-charset="UTF-8">
                                     <div id="error" style="display:none" class="alert alert-danger"></div>
                                     <?
                                     if(!$this->company_model->register_domain)
@@ -153,7 +174,7 @@
 									}
 									?>
                                     <button type="submit" name="submit" class="btn btn-green btn-block"><?= lang("Registrarse")?></button>
-                                </form>
+                                </form>-->
                             </div>
                 		<?
 						}

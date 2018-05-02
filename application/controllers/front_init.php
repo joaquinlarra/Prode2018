@@ -654,15 +654,14 @@ class Front_init extends CI_Controller
 		} else if (!$this->form_validation->run()) {
 			$data['valid'] = 0;
 			$data['message'] = lang("El código ingresado no es válido");
-		} else if ($this->form_validation->run() && !$this->is_company_available($this->data['post']['code']) ) {
+		} else if (!$this->is_company_available($this->data['post']['code']) ) {
 			$data['message'] = lang('El código ingresado es incorrecto');
 			$data['valid'] = 0;
-		}else if( $this->form_validation->run() && $this->is_company_available($this->data['post']['code']) ) {
+		}else{
 			$data['valid'] = 1;
 			$data['code'] = $this->data['post']['code'];
-			$data['url'] = base_url().'';
-			$this->session->set_userdata('namespace', $data['namespace']);
-			$this->session->set_userdata('test', $data['namespace']);	
+			$data['url'] = 'http://'.$this->company_model->namespace.".prode2018.com/completar-registro";
+			$this->session->set_userdata('register_code', $data['code']);
 		}
 		echo json_encode($data);
 	}

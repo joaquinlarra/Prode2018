@@ -30,7 +30,12 @@ class Home extends Front_init
 	
 	public function complete_register()
 	{
-		$this->load->library('simple_captcha');
+        if (!$this->is_company_available($this->session->userdata('register_code')))
+        {
+            redirect('/');
+            die();
+        }
+	    $this->load->library('simple_captcha');
 		$this->data['section'] = "complete_register";
 		$sql = "SELECT * FROM bitauth_users WHERE user_id = '".(int)$this->session->userdata('prev_user_id')."'";
 		$result = $this->db->query($sql)->result_array();
@@ -581,70 +586,11 @@ class Home extends Front_init
 		$this->data['section'] = 'how-to';
 		$this->load->view("front/how_to_play.php",$this->data);
 	}
-	
-	public function create_friends_league()
-	{
-		$this->redirect_login();
-		$this->data['section'] = 'friends_league';
-		$this->data['sub_section'] = 'create_friends_league';
-		$this->load->view("front/create_friends_league.php",$this->data);	
-	}
-	public function join_friends_league()
-	{
-		$this->redirect_login();
-		$this->data['section'] = 'friends_league';
-		$this->data['sub_section'] = 'join_friends_league';
-		
-		$sql = "SELECT * FROM friends_leagues WHERE company_id = '".$this->company_model->get_id()."'";
-		$this->data['join_leagues'] = $this->db->query($sql)->result_array();
-		
-		$this->load->view("front/join_friends_league.php",$this->data);	
-	}
-	
-	public function friends_league($league_id)
-	{
-		$this->redirect_login();
-		$this->data['section'] = 'friends_league';
-		$this->data['sub_section'] = 'view_league';
-		$this->load->model("admin/friend_league_model");
-		
-		$sql = "SELECT * FROM friends_leagues WHERE league_id = '".(int)$league_id."' AND company_id = '".$this->company_model->get_id()."'";
-		
-		$league = $this->db->query($sql)->row();
-
-		if(!(int)$league_id || !($league->name))
-		{
-			$this->data['error'] = lang('non-existent-league');	
-			$this->load->view("front/friends_league.php", $this->data);
-			return;
-		}
-		
-		if($league->creator_id == $this->user_id)
-		{
-			$sql = "UPDATE friends_leagues SET notifications = 0 WHERE league_id = '".$league->league_id."'";
-			$this->db->query($sql);
-			$this->get_friends_league_notifications();	
-		}
-		
-		$this->data['in_league'] = $league->name;
-		$this->data['f_league'] = $league;
-		$this->data['is_moderator'] = $league->creator_id == $this->user_id;
-		
-		$sql = "SELECT * FROM friends_leagues_users WHERE league_id = '".(int)$league_id."' AND confirmed = 1";
-		$this->data['confirmed_users'] = $this->db->query($sql)->result_array();
-		
-		if($this->data['is_moderator'])
-		{
-			$sql = "SELECT * FROM friends_leagues_users WHERE league_id = '".(int)$league_id."' AND confirmed = 0";
-			$this->data['non_confirmed_users'] = $this->db->query($sql)->result_array();
-		}
-		
-		$this->load->view("front/friends_league.php", $this->data);
-	}
 
 	public function promo_landing()
 	{
 
 		$this->load->view("front/promo-landing.php");
 	}
+
 }

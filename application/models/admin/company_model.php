@@ -77,7 +77,8 @@ class Company_model extends Simple_data_model
 	public function get_register_code()
 	{
 		$date = new DateTime($this->company_model->date_created);
-		$code =  $date->format('ms');
+		$this->get_id();
+		$code =  $date->format('m').$this->get_id();
 		return ($code);
 	}
 
