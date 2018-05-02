@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="6be8e79c-ddd2-4f79-9258-0a91d37c7b31" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/controllers/front_init.php" afterPath="$PROJECT_DIR$/application/controllers/front_init.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/models/admin/company_model.php" afterPath="$PROJECT_DIR$/application/models/admin/company_model.php" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -89,18 +88,18 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="front_init.php" pinned="false" current-in-tab="false">
+      <file leaf-file-name="front_init.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/application/controllers/front_init.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="403">
-              <caret line="634" column="55" lean-forward="true" selection-start-line="634" selection-start-column="55" selection-end-line="634" selection-end-column="55" />
+            <state relative-caret-position="133">
+              <caret line="616" column="65" lean-forward="false" selection-start-line="616" selection-start-column="65" selection-end-line="616" selection-end-column="65" />
               <folding>
-                <marker date="1525276709926" expanded="true" signature="9314:9398" ph="SELECT * FRO... companies" />
-                <marker date="1525276709926" expanded="true" signature="11544:11641" ph="SELECT branc... company_branches" />
-                <marker date="1525276709926" expanded="true" signature="12654:12826" ph="SELECT * FRO... bitauth_users" />
-                <marker date="1525276709926" expanded="true" signature="13997:14109" ph="UPDATE score... " />
-                <marker date="1525276709926" expanded="true" signature="21329:21419" ph="SELECT * FRO... friends_leagues_users" />
-                <marker date="1525276709926" expanded="true" signature="21508:21577" ph="SELECT * FRO... friends_leagues" />
+                <marker date="1525276864012" expanded="true" signature="9314:9398" ph="SELECT * FRO... companies" />
+                <marker date="1525276864012" expanded="true" signature="11544:11641" ph="SELECT branc... company_branches" />
+                <marker date="1525276864012" expanded="true" signature="12654:12826" ph="SELECT * FRO... bitauth_users" />
+                <marker date="1525276864012" expanded="true" signature="13997:14109" ph="UPDATE score... " />
+                <marker date="1525276864012" expanded="true" signature="21329:21419" ph="SELECT * FRO... friends_leagues_users" />
+                <marker date="1525276864012" expanded="true" signature="21508:21577" ph="SELECT * FRO... friends_leagues" />
               </folding>
             </state>
           </provider>
@@ -116,7 +115,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="company_model.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="company_model.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/application/models/admin/company_model.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="898">
@@ -182,8 +181,8 @@
         <option value="$PROJECT_DIR$/application/views/front/index.php" />
         <option value="$PROJECT_DIR$/application/views/front/register.php" />
         <option value="$PROJECT_DIR$/application/controllers/home.php" />
-        <option value="$PROJECT_DIR$/application/controllers/front_init.php" />
         <option value="$PROJECT_DIR$/application/models/admin/company_model.php" />
+        <option value="$PROJECT_DIR$/application/controllers/front_init.php" />
       </list>
     </option>
   </component>
@@ -348,12 +347,12 @@
       <option name="presentableId" value="Default" />
       <updated>1525198249127</updated>
       <workItem from="1525198251277" duration="9164000" />
-      <workItem from="1525267165025" duration="564000" />
+      <workItem from="1525267165025" duration="628000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="9728000" />
+    <option name="totallyTimeSpent" value="9792000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1920" height="1200" extended-state="0" />
@@ -517,21 +516,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/application/controllers/front_init.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="403">
-          <caret line="634" column="55" lean-forward="true" selection-start-line="634" selection-start-column="55" selection-end-line="634" selection-end-column="55" />
-          <folding>
-            <marker date="1525276709926" expanded="true" signature="9314:9398" ph="SELECT * FRO... companies" />
-            <marker date="1525276709926" expanded="true" signature="11544:11641" ph="SELECT branc... company_branches" />
-            <marker date="1525276709926" expanded="true" signature="12654:12826" ph="SELECT * FRO... bitauth_users" />
-            <marker date="1525276709926" expanded="true" signature="13997:14109" ph="UPDATE score... " />
-            <marker date="1525276709926" expanded="true" signature="21329:21419" ph="SELECT * FRO... friends_leagues_users" />
-            <marker date="1525276709926" expanded="true" signature="21508:21577" ph="SELECT * FRO... friends_leagues" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/application/views/front/common/header.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="15">
@@ -545,6 +529,21 @@
         <state relative-caret-position="898">
           <caret line="80" column="33" lean-forward="false" selection-start-line="80" selection-start-column="33" selection-end-line="80" selection-end-column="33" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/controllers/front_init.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="133">
+          <caret line="616" column="65" lean-forward="false" selection-start-line="616" selection-start-column="65" selection-end-line="616" selection-end-column="65" />
+          <folding>
+            <marker date="1525276864012" expanded="true" signature="9314:9398" ph="SELECT * FRO... companies" />
+            <marker date="1525276864012" expanded="true" signature="11544:11641" ph="SELECT branc... company_branches" />
+            <marker date="1525276864012" expanded="true" signature="12654:12826" ph="SELECT * FRO... bitauth_users" />
+            <marker date="1525276864012" expanded="true" signature="13997:14109" ph="UPDATE score... " />
+            <marker date="1525276864012" expanded="true" signature="21329:21419" ph="SELECT * FRO... friends_leagues_users" />
+            <marker date="1525276864012" expanded="true" signature="21508:21577" ph="SELECT * FRO... friends_leagues" />
+          </folding>
         </state>
       </provider>
     </entry>
