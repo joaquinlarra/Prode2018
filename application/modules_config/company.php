@@ -61,8 +61,8 @@ $config['modules'][$module_name]['fields'] = array(
 															'visibility' => 'save|details'
 															),
 										'confirm_email' => array('label' => 'Confirmar Email',
-															'type' => 'hidden',
-															'value' => 1,
+															'type' => 'checkbox',
+															'value' => 0,
 															'validation' => '',
 															'description' => "Se habilitará al usuario solo si confirmó la cuenta",
 															'visibility' => 'save'
