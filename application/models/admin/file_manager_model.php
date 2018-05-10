@@ -104,8 +104,14 @@ class File_manager_model extends Simple_data_model
 		$this->load->library('image_lib');
 		foreach($file_fields as $field_id => $field_attrs)
 		{
-			$file_data = array();
+            if(!$_FILES[$field_id]['name'] || ($_FILES[$field_id]['name'] == ""))
+            {
+                continue;
+            }
+
+		    $file_data = array();
 			$path_parts = pathinfo($_FILES[$field_id]['name']);
+
 			switch($field_attrs['type'])
 			{
 				case "image":

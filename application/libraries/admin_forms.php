@@ -485,7 +485,7 @@ class admin_forms {
 		$str .= "<div class='col-sm-12 col-md-9'>";
 		if($this->prev_val)
 		{
-			$img = '<a href="'.$this->prev_val.'" target="_blank"><img src="'.thumb_image($this->prev_val).'" class="form_image"></a> <span fieldname="'.$this->field_name.'" class="modify_file">Cambiar '.$this->field_attrs['label'].'</span>';	
+			$img = '<a href="'.$this->prev_val.'" target="_blank"><img src="'.thumb_image($this->prev_val).'" class="form_image"></a>';
 			$str .= "<div>".$img."<input type='file' id='".$this->field_name."' class='input_file' ".$this->common_attrs."/></div>";
 			
 		}

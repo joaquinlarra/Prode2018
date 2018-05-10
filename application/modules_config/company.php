@@ -108,7 +108,14 @@ $config['modules'][$module_name]['fields'] = array(
 																	'validation' => '',
 																	'visibility' => 'details|save',
 																	),
-										'footer_image' => array(	'label' => 'Logo footer',
+                                        'prizes_image' => array(	'label' => 'Infografía Premios',
+                                            'type' => 'image',
+                                            'tag' => 'prizes_image',
+                                            'validation' => '',
+                                            'visibility' => 'details_save',
+                                        ),
+
+                                        'footer_image' => array(	'label' => 'Logo footer',
 																	'type' => 'image',
 																	'tag' => 'footer_image',
 																	'validation' => '',
@@ -160,7 +167,7 @@ $config['modules'][$module_name]['fields'] = array(
 															'tag' => 'bg_image',
 															'validation' => '',
 															'description' => "",
-															'visibility' => ''
+															'visibility' => 'save|details'
 														),
 										'custom_css' => array(	'label' => 'Custom CSS',
 															'type' => 'script',

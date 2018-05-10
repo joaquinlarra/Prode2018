@@ -36,6 +36,22 @@ $words['Salir']['MX'] = "Salir";
 $words['Salir']['PR'] = "Sair";
 $words['Salir']['US'] = "Log out";
 
+$words['Estilos']['AR'] = "Estilos (CSS)";
+$words['Estilos']['MX'] = "Estilos (CSS)";
+$words['Estilos']['PR'] = "Estilos (CSS)";
+$words['Estilos']['US'] = "Styles (CSS)";
+
+
+$words['Imagen Premios']['AR'] = "Imagen Premios";
+$words['Imagen Premios']['MX'] = "Imagen Premios";
+$words['Imagen Premios']['PR'] = "Imagen Premios";
+$words['Imagen Premios']['US'] = "Prices Image";
+
+$words['Imagen Fondo']['AR'] = "Imagen Fondo";
+$words['Imagen Fondo']['MX'] = "Imagen Fondo";
+$words['Imagen Fondo']['PR'] = "Imagen Fondo";
+$words['Imagen Fondo']['US'] = "Background Image";
+
 $words['leave-comment']['AR'] = "Dejá tu comentario...";
 $words['leave-comment']['MX'] = "Deja tu comentario...";
 $words['leave-comment']['PR'] = "Deixe seu comentário...";

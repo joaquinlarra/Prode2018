@@ -79,7 +79,8 @@
 
 						<div class="rightNav" id="rightNav">
 							<span class="glyphicon glyphicon-menu-right closeNav navToggler"></span>
-							<a <? if($user_first_login){ echo 'data-intro="Clickea en <i>Como jugar</i> antes de emepzar!"'; } ?> class="btn btn-info <?= $section == 'how-to' ? 'active' : '' ?>" href="<?=$link_url?>como-jugar">
+
+                            <a <? if($user_first_login){ echo 'data-intro="Clickea en <i>Como jugar</i> antes de emepzar!"'; } ?> class="btn btn-info <?= $section == 'how-to' ? 'active' : '' ?>" href="<?=$link_url?>como-jugar">
 								<?= strtoupper(lang('Cómo jugar'))?>
 							</a>
 
@@ -91,7 +92,14 @@
 								</button>
 								<ul class="dropdown-menu" role="menu">
 									<li <? if($section=='usuario'){?>class="active"<? } ?>><a href="<?=$link_url?>mi-cuenta"><?= lang('Mi cuenta')?></a></li>
-									<li><a href="<?=$link_url?>log-out"><?= lang('Salir')?></a></li>
+                                    <? if($this->company_model->is_company_admin($this->bitauth->email))
+                                    {
+                                        ?>
+                                    <li <? if($section=='edit_company'){?>class="active"<? } ?>><a href="<?=$link_url?>editar-grupo"><?= lang('EDITAR GRUPO')?></a>
+                                        <?
+                                    }
+                                    ?>
+                                    <li><a href="<?=$link_url?>log-out"><?= lang('Salir')?></a></li>
 								</ul>
 							</div>
 

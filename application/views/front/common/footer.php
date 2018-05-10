@@ -61,7 +61,11 @@
     <![endif]-->
 	<script>
 		$('body').parallax("50%", -0.2);
-			
+        $(".modify_file").live('click', function(){
+            // id = $(this).attr('fieldname');
+            $(this).hide();
+            $(this).next().show();
+        });
 	</script>
 	<?
 	if ($section == 'home' || $section == 'comprar' ) {
@@ -318,7 +322,38 @@
         </script>
 	<?	
 	}
-	
+    if($section == 'edit_company')
+    {
+        ?>
+        <script src="<?= $link_url?>assets_common/js/jquery.form.js"></script>
+        <script>
+            $('#edit-company-form').ajaxForm({
+                // dataType identifies the expected content type of the server response
+                dataType:  'json',
+                // success identifies the function to invoke when the server response
+                // has been received
+                success:   validate_ajax_form
+            });
+
+            function validate_ajax_form(data) {
+                $('#error').hide();
+                if(data.valid)
+                {
+                    window.location.href = "<?= $link_url?>mi-grupo/";
+
+                }
+                else
+                {
+                    $.each(data.errors, function(key, value) {
+
+                        if(value)
+                            $('#contact_error_' + key ).html( value ).fadeIn();
+                    });
+                }
+            };
+        </script>
+        <?
+    }
 	if($section == 'recover_password')
 	{
 	?>

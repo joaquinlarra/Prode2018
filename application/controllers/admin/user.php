@@ -194,7 +194,7 @@ class User extends ADMIN_Controller
 					$forgot_code = $this->bitauth->forgot_password($user->user_id);
 					
 					$data['url'] = base_url()."admin/generame-la-clave/".$forgot_code;
-					var_dump($data['url']);
+
 					$this->bitauth->send_forgot_password_email($data['url'], $user->user_id);	
 					$data['success'] = 1;
 					$data['email'] = $user->email;

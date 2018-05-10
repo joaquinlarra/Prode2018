@@ -44,15 +44,19 @@ class Home extends Front_init
 		$this->load->view("front/register.php", $this->data);
 	}
 
-	public function complete_company_register()
+	public function edit_company()
 	{
-		$this->load->library('simple_captcha');
-		$this->data['section'] = "complete_register";
-		$this->data['register_company']['namespace_disabled'] = $this->session->userdata('namespace');
-		$this->data['register_company']['namespace'] = $this->session->userdata('namespace');
-		$this->load->view("front/register_company.php", $this->data);			
+		$this->data['section'] = "edit_company";
+		$this->load->view("front/edit_company.php", $this->data);
 	}
-	
+
+    public function view_company()
+    {
+        $this->data['section'] = "view_company";
+        $this->load->view("front/view_company.php", $this->data);
+    }
+
+
 	public function language($lang)
 	{
 		$this->redirect_login();

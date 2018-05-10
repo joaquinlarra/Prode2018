@@ -70,73 +70,96 @@ class Front_init extends CI_Controller
 
 		
 		$this->data['fields'] = array(	
-										'namespace_disabled' => array(	'label' => lang('Nombre del Grupo / Name of the group'),
-												'type' => 'text',
-												'validation' => '',
-												'disabled' => true,
-												'visibility' => 'register_company'
-										),
-										
-										'email' => array('label' => lang('Email<br> <span class="grey-label">Email</span>'),
-														'type' => 'text',
-														'validation' => 'valid_email|required',
-														'visibility' => 'profile|edit_profile|first_login|register|register_company'
-										),
-										/*
-										'username' => array(	'label' => lang('Email'),
-															'type' => 'text',
-															'validation' => '',
-															'disabled' => 'true',
-															'visibility' => 'profile|first_login|register'
-															),
-										*/
-										
-										'displayname' => array(	'label' => lang('Apodo<br> <span class="grey-label">Nickname</span>'),
-															'type' => 'text',
-															'validation' => 'required',
-															'visibility' => 'profile|edit_profile|first_login|register|register_company'
-															),
-										'fullname' => array(	'label' => lang('Nombre Completo<br> <span class="grey-label">Full Name</spam>'),
-															'type' => 'text',
-															'validation' => 'required',
-															'visibility' => 'profile|edit_profile|first_login|register|register_company'
-															),
-										'password' => array('label' => lang('Contraseña<br> <span class="grey-label">Password</span>'),
-														'type' => 'password',
-														'validation' => 'required|matches[passconf]',
-														'visibility' => 'profile|first_login|register|forgot_pass|register_company'
-														),
-										'passconf' => array('label' => lang('Repetir contraseña<br> <span class="grey-label">Repeat Password</span>'),
-														'type' => 'password',
-														'validation' => 'required',
-														'visibility' => 'profile|first_login|register|forgot_pass|register_company'
-														),
+                'namespace_disabled' => array(	'label' => lang('Nombre del Grupo / Name of the group'),
+                        'type' => 'text',
+                        'validation' => '',
+                        'disabled' => true,
+                        'visibility' => 'register_company'
+                ),
 
-										/*				
-										COMPANY FIELDS
-										*/
-										
-										'namespace' => array(	'label' => lang('Nombre del Grupo'),
-											'type' => 'hidden',
-											'validation' => 'required|alpha_dash',
-											'visibility' => 'register_company'
-										),
-										'user_language'=> array(	'label' => 'Idioma<br> <span class="grey-label">Language</span>',
-															'type' => 'select',
-															'options' => array(0 => array("value" => "AR", "label" => "Español"),
-																				1 => array("value" => "PR", "label" => "Portugues"),
-																				2 => array("value" => "US", "label" => "English"),
-																				),
-															'validation' => '',
-															'visibility' => 'company_register|register'
-														),
-										'main_image' => array(	'label' => 'Logo',
-														'type' => 'image',
-														'tag' => 'main_image',
-														'validation' => '',
-														'visibility' => 'company_register|company_edit',
-														),
-										);
+                'email' => array('label' => lang('Email<br> <span class="grey-label">Email</span>'),
+                                'type' => 'text',
+                                'validation' => 'valid_email|required',
+                                'visibility' => 'profile|edit_profile|first_login|register'
+                ),
+                /*
+                'username' => array(	'label' => lang('Email'),
+                                    'type' => 'text',
+                                    'validation' => '',
+                                    'disabled' => 'true',
+                                    'visibility' => 'profile|first_login|register'
+                                    ),
+                */
+
+                'displayname' => array(	'label' => lang('Apodo<br> <span class="grey-label">Nickname</span>'),
+                                    'type' => 'text',
+                                    'validation' => 'required',
+                                    'visibility' => 'profile|edit_profile|first_login|register'
+                                    ),
+                'fullname' => array(	'label' => lang('Nombre Completo<br> <span class="grey-label">Full Name</spam>'),
+                                    'type' => 'text',
+                                    'validation' => 'required',
+                                    'visibility' => 'profile|edit_profile|first_login|register'
+                                    ),
+                'password' => array('label' => lang('Contraseña<br> <span class="grey-label">Password</span>'),
+                                'type' => 'password',
+                                'validation' => 'required|matches[passconf]',
+                                'visibility' => 'profile|first_login|register|forgot_pass'
+                                ),
+                'passconf' => array('label' => lang('Repetir contraseña<br> <span class="grey-label">Repeat Password</span>'),
+                                'type' => 'password',
+                                'validation' => 'required',
+                                'visibility' => 'profile|first_login|register|forgot_pass'
+                                ),
+
+                'user_language'=> array(	'label' => 'Idioma<br> <span class="grey-label">Language</span>',
+                    'type' => 'select',
+                    'options' => array(0 => array("value" => "AR", "label" => "Español"),
+                        1 => array("value" => "PR", "label" => "Portugues"),
+                        2 => array("value" => "US", "label" => "English"),
+                    ),
+                    'validation' => '',
+                    'visibility' => 'register'
+                ),
+                /*
+                COMPANY FIELDS
+                */
+
+                'name' => array(	'label' => lang('Nombre'),
+                    'type' => 'text',
+                    'validation' => 'required',
+                    'visibility' => 'edit_company'
+                ),
+                'main_image' => array(	'label' => 'Logo',
+                                'type' => 'image',
+                                'tag' => 'main_image',
+                                'validation' => '',
+                                'visibility' => 'edit_company',
+                                ),
+
+                'prizes_image' => array(	'label' => lang('Imagen Premios'),
+                        'type' => 'image',
+                        'tag' => 'prizes_image',
+                        'validation' => '',
+                        'visibility' => 'edit_company',
+                    ),
+
+                'custom_css' => array(	'label' => lang('Estilos'),
+                    'type' => 'textarea',
+                    'validation' => '',
+                    'visibility' => 'edit_company'
+                ),
+                'bg_image' => array('label' => 'Imagen fondo',
+                    'type' => 'image',
+                    'tag' => 'bg_image',
+                    'validation' => '',
+                    'description' => "",
+                    'visibility' => 'edit_company'
+                ),
+
+
+
+            );
 		
 		if($this->company_model->branch_league)
 		{
@@ -360,9 +383,10 @@ class Front_init extends CI_Controller
 									$row = $this->db->query($sql)->row();
 									$this->form_model->get($row->user_id);
 									break;
-				case 'register_company':	
+				case 'edit_company':
 									/* register company utils */
-									$this->load->model("user_model","form_model");
+									$this->load->model("admin/company_model","form_model");
+									$this->form_model->get($this->company_model->company_id);
 									break;
 				case 'edit_profile':
 									$this->load->model("user_model","form_model");
@@ -456,34 +480,25 @@ class Front_init extends CI_Controller
 											$this->send_register_email();
 											$output['message'] = lang("register-message");
 											break;
-						case 'register_company':
-											$this->company_model->set_field("namespace", $this->input->post('namespace'));
-											$this->company_model->set_field("name", $this->input->post('namespace'));
-											$this->company_model->set_field("active", 1);
-											$this->company_model->save();
-											$this->company_model->get_register_code();
 
-											$this->form_model->set_field("active",1);
-											$this->form_model->set_field("enabled",1);
-											$this->form_model->set_field("username",$this->data['post']['email']);
-
-											$this->form_model->set_field("group_id", 3);
-											$this->form_model->set_field("groups_names", "Jugador");
-											$this->form_model->set_field("company_id", $this->company_model->get_id());
-											$this->form_model->set_field("company",$this->company_model->name);
-											$pass = $this->bitauth->hash_password($this->data['post']['password']);
-											$last_set = $this->bitauth->timestamp();
-											$this->form_model->set_field("password",$pass);
-											$this->form_model->set_field("password_last_set",$last_set);
-											
-											$this->form_model->update();
-											$this->bitauth->logout();
-											$this->bitauth->login($this->form_model->username,$this->data['post']['password']);
-											$this->send_register_email();
-											$this->send_creation_email($this->company_model->get_register_code());
-											$output['redirect_url'] = $this->company_model->get_url();
-											$output['message'] = lang("creation-message");											
-											break;
+                        case 'edit_company':
+                                            if(is_array($_FILES))
+                                            {
+                                                $this->get_file_manager();
+                                                if(!$this->file_manager->upload($this->file_fields))
+                                                {
+                                                    $output['errors'][] = "Error al subir los archivos".
+                                                        $output['valid'] = 0;
+                                                }
+                                                else
+                                                {
+                                                    $output['valid'] = 1;
+                                                }
+                                            }
+                                            else
+                                            {
+                                                $output['valid'] = 1;
+                                            }
 					}
 					
 					$this->post_validate_save();

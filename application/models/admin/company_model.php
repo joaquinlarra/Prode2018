@@ -74,6 +74,11 @@ class Company_model extends Simple_data_model
 		return 'http://'.$this->company_model->namespace.'.prode2018.com';
 	}
 
+	public function is_company_admin($email)
+    {
+        $email_owners = explode(",",$this->email_owners);
+        return in_array($email, $email_owners);
+    }
 	public function get_register_code()
 	{
 		$date = new DateTime($this->company_model->date_created);
