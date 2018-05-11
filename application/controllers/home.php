@@ -46,12 +46,20 @@ class Home extends Front_init
 
 	public function edit_company()
 	{
-		$this->data['section'] = "edit_company";
+        if(!$this->company_model->is_company_admin($this->bitauth->email))
+        {
+            redirect($this->data['link_url']."pronosticos");
+        }
+	    $this->data['section'] = "edit_company";
 		$this->load->view("front/edit_company.php", $this->data);
 	}
 
     public function view_company()
     {
+        if(!$this->company_model->is_company_admin($this->bitauth->email))
+        {
+            redirect($this->data['link_url']."pronosticos");
+        }
         $this->data['section'] = "view_company";
         $this->load->view("front/view_company.php", $this->data);
     }
