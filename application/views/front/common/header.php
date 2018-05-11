@@ -80,7 +80,7 @@
 						<div class="rightNav" id="rightNav">
 							<span class="glyphicon glyphicon-menu-right closeNav navToggler"></span>
 
-                            <a <? if($user_first_login){ echo 'data-intro="Clickea en <i>Como jugar</i> antes de emepzar!"'; } ?> class="btn btn-info <?= $section == 'how-to' ? 'active' : '' ?>" href="<?=$link_url?>como-jugar">
+                            <a <? //if($user_first_login){ echo 'data-intro="Clickea en <i>Como jugar</i> antes de emepzar!"'; } ?> class="btn btn-info <?= $section == 'how-to' ? 'active' : '' ?>" href="<?=$link_url?>como-jugar">
 								<?= strtoupper(lang('Cómo jugar'))?>
 							</a>
 
