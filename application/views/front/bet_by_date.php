@@ -144,7 +144,7 @@
             <td class="teamname team1 matchrow-1-<?= $match['match_id']?> <?= $class_col_1?>" title="<?= $match['team1_name']?>">
                 <p class="hidden-xs"><img  id="match-img-<?= $match['match_id']?>-1" src="<?= $match['team1_flag']?>" title="<?= $match['team1_name']?>" class="img-rounded team1-flag"><?= $match['team1_abbr_name']?>
 				</p>
-                <p class="visible-xs"><img id="match-img-<?= $match['match_id']?>-1" src="<?= $match['team1_flag']?>" title="<?= $match['team1_name']?>" class="img-rounded team1-flag" style="height:35px"><?= $match['team1_abbr_name']?></p>
+                <p class="visible-xs"><img id="match-img-<?= $match['match_id']?>-1" src="<?= $match['team1_flag']?>" title="<?= $match['team1_name']?>" class="img-rounded team1-flag" style="height:25px"><?= $match['team1_abbr_name']?></p>
 				<div class="group-team-name-1" id="match-name-<?= $match['match_id']?>-1"><?= $match['team1_name']?></div>
 			</td>
             <td class="middle-col" id="middle-col-<?= $match['match_id']?>">
@@ -174,7 +174,7 @@
 				<p class="visible-sm">
 				<img  id="match-img-<?= $match['match_id']?>-2" src="<?= $match['team2_flag']?>" title="<?= $match['team2_name']?>" class="img-rounded team1-flag"><?= $match['team2_abbr_name']?>
 				</p>
-                <p class="visible-xs"><?= $match['team2_abbr_name']?><img src="<?= $match['team2_flag']?>"  id="match-img-<?= $match['match_id']?>-2" class="img-rounded team1-flag" title="<?= $match['team2_name']?>" style="height:35px;"></p>
+                <p class="visible-xs"><?= $match['team2_abbr_name']?><img src="<?= $match['team2_flag']?>"  id="match-img-<?= $match['match_id']?>-2" class="img-rounded team1-flag" title="<?= $match['team2_name']?>" style="height:25px;"></p>
 				<div class="group-team-name-2" id="match-name-<?= $match['match_id']?>-2"><?= $match['team2_name']?></div>
 			</td>
             <td class="input-match matchrow-2-<?= $match['match_id']?> <?= $class_col_2?>">
