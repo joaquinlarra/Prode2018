@@ -399,10 +399,10 @@ $words['first-time-message-no-email']['PR'] = "<h3 align='center'>Seu registro f
 $words['first-time-message-no-email']['US'] = "<h3 align='center'>Registration successful</h3><br><a href='[[link_url]]pronosticos' class='btn btn-primary btn-block'>Ingresar</a>";
 
 
-$words['no-prev-id']['AR'] = "Expiró la sesión. Por favor vuelve a ingresar a <a href='[[link_url]]'>fantasyfutbol214.com</a>.";
-$words['no-prev-id']['MX'] = "Expiró la sesión. Por favor vuelve a ingresar a  <a href='[[link_url]]'>fantasyfutbol214.com</a>.";
-$words['no-prev-id']['PR'] = "A sessão foi terminada. Por favor ingresse à  <a href='[[link_url]]'>fantasyfutbol214.com</a>.";
-$words['no-prev-id']['US'] = "Session has expired. Please enter <a href='[[link_url]]'>fantasyfutbol214.com</a> again.";
+$words['no-prev-id']['AR'] = "Expiró la sesión. Por favor vuelve a ingresar a <a href='[[link_url]]'>prode2018.com</a>.";
+$words['no-prev-id']['MX'] = "Expiró la sesión. Por favor vuelve a ingresar a  <a href='[[link_url]]'>prode2018.com</a>.";
+$words['no-prev-id']['PR'] = "A sessão foi terminada. Por favor ingresse à  <a href='[[link_url]]'>prode2018.com</a>.";
+$words['no-prev-id']['US'] = "Session has expired. Please enter <a href='[[link_url]]'>prode2018.com</a> again.";
 
 $words['Nombre']['AR'] = "Nombre";
 $words['Nombre']['MX'] = "Nombre";

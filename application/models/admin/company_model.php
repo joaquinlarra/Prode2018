@@ -49,6 +49,7 @@ class Company_model extends Simple_data_model
 								'country',
 								'creator_id',
 								'creator_name',
+                                'register_code'
 								);	
 	public function post_save()
 	{
@@ -65,9 +66,11 @@ class Company_model extends Simple_data_model
 			$this->default_user_model->set_field("group_id",2);
 			$this->default_user_model->create();
 			$this->set_field("default_user_id",$this->default_user_model->get_id());
-			$this->update();	
-		}	
-	}
+
+		}
+        $this->set_field("register_code",$this->generate_register_code());
+        $this->update();
+    }
 
 	public function get_url()
 	{
@@ -79,13 +82,17 @@ class Company_model extends Simple_data_model
         $email_owners = explode(",",$this->email_owners);
         return in_array($email, $email_owners);
     }
-	public function get_register_code()
+	public function generate_register_code()
 	{
-		$date = new DateTime($this->company_model->date_created);
-		$this->get_id();
+		$date = new DateTime($this->date_created);
 		$code =  $date->format('i').$this->get_id();
-		return ($code);
+		return $code;
 	}
+
+	public function get_register_code()
+    {
+        return $this->register_code;
+    }
 
 }
 

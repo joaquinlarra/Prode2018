@@ -61,11 +61,6 @@
     <![endif]-->
 	<script>
 		$('body').parallax("50%", -0.2);
-        $(".modify_file").live('click', function(){
-            // id = $(this).attr('fieldname');
-            $(this).hide();
-            $(this).next().show();
-        });
 	</script>
 	<?
 	if ($section == 'home' || $section == 'comprar' ) {

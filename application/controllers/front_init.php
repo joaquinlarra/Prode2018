@@ -372,15 +372,16 @@ class Front_init extends CI_Controller
 									break;
 				case 'register':	
 									$this->load->model("user_model","form_model");
-									if(!$this->session->userdata('register_email'))
-									{
-										$output['error'] = lang("no-prev-id");
-										echo json_encode($output);
-										return;
-									}
-									$sql = "SELECT * FROM bitauth_users WHERE username = '".addslashes($this->session->userdata('register_email'))."' 
+                                    $sql = "SELECT * FROM bitauth_users WHERE username = '".addslashes($this->data['post']['email'])."' 
 												AND company_id = '".$this->company_model->get_id()."'";
 									$row = $this->db->query($sql)->row();
+									if($row->user_id)
+                                    {
+                                        $output['valid'] = false;
+                                        $output['error'] = lang("Ya existe un usuario con ese email. si olvidaste tu contraseña clickea <a href='".$this->data['link_url']."olvide-mi-clave'>aca</a>");
+                                        echo json_encode($output);
+                                        return;
+                                    }
 									$this->form_model->get($row->user_id);
 									break;
 				case 'edit_company':
@@ -473,7 +474,8 @@ class Front_init extends CI_Controller
 											$last_set = $this->bitauth->timestamp();
 											$this->form_model->set_field("password",$pass);
 											$this->form_model->set_field("password_last_set",$last_set);
-											
+
+
 											$this->form_model->update();
 											$this->bitauth->logout();
 											$this->bitauth->login($this->form_model->username,$this->data['post']['password']);
@@ -564,7 +566,7 @@ class Front_init extends CI_Controller
 				<br><br>".lang('register-login-email')."
 				<br><br>".$this->company_model->username_field.": <b>".$this->form_model->username."</b><br>
 				<br><br>".lang('Contraseña').": <b>".$this->data['post']['password']."</b><br><br>
-				Prode ".date('Y')."<br>--";
+				Prode2018.com<br>--";
 		
 		$this->email->message($body);
 		
@@ -579,7 +581,7 @@ class Front_init extends CI_Controller
 
 	protected function get_confirm_code($id)
 	{
-		return $id."-".substr(base64_encode($id."fantastic 2013 vv ++ ??"),0,10);
+		return $id."-".substr(base64_encode($id."fantastiK 2019 +I2"),0,10);
 	}
 	
 	protected function post_validate_save(){}
@@ -675,7 +677,7 @@ class Front_init extends CI_Controller
 		}else{
 			$data['valid'] = 1;
 			$data['code'] = $this->data['post']['code'];
-			$data['url'] = 'http://'.$this->company_model->namespace.".prode2018.com/completar-registro";
+			$data['url'] = $this->data['link_url']."completar-registro";
 			$this->session->set_userdata('register_code', $data['code']);
 		}
 		echo json_encode($data);
