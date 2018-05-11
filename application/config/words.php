@@ -897,7 +897,10 @@ $words['PP']['MX'] = "PP";
 $words['PP']['PR'] = "PP";
 $words['PP']['US'] = "ML";
 
-
+$words['empty-wall']['AR'] = "Nada aquí. Se el primero en comentar!";
+$words['empty-wall']['MX'] = "Nada aquí. Se el primero en comentar!";
+$words['empty-wall']['PR'] = "Nada aqui. Seja o primeiro a comentar!";
+$words['empty-wall']['US'] = "Nothing here. Be the first to comment!";
 
 
 
