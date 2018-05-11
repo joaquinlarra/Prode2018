@@ -1060,3 +1060,7 @@ user-found td:hover {
   margin:0px 15px 5px 0px;
 
 }
+
+.btn-group{
+  display: flex;
+}
