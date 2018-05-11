@@ -23,7 +23,7 @@
 		?><style>
         body
 		{
-		background: #010D27 url('<?= $this->company_model->bg_image?>') top center repeat-y;
+		background: #010D27 url('<?=$this->company_model->bg_image?>') top center repeat-y;
 		}
         </style><?
 	}
@@ -31,6 +31,18 @@
 	{
 		echo "<style>".$this->company_model->custom_css."</style>";	
 	}
+    if($this->company_model->fonts_url)
+    {
+        $additional_fonts = $this->company_model->fonts_url;
+        $additional_fonts = explode(",",$additional_fonts);
+
+        foreach($additional_fonts as $additional_font)
+        {
+            echo '<link href="'.trim($additional_font).'" rel="stylesheet">'."\n";
+        }
+
+        echo "<style>".$this->company_model->custom_css."</style>";
+    }
 	?>
   </head>
   <body>

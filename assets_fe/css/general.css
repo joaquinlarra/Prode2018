@@ -110,7 +110,6 @@ h6 {
   background: transparent;
 }
 .panel-primary .panel-heading {
-  font-family: 'Khand', sans-serif;
   font-size: 24px;
 }
 
@@ -557,8 +556,7 @@ h6 {
   display: inline-block;
 }
 .zone-table .middle-col span b {
-  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande',
-    'Lucida Sans', Arial, sans-serif;
+
   font-weight: bold;
 }
 
@@ -631,7 +629,7 @@ h6 {
   margin: 10px;
 }
 
-<<<<<<< HEAD .zone-table .table-division {
+.zone-table .table-division {
   background: none;
   height: 15px;
 }
@@ -853,7 +851,7 @@ h6 {
   margin-top: 20px;
 }
 
->>>>>>>36462061a9dc9a8ff66a5993f4e4a49b0f142f62 .comment-box .comment-body h2 {
+.comment-box .comment-body h2 {
   font-size: 20px;
   font-weight: bold;
   color: #333;

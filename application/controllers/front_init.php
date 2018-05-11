@@ -149,14 +149,19 @@ class Front_init extends CI_Controller
                     'validation' => '',
                     'visibility' => 'edit_company'
                 ),
-                'bg_image' => array('label' => 'Imagen fondo',
+                'bg_image' => array('label' => lang('Imagen fondo'),
                     'type' => 'image',
                     'tag' => 'bg_image',
                     'validation' => '',
                     'description' => "",
                     'visibility' => 'edit_company'
                 ),
-
+                'fonts_url' => array(	'label' => lang('Fonts URL(s)'),
+                    'type' => 'text',
+                    'description' => lang("Separados por comma. ej: https://fonts.googleapis.com/css?family=Pangolin"),
+                    'validation' => 'required',
+                    'visibility' => 'edit_company'
+                ),
 
 
             );

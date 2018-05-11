@@ -49,7 +49,8 @@ class Company_model extends Simple_data_model
 								'country',
 								'creator_id',
 								'creator_name',
-                                'register_code'
+                                'register_code',
+                                'fonts_url'
 								);	
 	public function post_save()
 	{
