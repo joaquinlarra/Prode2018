@@ -478,7 +478,7 @@ class Front_init extends CI_Controller
 
 											$this->form_model->update();
 											$this->bitauth->logout();
-											$this->bitauth->login($this->form_model->username,$this->data['post']['password']);
+											$this->bitauth->login($this->form_model->username,$this->data['post']['password'], true, array(), NULL, $this->company_model->get_id());
 											$this->send_register_email();
 											$output['message'] = lang("register-message");
 											break;
