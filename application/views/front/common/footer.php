@@ -104,8 +104,8 @@
 			}
 			else
 			{
-			  	$('#company-code-error').html(data.message);
-				$('#company-code-error').fadeIn();	
+			  	$('#error').html(data.message);
+				$('#error').fadeIn();
 			}
 		};
 
@@ -134,7 +134,7 @@
 			else
 			{
 			  	$('#error').html(data.error);
-				$('#error').fadeIn();	
+				$('#error').fadeIn();
 			}
 		};
 		

@@ -56,23 +56,8 @@
                 <div class="panel-heading" align="center">Ingresá el código de registro </div>
                 <div class="panel-body">
                     <div class="row">
-                    	<div class="col-md-12 <?=($this->company_model->first_login)?'':'hidden'?>">
-                        <?
-						
-                        if($this->company_model->first_login)
-						{
-							?><small><?= lang("first-time-login")?> <?= $this->company_model->username_field?>
-                            <?
-                            if($this->company_model->first_login_text)
-							{
-								echo "<br>".$this->company_model->first_login_text;	
-							}
-							?>
-                            </small><?	
-						}
-						?>
-                        <div class="alert alert-danger" id="error" style="display:none"></div>
-                        </div>
+                    	    <div class="alert alert-danger" id="error" style="display:none"></div>
+
                     	<div class="<?= $this->company_model->register && !$no_company ? "col-md-6 col-sm-6" : "col-md-12"?>">
                          <?
 						if($no_company)
