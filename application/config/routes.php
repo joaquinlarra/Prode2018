@@ -48,6 +48,7 @@ $route['pronosticos'] = "home/prognostics";
 $route['mi-pronostico'] = "home/prognostics/initial/1";
 $route['badges'] = "home/badges";
 $route['como-jugar'] = "home/how_to_play";
+$route['premios'] = "home/prizes";
 $route['comprar'] = "home/comprar";
 $route['pronostico-ganadores'] = "home/prognostics/starter";
 $route['pronostico-qualys'] = "home/prognostics/qualys";

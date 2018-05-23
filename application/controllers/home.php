@@ -599,6 +599,13 @@ class Home extends Front_init
 		$this->load->view("front/how_to_play.php",$this->data);
 	}
 
+    public function prizes()
+    {
+        $this->redirect_login();
+        $this->data['section'] = 'prizes';
+        $this->load->view("front/prizes.php",$this->data);
+    }
+
 	public function promo_landing()
 	{
 

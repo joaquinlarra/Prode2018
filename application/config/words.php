@@ -47,6 +47,12 @@ $words['Imagen Premios']['MX'] = "Imagen Premios";
 $words['Imagen Premios']['PR'] = "Imagen Premios";
 $words['Imagen Premios']['US'] = "Prices Image";
 
+$words['Premios']['AR'] = "Premios";
+$words['Premios']['MX'] = "Premios";
+$words['Premios']['PR'] = "Prêmios";
+$words['Premios']['US'] = "Prizes";
+
+
 $words['Imagen Fondo']['AR'] = "Imagen Fondo";
 $words['Imagen Fondo']['MX'] = "Imagen Fondo";
 $words['Imagen Fondo']['PR'] = "Imagen Fondo";

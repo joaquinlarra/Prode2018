@@ -159,7 +159,7 @@ class Front_init extends CI_Controller
                 'fonts_url' => array(	'label' => lang('Fonts URL(s)'),
                     'type' => 'text',
                     'description' => lang("Separados por comma. ej: https://fonts.googleapis.com/css?family=Pangolin"),
-                    'validation' => 'required',
+                    'validation' => '',
                     'visibility' => 'edit_company'
                 ),
 
