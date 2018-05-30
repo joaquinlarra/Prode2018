@@ -522,10 +522,10 @@ $words['subject-registro']['MX'] = "Completá tu registro a Prode 2018";
 $words['subject-registro']['PR'] = "Preencha os seus dados para cadastrares no Prode 2018";
 $words['subject-registro']['US'] = "Complete your Prode 2018 suscription";
 
-$words['body-registro']['AR'] = "Hola $1,<br><br>Confirmá tu cuenta de Fantasy Futbol haciendo click en el siguiente enlace.<br><br>";
-$words['body-registro']['MX'] = "Hola $1,<br><br>Confirma tu cuenta de Fantasy Futbol haciendo click en el siguiente enlace.<br><br>";
-$words['body-registro']['PR'] = "Oí $1,<br><br>Verifique a sua conta no Fantasy Futbol fazendo clique no seguinte link.<br><br>";
-$words['body-registro']['US'] = "Hi $1,<br><br>Confirm your Fantasy Futbol account by following the link.<br><br>";
+$words['body-registro']['AR'] = "Hola $1,<br><br>Confirmá tu cuenta de Prode2018 haciendo click en el siguiente enlace.<br><br>";
+$words['body-registro']['MX'] = "Hola $1,<br><br>Confirma tu cuenta de Prode2018 haciendo click en el siguiente enlace.<br><br>";
+$words['body-registro']['PR'] = "Oí $1,<br><br>Verifique a sua conta no Prode2018 fazendo clique no seguinte link.<br><br>";
+$words['body-registro']['US'] = "Hi $1,<br><br>Confirm your Prode2018 account by following the link.<br><br>";
 
 $words['body-creation']['AR'] = "Hola $1,<br><br>Ya tenes tu prode creado. Invita a tus amigos utilizando el siguiente enlace.<br><br>";
 $words['body-creation']['MX'] = "Hola $1,<br><br>Ya tenes tu prode creado. Invita a tus amigos utilizando el siguiente enlace.<br><br>";
