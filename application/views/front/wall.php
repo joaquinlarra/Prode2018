@@ -3,7 +3,7 @@
 <div id="section-header" class="container-fluid">
 	<div class="container">
     	<div class="row">
-        	<div class="col-md-12"><h1>Muro</h1></div>
+        	<div class="col-md-12"><h1><?= lang('Muro')?></h1></div>
         </div>
     </div>
 </div>
@@ -12,9 +12,9 @@
 		<div class="panel panel-primary">
     		<div class="panel-body">
                 <form class="ajax_form" id="leave-comment-form" action="<?= $link_url?>front_user/send_comment" method="post">
-				<textarea name="new_wall_post" id="new_wall_post" class="form-control" placeholder="<? lang("share-comment")?>"></textarea>
+				<textarea name="new_wall_post" id="new_wall_post" class="form-control"><?= lang('Escribe algo...')?></textarea>
                 <div class="clearfix"></div>
-                <input type="submit" class="btn btn-primary pull-right" id="submit-wall-post" value="Publicar" disabled="disabled">
+                <input type="submit" class="btn btn-primary pull-right" id="submit-wall-post" style="padding: 6px 12px;" value="<?= lang('Publicar')?>" disabled="disabled">
                 <div class="clearfix"></div>
                 </form>
 				<div id="posts-container">
@@ -57,7 +57,7 @@
 								<div class="comments">
                                     <form class="ajax_form comment-post-form" action="<?= $link_url?>front_user/comment_post/<?= $wall_post['comment_id']?>" method="post">
                                     <textarea name="post_comment" class="form-control comment-area" post_id="<?= $wall_post['comment_id']?>" placeholder="<?= $wall_post['total_comments'] ? lang("leave-comment") : lang("first-comment");	?> "></textarea>
-                                    <input type="submit" id="submit-comment-<?= $wall_post['comment_id']?>" class="btn btn-primary" value="Publicar" disabled="disabled">
+                                    <input type="submit" id="submit-comment-<?= $wall_post['comment_id']?>" class="btn btn-primary" style="padding: 6px 12px;" value="<?= lang('Publicar')?>" disabled="disabled">
                                     </form>
                                     <div id="post-comments-<?= $wall_post['comment_id']?>" class="post-comments">
                                     <?
@@ -93,7 +93,7 @@
 				}
 				?>
                 </div>
-                <div align="center" id="pagination" style="display:none"><a  id="next-posts" href="<?= base_url()?>muro/<?= $page+1?>" class="btn btn-primary" >Siguiente ></a></div>
+                <div align="center" id="pagination" style="display:none"><a  id="next-posts" href="<?= base_url()?>muro/<?= $page+1?>" class="btn btn-primary" ><?= lang('Siguiente')?> ></a></div>
 			</div>
 		</div>
 	</div>

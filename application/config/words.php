@@ -314,6 +314,11 @@ $words['infografia']['MX'] = "infografia-mex";
 $words['infografia']['PR'] = "infografia-pr";
 $words['infografia']['US'] = "infografia-en";
 
+$words['Bienvenido']['AR'] = "Bienvenido";
+$words['Bienvenido']['MX'] = "Bienvenido";
+$words['Bienvenido']['PR'] = "Bienvenido";
+$words['Bienvenido']['US'] = "Welcome";
+
 $words['login']['AR'] = "<em>Ya tenés cuenta?</em><br>INGRESÁ";
 $words['login']['MX'] = "INGRESO";
 $words['login']['PR'] = "<em>Já tem uma conta?</em><br>LOG IN";
@@ -485,6 +490,17 @@ $words['winners-label']['AR'] = "GT";
 $words['winners-label']['MX'] = "GT";
 $words['winners-label']['PR'] = "GT";
 $words['winners-label']['US'] = "TW";
+
+$words['Siguiente']['AR'] = "Siguiente";
+$words['Siguiente']['PR'] = "Próximo";
+$words['Siguiente']['US'] = "Next";
+
+$words['Escribe algo...']['AR'] = "Escribe algo...";
+$words['Escribe algo...']['PR'] = "Escribe algo...";
+$words['Escribe algo...']['US'] = "Write something...";
+
+
+
 
 $words['no-players']['AR'] = "No hay posiciones por el momento";
 $words['no-players']['MX'] = "No hay posiciones por el momento";
@@ -717,6 +733,11 @@ $words['Aceptar']['MX'] = "Aceptar";
 $words['Aceptar']['PR'] = "Aceptar";
 $words['Aceptar']['US'] = "Accept";
 
+$words['Puntos']['AR'] = "Puntos";
+$words['Puntos']['MX'] = "Puntos";
+$words['Puntos']['PR'] = "Pontos";
+$words['Puntos']['US'] = "Score";
+
 $words['Rechazar']['AR'] = "Rechazar";
 $words['Rechazar']['MX'] = "Rechazar";
 $words['Rechazar']['PR'] = "Rechazar";
@@ -785,12 +806,12 @@ $words['Equipo']['US'] = "Team";
 $words['Resultados Adivinados']['AR'] = "Resultados Adivinados";
 $words['Resultados Adivinados']['MX'] = "Resultados Adivinados";
 $words['Resultados Adivinados']['PR'] = "Resultados Certos";
-$words['Resultados Adivinados']['US'] = "Results";
+$words['Resultados Adivinados']['US'] = "Results Guessed";
 
 $words['Resultados Exactos Adivinados']['AR'] = "Resultados Exactos Adivinados";
 $words['Resultados Exactos Adivinados']['MX'] = "Resultados Exactos Adivinados";
 $words['Resultados Exactos Adivinados']['PR'] = "Resultados Exatos Certos";
-$words['Resultados Exactos Adivinados']['US'] = "Resultados Exactos Adivinados";
+$words['Resultados Exactos Adivinados']['US'] = "Exact Results Guessed";
 
 $words['wall-share-happiness']['AR'] = "&iexcl;Compartí la experiencia Prode con tus compañeros!";
 $words['wall-share-happiness']['MX'] = "&iexcl;Comparte la experiencia Prode con tus compañeros!";
@@ -831,6 +852,18 @@ $words['Buscar']['AR'] = "Buscar";
 $words['Buscar']['MX'] = "Buscar";
 $words['Buscar']['PR'] = "Buscar";
 $words['Buscar']['US'] = "Search";
+
+$words['RE']['AR'] = "RE";
+$words['RE']['MX'] = "RE";
+$words['RE']['PR'] = "RE";
+$words['RE']['US'] = "ER";
+
+$words['Publicar']['AR'] = "Enviar";
+$words['Publicar']['MX'] = "Enviar";
+$words['Publicar']['PR'] = "Enviar";
+$words['Publicar']['US'] = "Send";
+
+
 
 $words['player-not-found']['AR'] = "No se encontró al jugador. Revisá que el nombre completo sea el mismo que aparece en el perfil";
 $words['player-not-found']['MX'] = "No se encontró al jugador. Revisa que el nombre completo sea el mismo que aparece en el perfil";

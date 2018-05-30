@@ -19,7 +19,7 @@
 		<div class="<?= $this->company_model->register ? "col-md-offset-2 col-md-8" : "col-md-offset-3 col-md-6 col-sm-offset-2 col-sm-8"?>">
              <div class="panel panel-primary">
                  <div class="panel-heading">
-                     <div class="pull-left">Bienvenido <span class="grey-text"> / Welcome</span></div>
+
                      <div class="pull-right" style="font-size: 13px">
                          <div class="dropdown">
                          <?
@@ -54,11 +54,10 @@
                             <form method="POST" id="login-form" class="form-signin ajax_form" action="<?=$link_url.'front_user/login'?>" accept-charset="UTF-8">
                                 
                                 <div class="form-group" style="margin-bottom:15px; text-align:left">
-                                <label for="username">Email</label><br><input type="text" id="username" class="form-control" name="username">
+                                <input type="text"  placeholder="<?= lang("Email")?>" id="username" class="form-control" name="username">
                                 </div>
                                 <div class="form-group" style=" text-align:left">
-                                <label for="password"><?= lang("Contraseña")?></label><br>
-                                <input type="password" id="password" class="form-control" name="password">
+                                <input type="password" id="password" class="form-control" name="password" placeholder="<?= lang("Contraseña")?>">
                                 </div>
                                 <div class="form-group checkbox">
                                     <label>

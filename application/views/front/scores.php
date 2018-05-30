@@ -27,7 +27,7 @@
                         <?
 						echo $players[0]['username'] ? "<th>".lang("Nombre")."</th>" : "";
 						?>
-                        <th style="text-align:right"><?= lang("Puntos")?></th><th title="<?= lang("Resultados Adivinados")?>" style="text-align:right">R<br><span class='glyphicon glyphicon-info-sign'></span></th><th  style="text-align:right" title="<?= lang("Resultados Exactos Adivinados")?>">RE<br><span class='glyphicon glyphicon-info-sign'></span></th>
+                        <th style="text-align:right"><?= lang("Puntos")?></th><th title="<?= lang("Resultados Adivinados")?>" style="text-align:right">R<br><span class='glyphicon glyphicon-info-sign'></span></th><th  style="text-align:right" title="<?= lang("Resultados Exactos Adivinados")?>"><?= lang('RE')?><br><span class='glyphicon glyphicon-info-sign'></span></th>
                         <?
 						echo $this->company_model->qualys ? " <th  style='text-align:right' title='".lang("Pre Clasificados")."'>".lang("pre-qualy-label")."<br><span class='glyphicon glyphicon-info-sign'></span></th>" : "";
 						echo $this->company_model->winners ? " <th style='text-align:right' title='".lang("Ganadores del torneo")."'>".lang("winners-label")."<br><span class='glyphicon glyphicon-info-sign'></span></th>" : "";
