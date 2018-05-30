@@ -172,10 +172,10 @@ h6 {
 }
 
 #bg-footer {
-  height: 60px;
-  line-height: 60px;
+  line-height: 45px;
   background: #111;
   margin-top: 40px;
+  color: #fefefe;
 }
 
 .winners label {

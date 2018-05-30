@@ -316,7 +316,8 @@ class admin_forms {
 	
 	protected function _select()
 	{
-		if(isset($this->field_attrs['source_table']))
+        $this->prev_val =  $this->prev_val ? $this->prev_val : $this->field_attrs['value'];
+	    if(isset($this->field_attrs['source_table']))
 		{
 			$source_fields = "CONCAT (".implode(",' - ',",$this->field_attrs['source_fields']).")";
 			$source_condition = ((isset($this->field_attrs['source_condition'])&&$this->field_attrs['source_condition']!='')?" AND ".$this->field_attrs['source_condition']." ":"");

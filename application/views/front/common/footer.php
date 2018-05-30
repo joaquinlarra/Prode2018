@@ -24,6 +24,8 @@
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 	<!-- <script src="<?= $link_url?>assets_fe/js/mdb.js"></script> -->
     <script src="<?= $link_url?>assets_fe/js/jquery.parallax-1.1.3.js" type="text/javascript"></script>
+
+
 	<?
     if(preg_match('/(?i)msie [1-9]/',$_SERVER['HTTP_USER_AGENT']))
 	{
@@ -60,7 +62,7 @@
 	
     <![endif]-->
 	<script>
-		$('body').parallax("50%", -0.2);
+		$('body').parallax("70%", -0.3);
 	</script>
 	<?
 	if ($section == 'home' || $section == 'comprar' ) {
@@ -380,69 +382,7 @@
         </script>
 	<?	
 	}
-	
-	if($sub_section == 'create_friends_league')
-	{
-	?>
-		<script src="<?= $link_url?>assets_common/js/jquery.form.js"></script>
-        <script>
-        $('#create-league-form').ajaxForm({
-                	// dataType identifies the expected content type of the server response 
-                    dataType:  'json', 
-                    // success identifies the function to invoke when the server response 
-                    // has been received 
-                    success:   validate_ajax_form 
-                });
-                
-		function validate_ajax_form(data) {
-			$('#error').hide();
-			if(data.valid)
-			{
-				$("#create-league-content").hide();
-				$("#create-league-content").html('<div class="alert alert-success"><?= lang('league-created')?></div>');
-				$("#create-league-content").fadeIn();
-			}
-			else
-			{
-				$("#error").html(data.error);
-				$("#error").fadeIn();
-			}
-		};
-        </script>
-	<?	
-	}
-	
-	if($sub_section == "join_friends_league")
-	{
-		?>
-		<script src="<?= $link_url?>assets_common/js/jquery.form.js"></script>
-        <script>
-        $('#join-league-form').ajaxForm({
-                	// dataType identifies the expected content type of the server response 
-                    dataType:  'json', 
-                    // success identifies the function to invoke when the server response 
-                    // has been received 
-                    success:   validate_ajax_form 
-                });
-                
-		function validate_ajax_form(data) {
-			$('#error').hide();
-			if(data.valid)
-			{
-				$("#create-league-content").hide();
-				$("#create-league-content").html('<div class="alert alert-success">'+data.message+'</div>');
-				$("#create-league-content").fadeIn();
-			}
-			else
-			{
-				$("#error").html(data.error);
-				$("#error").fadeIn();
-			}
-		};
-        </script>
-		<?	
-	}
-	
+
 	if($sub_section == "view_league")
 	{
 		?>
@@ -646,8 +586,10 @@
 		<script src="<?= $link_url?>assets_common/js/jquery.form.js"></script>
         <script src="<?= $link_url?>assets_fe/js/jquery.ddslick.min.js"></script>
         <script src="<?= $link_url?>assets_fe/js/gridline.js"></script>
+
 		<script>
-			<?
+
+            <?
 			if(($phase == "initial") || ($phase = "final"))
 			{
 			?>

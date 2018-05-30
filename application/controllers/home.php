@@ -67,18 +67,22 @@ class Home extends Front_init
 
 	public function language($lang)
 	{
-		$this->redirect_login();
+		//$this->redirect_login();
 		$langs = array("AR","MX","PR","US");
 		if(in_array($lang,$langs))
 		{
-			$sql = "UPDATE bitauth_users SET user_language = '".addslashes($lang)."' WHERE user_id = '".$this->user_id."'";	
-			$this->db->query($sql);
-			
+		    if($this->user_id)
+            {
+                $sql = "UPDATE bitauth_users SET user_language = '".addslashes($lang)."' WHERE user_id = '".$this->user_id."'";
+                $this->db->query($sql);
+                $this->bitauth->user_language = addslashes($lang);
+            }
+
 			$this->session->set_userdata('lang',addslashes($lang));	
 			$this->session->set_userdata('chosen_lang',addslashes($lang));
-			$this->bitauth->user_language = addslashes($lang);
+
 		}
-		redirect($this->data['link_url']."pronosticos");
+		redirect($_SERVER['HTTP_REFERER']);
 			
 	}
 	
@@ -142,30 +146,6 @@ class Home extends Front_init
 		$this->index();
 	}
 
-/*
-	public function badges()
-	{
-		$this->redirect_login();
-		$this->data['badges_descriptions'][] =  array("name" => lang("Mejor de la fecha"),"desc" => lang('mejor-desc'), "img" => "mejor.png");
-		$this->data['badges_descriptions'][] =  array("name" => lang("Peor de la fecha"),"desc" => lang('peor-desc'), "img" => "peor.png");
-		$this->data['badges_descriptions'][] =  array("name" => lang("Antifutbol"),"desc" => lang('anti-desc'), "img" => "antifutbol.png"); 
-		$this->data['badges_descriptions'][] =  array("name" => lang("Rey Grupo"),"desc" => lang('king-desc'), "img" => "rey.png");
-		$this->data['badges_descriptions'][] =  array("name" => lang("Jogo Bonito"),"desc" => lang('jogo-desc'), "img" => "jogobonito.png");
-
-		if($this->company_model->super_patriot)
-		{
-			$this->data['badges_descriptions'][] =  array("name" => lang("Súper Argentino"),"desc" => lang('super-desc'), "img" => lang("super_argentino").".png");
-		}
-		$this->data['badges_descriptions'][] =  array("name" => lang("Tortuga"),"desc" => lang('tortuga-desc'), "img" => "tortuga.png");
-		if($this->company_model->patriot_seller)
-		{
-			$this->data['badges_descriptions'][] =  array("name" => lang("Vendepatria"),"desc" => lang('vende-desc'), "img" => lang("vendepatria_arg").".png");
-		}
-		$this->data['badges_descriptions'][] =  array("name" => lang("Vidente"),"desc" => lang('vidente-desc'), "img" => "vidente.png");	
-		
-		$this->load->view("front/badges.php", $this->data);
-	}
-*/	
 	public function get_teams_positions()
 	{
 		$this->redirect_login();

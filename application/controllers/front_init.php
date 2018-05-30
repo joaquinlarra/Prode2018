@@ -77,7 +77,7 @@ class Front_init extends CI_Controller
                         'visibility' => 'register_company'
                 ),
 
-                'email' => array('label' => lang('Email<br> <span class="grey-label">Email</span>'),
+                'email' => array('label' => lang('Email'),
                                 'type' => 'text',
                                 'validation' => 'valid_email|required',
                                 'visibility' => 'profile|edit_profile|first_login|register'
@@ -91,33 +91,34 @@ class Front_init extends CI_Controller
                                     ),
                 */
 
-                'displayname' => array(	'label' => lang('Apodo<br> <span class="grey-label">Nickname</span>'),
+                'displayname' => array(	'label' => lang('Apodo'),
                                     'type' => 'text',
                                     'validation' => 'required',
                                     'visibility' => 'profile|edit_profile|first_login|register'
                                     ),
-                'fullname' => array(	'label' => lang('Nombre Completo<br> <span class="grey-label">Full Name</spam>'),
+                'fullname' => array(	'label' => lang('Nombre Completo'),
                                     'type' => 'text',
                                     'validation' => 'required',
                                     'visibility' => 'profile|edit_profile|first_login|register'
                                     ),
-                'password' => array('label' => lang('Contraseña<br> <span class="grey-label">Password</span>'),
+                'password' => array('label' => lang('Contraseña'),
                                 'type' => 'password',
                                 'validation' => 'required|matches[passconf]',
                                 'visibility' => 'profile|first_login|register|forgot_pass'
                                 ),
-                'passconf' => array('label' => lang('Repetir contraseña<br> <span class="grey-label">Repeat Password</span>'),
+                'passconf' => array('label' => lang('Repetir contraseña'),
                                 'type' => 'password',
                                 'validation' => 'required',
                                 'visibility' => 'profile|first_login|register|forgot_pass'
                                 ),
 
-                'user_language'=> array(	'label' => 'Idioma<br> <span class="grey-label">Language</span>',
+                'user_language'=> array(	'label' => lang('Idioma'),
                     'type' => 'select',
                     'options' => array(0 => array("value" => "AR", "label" => "Español"),
                         1 => array("value" => "PR", "label" => "Portugues"),
                         2 => array("value" => "US", "label" => "English"),
                     ),
+                    'value' => $this->session->userdata('lang'),
                     'validation' => '',
                     'visibility' => 'register'
                 ),
@@ -221,7 +222,7 @@ class Front_init extends CI_Controller
 	protected function set_company()
 	{
 		$this->company = $this->company_model->name;
-		$this->session->set_userdata('lang',$this->company_model->country);	
+
 		$this->company_id = $this->company_model->get_id();
 		$this->session->set_userdata('company_id', $this->company_model->get_id());
 		

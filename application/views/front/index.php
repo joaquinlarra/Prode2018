@@ -13,83 +13,48 @@
             <h3 class="visible-sm visible-xs">Prode <?= $this->company_model->name?></h3>
 
             <br>
-            
-            <!--
-            <a href="<?=base_url().'comprar'?>" class="btn btn-green">Comprar cuenta</a>
-            -->
-            <!--
-            <div class="panel panel-primary">
-            <div class="panel-heading" align="center">Crea tu PRODE para vos y tu grupo</div>
-            <div class="panel-body">   	
-                
-                <div class="row">
-                <div class="col-md-12">
-                        <div class="alert alert-danger" id="company-error" style="display:none"></div>
-                    </div>
-                </div>
-                <div class="row">
-                    <form method="POST" id="company-availability" class="form-signin ajax_form" action="<?=$link_url.'check-company-availability'?>" accept-charset="UTF-8">
-                        <div class="col-xs-6 col-sm-5 col-md-5 col-lg-5">
-                            <input type="text" id="namespace" class="form-control" name="namespace">
-                        </div>
-                        <div class="col-xs-6 col-sm-4 col-md-4 col-lg-4">
-                            <p style="font-size:19px; color:#111111;text-align:left">.prode2018.com</p>
-                        </div>
-                        <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3">
-                        <button type="submit" name="submit" class="btn btn-green btn-block"><?= lang("CREAR")?>
-                        </div>    
-                    </form>
-                </div>
-            </div>
-            </div>
-            </div>
-            <br><br><br>
-            <h2 class="white"><center>HACE EL MEJOR PRONOSTICO Y DIVERTITE CON TUS AMIGOS</center></h2>
-            <br>
-            -->
         </div>
     </div>
     <div class="row">
 		<div class="<?= $this->company_model->register ? "col-md-offset-2 col-md-8" : "col-md-offset-3 col-md-6 col-sm-offset-2 col-sm-8"?>">
              <div class="panel panel-primary">
-
-                <div class="panel-heading" align="center">Ingresá el código de registro </div>
-                <div class="panel-body">
+                 <div class="panel-heading">
+                     <div class="pull-left">Bienvenido <span class="grey-text"> / Welcome</span></div>
+                     <div class="pull-right" style="font-size: 13px">
+                         <div class="dropdown">
+                         <?
+                         if($this->company_model->multi_lang){
+                             $lang = $this->bitauth->user_language == "AR"? "ES" : ($this->bitauth->user_language == "US" ? "EN" :$this->bitauth->user_language);
+                             ?>
+                             <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                                 <?= strtoupper($lang)?>
+                                 <!-- <span class="glyphicon glyphicon-user"> -->
+                                 <span class="caret"></span>
+                                 Idioma / Language
+                             </button>
+                             <ul class="dropdown-menu" role="menu">
+                                 <li><a href="<?= $link_url?>cambiar-idioma/AR">ESPAÑOL (ES)</a></li>
+                                 <li><a href="<?= $link_url?>cambiar-idioma/PR">PORTUGUES (PR)</a></li>
+                                 <li><a href="<?= $link_url?>cambiar-idioma/US">ENGLISH (EN)</a></li>
+                             </ul>
+                             <?
+                         }
+                         ?>
+                         </div>
+                     </div>
+                     <div class="clearfix"></div>
+                 </div>
+                 <div class="panel-body">
                     <div class="row">
                     	    <div class="alert alert-danger" id="error" style="display:none"></div>
 
                     	<div class="<?= $this->company_model->register && !$no_company ? "col-md-6 col-sm-6" : "col-md-12"?>">
-                         <?
-						if($no_company)
-						{
-							?>  <div align="center">
-                                    <div class="row">
-                                        <div class="col-md-12">
-                                            <div class="alert alert-danger" id="company-code-error" style="display:none"></div>
-                                        </div>
-                                    </div>
-                                    <div class="row">
-                                        <form method="POST" id="check-code" class="form-horizontal form-inline form-code ajax_form" action="<?=$link_url.'check-code'?>" accept-charset="UTF-8" role="form">
 
-                                            <div class="col-md-offset-1 col-sm-offset-1 col-lg-offset-1 col-xs-6 col-sm-7 col-md-7 col-lg-6">
-                                                <input type="text" id="code" class="form-control" name="code"  placeholder="# codigo">
-                                            </div>
-                                            <div class="col-xs-6 col-sm-4 col-md-4 col-lg-4 col-md-inset-1 col-lg-inset-1">
-                                                <button type="submit" name="submit" class="btn btn-green btn-block pull-left">Unirme al grupo</button>
-                                            </div>
-                                        </form>
-                                    </div>
-
-                                </div><? 
-						}
-						else
-						{
-						 ?>
-                         <label><?= lang("INGRESÁ SI YA TENES CUENTA")?></label>
+                            <label><?= lang('login')?><br></label>
                             <form method="POST" id="login-form" class="form-signin ajax_form" action="<?=$link_url.'front_user/login'?>" accept-charset="UTF-8">
                                 
                                 <div class="form-group" style="margin-bottom:15px; text-align:left">
-                                <label for="username"><?= $this->company_model->username_field ? $this->company_model->username_field : "usuario"?></label><br><input type="text" id="username" class="form-control" name="username">
+                                <label for="username">Email</label><br><input type="text" id="username" class="form-control" name="username">
                                 </div>
                                 <div class="form-group" style=" text-align:left">
                                 <label for="password"><?= lang("Contraseña")?></label><br>
@@ -109,64 +74,57 @@
 							 ?><br><a class="pull-right" href="<?= $this->company_model->tyc_doc?>" target="_blank"><?= lang('politica-privacidad')?></a><?	
 							}
 							?>
-                        <?
-						}
-						?>
+
                         </div>
-                        <?
-                        if($this->company_model->register && !$no_company)
-						{
-						?>
-                            <div class="col-md-6 col-sm-6">
-                                <label><?= lang("code-register")?></label>
 
-                                <div align="center">
-                                    <div class="row">
-                                        <div class="col-md-12">
-                                            <div class="alert alert-danger" id="company-code-error" style="display:none"></div>
-                                        </div>
-                                    </div>
-                                    <div class="row">
-                                        <form method="POST" id="check-code" class="form-horizontal form-inline form-code ajax_form" action="<?=$link_url.'check-code'?>" accept-charset="UTF-8" role="form">
+                        <div class="col-md-6 col-sm-6">
+                            <label><?= lang("code-register")?></label>
 
-                                            <br ><div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-                                                <input type="text" id="code" class="form-control" name="code"  placeholder="# codigo">
-                                            </div>
-                                            <br >
-                                            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 ">
-                                                <button type="submit" name="submit" class="btn btn-green btn-block pull-left">Unirme al grupo</button>
-                                            </div>
-                                        </form>
+                            <div align="center">
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <div class="alert alert-danger" id="company-code-error" style="display:none"></div>
                                     </div>
                                 </div>
+                                <div class="row">
+                                    <form method="POST" id="check-code" class="form-horizontal form-inline form-code ajax_form" action="<?=$link_url.'check-code'?>" accept-charset="UTF-8" role="form">
 
-                                <!--<form method="POST" id="register-form" class="form-signin ajax_form" action="<?= $link_url.'front_user/register'?>" accept-charset="UTF-8">
-                                    <div id="error" style="display:none" class="alert alert-danger"></div>
-                                    <?
-                                    if(!$this->company_model->register_domain)
-									{
-										?>
-										<div class="form-group" style=" text-align:left">
-											<input type="text" id="email" class="form-control" name="email" placeholder="email">
-										</div>
-                                    <?
-									}
-									else
-									{
-									?>
-                                        <div class="input-group" style="margin-bottom:25px;">
-                                            <input type="text" id="email" class="form-control" name="email" placeholder="email">
-                                            <span class="input-group-addon">@<?= $this->company_model->register_domain?></span>
+                                        <br ><div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                                            <input type="text" id="code" class="form-control" name="code"  placeholder="<?= lang('# codigo')?>">
                                         </div>
-                                    <?
-									}
-									?>
-                                    <button type="submit" name="submit" class="btn btn-green btn-block"><?= lang("Registrarse")?></button>
-                                </form>-->
+                                        <br >
+                                        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 ">
+                                            <button type="submit" name="submit" class="btn btn-green btn-block pull-left"><?= lang("register-button")?></button>
+                                        </div>
+                                    </form>
+                                </div>
                             </div>
-                		<?
-						}
-						?>
+
+                            <!--<form method="POST" id="register-form" class="form-signin ajax_form" action="<?= $link_url.'front_user/register'?>" accept-charset="UTF-8">
+                                <div id="error" style="display:none" class="alert alert-danger"></div>
+                                <?
+                                if(!$this->company_model->register_domain)
+                                {
+                                    ?>
+                                    <div class="form-group" style=" text-align:left">
+                                        <input type="text" id="email" class="form-control" name="email" placeholder="email">
+                                    </div>
+                                <?
+                                }
+                                else
+                                {
+                                ?>
+                                    <div class="input-group" style="margin-bottom:25px;">
+                                        <input type="text" id="email" class="form-control" name="email" placeholder="email">
+                                        <span class="input-group-addon">@<?= $this->company_model->register_domain?></span>
+                                    </div>
+                                <?
+                                }
+                                ?>
+                                <button type="submit" name="submit" class="btn btn-green btn-block"><?= lang("Registrarse")?></button>
+                            </form>-->
+                        </div>
+
                     </div>
                     
                 </div>

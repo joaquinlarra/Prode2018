@@ -283,6 +283,17 @@ $words['Editar']['MX'] = "Editar";
 $words['Editar']['PR'] = "Editar";
 $words['Editar']['US'] = "Edit";
 
+$words['Apodo']['AR'] = "Apodo";
+$words['Apodo']['MX'] = "Apodo";
+$words['Apodo']['PR'] = "Apelido";
+$words['Apodo']['US'] = "Nickname";
+
+$words['Idioma']['AR'] = "Idioma";
+$words['Idioma']['MX'] = "Idioma";
+$words['Idioma']['PR'] = "Língua";
+$words['Idioma']['US'] = "Language";
+
+
 $words['COMPLETA TUS DATOS']['AR'] = "COMPLETA TUS DATOS";
 $words['COMPLETA TUS DATOS']['MX'] = "COMPLETA TUS DATOS";
 $words['COMPLETA TUS DATOS']['PR'] = "CONPLETE SEUS DADOS";
@@ -291,11 +302,11 @@ $words['COMPLETA TUS DATOS']['US'] = "COMPLETE YOUR PROFILE";
 $words['Para finalizar el registro']['AR'] = "Para finalizar el registro";
 $words['Para finalizar el registro']['MX'] = "Para finalizar el registro";
 $words['Para finalizar el registro']['PR'] = "Para concluir o registo";
-$words['Para finalizar el registro']['US'] = "To complete registration";
+$words['Para finalizar el registro']['US'] = "To finish registration";
 
 $words['Completar registro']['AR'] = "Completar registro";
 $words['Completar registro']['MX'] = "Completar registro";
-$words['Completar registro']['PR'] = "Completar registro";
+$words['Completar registro']['PR'] = "Registro completo";
 $words['Completar registro']['US'] = "Complete profile";
 
 $words['infografia']['AR'] = "infografia";
@@ -303,10 +314,10 @@ $words['infografia']['MX'] = "infografia-mex";
 $words['infografia']['PR'] = "infografia-pr";
 $words['infografia']['US'] = "infografia-en";
 
-$words['INGRESO']['AR'] = "INGRESO";
-$words['INGRESO']['MX'] = "INGRESO";
-$words['INGRESO']['PR'] = "LOG IN";
-$words['INGRESO']['US'] = "LOG IN";
+$words['login']['AR'] = "<em>Ya tenés cuenta?</em><br>INGRESÁ";
+$words['login']['MX'] = "INGRESO";
+$words['login']['PR'] = "<em>Já tem uma conta?</em><br>LOG IN";
+$words['login']['US'] = "<em>Already have an account?</em><br>LOG IN";
 
 $words['first-time-login']['AR'] = "Si es tu primera vez ingresá solo el ";
 $words['first-time-login']['MX'] = "Si es la primera vez que ingresas, solo captura ";
@@ -318,10 +329,15 @@ $words['email-register']['MX'] = "REGISTRATE CON TU EMAIL";
 $words['email-register']['PR'] = "REGISTRE COM SEU EMAIL";
 $words['email-register']['US'] = "REGISTER WITH YOUR EMAIL";
 
-$words['code-register']['AR'] = "REGISTRATE CON TU CÓDIGO";
-$words['code-register']['MX'] = "REGISTRATE CON TU CÓDIGO";
-$words['code-register']['PR'] = "REGISTRE COM SEU CODE";
-$words['code-register']['US'] = "REGISTER WITH YOUR CODE";
+$words['code-register']['AR'] = "<em>Primera vez aquí?</em><br>INGRESÁ EL CÓDIGO DE REGISTRO";
+$words['code-register']['MX'] = "<em>Primera vez aquí?</em><br>INGRESÁ EL CÓDIGO DE REGISTRO";
+$words['code-register']['PR'] = "<em>Primeira vez aqui?</em><br>ENTRE NO CÓDIGO DE REGISTRO";
+$words['code-register']['US'] = "<em>First time here?</em><br>ENTER THE REGISTRATION CODE";
+
+$words['register-button']['AR'] = "CREAR CUENTA";
+$words['register-button']['MX'] = "CREAR CUENTA";
+$words['register-button']['PR'] = "CRIAR UMA CONTA";
+$words['register-button']['US'] = "CREATE ACCOUNT";
 
 $words['Guardar sesión']['AR'] = "Guardar sesión";
 $words['Guardar sesión']['MX'] = "Guardar sesión";
@@ -600,10 +616,10 @@ $words['account-confirmed']['MX'] = "<h4>&iexcl;Cuenta confirmada!</h4><br><br><
 $words['account-confirmed']['PR'] = "<h4>&iexcl;Conta confirmada!</h4><br><br><a class='btn btn-primary btn-block' href='[[link_url]]pronosticos'>Ingresar</a>";
 $words['account-confirmed']['US'] = "<h4>&iexcl;Account confirmed!</h4><br><br><a class='btn btn-primary btn-block' href='[[link_url]]pronosticos'>Enter</a>";
 
-$words['support-email']['AR'] = "si tenés alguna duda o inquietud podés escribir a <a href='mailto:info@prode2018.com'><b>info@prode2018.com</b></a>";
-$words['support-email']['MX'] = "si tienes alguna duda o inquietud puedes escribir a <a href='mailto:info@prode2018.com'><b>info@prode2018.com</b></a>";
-$words['support-email']['PR'] = "Se você tiver alguma dúvida pode escrever para <a href='mailto:info@prode2018.com'><b>info@prode2018.com</b></a>";
-$words['support-email']['US'] = "questions? <a href='mailto:info@prode2018.com'><b>info@prode2018.com</b></a>";
+$words['support-email']['AR'] = "Si tenés alguna duda o problema podés escribir a <a href='mailto:info@prode2018.com'><b>info@prode2018.com</b></a>";
+$words['support-email']['MX'] = "Si tienes alguna duda o inquietud puedes escribir a <a href='mailto:info@prode2018.com'><b>info@prode2018.com</b></a>";
+$words['support-email']['PR'] = "Se você tiver dúvidas ou problemas, pode escrever para <a href='mailto:info@prode2018.com'><b>info@prode2018.com</b></a>";
+$words['support-email']['US'] = "Any questions or issues please send us an email to <a href='mailto:info@prode2018.com'><b>info@prode2018.com</b></a>";
 
 $words['Nickname']['AR'] = "Apodo";
 $words['Nickname']['MX'] = "Apodo";
