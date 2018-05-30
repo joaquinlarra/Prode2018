@@ -221,9 +221,9 @@
 			if(data.valid)
 			{
 				$('#register-content').hide();
-				$('#register-header').hide();
-				$('#register-header').html(data.message);
-				$('#register-header').fadeIn();
+
+				$('#register-content').html(data.message);
+                $('#register-content').fadeIn();
 			}
 			else
 			{
