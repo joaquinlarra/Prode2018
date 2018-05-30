@@ -74,9 +74,33 @@ h6 {
   font-size: 20px;
 }
 
+.btn-header {
+  padding: 15px;
+  font-size: 12px;
+  background: none;
+  border: none;
+  color:white; 
+  box-shadow: none; 
+}
+
+.btn-header:hover {
+  color: white;
+  box-shadow: none; 
+}
+
+.btn-header.active {
+  text-decoration:underline;
+  box-shadow: none; 
+}
+
 .btn-primary {
   padding: 15px;
   font-size: 12px;
+}
+
+.headerInner .btn-info{
+  background: #4f8ac2 !important;
+  border: #4f8ac2 !important;
 }
 
 .btn-green,

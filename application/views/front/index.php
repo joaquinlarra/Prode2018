@@ -46,13 +46,12 @@
                  </div>
                  <div class="panel-body">
                     <div class="row">
+                         <div class="col-md-12">
                     	    <div class="alert alert-danger" id="error" style="display:none"></div>
-
+                            </div>
                     	<div class="<?= $this->company_model->register && !$no_company ? "col-md-6 col-sm-6" : "col-md-12"?>">
-
-                            <label><?= lang('login')?><br></label>
                             <form method="POST" id="login-form" class="form-signin ajax_form" action="<?=$link_url.'front_user/login'?>" accept-charset="UTF-8">
-                                
+                                <label><?= lang('login')?><br></label>
                                 <div class="form-group" style="margin-bottom:15px; text-align:left">
                                 <input type="text"  placeholder="<?= lang("Email")?>" id="username" class="form-control" name="username">
                                 </div>
@@ -65,8 +64,9 @@
                                     </label>
                                 </div>
                                     <button type="submit" name="submit" class="btn btn-green btn-block"><?= lang("Ingresar")?></button>
+                            <br><a class="pull-right" href="<?= $link_url?>olvide-mi-clave"><?= lang('olvide-clave')?></a>
                             </form>
-                            <a class="pull-right" href="<?= $link_url?>olvide-mi-clave"><?= lang('olvide-clave')?></a>
+                            
                             <?
                             if($this->company_model->tyc_doc)
 							{

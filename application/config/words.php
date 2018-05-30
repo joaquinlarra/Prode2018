@@ -334,10 +334,20 @@ $words['email-register']['MX'] = "REGISTRATE CON TU EMAIL";
 $words['email-register']['PR'] = "REGISTRE COM SEU EMAIL";
 $words['email-register']['US'] = "REGISTER WITH YOUR EMAIL";
 
+$words['# codigo']['AR'] = "# CÓDIGO";
+$words['# codigo']['MX'] = "# CÓDIGO";
+$words['# codigo']['PR'] = "# CÓDIGO";
+$words['# codigo']['US'] = "# CODE";
+
 $words['code-register']['AR'] = "<em>Primera vez aquí?</em><br>INGRESÁ EL CÓDIGO DE REGISTRO";
 $words['code-register']['MX'] = "<em>Primera vez aquí?</em><br>INGRESÁ EL CÓDIGO DE REGISTRO";
 $words['code-register']['PR'] = "<em>Primeira vez aqui?</em><br>ENTRE NO CÓDIGO DE REGISTRO";
 $words['code-register']['US'] = "<em>First time here?</em><br>ENTER THE REGISTRATION CODE";
+
+$words['El código ingresado es incorrecto']['AR'] = "El código ingresado es incorrecto";
+$words['El código ingresado es incorrecto']['MX'] = "El código ingresado es incorrecto";
+$words['El código ingresado es incorrecto']['PR'] = "O código digitado está incorreto";
+$words['El código ingresado es incorrecto']['US'] = "The entered code is incorrect";
 
 $words['register-button']['AR'] = "CREAR CUENTA";
 $words['register-button']['MX'] = "CREAR CUENTA";

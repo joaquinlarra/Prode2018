@@ -69,16 +69,16 @@
 					<div class="navs">
 						<div class="leftNav">
 							<div class="btn-group" role="group">
-								<a href="<?=$link_url?>pronosticos" class="btn btn-primary <?= $section == 'bet' ? 'active' : '' ?>">
+								<a href="<?=$link_url?>pronosticos" class="btn btn-header <?= $section == 'bet' ? 'active' : '' ?>">
 									<?= strtoupper(lang('Pronosticos'))?>
 								</a>
-								<a href="<?=$link_url?>posiciones" class="btn btn-primary <?= $section == 'scores' ? 'active' : '' ?>">
+								<a href="<?=$link_url?>posiciones" class="btn btn-header <?= $section == 'scores' ? 'active' : '' ?>">
 									<?= strtoupper(lang('Posiciones'))?>
 								</a>
 								<?
 									if($this->company_model->wall){
 										?>
-											<a href="<?=$link_url?>muro" class="btn btn-primary <?= $section == 'wall' ? 'active' : '' ?>">
+											<a href="<?=$link_url?>muro" class="btn btn-header <?= $section == 'wall' ? 'active' : '' ?>">
 												<?= strtoupper(lang('Muro'))?>
 											</a>
 										<?
