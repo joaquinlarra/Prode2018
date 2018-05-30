@@ -49,6 +49,13 @@ h6 {
   text-transform: uppercase;
 }
 
+/* GLOBALS STYLES */
+
+.dropdown:hover .dropdown-menu {
+  display: block;
+  margin-top: 0;
+}
+
 /* HOME PAGE */
 
 .white{
@@ -83,7 +90,7 @@ h6 {
   box-shadow: none; 
 }
 
-.btn-header:hover {
+.btn-header:hover, .btn-header:focus {
   color: white;
   box-shadow: none; 
 }

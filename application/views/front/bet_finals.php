@@ -23,7 +23,9 @@
 </div>
 <div class="container main-content finals-container">
 	<div class="row paralax">
-    <h3 class="page-title"><?= lang("complete-bets")?><br><small><?= lang("penalties-rule")?></small></h3>
+    <div class="col-md-12">
+        <h3 class="page-title"><?= lang("complete-bets")?><br><small><?= lang("penalties-rule")?></small></h3>
+    </div>
 	<?
 	if($saved)
 	{
@@ -37,73 +39,75 @@
 		<?	
 	}
 	?>
-        <div class="panel panel-primary finals-panel">
-            <div class="panel-body">
-                <form action="<?= $link_url?>home/validate_matches_form/" method="post" enctype="multipart/form-data" id="prognostics-form">
-                <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12 col-8vos">
-                    <h2><?= lang("8vos de final")?></h2>
-                    <table class="table pull-left zone-table table-responsive table-condensed full-width">
-                <?
-                $phase = "8";
-                include(dirname(__FILE__)."/common/finals_col.php");
-                ?>
-                </table>
-                <div class="clearfix"></div>
-                </div>
-                <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12  col-4tos">
-                    <h2><?= lang("4tos de final")?></h2>
-                    <table class="table pull-left zone-table table-responsive table-condensed full-width">
-                <?
-                $phase = "4";
-                include(dirname(__FILE__)."/common/finals_col.php");
-                ?>
-                </table>
-                <div class="clearfix"></div>
-                </div>
-                <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12  col-semi">
-                    <h2><?= lang("Semifinal")?></h2>
-                    <table class="table pull-left zone-table table-responsive table-condensed full-width">
-                <?
-                $phase = "semi";
-                include(dirname(__FILE__)."/common/finals_col.php");
-                ?>
-                </table>
-                <div class="clearfix"></div>
-                </div>
-                <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12 col-finals">
-                    <h2><?= lang("Final")?></h2>
-                    <table class="table pull-left zone-table table-responsive table-condensed full-width finals-table">
+        <div class="col-md-12">
+            <div class="panel panel-primary finals-panel">
+                <div class="panel-body">
+                    <form action="<?= $link_url?>home/validate_matches_form/" method="post" enctype="multipart/form-data" id="prognostics-form">
+                    <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12 col-8vos">
+                        <h2><?= lang("8vos de final")?></h2>
+                        <table class="table pull-left zone-table table-responsive table-condensed full-width">
                     <?
-                    $phase = "final";
+                    $phase = "8";
                     include(dirname(__FILE__)."/common/finals_col.php");
-            
-                    ?>
-                    </table>
-                    <h2>3er y 4to puesto</h2>
-                     <table class="table pull-left zone-table table-responsive table-condensed full-width">
-                    <?
-                    $phase = "3y4";
-                    include(dirname(__FILE__)."/common/finals_col.php");
-            
                     ?>
                     </table>
                     <div class="clearfix"></div>
-                </div> 
-                <?
-                if($section == "bet_completed")
-                {
-                    ?><div class="clearfix"></div>
-                    <a href="<?= $link_url?>pronosticos" class="btn btn-primary btn-lg btn-block"><?= lang("editar")?></a><?	
-                }
-                else
-                {
+                    </div>
+                    <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12  col-4tos">
+                        <h2><?= lang("4tos de final")?></h2>
+                        <table class="table pull-left zone-table table-responsive table-condensed full-width">
+                    <?
+                    $phase = "4";
+                    include(dirname(__FILE__)."/common/finals_col.php");
                     ?>
+                    </table>
                     <div class="clearfix"></div>
-                    <button type="button" class="btn btn-primary btn-lg btn-block" id="submit-btn"><?= lang("Guardar")?></button><?
-                }
-                ?>
-                </form>
-    		</div>
+                    </div>
+                    <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12  col-semi">
+                        <h2><?= lang("Semifinal")?></h2>
+                        <table class="table pull-left zone-table table-responsive table-condensed full-width">
+                    <?
+                    $phase = "semi";
+                    include(dirname(__FILE__)."/common/finals_col.php");
+                    ?>
+                    </table>
+                    <div class="clearfix"></div>
+                    </div>
+                    <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12 col-finals">
+                        <h2><?= lang("Final")?></h2>
+                        <table class="table pull-left zone-table table-responsive table-condensed full-width finals-table">
+                        <?
+                        $phase = "final";
+                        include(dirname(__FILE__)."/common/finals_col.php");
+                
+                        ?>
+                        </table>
+                        <h2>3er y 4to puesto</h2>
+                        <table class="table pull-left zone-table table-responsive table-condensed full-width">
+                        <?
+                        $phase = "3y4";
+                        include(dirname(__FILE__)."/common/finals_col.php");
+                
+                        ?>
+                        </table>
+                        <div class="clearfix"></div>
+                    </div> 
+                    <?
+                    if($section == "bet_completed")
+                    {
+                        ?><div class="clearfix"></div>
+                        <a href="<?= $link_url?>pronosticos" class="btn btn-primary btn-lg btn-block"><?= lang("editar")?></a><?	
+                    }
+                    else
+                    {
+                        ?>
+                        <div class="clearfix"></div>
+                        <button type="button" class="btn btn-primary btn-lg btn-block" id="submit-btn"><?= lang("Guardar")?></button><?
+                    }
+                    ?>
+                    </form>
+                </div>
+            </div>
         </div>
     </div>
 </div>

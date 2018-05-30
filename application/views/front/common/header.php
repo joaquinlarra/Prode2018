@@ -99,12 +99,12 @@
                                     <?= strtoupper(lang('Premios'))?>
                                 </a>
                             <? } ?>
-                            <a <? //if($user_first_login){ echo 'data-intro="Clickea en <i>Como jugar</i> antes de emepzar!"'; } ?> class="btn btn-info <?= $section == 'how-to' ? 'active' : '' ?>" href="<?=$link_url?>como-jugar">
+                            <a <? //if($user_first_login){ echo 'data-intro="Clickea en <i>Como jugar</i> antes de emepzar!"'; } ?> class="btn btn-header <?= $section == 'how-to' ? 'active' : '' ?>" href="<?=$link_url?>como-jugar">
 								<?= strtoupper(lang('Cómo jugar'))?>
 							</a>
 
 							<div class="dropdown">
-								<button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+								<button class="btn btn-header dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
 									<?= strtoupper($shortname)?>
 									<span class="glyphicon glyphicon-user">
 									<span class="caret"></span>
@@ -127,7 +127,7 @@
 								if($this->company_model->multi_lang){
 									$lang = $this->bitauth->user_language == "AR"? "ES" : ($this->bitauth->user_language == "US" ? "EN" :$this->bitauth->user_language);   
 								?>
-									<button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+									<button class="btn btn-header dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
 										<?= strtoupper($lang)?>
 										<!-- <span class="glyphicon glyphicon-user"> -->
 										<span class="caret"></span>
