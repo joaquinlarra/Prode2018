@@ -76,8 +76,8 @@ class Scores extends ADMIN_Controller
 	
 	public function set_score_table()
 	{
-		$sql = "INSERT IGNORE INTO scores (user_id, username, company, company_id, department,department_id, branch, branch_id)
-				SELECT user_id, fullname, company, company_id, department, department_id, branch, branch_id FROM bitauth_users WHERE active = 1 AND group_id = 3";	
+		$sql = "INSERT IGNORE INTO scores (user_id, username, company, company_id)
+				SELECT user_id, fullname, company, company_id FROM bitauth_users WHERE active = 1 AND group_id = 3";
 		$this->db->query($sql);
 		vd("Tabla de puntajes seteada.");
 	}

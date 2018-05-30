@@ -470,13 +470,14 @@ class Home extends Front_init
 						{
 							$this->data['error'] = lang("player-not-found");	
 						}
+						break;
 			case "dept":
-						$condition =  "AND department_id = '".(int)$id."'";
+						//$condition =  "AND department_id = '".(int)$id."'";
 						$sql = "SELECT * FROM scores WHERE company_id = '".$this->company_id."' ".$condition." ORDER BY points DESC, username ASC LIMIT ".$offset.",100";
 						$this->data['players'] = $this->db->query($sql)->result_array();
 						break;
 			case "branch":
-						$condition =  "AND branch_id = '".(int)$id."'";
+						//$condition =  "AND branch_id = '".(int)$id."'";
 						$sql = "SELECT * FROM scores WHERE company_id = '".$this->company_id."' ".$condition." ORDER BY points DESC, username ASC LIMIT ".$offset.",100";
 						$this->data['players'] = $this->db->query($sql)->result_array();
 						break;
