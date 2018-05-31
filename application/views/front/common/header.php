@@ -95,7 +95,7 @@
                             if($this->company_model->prizes_image){
 
                             ?>
-                                <a class="btn btn-info <?= $section == 'prizes' ? 'active' : '' ?>" href="<?=$link_url?>premios">
+                                <a class="btn btn-header <?= $section == 'prizes' ? 'active' : '' ?>" href="<?=$link_url?>premios">
                                     <?= strtoupper(lang('Premios'))?>
                                 </a>
                             <? } ?>
