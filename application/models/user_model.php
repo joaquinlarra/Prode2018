@@ -104,7 +104,7 @@ class User_model extends Simple_data_model
 	}
 	protected function post_create()
 	{
-		$this->set_field('active',($this->post['active'] ? $this->post['active'] : $this->active));
+		$this->set_field('active','1');
 		
 		$this->set_field('group_id', ($this->group_id ? $this->group_id : '3'));
 		
