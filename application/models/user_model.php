@@ -116,7 +116,7 @@ class User_model extends Simple_data_model
 		}
 		$this->hash_password();
         $sql = "INSERT IGNORE INTO scores (user_id, username, company, company_id)
-				VALUES ('".$this->get_id()."','".$this->fullname."','".$this->company."',''".$this->company_id."')";
+				VALUES ('".$this->get_id()."','".$this->fullname."','".$this->company."','".$this->company_id."')";
         $this->db->query($sql);
 		$this->update();
 	}
