@@ -11,68 +11,6 @@ class Scores extends ADMIN_Controller
 		
 	}
 
-	/*
-	public function update_qualys()
-	{
-		$qualy_teams = array(	"13","38", //a
-								"22","28", //b
-								"10","16", //c
-								"33","17", //d
-								"12","19", //e
-								"8","30", //f
-								"39","34", //g
-								"9","24" //h						
-							);
-		$sql = "UPDATE prognostics_qualys SET result = 0";
-		$this->db->query($sql);
-		foreach($qualy_teams as $key => $team_id)
-		{
-			$sql = "UPDATE prognostics_qualys SET result =  result+1 WHERE team".($key+1)."_id = '".$team_id."'";
-			$this->db->query($sql);
-		}
-		
-		$sql = "UPDATE scores AS s, prognostics_qualys AS p
-			 	SET s.qualy_points = p.result WHERE p.user_id = s.user_id";
-		$this->db->query($sql);
-
-		vd("Qualys seteada");
-		$sql = "UPDATE scores SET points = results*3 + exact_results*5 + badges_points + qualy_points + winner_points ";
-		$this->db->query($sql);
-		vd("Scores actualizado");
-		
-	}
-	
-	public function update_winners()
-	{
-		$sql = "UPDATE prognostics_winners SET result = 0";
-		$this->db->query($sql);
-		$sql = "UPDATE prognostics_winners SET result = 3 WHERE winner1_id = '39'";
-		$this->db->query($sql);
-		$sql = "UPDATE prognostics_winners SET result = result + 3 WHERE winner2_id = '8'";
-		$this->db->query($sql);
-		$sql = "UPDATE prognostics_winners SET result = result + 3 WHERE winner3_id = '22'";
-		$this->db->query($sql);
-		
-		$sql = "SELECT * FROM companies WHERE winners = 1";
-		
-		$companies = $this->db->query($sql)->result();
-		
-		foreach($companies as $company)
-		{
-			$sql = "UPDATE scores AS s, prognostics_winners AS p 
-				SET s.winner_points = p.result WHERE p.user_id = s.user_id
-				AND s.company_id = '".$company->company_id."'
-				";
-			$this->db->query($sql);
-		
-		}
-		$sql = "UPDATE scores SET points = results*3 + exact_results*5 + badges_points + qualy_points + winner_points ";
-		$this->db->query($sql);
-		vd("Scores actualizado");		
-		vd("finalizado");
-		
-	}
-	*/
 	
 	public function set_score_table()
 	{
@@ -85,8 +23,11 @@ class Scores extends ADMIN_Controller
 
 	public function update_scores()
 	{
-		
-		$this->set_score_table();
+        // LOCK PLAYERS TABLE
+        $sql = "UPDATE scores_go SET go = '0'";
+        $this->db->query($sql);
+
+	    $this->set_score_table();
 		$sql = "SELECT * FROM scores_update WHERE state = 'start'";
 		$this->load->model("admin/user_badges_model","user_badges_model");
 		$this->load->model("admin/match_model","match_model");
@@ -120,13 +61,16 @@ class Scores extends ADMIN_Controller
 		
 			vd("Generando puntos");
 			
-			$sql = "UPDATE scores SET points = results*3 + exact_results*5 + qualy_points + winner_points ";
+			$sql = "UPDATE scores SET points = results*3 + exact_results*5 ";
 			$this->db->query($sql);
 			vd("<span style='color:green'>Generación de puntos OK. Comenzando cierre...</span>");
 			$this->close_scores();
 		}
-		
-		
+
+		// UNLOCK PLAYERS
+        $sql = "UPDATE scores_go SET go = '1'";
+        $this->db->query($sql);
+	    echo "<br>--- FINISH !!!!!------";
 	}
 
 	public function close_scores()
@@ -141,8 +85,7 @@ class Scores extends ADMIN_Controller
 		vd($scores);	
 		$sql = "SELECT * FROM scores ORDER BY RAND() LIMIT 0, 5";
 		$scores = $this->db->query($sql)->result_array();
-		vd($scores);	
-
+		vd($scores);
 	}
 	
 	protected function prepare_match()

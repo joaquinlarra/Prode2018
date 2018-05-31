@@ -93,8 +93,14 @@ class User_model extends Simple_data_model
 
 	protected function post_delete()
 	{
-		$sql = "DELETE FROM configurations WHERE configuration_id = '".$this->get_id()."'";
-		$this->db->query($sql);	
+		$sql = "DELETE FROM prognostics WHERE user_id = '".$this->get_id()."'";
+		$this->db->query($sql);
+        $sql = "DELETE FROM scores WHERE user_id = '".$this->get_id()."'";
+        $this->db->query($sql);
+        $sql = "DELETE FROM bitauth_userdata WHERE user_id = '".$this->get_id()."'";
+        $this->db->query($sql);
+        $sql = "DELETE FROM bitauth_logins WHERE user_id = '".$this->get_id()."'";
+        $this->db->query($sql);
 	}
 	protected function post_create()
 	{
@@ -109,7 +115,10 @@ class User_model extends Simple_data_model
 			$this->db->query($sql);	
 		}
 		$this->hash_password();
-		$this->update();	
+        $sql = "INSERT IGNORE INTO scores (user_id, username, company, company_id)
+				VALUES ('".$this->get_id()."','".$this->fullname."','".$this->company."',''".$this->company_id."')";
+        $this->db->query($sql);
+		$this->update();
 	}
 	
 	public function hash_password()

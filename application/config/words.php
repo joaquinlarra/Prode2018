@@ -509,7 +509,9 @@ $words['Escribe algo...']['AR'] = "Escribe algo...";
 $words['Escribe algo...']['PR'] = "Escribe algo...";
 $words['Escribe algo...']['US'] = "Write something...";
 
-
+$words['Guardando...']['AR'] = "Guardando...";
+$words['Guardando...']['PR'] = "Guardando...";
+$words['Guardando...']['US'] = "Saving...";
 
 
 $words['no-players']['AR'] = "No hay posiciones por el momento";

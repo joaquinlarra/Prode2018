@@ -605,7 +605,7 @@
 					$("#input-goals-1-"+match_id).prop('disabled', true);
 					$("#input-goals-2-"+match_id).prop('disabled', true);
 					
-					$("#middle-col-"+match_id).html('<small>Guardando...</div><div class="spinner"><div class="double-bounce1"></div><div class="double-bounce2"></div></div>');				
+					$("#middle-col-"+match_id).html('<small><?= lang('Guardando...')?></div><div class="spinner"><div class="double-bounce1"></div><div class="double-bounce2"></div></div>');
 					
 					setTimeout(function() {
 						$("#middle-col-"+match_id).html('<span>'+message+'</span><br><span class="btn btn-success btn-edit-match" match_id="'+match_id+'" onclick="enable_match('+match_id+')"><?= lang('editar')?></span>');				
