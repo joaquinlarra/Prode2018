@@ -87,7 +87,7 @@ class User_model extends Simple_data_model
 			$sql = "INSERT INTO bitauth_assoc (user_id, group_id) VALUES ('".$this->get_id()."','".$this->group_id."')";
 			$this->db->query($sql);	
 		}
-		$sql = "UPDATE scores SET username = '".$this->fullname."' WHERE user_id = '".$this->get_id()."'";
+		$sql = "UPDATE scores SET username = '".$this->fullname."', company_id = '".$this->company_id."', company = '".$this->company."' WHERE user_id = '".$this->get_id()."'";
 		$this->db->query($sql);
         $sql = "UPDATE wall SET username = '".$this->displayname."' WHERE user_id = '".$this->get_id()."'";
         $this->db->query($sql);
@@ -154,7 +154,7 @@ class User_model extends Simple_data_model
 			unset($this->post['group_id']);
 		}
 		$ci =& get_instance();
-		$company_id = $this->company_id ? $this->company_id : $ci->bitauth->company_id;
+		$company_id = $this->company_id ? $this->company_id : $ci->company_model->company_id;
 		if($this->post['company_id'] && $ci->bitauth->is_admin())
 		{
 			$company_id = $this->post['company_id'];
@@ -170,13 +170,7 @@ class User_model extends Simple_data_model
 			$this->post['company'] = $result[0]['name'];		
 		}
 
-		
-		if($this->branch_id)
-		{
-			$sql = "SELECT branch FROM company_branches WHERE branch_id = '".(int)$this->branch_id."'";
-			$row = $this->db->query($sql)->row();
-			$this->set_field("branch",$row->branch);
-		}		
+
 		unset($this->post['passconf']);	
 		$this->userdata = $this->post['userdata'];
 		unset($this->post['userdata']);
