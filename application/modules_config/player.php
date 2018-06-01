@@ -57,6 +57,12 @@ $config['modules'][$module_name]['fields'] = array(
         'value' => 1,
         'visibility' => 'save|details|list',
     ),
+
+    'hide_stats'	=> array(	'label' => 'Oculto',
+        'type' => 'checkbox',
+        'value' => 0,
+        'visibility' => 'save|details|list',
+    ),
 );
 
 $config['modules'][$module_name]['top_menu_actions'] = array( 	'users_list' => array(	'method' => 'show_list',

@@ -22,31 +22,6 @@ class Player extends ADMIN_Controller
 	}
 
 
-	public function update_qualys()
-	{
-		vd("start");
-		$sql = "SELECT * FROM prognostics_qualys";
-		$qualys = $this->db->query($sql)->result_array();
-		$this->load->model("admin/team_model");
-		
-		foreach($qualys as $qualy)
-		{
-			$team_info = "";
-			for($i = 1; $i <= 16; $i++)
-			{
-				$team = new Team_model();
-				$team->get((int)$qualy['team'.$i."_id"]);
-				
-				$team_info .= $i.",".$team->name.",".$team->team_flag."|";	
-			}
-			
-			$sql = "UPDATE prognostics_qualys SET teams_info = '".$team_info."' WHERE user_id = '".$qualy['user_id']."'";
-			vd($sql);
-			$this->db->query($sql);	
-		}
-		
-	}
-
 	public function update_pass()
 	{
 		$sql = "SELECT * FROM bitauth_users WHERE group_id = 3 AND password != ''";

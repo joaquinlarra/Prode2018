@@ -68,6 +68,10 @@ class Bitauth
 		$this->_mins_locked_out				= $this->config->item('mins_locked_out', 'bitauth');
 		$this->_date_format					= $this->config->item('date_format', 'bitauth');
 
+        $server_name = explode(".",$_SERVER['SERVER_NAME']);
+        //$this->_cookie_elem_prefix = $server_name[0] ? $server_name[0] : 'ba_';
+
+
 		$this->_all_roles					= $this->config->item('roles', 'bitauth');
 
 		// Grab the first role on the list as the administrator role
@@ -104,6 +108,7 @@ class Bitauth
 			return FALSE;
 		}
 
+
 		if($this->locked_out())
 		{
 			$this->set_error(sprintf($this->lang->line('bitauth_user_locked_out'), $this->_mins_locked_out));
@@ -116,12 +121,13 @@ class Bitauth
 		{
 			$user = $this->get_user_by_email($username,NULL, $company_id);	
 		}
-		
+
 		if($user !== FALSE)
 		{
 			if($this->phpass->CheckPassword($password, $user->password) || ($password === NULL && $user->remember_me == $token))
 			{
-				if( ! empty($this->_login_fields) && ! $this->check_login_fields($user, $extra))
+
+			    if( ! empty($this->_login_fields) && ! $this->check_login_fields($user, $extra))
 				{
 					$this->log_attempt($user->user_id, FALSE);
 					return FALSE;

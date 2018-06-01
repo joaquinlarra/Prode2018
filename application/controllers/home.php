@@ -5,8 +5,6 @@ class Home extends Front_init
 	public function __construct()
 	{	
 		parent::__construct();
-		$this->data['company_id'] = 1;
-		$this->data['company'] = "BambooDev";
 	}
 	
 	public function index()
@@ -124,6 +122,7 @@ class Home extends Front_init
 		$this->load->view("front/first_login.php", $this->data);
 	}
 
+	/*
 	public function company($company)
 	{
 		$this->session->set_userdata('keep_company',true);
@@ -145,6 +144,7 @@ class Home extends Front_init
 		$this->data['no_company'] = false;
 		$this->index();
 	}
+	*/
 
 	public function get_teams_positions()
 	{
@@ -173,55 +173,26 @@ class Home extends Front_init
 		$this->data['wall_posts'] = $this->db->query($sql)->result_array();
 		$this->load->view("front/wall.php",$this->data);
 	}
-	
-	public function first_round()
-	{
-		$sql = "SELECT * FROM matches ORDER BY match_id ASC";
-		$this->data['matches_zone'] = $this->db->query($sql)->result_array();
-	}
-	
+
 	public function bet_by_date()
 	{
 		$this->data['phase'] = "initial";
 		$sql = "SELECT * FROM matches WHERE phase = 'zone' ORDER BY date_played ASC";
 		$this->data['matches'] = $this->db->query($sql)->result_array();
+
 		$sql = "SELECT * FROM prognostics WHERE user_id = '".$this->user_id."'";
 		$matches_completed = $this->db->query($sql)->result_array();
 		foreach($matches_completed as $match)
 		{
 			$this->data['matches_completed'][$match['match_id']] = $match; 	
 		}
-		$this->first_round();
+        $sql = "SELECT * FROM matches WHERE phase = 'zone' ORDER BY zone ASC, match_id ASC";
+        $this->data['matches_zone'] = $this->db->query($sql)->result_array();
+
 		$this->get_teams_positions();
 		$this->load->view("front/bet_by_date.php",$this->data);				
 	}
-	
-	public function validate_matches_form()
-	{
-		$this->redirect_login();
-		/*
-		$post = $this->input->post();
-		$sql = "INSERT INTO prognostics (tournament_id, tournament, match_id, matchname, user_id, team1_goals, team2_goals, result, username) VALUES";
-		$result = -2;
-		$rows = array();
-		foreach($post['match'] as $match_id => $match)
-		{
-			$result = (int)$match['team1'] > (int)$match['team2'] ? -1 : ((int)$match['team1'] < (int)$match['team2'] ? 1 : 0);
-			if($match['team1'] != "")
-			{
-				$rows[] = "(1,'Mundial 2014','".(int)$match_id."','".mysql_escape_string($match['matchname'])."','".$this->user_id."','".(int)$match['team1']."','".(int)$match['team2']."','".$result."','".$this->username."')";
-			}
-		}
-		if(count($rows))
-		{
-			$sql .= implode(",",$rows )." ON DUPLICATE KEY UPDATE team1_goals = VALUES(team1_goals), team2_goals = VALUES(team2_goals), result = VALUES(result)";
-		}
-		$this->db->query($sql);
-		*/
-		$output['valid'] = 1;
-		echo json_encode($output);		
-	}
-	
+
 	public function prognostics($phase = "",$saved = "")
 	{
 		$this->redirect_login();
@@ -249,76 +220,7 @@ class Home extends Front_init
 			case "final":
 							$this->bet_finals();
 							break;
-			case "starter":
-							$this->bet_starter();
-							break;
-			case "qualys":
-							$this->bet_qualys();
 		}
-	}
-	
-	public function bet_qualys()
-	{
-		$sql = "SELECT * FROM prognostics_qualys WHERE user_id = '".$this->user_id."'";
-		$result = $this->db->query($sql)->result_array();
-		$this->data['qualys'] = $result[0];
-		
-		if(is_array($this->data['qualys']))
-		{
-			$teams_info = $this->data['qualys']['teams_info'];
-			$teams_info = explode("|",$teams_info);
-			foreach($teams_info as $info)
-			{
-				$info = explode(",",$info);
-				$this->data['qualy']['team'.$info[0]."_id"] = $this->data['qualys']['team'.$info[0]."_id"];
-				$this->data['qualy']['team'.$info[0]."_name"] = $info[1];
-				$this->data['qualy']['team'.$info[0]."_flag"] = $info[2];
-			}
-			$this->data['qualys_completed'] = true;
-		}		
-		
-		
-		$sql = "SELECT * FROM teams ORDER BY zone ASC, name ASC";
-		$result = $this->db->query($sql)->result_array();
-		$this->data['teams'] = array();
-		foreach($result as $row)
-		{
-			$this->data['zones'][$row['zone']][$row['team_id']] = $row;
-		}
-		$this->data['phase'] = "qualys";
-		$this->load->view("front/prequalified.php",$this->data);
-	}
-	
-	public function bet_starter()
-	{
-		$sql = "SELECT * FROM teams ORDER BY name ASC";
-		$this->data['teams'] = $this->db->query($sql)->result_array();
-		
-		$sql = "SELECT * FROM prognostics_winners WHERE user_id = '".$this->user_id."'";
-		$this->data['winners'] = $this->db->query($sql)->result_array();
-		
-		
-		$this->data['winners'] = $this->data['winners'][0];
-		if(is_array($this->data['winners']) && $this->data['winners']['winner1_id'] && $this->data['winners']['winner2_id'] && $this->data['winners']['winner3_id'])
-		{
-			$this->data['winners_completed'] = true;
-		}
-
-		/*
-		$this->data['teams'] = array();
-		$i = 0;
-		foreach($result as $row)
-		{
-			$this->data['teams'][$i]['text'] = $row['name'];
-			$this->data['teams'][$i]['value'] = $row['team_id'];
-			$this->data['teams'][$i]['selected'] = false;
-			//$this->data['teams'][$i]['description'] = $row['zone'];
-			$this->data['teams'][$i]['imageSrc'] = $row['team_flag'];
-			$i++;
-		}*/		
-		$this->data['phase'] = "starter";
-
-		$this->load->view("front/bet_initial.php",$this->data);
 	}
 	
 	public function bet_finals()
@@ -400,37 +302,12 @@ class Home extends Front_init
 			$this->load->view("front/scores.php",$this->data);	
 			return;
 		}
-				
-		if($this->company_model->dept_league)
-		{
-			$sql = "SELECT * FROM company_departments WHERE company_id = '".$this->company_model->get_id()."' ORDER BY department ASC";
-			$this->data['departments'] = $this->db->query($sql)->result_array();
-		}
-		
-		if($this->company_model->branch_league)
-		{
-			$sql = "SELECT * FROM company_branches  WHERE company_id = '".$this->company_model->get_id()."' ORDER BY branch ASC";
-			$this->data['branches'] = $this->db->query($sql)->result_array();
-		}
+
 		
 		$this->data['offset'] = $offset;
 
 		switch($type)
 		{
-			case "amigos":
-						
-						$sql = "SELECT COUNT(*) AS total FROM scores WHERE user_id IN (SELECT user_id FROM friends_leagues_users WHERE league_id = '".(int)$id."' AND confirmed = 1)";
-						
-						$total_rows = $this->db->query($sql)->row()->total;
-						
-						$sql = "SELECT * FROM scores 
-								WHERE user_id IN (SELECT user_id FROM friends_leagues_users WHERE league_id = '".(int)$id."' AND confirmed = 1)
-								ORDER BY points DESC, username ASC LIMIT ".$offset.",100";
-						$this->data['players'] = $this->db->query($sql)->result_array();
-												
-						break;				
-						
-			
 			case "buscar":
 						$this->data['league_type'] = "general";
 						if($this->input->post("name"))
@@ -470,46 +347,6 @@ class Home extends Front_init
 						{
 							$this->data['error'] = lang("player-not-found");	
 						}
-						break;
-			case "dept":
-						//$condition =  "AND department_id = '".(int)$id."'";
-						$sql = "SELECT * FROM scores WHERE company_id = '".$this->company_id."' ".$condition." ORDER BY points DESC, username ASC LIMIT ".$offset.",100";
-						$this->data['players'] = $this->db->query($sql)->result_array();
-						break;
-			case "branch":
-						//$condition =  "AND branch_id = '".(int)$id."'";
-						$sql = "SELECT * FROM scores WHERE company_id = '".$this->company_id."' ".$condition." ORDER BY points DESC, username ASC LIMIT ".$offset.",100";
-						$this->data['players'] = $this->db->query($sql)->result_array();
-						break;
-			case "all-dept":
-						$sql = "SELECT department, SUM(points) AS points, SUM(results) AS results, SUM(exact_results) AS exact_results, GROUP_CONCAT(badges SEPARATOR '|') AS badges
-								FROM scores WHERE company_id = '".$this->company_id."' GROUP BY department ORDER BY SUM(points) DESC LIMIT 0,20";
-						$this->data['players'] = $this->db->query($sql)->result_array();
-						break;
-			case "all-branch":
-						$sql = "SELECT * FROM company_branches WHERE company_id = '".$this->company_model->get_id()."'";
-						$branches = $this->db->query($sql)->result();
-						
-						foreach($branches as $branch)
-						{
-							$sql = "SELECT p.branch, p.branch_id, SUM(p.points) AS points, SUM(p.results) AS results, SUM(p.exact_results) AS exact_results, GROUP_CONCAT(p.badges SEPARATOR '|') AS badges
-									FROM (SELECT * FROM scores WHERE company_id = '".$this->company_id."' AND branch_id = '".$branch->branch_id."' ORDER BY points DESC LIMIT 0,10) AS p GROUP BY p.branch_id";				
-
-							
-							$row = $this->db->query($sql)->row_array();
-							
-							$branch_points[$row['points']][$row['branch_id']] = $row;  
-						
-						}
-						krsort($branch_points);
-						foreach($branch_points as $branch_id)
-						{
-							foreach($branch_id as $branch)
-							{
-								$this->data['players'][] = $branch;	
-							}
-						}
-						
 						break;
 			default: 
 						$sql = "SELECT COUNT(*) AS total FROM scores WHERE company_id = '".$this->company_id."'";
@@ -564,13 +401,7 @@ class Home extends Front_init
 		
 		$this->load->view("front/scores.php",$this->data);
 	}
-		
-	public function prognostics_completed()
-	{
-		$this->redirect_login();
-		$this->data['section'] = 'bet_completed';
-		$this->first_round();
-	}
+
 	
 	public function how_to_play($link = "image")
 	{

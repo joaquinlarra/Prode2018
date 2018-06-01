@@ -15,7 +15,7 @@ class Scores extends ADMIN_Controller
 	public function set_score_table()
 	{
 		$sql = "INSERT IGNORE INTO scores (user_id, username, company, company_id)
-				SELECT user_id, fullname, company, company_id FROM bitauth_users WHERE active = 1 AND group_id = 3";
+				SELECT user_id, fullname, company, company_id FROM bitauth_users WHERE active = 1 AND group_id = 3 AND hide_stats = 0";
 		$this->db->query($sql);
 		vd("Tabla de puntajes seteada.");
 	}
@@ -28,11 +28,11 @@ class Scores extends ADMIN_Controller
         $this->db->query($sql);
 
 	    $this->set_score_table();
-		$sql = "SELECT * FROM scores_update WHERE state = 'start'";
+
 		$this->load->model("admin/user_badges_model","user_badges_model");
 		$this->load->model("admin/match_model","match_model");
-		
-		
+
+        $sql = "SELECT * FROM scores_update WHERE state = 'start'";
 		$matches = $this->db->query($sql)->result_array();
 		if(!count($matches))
 		{
@@ -70,7 +70,7 @@ class Scores extends ADMIN_Controller
 		// UNLOCK PLAYERS
         $sql = "UPDATE scores_go SET go = '1'";
         $this->db->query($sql);
-	    echo "<br>--- FINISH !!!!!------";
+	    echo "<br>---FINISH !!!!!---";
 	}
 
 	public function close_scores()

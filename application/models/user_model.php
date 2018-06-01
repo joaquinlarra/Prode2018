@@ -47,6 +47,7 @@ class User_model extends Simple_data_model
 								'email_confirmed',
 								'enabled',
                                 'last_login',
+                                'hide_stats',
                                 'date_created');
 
     protected $db_fields_type = array(
@@ -87,7 +88,9 @@ class User_model extends Simple_data_model
 			$sql = "INSERT INTO bitauth_assoc (user_id, group_id) VALUES ('".$this->get_id()."','".$this->group_id."')";
 			$this->db->query($sql);	
 		}
+
 		$sql = "UPDATE scores SET username = '".$this->fullname."', company_id = '".$this->company_id."', company = '".$this->company."' WHERE user_id = '".$this->get_id()."'";
+
 		$this->db->query($sql);
         $sql = "UPDATE wall SET username = '".$this->displayname."' WHERE user_id = '".$this->get_id()."'";
         $this->db->query($sql);
@@ -119,10 +122,12 @@ class User_model extends Simple_data_model
 			$this->db->query($sql);	
 		}
 		$this->hash_password();
-        $sql = "INSERT IGNORE INTO scores (user_id, username, company, company_id)
-				VALUES ('".$this->get_id()."','".$this->fullname."','".$this->company."','".$this->company_id."')";
+
+		$sql = "INSERT IGNORE INTO scores (user_id, username, company, company_id)
+                VALUES ('" . $this->get_id() . "','" . $this->fullname . "','" . $this->company . "','" . $this->company_id . "')";
         $this->db->query($sql);
-		$this->update();
+
+        $this->update();
 	}
 	
 	public function hash_password()

@@ -26,12 +26,7 @@
                     	<th><?= lang("Puesto")?></th>
 						<th><?= lang("Nombre")?></th>
                         <th style="text-align:right"><?= lang("Puntos")?></th><th title="<?= lang("Resultados Adivinados")?>" style="text-align:right">R<br><span class='glyphicon glyphicon-info-sign'></span></th><th  style="text-align:right" title="<?= lang("Resultados Exactos Adivinados")?>"><?= lang('RE')?><br><span class='glyphicon glyphicon-info-sign'></span></th>
-                        <?
-						echo $this->company_model->qualys ? " <th  style='text-align:right' title='".lang("Pre Clasificados")."'>".lang("pre-qualy-label")."<br><span class='glyphicon glyphicon-info-sign'></span></th>" : "";
-						echo $this->company_model->winners ? " <th style='text-align:right' title='".lang("Ganadores del torneo")."'>".lang("winners-label")."<br><span class='glyphicon glyphicon-info-sign'></span></th>" : "";
-                        //echo $this->company_model->badges ? " <th>".lang("Badges")."</th>" : "";
-						?>
-                       
+
                     </tr>
                     <?
 					if($error)
@@ -44,67 +39,15 @@
 						foreach($players as $player)
 						{
 							$i++;
-							$badges = $player['badges'] ? explode("|",$player['badges']) : "";
-							
 							?>
 							<tr class="<?= $player['user_id'] && ($player['user_id'] == $marked_user_id) ? "user-found" : ""?>">
                             	<td class="scores-position"><?= $i ?>°</td>
                                 <?
                                 echo $player['username'] ? "<td>".$player['username']."</td>" : "";
-								echo $this->company_model->branch_league ? "<td>".$player['branch']."</td>" : "";
 								?>
                                 <td align="right"><b style="font-size:17px"><?= (int)$player['points']?></b></td>
                                 <td align="right"><?= (int)$player['results']?></td>
                                 <td align="right"><?= (int)$player['exact_results']?></td>
-                                <?
-                                if($this->company_model->qualys)
-								{
-									?><td align="right"><?= (int)$player['qualy_points']?></td><?	
-								}
-								if($this->company_model->winners)
-								{
-									?><td align="right"><?= (int)$player['winner_points']?></td><?	
-								}
-								/*
-                                if($this->company_model->badges)
-								{
-								?>
-                                    <td>
-                                    <?
-									
-									if(is_array($badges))
-                                    {
-                                        $show_badge = array();
-                                        foreach($badges as $badge)
-                                        {
-                                            $badge = explode("/",$badge);
-                                            $show_badge[$badge[0]] += $badge[1];
-                                        }
-										
-										foreach($show_badge as $badge_id => $total)
-										{
-											if($badges_icons[$badge_id]['icon'] && $total)
-											{
-											?>
-												<div class="pull-left score-badges">
-													<img class="media-object" src="<?= base_url()?>assets_fe/img/badges/32x32/<?= $badges_icons[$badge_id]['icon']?>" title="<?= $badges_icons[$badge_id]['name']?>" />
-													<?
-													if($total > 1)
-													{
-														?><span class="badge badge-success pull-right"><?= $total?></span><?
-													}?>
-												</div>
-											<?
-											}
-										}
-										?><span class="badge pull-right"><?= $player['badges_points'] > 0 ? "+".$player['badges_points'] : $player['badges_points'] ?></span><?
-									}
-									?>
-                                    </td>
-								<?	
-								}*/
-								?>
-                                
                             </tr>
 							<?
 						}

@@ -124,14 +124,8 @@
 			$('#error').hide();
 			if(data.valid)
 			{
-				if(data.first_register)
-				{
-					window.location.href = "<?= $link_url?>primer-ingreso";	
-				}
-				else
-				{
-					window.location.href = "<?= $link_url?>posiciones";
-				}
+				window.location.href = "<?= $link_url?>posiciones";
+
 			}
 			else
 			{
@@ -657,14 +651,14 @@
                 if(result > -2)
                 {
                     $.ajax({url: "<?= $link_url?>front_user/auto_save/"+match_code+"/"+match_id+"/"+goals1+"/"+goals2+"/"+result});
-                    var message = "Guardado";
+                    var message = "<?= lang('Guardado')?>";
                     if(result == -1)
                     {
-                        message = "Gana <b>"+$("#match-name-"+match_id+"-1").html()+"</b>";
+                        message = "<?= lang("Gana")?> <b>"+$("#match-name-"+match_id+"-1").html()+"</b>";
                     }
                     if(result == 0)
                     {
-                        message = "Empate";
+                        message = "<?= lang("Empate")?>";
                     }
                     if(result == 1)
                     {
@@ -694,12 +688,12 @@
 
                     if (result > -2) {
                         $.ajax({url: "<?= $link_url?>front_user/auto_save/" + match_code + "/" + match_id + "/" + goals1 + "/" + goals2 + "/" + result});
-                        var message = "Guardado";
+                        var message = "<?= lang('Guardado')?>";
                         if (result == -1) {
-                            message = "Gana <b>" + $("#match-name-" + match_id + "-1").html() + "</b>";
+                            message = "<?= lang("Gana")?> <b>" + $("#match-name-" + match_id + "-1").html() + "</b>";
                         }
                         if (result == 0) {
-                            message = "Empate";
+                            message = "<?= lang("Empate")?>";
                         }
                         if (result == 1) {
                             message = "Gana <b>" + $("#match-name-" + match_id + "-2").html() + "</b>";

@@ -29,38 +29,7 @@ class Front_user extends Front_init
 	public function login()
 	{	
 		$out['valid'] = false;
-	
-		if(!$this->company_model->users_activated)
-		{
-			$out['valid'] = true;
-			echo json_encode($out);
-			return;
-		}
-			
-		if($this->company_model->first_login)
-		{
-			$sql = "SELECT * FROM bitauth_users WHERE username = '".addslashes($this->input->post('username'))."' AND company_id = '".$this->company_model->get_id()."'";
-			$query = $this->db->query($sql);
-			
-			if(!$query->num_rows())
-			{
-				$out['error'] = "No existe el ".$this->company_model->username_field;
-				echo json_encode($out);
-				return;
-			}
-			
-			$row = $query->row();
-			
-			if(!$row->active)
-			{
-				$this->session->set_userdata('prev_user_id', $row->user_id);
-					
-				$out['valid'] = true;
-				$out['first_register'] = true;
-				echo json_encode($out);
-				return;
-			}
-		}
+
 		
 		if($this->input->post())
 		{
@@ -78,7 +47,7 @@ class Front_user extends Front_init
 					echo json_encode($out);
 					return;
 				}
-				
+
 				// Login
 				if($this->bitauth->login($this->input->post('username'), $this->input->post('password'), $this->input->post('remember_me'),array(),NULL, $this->company_model->get_id()))
 				{
@@ -182,125 +151,6 @@ class Front_user extends Front_init
 				$this->load->view('front/recover_password_failure.php',$this->data);
 			}
 		}
-	}	
-	
-	public function clean_qualys()
-	{
-		$this->redirect_login();
-		if(minDiff($this->company_model->qualys_close_date,$this->today) > 0)
-		{
-			$sql = "DELETE FROM prognostics_qualys WHERE user_id = '".$this->user_id."'";
-			$this->db->query($sql);	
-		}
-	}
-		
-	public function clean_winners()
-	{
-		$this->redirect_login();
-		if(minDiff($this->company_model->winners_close_date,$this->today) > 0)
-		{
-			$sql = "DELETE FROM prognostics_winners WHERE user_id = '".$this->user_id."'";
-			$this->db->query($sql);	
-		}
-	}
-
-	public function save_qualys()
-	{
-		$this->redirect_login();
-		$post = $this->input->post();
-		$out['valid'] = false;
-		
-		if(minDiff($this->company_model->qualys_close_date,$today) < 0)
-		{
-			$out['error'] = var_lang('qualy-no-refund',dateFormat($this->company_model->qualys_close_date,"d/m/Y H:i:s"));		
-		}
-		
-		$prev_teams = array();
-		$this->load->model("admin/team_model");
-		foreach($post['qualy_ids'] as $i => $team_id)
-		{
-			if(!(int)$team_id)
-			{
-				$out['error'] = lang("choose-all-qualys");
-				echo json_encode($out);
-				return;	
-			}
-			if(in_array($team_id, $prev_teams))
-			{
-				$out['error'] = lang("qualys-no-repeat");
-				echo json_encode($out);
-				return;					
-			}
-			array_push($prev_teams,$team_id);
-			$team = new Team_model();
-			$team->get((int)$team_id);
-			
-			$team_info .= $i.",".$team->name.",".$team->team_flag."|";
-		}
-
-		
-		$sql = "REPLACE INTO prognostics_qualys VALUES('".$this->user_id."','".$this->username."','".$this->company_model->get_id()."','".$this->company_model->name."',
-				'".implode("','",$post['qualy_ids'])."','0','".$team_info."', NOW())";
-		$this->db->query($sql);
-		$out['valid'] = true;
-		$this->session->set_flashdata('message', lang("qualy-success"));
-		
-		echo json_encode($out);
-		return;
-	}
-		
-	public function save_winners()
-	{
-		$this->redirect_login();
-		$post = $this->input->post();
-		$out['valid'] = false;
-
-		if(minDiff($this->company_model->winners_close_date,$this->today) < 0)
-		{
-			
-			$out['error'] = var_lang("winners-no-refund",dateFormat($this->company_model->winners_close_date,"d/m/Y H:i:s"));
-			echo json_encode($out);
-			return;
-			
-		}
-		
-		if(!(int)$post['winner1_id'] || !(int)$post['winner2_id'] || !(int)$post['winner3_id'])
-		{
-			
-			$out['error'] = lang("winners-all-three");
-			echo json_encode($out);
-			return;
-		}
-		
-		if(((int)$post['winner1_id'] == (int)$post['winner2_id'])||((int)$post['winner1_id'] == (int)$post['winner3_id']) || ((int)$post['winner2_id'] == (int)$post['winner3_id']))
-		{
-			
-			$out['error'] = lang('winners-diff');
-			echo json_encode($out);
-			return;
-		}
-		$this->load->model("admin/team_model");
-		
-		$team1 = new Team_model();
-		$team2 = new Team_model();
-		$team3 = new Team_model();
-		
-		if(!$team1->get((int)$post['winner1_id']) || !$team2->get((int)$post['winner2_id']) || !$team3->get((int)$post['winner3_id']))
-		{
-			
-			$out['error'] = lang('winners-error');
-			echo json_encode($out);
-			return;		
-			
-		}
-		
-		$sql = "REPLACE INTO prognostics_winners VALUES('".$this->user_id."','".$this->username."','".$this->company_model->get_id()."','".$this->company_model->name."','".$team1->get_id()."','".$team1->name."','".$team1->team_flag."','".$team2->get_id()."','".$team2->name."','".$team2->team_flag."','".$team3->get_id()."','".$team3->name."','".$team3->team_flag."', '0', NOW())";
-		$this->db->query($sql);
-		$out['valid'] = true;
-		$this->session->set_flashdata('message', lang('winners-save-ok'));
-		echo json_encode($out);
-		
-		return;
 	}
 	
 	public function send_comment()
