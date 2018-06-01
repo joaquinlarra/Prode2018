@@ -46,7 +46,6 @@ $route['mi-pronostico'] = "home/prognostics/initial/1";
 $route['badges'] = "home/badges";
 $route['como-jugar'] = "home/how_to_play";
 $route['premios'] = "home/prizes";
-$route['comprar'] = "home/comprar";
 $route['pronostico-fase-inicial'] = "home/prognostics/initial/";
 $route['pronostico-fase-final'] = "home/prognostics/final/";
 $route['usuario/editar-perfil'] = "usuario/editar_perfil";

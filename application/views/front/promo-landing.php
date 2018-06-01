@@ -7,7 +7,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Free coming soon template with jQuery countdown">
 
-  <title>Prode 2018</title>
+  <title>Jugá al Prode este mundial 2018</title>
 
   <!-- Bootstrap -->
   <link href="<?=$link_url?>assets_fe/landing/assets/css/bootstrap.css" rel="stylesheet">
@@ -32,10 +32,12 @@
     <div class="container">
       <div class="row">
         <div class="col-md-12">
-          <h1>
+          <h2>
             <img src="<?=$link_url?>assets_fe/landing/assets/img/logo-mundial.png" class="logo-mundial">
-          </h1>
-          <h2 class="subtitle">Participa del mundial con tus amigos con la app del prode.</h2>
+          </h2>
+          <h2 class="subtitle"><b>Participá del mundial con tus amigos con la app del prode.</b></h2>
+          <br><br>
+          <a href="http://demo.prode2018.com/" target="_blank" class="btn btn-warning"><b>PROBA LA DEMO</b></a><br>
           <div id="countdown"></div>
         </div>
       </div>
@@ -44,165 +46,107 @@
       <div class="row">
         <div class="col-xs-12 col-md-4">
           <div class="panel panel-primary">
-            <div class="panel-heading">
-              <h3 class="panel-title">
-                Plan Amigos</h3>
-            </div>
             <div class="panel-body">
               <div class="the-price">
                 <h1>
-                  $10
-                  <span class="subscript">/por usuario</span>
+                  $500<br>
+                  <small class="subscript">para 25 personas</small>
                 </h1>
-                <small>1 month FREE trial</small>
               </div>
               <table class="table">
-                <tr>
-                  <td>
-                    1 Account
-                  </td>
-                </tr>
                 <tr class="active">
                   <td>
-                    1 Project
+                    dominio propio -> <b>tugrupo.prode2018.com</b>
                   </td>
                 </tr>
                 <tr>
                   <td>
-                    100K API Access
+                    Mobile Friendly
                   </td>
                 </tr>
                 <tr class="active">
                   <td>
-                    100MB Storage
-                  </td>
-                </tr>
-                <tr>
-                  <td>
-                    Custom Cloud Services
-                  </td>
-                </tr>
-                <tr class="active">
-                  <td>
-                    Weekly Reports
+                    Muro de mensajes
                   </td>
                 </tr>
               </table>
             </div>
             <div class="panel-footer">
-              <a href="http://www.jquery2dotnet.com" class="btn btn-success" role="button">Seleccionar</a>
-              <span>Comprá con: </span><img src="<?=$link_url?>assets_fe/landing/assets/img/mp.png" alt="Mercado Pago" class="mp">
+            <a mp-mode="dftl" href="https://www.mercadopago.com/mla/checkout/start?pref_id=35681194-967a8bae-3bf2-446c-8809-9741d0fab8c9" name="MP-payButton" class='orange-ar-m-rn-aron'>COMPRAR PRODE</a>
+<script type="text/javascript">
+(function(){function $MPC_load(){window.$MPC_loaded !== true && (function(){var s = document.createElement("script");s.type = "text/javascript";s.async = true;s.src = document.location.protocol+"//secure.mlstatic.com/mptools/render.js";var x = document.getElementsByTagName('script')[0];x.parentNode.insertBefore(s, x);window.$MPC_loaded = true;})();}window.$MPC_loaded !== true ? (window.attachEvent ?window.attachEvent('onload', $MPC_load) : window.addEventListener('load', $MPC_load, false)) : null;})();
+</script>
             </div>
           </div>
         </div>
         <div class="col-xs-12 col-md-4">
           <div class="panel panel-success">
-            <div class="cnrflash">
-              <div class="cnrflash-inner">
-                <span class="cnrflash-label">MOST
-                  <br> POPULR
-                </span>
-              </div>
-            </div>
-            <div class="panel-heading">
-              <h3 class="panel-title">
-                Silver</h3>
-            </div>
             <div class="panel-body">
               <div class="the-price">
                 <h1>
-                  $20
-                  <span class="subscript">/mo</span>
+                  $1000<br>
+                  <small class="subscript">para 50 personas</small>
                 </h1>
-                <small>1 month FREE trial</small>
               </div>
               <table class="table">
-                <tr>
-                  <td>
-                    2 Account
-                  </td>
-                </tr>
                 <tr class="active">
                   <td>
-                    5 Project
+                    dominio propio -> <b>tugrupo.prode2018.com</b>
                   </td>
                 </tr>
                 <tr>
                   <td>
-                    100K API Access
+                    Mobile Friendly
                   </td>
                 </tr>
                 <tr class="active">
                   <td>
-                    200MB Storage
-                  </td>
-                </tr>
-                <tr>
-                  <td>
-                    Custom Cloud Services
-                  </td>
-                </tr>
-                <tr class="active">
-                  <td>
-                    Weekly Reports
+                    Muro de mensajes
                   </td>
                 </tr>
               </table>
             </div>
             <div class="panel-footer">
-              <a href="http://www.jquery2dotnet.com" class="btn btn-success" role="button">Sign Up</a>
-              1 month FREE trial</div>
-          </div>
+            <a mp-mode="dftl" href="https://www.mercadopago.com/mla/checkout/start?pref_id=35681194-f23e9993-ab8c-47ae-aec7-9953e4b58f1d" name="MP-payButton" class='orange-ar-m-rn-aron'>COMPRAR PRODE</a>
+<script type="text/javascript">
+(function(){function $MPC_load(){window.$MPC_loaded !== true && (function(){var s = document.createElement("script");s.type = "text/javascript";s.async = true;s.src = document.location.protocol+"//secure.mlstatic.com/mptools/render.js";var x = document.getElementsByTagName('script')[0];x.parentNode.insertBefore(s, x);window.$MPC_loaded = true;})();}window.$MPC_loaded !== true ? (window.attachEvent ?window.attachEvent('onload', $MPC_load) : window.addEventListener('load', $MPC_load, false)) : null;})();
+</script>
+              </div>
+            </div>
         </div>
         <div class="col-xs-12 col-md-4">
           <div class="panel panel-info">
-            <div class="panel-heading">
-              <h3 class="panel-title">
-                Gold</h3>
-            </div>
             <div class="panel-body">
               <div class="the-price">
                 <h1>
-                  $35
-                  <span class="subscript">/mo</span>
+                  $1500<br>
+                  <small class="subscript">para 100 personas</small>
                 </h1>
-                <small>1 month FREE trial</small>
               </div>
               <table class="table">
-                <tr>
-                  <td>
-                    5 Account
-                  </td>
-                </tr>
                 <tr class="active">
                   <td>
-                    20 Project
+                    dominio propio -> <b>tugrupo.prode2018.com</b>
                   </td>
                 </tr>
                 <tr>
                   <td>
-                    300K API Access
+                    Mobile Friendly
                   </td>
                 </tr>
                 <tr class="active">
                   <td>
-                    500MB Storage
-                  </td>
-                </tr>
-                <tr>
-                  <td>
-                    Custom Cloud Services
-                  </td>
-                </tr>
-                <tr class="active">
-                  <td>
-                    Weekly Reports
+                    Muro de mensajes
                   </td>
                 </tr>
               </table>
             </div>
             <div class="panel-footer">
-              <a href="http://www.jquery2dotnet.com" class="btn btn-success" role="button">Sign Up</a> 1 month FREE trial</div>
+            <a mp-mode="dftl" href="https://www.mercadopago.com/mla/checkout/start?pref_id=35681194-3a9cea77-4d0d-4fff-9e94-d4588b3ddd28" name="MP-payButton" class='orange-ar-m-rn-aron'>COMPRAR PRODE</a>
+<script type="text/javascript">
+(function(){function $MPC_load(){window.$MPC_loaded !== true && (function(){var s = document.createElement("script");s.type = "text/javascript";s.async = true;s.src = document.location.protocol+"//secure.mlstatic.com/mptools/render.js";var x = document.getElementsByTagName('script')[0];x.parentNode.insertBefore(s, x);window.$MPC_loaded = true;})();}window.$MPC_loaded !== true ? (window.attachEvent ?window.attachEvent('onload', $MPC_load) : window.addEventListener('load', $MPC_load, false)) : null;})();
+</script>
+            </div>
           </div>
         </div>
       </div>
@@ -211,15 +155,6 @@
       <div class="row">
         <div class="col-lg-6 col-lg-offset-3">
           <p class="copyright">&copy; Prode2018 - All Rights Reserved</p>
-          <div class="credits">
-            <!--
-              All the links in the footer should remain intact. 
-              You can delete the links only if you purchased the pro version.
-              Licensing information: https://bootstrapmade.com/license/
-              Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/buy/?theme=WeBuild
-            -->
-            <a href="https://bamboodev.com/">Prode App</a> by BambooDev
-          </div>
         </div>
       </div>
     </div>
