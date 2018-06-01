@@ -163,6 +163,10 @@ class Front_init extends CI_Controller
 
 		if($company == "www")
         {
+            if($server_name[1] == 'prode2018')
+            {
+                redirect("/precios");
+            }
             $company = $server_name[1];
         }
 
