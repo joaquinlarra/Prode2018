@@ -38,7 +38,8 @@
 |
 */
 $route['admin'] = "admin/user";
-$route['default_controller'] = "home/promo_landing";
+$route['default_controller'] = "home";
+$route['promo-landing'] = "home/promo_landing";
 $route['404_override'] = '';
 $route['pronosticos'] = "home/prognostics";
 $route['mi-pronostico'] = "home/prognostics/initial/1";
