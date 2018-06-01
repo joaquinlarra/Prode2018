@@ -164,7 +164,6 @@ class Front_init extends CI_Controller
 		if($company == "www")
         {
             $company = $server_name[1];
-            return;
         }
 
 		if(($company == "localhost") || ($company == "prode"))
