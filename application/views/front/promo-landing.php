@@ -164,7 +164,7 @@
   <script src="<?=$link_url?>assets_fe/landing/assets/js/jquery.countdown.min.js"></script>
   <script type="text/javascript">
     $('#countdown').countdown('2018/06/14', function (event) {
-      $(this).html(event.strftime('%w semanas %d días <br /> %H:%M:%S'));
+      $(this).html(event.strftime('Falta %w semanas %d días %H:%M:%S'));
     });
   </script>
 
