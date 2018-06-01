@@ -161,9 +161,9 @@ class Front_init extends CI_Controller
 		$server_name = explode(".",$_SERVER['SERVER_NAME']);
 		$company = $server_name[0];
 
-		if($company == "www" || $company == '')
+		if($company == "www")
         {
-            $this->data['no_company'] = 1;
+            $company = $server_name[1];
             return;
         }
 
@@ -190,8 +190,7 @@ class Front_init extends CI_Controller
 		}
 		else
 		{
-            echo "Not found";
-            die();
+            $this->data['no_company'] = 1;
 		}
 		
 		return;
