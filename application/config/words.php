@@ -882,10 +882,10 @@ $words['player-not-found']['MX'] = "No se encontró al jugador. Revisa que el no
 $words['player-not-found']['PR'] = "No se encontró al jugador. Revisá que el nombre completo sea el mismo que aparece en el perfil";
 $words['player-not-found']['US'] = "Player not found. Fullname must match player's profile fullname";
 
-$words['processing-scores']['AR'] = "La tabla de posiciones se está procesando. Espere unos minutos.";
-$words['processing-scores']['MX'] = "La tabla de posiciones se está procesando. Espere unos minutos.";
-$words['processing-scores']['PR'] = "La tabla de posiciones se está procesando. Espere unos minutos.";
-$words['processing-scores']['US'] = "Positions table is in process. Wait a few minutes.";
+$words['processing-scores']['AR'] = "La tabla de posiciones se está procesando.";
+$words['processing-scores']['MX'] = "La tabla de posiciones se está procesando.";
+$words['processing-scores']['PR'] = "La tabla de posiciones se está procesando.";
+$words['processing-scores']['US'] = "Positions table is in process.";
 
 $words['8vos de final']['AR'] = "8vos de final";
 $words['8vos de final']['MX'] = "8vos de final";
