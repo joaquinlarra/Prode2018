@@ -56,7 +56,7 @@
                                 </div>
 								<div class="comments">
                                     <form class="ajax_form comment-post-form" action="<?= $link_url?>front_user/comment_post/<?= $wall_post['comment_id']?>" method="post">
-                                    <textarea name="post_comment" class="form-control comment-area" post_id="<?= $wall_post['comment_id']?>" placeholder="<?= $wall_post['total_comments'] ? lang("leave-comment") : lang("first-comment");	?> "></textarea>
+                                    <textarea name="post_comment" class="form-control comment-area" id="comment-area-<?= $wall_post['comment_id']?>" post_id="<?= $wall_post['comment_id']?>" placeholder="<?= $wall_post['total_comments'] ? lang("leave-comment") : lang("first-comment");	?> "></textarea>
                                     <input type="submit" id="submit-comment-<?= $wall_post['comment_id']?>" class="btn btn-primary" style="padding: 6px 12px;" value="<?= lang('Publicar')?>" disabled="disabled">
                                     </form>
                                     <div id="post-comments-<?= $wall_post['comment_id']?>" class="post-comments">

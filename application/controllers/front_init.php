@@ -15,7 +15,7 @@ class Front_init extends CI_Controller
 		if($this->bitauth->logged_in())
 		{
 			$this->data['user_id'] = $this->user_id = $this->bitauth->user_id;
-			$this->data['username'] = $this->username = $this->bitauth->username;
+			$this->data['username'] = $this->username = $this->bitauth->displayname;
 			$this->data['fullname'] = $this->fullname = $this->bitauth->fullname;
 			if($this->bitauth->displayname)
 			{

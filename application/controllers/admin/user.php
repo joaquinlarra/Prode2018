@@ -11,6 +11,20 @@ class User extends ADMIN_Controller
 		}	
 		
 	}
+
+    public function update_users()
+    {
+        $sql = "SELECT user_id FROM bitauth_users";
+        $result = $this->db->query($sql)->result_array();
+
+        $this->load->model("user_model");
+        foreach($result as $row)
+        {
+            $this->user_model->get($row['user_id']);
+            $this->user_model->save();
+            vd("updated: ".$this->user_model->get_id());
+        }
+    }
 	
 	public function index()
 	{		

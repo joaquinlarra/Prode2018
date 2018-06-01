@@ -462,6 +462,7 @@
 								$('#post-comments-'+data.post_id).append('<div class="post-comment new-post-comment" style="display:none"><span class="comment-name">'+data.username+'</span> '+data.comment+'<br><small>'+data.date_created+'</small></div>');
 								$('.new-post-comment').fadeIn();
 								$("#submit-comment-"+data.post_id).attr('disabled',true);
+                                $("#comment-area-"+data.post_id).val('');
 							}
 							else
 							{
@@ -473,7 +474,7 @@
 				$(".comment-area").keyup(function(){
 					if($(this).val())
 					{
-						$("#submit-comment-"+$(this).attr("post_id")).attr('disabled',false);	
+						$("#submit-comment-"+$(this).attr("post_id")).attr('disabled',false);
 					}
 					else
 					{
@@ -482,7 +483,22 @@
 				});                  
 
             });
-		
+
+
+         $("#new_wall_post").focus(function(){
+             console.log('sasasa');
+             if($(this).val() == "<?= lang("Escribe algo...")?>")
+             {
+                 $(this).val('');
+             }
+         });
+         $("#new_wall_post").blur(function(){
+             if($(this).val() == "")
+             {
+                 $(this).val('<?= lang("Escribe algo...")?>');
+             }
+         });
+
         $('#leave-comment-form').ajaxForm({
                 // dataType identifies the expected content type of the server response 
                     dataType:  'json', 
@@ -495,7 +511,7 @@
 			if(data.valid)
 			{
 				$('#no-comments').fadeOut();
-				$('#posts-container').prepend('<div id="new-message" style="display:none"><div class="row comment-box" id="comment"><div class="col-md-12"><div class="comment-body"><div class="comment-author"><h3><span id="new-message-name">'+data.username+'</span> <small>Hoy <span id="new-message-hour">'+data.hour+'</span></small></h3></div><span id="new-message-post">'+data.comment+'</span><div class="clearfix"></div></div><div class="comments"> <form class="ajax_form comment-post-form" action="<?= $link_url?>front_user/comment_post/'+data.post_id+'" method="post"><textarea name="post_comment" class="form-control comment-area" post_id="'+data.post_id+'" placeholder="<?= $wall_post['total_comments'] ? lang('leave-comment') : lang('first-comment')?>"></textarea><input type="submit" id="submit-comment-'+data.post_id+'" class="btn btn-primary" value="Publicar" disabled="disabled"></form><div id="post-comments-'+data.post_id+'" class="post-comments"></div></div></div></div></div>');
+				$('#posts-container').prepend('<div id="new-message" style="display:none"><div class="row comment-box" id="comment"><div class="col-md-12"><div class="comment-body"><div class="comment-author"><h3><span id="new-message-name">'+data.username+'</span> <small>Hoy <span id="new-message-hour">'+data.hour+'</span></small></h3></div><span id="new-message-post">'+data.comment+'</span><div class="clearfix"></div></div><div class="comments"> <form class="ajax_form comment-post-form" action="<?= $link_url?>front_user/comment_post/'+data.post_id+'" method="post"><textarea name="post_comment" class="form-control comment-area" id="comment-area-'+data.post_id+'" post_id="'+data.post_id+'" placeholder="<?= $wall_post['total_comments'] ? lang('leave-comment') : lang('first-comment')?>"></textarea><input type="submit" id="submit-comment-'+data.post_id+'" class="btn btn-primary" value="Publicar" disabled="disabled"></form><div id="post-comments-'+data.post_id+'" class="post-comments"></div></div></div></div></div>');
 				$('#new-message').fadeIn();
 				$("#submit-wall-post").attr('disabled',true);
 				
@@ -510,6 +526,7 @@
 								$('#post-comments-'+data.post_id).append('<div class="post-comment new-post-comment" style="display:none"><span class="comment-name">'+data.username+'</span> '+data.comment+'<br><small>'+data.date_created+'</small></div>');
 								$('.new-post-comment').fadeIn();
 								$("#submit-comment-"+data.post_id).attr('disabled',true);
+                                $("#comment-area-"+data.post_id).val('');
 							}
 							else
 							{
@@ -521,7 +538,7 @@
 				$(".comment-area").keyup(function(){
 					if($(this).val())
 					{
-						$("#submit-comment-"+$(this).attr("post_id")).attr('disabled',false);	
+						$("#submit-comment-"+$(this).attr("post_id")).attr('disabled',false);
 					}
 					else
 					{

@@ -89,6 +89,10 @@ class User_model extends Simple_data_model
 		}
 		$sql = "UPDATE scores SET username = '".$this->fullname."' WHERE user_id = '".$this->get_id()."'";
 		$this->db->query($sql);
+        $sql = "UPDATE wall SET username = '".$this->displayname."' WHERE user_id = '".$this->get_id()."'";
+        $this->db->query($sql);
+        $sql = "UPDATE wall_comments SET username = '".$this->displayname."' WHERE user_id = '".$this->get_id()."'";
+        $this->db->query($sql);
 	}
 
 	protected function post_delete()

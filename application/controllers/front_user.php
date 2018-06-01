@@ -309,11 +309,11 @@ class Front_user extends Front_init
 		$post = $this->input->post();
 		
 		$sql = "INSERT INTO wall (comment, user_id, username, company_id, active, date_created)
-				VALUES('".addslashes($post['new_wall_post'])."','".$this->user_id."','".$this->fullname."','".$this->company_model->get_id()."',1,NOW())";
+				VALUES('".addslashes($post['new_wall_post'])."','".$this->user_id."','".$this->username."','".$this->company_model->get_id()."',1,NOW())";
 		$this->db->query($sql);
 		$out['post_id'] = $this->db->insert_id();
 		$out['valid'] = true;
-		$out['username'] =  $this->fullname;
+		$out['username'] =  $this->username;
 		$out['hour'] = date("H:i");
 		$out['comment'] = $post['new_wall_post'];
 		echo json_encode($out);
@@ -340,7 +340,7 @@ class Front_user extends Front_init
 			return;	
 		}
 		$sql = "INSERT INTO wall_comments (post_id, user_id, username, comment, date_created)
-				VALUES('".(int)$post_id."','".$this->user_id."','".$this->fullname."','".addslashes($post['post_comment'])."',NOW())";
+				VALUES('".(int)$post_id."','".$this->user_id."','".$this->username."','".addslashes($post['post_comment'])."',NOW())";
 		$this->db->query($sql);
 		$out['valid'] = true;
 		$out['comment'] = $post['post_comment'];
@@ -383,120 +383,7 @@ class Front_user extends Front_init
 		echo json_encode($out);
 		return;
 	}
-	
-	public function validate_create_league()
-	{
-		$out['valid'] = false;
-		$this->redirect_login();
-		$this->form_validation->set_rules("name", lang("Nombre de liga"), "required|alpha_numeric_space");
-		if(!$this->form_validation->run())
-		{
-			$out['error'] = form_error('name');	
-		}
-		else
-		{
-			$league_name = $this->input->post('name');
-			$sql = "SELECT * FROM friends_leagues WHERE name = '".addslashes($league_name)."' AND company_id = '".$this->company_model->get_id()."'";
-			
-			if($this->db->query($sql)->num_rows())
-			{
-				$out['error'] = var_lang('existent-league',$league_name);
-			}
-			else
-			{	
-				$sql = "INSERT INTO friends_leagues (name, company_id, company, creator_id, creator_name)
-						VALUES ('".addslashes($league_name)."','".$this->company_model->get_id()."','".$this->company_model->name."','".$this->user_id."','".$this->bitauth->fullname."')";	
-				$this->db->query($sql);
-				$league_id = $this->db->insert_id();
-				$sql = "INSERT INTO friends_leagues_users (league_id, league, confirmed, user_id, fullname)
-						VALUES ('".$league_id."','".addslashes($league_name)."',1,'".$this->user_id."','".$this->bitauth->fullname."')";
-				$this->db->query($sql);
-				$out['valid'] = 1;
-				$out['message'] = var_lang("league-created",$league_name);
-			}
-		}
-		echo json_encode($out);
-		return;	
-	}
-	
-	public function validate_join_league()
-	{
-		$out['valid'] = false;
-		$this->redirect_login();
 
-		$league_id = (int)$this->input->post("league_id");
-		if(!$league_id)
-		{
-			$out['error'] = lang('non-existent-league');
-			
-		}
-		else	
-		{
-			$sql = "SELECT * FROM friends_leagues WHERE league_id = '".$league_id."' AND company_id = '".$this->company_model->get_id()."'";
-			$league = $this->db->query($sql)->row();
-			if(!$league->league_id)
-			{
-				$out['error'] = lang('non-existent-league');	
-			}
-			else
-			{
-				$sql = "SELECT * FROM friends_leagues_users WHERE user_id = '".$this->user_id."' AND league_id = '".$league_id."'";
-				$result = $this->db->query($sql);
-				if($result->num_rows())
-				{
-					$row = $result->row();
-					$out['error'] = lang('already-in-league').(!$row->confirmed ? ". ".lang('wait-for-league-confirm').". " : "");	
-					
-				}
-				else
-				{
-					$sql = "INSERT INTO friends_leagues_users (league_id, league, confirmed, user_id, fullname)
-							VALUES ('".$league_id."','".$league->name."',0,'".$this->user_id."','".$this->bitauth->fullname."')";
-					$this->db->query($sql);
-					$sql = "UPDATE friends_leagues SET notifications = notifications + 1 WHERE league_id = '".$league_id."'";
-					$this->db->query($sql);
-					$out['valid'] = 1;
-					$out['message'] = var_lang('league-notify-join',$league->creator_name);	
-				}
-			}
-		}
-		echo json_encode($out);
-		return;	
-	}
-	
-	public function accept_in_league($league_id, $user_id)
-	{
-		$out['valid'] = 0;
-		$sql = "SELECT * FROM friends_leagues WHERE league_id = '".(int)$league_id."'";
-		$league = $this->db->query($sql)->row();
-		if(!$league->league_id || ($league->creator_id != $this->user_id))
-		{
-			$out['error'] = lang('non-existent-league');
-			echo json_encode($out);	
-		}
-		
-		$sql = "UPDATE friends_leagues_users SET confirmed = 1 WHERE user_id = '".(int)$user_id."' AND league_id = '".$league_id."'";
-		$this->db->query($sql);
-		$out['valid'] = 1;
-		echo json_encode($out);
-		return;
-	}
-	
-	public function decline_in_league($league_id, $user_id)
-	{
-		$out['valid'] = 0;
-		$sql = "SELECT * FROM friends_leagues WHERE league_id = '".(int)$league_id."'";
-		$league = $this->db->query($sql)->row();
-		if(!$league->league_id || ($league->creator_id != $this->user_id))
-		{
-			$out['error'] = lang('non-existent-league');
-			echo json_encode($out);	
-		}
-		
-		$sql = "UPDATE friends_leagues_users SET confirmed = -1 WHERE user_id = '".(int)$user_id."' AND league_id = '".$league_id."'";
-		$this->db->query($sql);
-		$out['valid'] = 1;
-		echo json_encode($out);
-		return;	}	
+
 	
 }
