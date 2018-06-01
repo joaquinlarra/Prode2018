@@ -28,8 +28,8 @@ $config['modules'][$module_name]['fields'] = array(
 															'type' => 'checkbox',
 															'value' => 0,
 															'validation' => '',
-															'description' => "Quita la marca fantasy futbol.",
-															'visibility' => 'save|details'
+															'description' => "Quitar logos Prode2018.",
+															'visibility' => 'save|details|list'
 															),
 										'multi_lang' => array('label' => 'Multilenguaje',
 															'type' => 'hidden',
@@ -67,34 +67,7 @@ $config['modules'][$module_name]['fields'] = array(
 															'description' => "Se habilitará al usuario solo si confirmó la cuenta",
 															'visibility' => 'save'
 															),
-										
-										/*
-										'register_domain' => array('label' => 'Dominio exclusivo de registro',
-															'type' => 'text',
-															
-															'validation' => '',
-															'description' => "Ej: miempresa.com.ar. Si no tiene dejar en blanco",
-															'visibility' => ''
-															),
-										'first_login' => array('label' => 'Primer ingreso',
-															'type' => 'checkbox',
-															'value' => 0,
-															'validation' => '',
-															'description' => "No pedirá clave al primer ingreso.",
-															'visibility' => ''
-															),									
-										'first_login_text'=> array(	'label' => 'Texto primer ingreso',
-															'type' => 'textarea',
-															'class' => 'summernote',
-															'validation' => 'Referencia de que hacer si no existe en la base u otro asunto relacionado al primer ingreso',
-															'visibility' => ''
-														),
-										'description'=> array(	'label' => 'Descripción',
-															'type' => 'textarea',
-															'class' => 'summernote',
-															'validation' => '',
-															'visibility' => 'save|details'
-														),*/
+
 										'country'=> array(	'label' => 'País',
 															'type' => 'hidden',
 															'value' => 'AR',
@@ -134,27 +107,7 @@ $config['modules'][$module_name]['fields'] = array(
 																	'validation' => '',
 																	'visibility' => 'save|details',
 																	),
-										/*
-										'how_to_image_MX' => array(	'label' => 'Imagen Como jugar (MX)',
-																	'type' => 'image',
-																	'tag' => 'how_to_image_MX',
-																	'validation' => '',
-																	'visibility' => '',
-																	),
-										
-										'how_to_image_PR' => array(	'label' => 'Imagen Como jugar (PR)',
-																	'type' => 'image',
-																	'tag' => 'how_to_image_PR',
-																	'validation' => '',
-																	'visibility' => '',
-																	),
-										'how_to_image_US' => array(	'label' => 'Imagen Como jugar (US)',
-																	'type' => 'image',
-																	'tag' => 'how_to_image_US',
-																	'validation' => '',
-																	'visibility' => '',
-																	),
-										*/
+
 										'banner_header' => array('label' => 'Banner Header',
 															'type' => 'image',
 															'tag' => 'banner_header',

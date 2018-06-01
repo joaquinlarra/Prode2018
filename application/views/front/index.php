@@ -4,6 +4,11 @@
         <div class="col-md-12 col-index-header">
             
             <?
+
+                if(!$this->company_model->no_logos)
+                {
+                    ?><img src="<?=$link_url?>assets_fe/img/logo.png" style="max-width:200px" /><?
+                }
                 if($this->company_model->main_image)
 				{
 					?><img src="<?=$this->company_model->main_image?>" border="0" style="max-height:150px;max-width: 100%;" /><?
