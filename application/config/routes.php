@@ -67,6 +67,7 @@ $route['confirmar-cuenta/(:any)'] = "home/confirm_account/$1";
 $route['cambiar-idioma/(:any)'] = "home/language/$1";
 $route['check-company-availability'] = "home/check_company_availability";
 $route['check-code'] = "home/validate_code";
+$route['checkout/(:any)'] = "home/checkout/$1";
 
 
 $route['posiciones'] = "home/scores/0";

@@ -110,6 +110,22 @@ a:after {
   border-radius: 0;
 }
 
+.btn-orange{
+	background: orange;
+    border-radius: 4px;
+    color: white;
+    font-weight: bold;
+}
+
+.panel-specs{
+  background:transparent;
+  color:white;
+}
+
+.panel-specs h4{
+  color:white;
+}
+
 .btn-theme {
   color: #fff;
   background-color: #4f92af;

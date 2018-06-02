@@ -424,4 +424,58 @@ class Home extends Front_init
 		$this->load->view("front/promo-landing.php");
 	}
 
+	public function checkout($prode)
+	{
+		$CI = &get_instance();
+		$CI->config->load("mercadopago", TRUE);
+		$config = $CI->config->item('mercadopago');
+		$this->load->library('Mercadopago', $config);   
+
+		switch ($prode) {
+			case '15PERSONAS':
+				$title = "Prode para 15 personas";
+				$amount = 300;
+				break;
+			case '25PERSONAS':
+				$title = "Prode para 25 personas";
+				$amount = 500;
+				break;
+
+			case '50PERSONAS':
+				$title = "Prode para 50 personas";
+				$amount = 1000;
+				break;
+
+			case '100PERSONAS':
+				$title = "Prode para 100 personas";
+				$amount = 1500;
+				break;
+
+			case '400PERSONAS':
+				$title = "Prode para 400 personas";
+				$amount = 2500;
+				break;
+
+			case '1000PERSONAS':
+				$title = "Prode para 1000 personas";
+				$amount = 4000;
+				break;
+		}
+
+		$preference_data = array (
+			"items" => array (
+					array (
+							"title" => $title,
+							"quantity" => 1,
+							"currency_id" => "ARS",
+							"unit_price" => $amount
+					)
+			)
+		);
+		
+		$data['preference'] = $this->mercadopago->create_preference($preference_data);
+		
+		$this->load->view("front/checkout/mercadopago.php", $data );
+	}
+
 }
