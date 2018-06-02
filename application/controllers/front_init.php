@@ -165,7 +165,7 @@ class Front_init extends CI_Controller
         {
             if($server_name[1] == 'prode2018')
             {
-                redirect("/precios");
+                $this->data['no_company'] = 1;
             }
             $company = $server_name[1];
         }

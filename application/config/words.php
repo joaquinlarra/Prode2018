@@ -93,15 +93,6 @@ $words['partido']['MX'] = "partido";
 $words['partido']['PR'] = "a partida";
 $words['partido']['US'] = "game";
 
-$words['Pre-clasificados']['AR'] = "Pre-clasificados";
-$words['Pre-clasificados']['MX'] = "Pre-clasificados";
-$words['Pre-clasificados']['PR'] = "Pré-classificados";
-$words['Pre-clasificados']['US'] = "Pre-qualyfied";
-
-$words['Ganadores']['AR'] = "Ganadores";
-$words['Ganadores']['MX'] = "Ganadores";
-$words['Ganadores']['PR'] = "Vencedores";
-$words['Ganadores']['US'] = "Winners";
 
 $words['Fase inicial']['AR'] = "Fase de grupos";
 $words['Fase inicial']['MX'] = "Fase de grupos";
@@ -112,66 +103,6 @@ $words['Fase final']['AR'] = "Segunda fase";
 $words['Fase final']['MX'] = "Segunda fase";
 $words['Fase final']['PR'] = "Segunda etapa";
 $words['Fase final']['US'] = "Final round";
-
-$words['badges-title']['AR'] = "Las MEDALLAS suman puntos que te ayudarán en las ligas.<br><b>&iexcl;Atento antes de llenar los pronósticos!</b> podrás también perder puntos por no llenar o ser el peor de la fecha.";
-$words['badges-title']['MX'] = "Las MEDALLAS suman puntos que te ayudarán en las ligas.<br><b>&iexcl;Atento antes de llenar los pronósticos!</b> podrás también perder puntos por no llenar o ser el peor de la fecha.";
-$words['badges-title']['PR'] = "Medalhas dar pontos extras que podem ajudá-lo a ir mais alto no ranking da liga.<br><b>&iexcl;Atento antes de llenar los pronósticos!</b> podrás también perder puntos por no llenar o ser el peor de la fecha.";
-$words['badges-title']['US'] = "BADGES give you extra points that may  help you go higher in league rankings.<br><b>&iexcl;Beware making your predictions!</b> You can lose points for not making your predictions on time or for being the worst matchday performer";
-
-$words['Antifutbol']['AR'] = "Antifútbol";
-$words['Antifutbol']['MX'] = "Antifútbol";
-$words['Antifutbol']['PR'] = "Antifutebol";
-$words['Antifutbol']['US'] = "Ultradefensive";
-
-$words['Rey Grupo']['AR'] = "Rey Grupo";
-$words['Rey Grupo']['MX'] = "Rey Grupo";
-$words['Rey Grupo']['PR'] = "O Rei do Grupo";
-$words['Rey Grupo']['US'] = "King Group";
-
-$words['Jogo Bonito']['AR'] = "Jogo Bonito";
-$words['Jogo Bonito']['MX'] = "Jogo Bonito";
-$words['Jogo Bonito']['PR'] = "Jogo Bonito";
-$words['Jogo Bonito']['US'] = "Jogo Bonito";
-
-$words['Mejor de la fecha']['AR'] = "Mejor de la fecha";
-$words['Mejor de la fecha']['MX'] = "Mejor de la fecha";
-$words['Mejor de la fecha']['PR'] = "Melhor da rodada";
-$words['Mejor de la fecha']['US'] = "Matchday best";
-
-$words['Peor de la fecha']['AR'] = "Peor de la fecha";
-$words['Peor de la fecha']['MX'] = "Peor de la fecha";
-$words['Peor de la fecha']['PR'] = "Pior da rodada";
-$words['Peor de la fecha']['US'] = "Matchday worst";
-
-$words['Súper Argentino']['AR'] = "Súper Argentino";
-$words['Súper Argentino']['MX'] = "Súper Mexicano";
-$words['Súper Argentino']['PR'] = "Súper Brasileiro";
-$words['Súper Argentino']['US'] = "Captain America";
-
-$words['super_argentino']['AR'] = "super_argentino";
-$words['super_argentino']['MX'] = "super_mexicano";
-$words['super_argentino']['PR'] = "super_argentino";
-$words['super_argentino']['US'] = "super_argentino";
-
-$words['Tortuga']['AR'] = "Tortuga";
-$words['Tortuga']['MX'] = "Tortuga";
-$words['Tortuga']['PR'] = "Tartaruga";
-$words['Tortuga']['US'] = "Turtle";
-
-$words['Vendepatria']['AR'] = "Vendepatria";
-$words['Vendepatria']['MX'] = "Vendepatria";
-$words['Vendepatria']['PR'] = "Traidor";
-$words['Vendepatria']['US'] = "Traitor";
-
-$words['vendepatria_arg']['AR'] = "vendepatria_arg";
-$words['vendepatria_arg']['MX'] = "vendepatria_mex";
-$words['vendepatria_arg']['PR'] = "vendepatria_arg";
-$words['vendepatria_arg']['US'] = "vendepatria_arg";
-
-$words['Vidente']['AR'] = "Vidente";
-$words['Vidente']['MX'] = "Vidente";
-$words['Vidente']['PR'] = "Clarividente";
-$words['Vidente']['US'] = "Clairvoyant";
 
 $words['Usuario']['AR'] = "Usuario";
 $words['Usuario']['MX'] = "Usuario";
@@ -197,11 +128,6 @@ $words['email']['AR'] = "email";
 $words['email']['MX'] = "email";
 $words['email']['PR'] = "email";
 $words['email']['US'] = "email";
-
-$words['Bio']['AR'] = "Bio";
-$words['Bio']['MX'] = "Biografía";
-$words['Bio']['PR'] = "Bio";
-$words['Bio']['US'] = "Bio";
 
 $words['Imagen']['AR'] = "Imagen";
 $words['Imagen']['MX'] = "Imagen";
@@ -233,30 +159,15 @@ $words['Faltan estos resultados']['MX'] = "Faltan estos resultados";
 $words['Faltan estos resultados']['PR'] = "Faltam os seguintes palpites";
 $words['Faltan estos resultados']['US'] = "The following results are missing";
 
-$words['30-min-prog']['AR'] = "Se podrán pronosticar resultados hasta 30 minutos antes del partido.";
-$words['30-min-prog']['MX'] = "Se podrán pronosticar resultados hasta 30 minutos antes del partido.";
-$words['30-min-prog']['PR'] = "Você poderá inserir palpites até no máximo 30 minutos antes da partida.";
-$words['30-min-prog']['US'] = "Make your predictions until 30 minutes before the game.";
+$words['30-min-prog']['AR'] = "Se podrán pronosticar resultados hasta 0 minutos antes del partido.";
+$words['30-min-prog']['MX'] = "Se podrán pronosticar resultados hasta 0 minutos antes del partido.";
+$words['30-min-prog']['PR'] = "Você poderá inserir palpites até no máximo 0 minutos antes da partida.";
+$words['30-min-prog']['US'] = "Make your predictions until 0 minutes before the game.";
 
 $words['Completar ahora']['AR'] = "Completar ahora";
 $words['Completar ahora']['MX'] = "Completar ahora";
 $words['Completar ahora']['PR'] = "Completar agora";
 $words['Completar ahora']['US'] = "Complete now";
-
-$words['winners-chosen']['AR'] = "Estos son los 3 equipos que elegiste como ganadores del torneoo.<br><small>Tenés hasta el ";
-$words['winners-chosen']['MX'] = "Estos son los 3 equipos que has elegido como ganadores del torneo.<br><small>Tienes hasta el ";
-$words['winners-chosen']['PR'] = "Estas são as três times que você escolheu como vencedores do torneio.<br><small>Seleção disponível até ";
-$words['winners-chosen']['US'] = "These are the 3 teams you chose as tournament winners.<br><small>Selection available till ";
-
-$words['choose-winners']['AR'] = "Arriesgá quiénes serán los ganadores del torneo.<br><small>Tenés hasta el ";
-$words['choose-winners']['MX'] = "Arriesga quiénes serán los ganadores del torneo.<br><small>Tienes hasta el ";
-$words['choose-winners']['PR'] = "Escolha os vencedores do torneio.<br><small>Seleção disponível até ";
-$words['choose-winners']['US'] = "Select the tournament winners.<br><small>Selection available till ";
-
-$words['to-select-winners']['AR'] = "para seleccionar a los ganadores.";
-$words['to-select-winners']['MX'] = "para seleccionar a los ganadores.";
-$words['to-select-winners']['PR'] = "para selecionar ganhadores.";
-$words['to-select-winners']['US'] = "to select winners.";
 
 $words['Subcampeón']['AR'] = "Subcampeón";
 $words['Subcampeón']['MX'] = "Subcampeón";
@@ -364,21 +275,6 @@ $words['Ingresar']['MX'] = "Ingresar";
 $words['Ingresar']['PR'] = "Log In";
 $words['Ingresar']['US'] = "Log In";
 
-$words['qualy-chosen']['AR'] = "Estos son los 16 equipos que elegiste como preclasificados del torneo.<br><small>Tenés hasta el ";
-$words['qualy-chosen']['MX'] = "Estos son los 16 equipos que has elegido como preclasificados del torneo.<br><small>Tienes hasta el ";
-$words['qualy-chosen']['PR'] = "Esses são os dezesseis equipamentos que escolheu como os pré - qualificados no torneio.<br><small>Tem até o ";
-$words['qualy-chosen']['US'] = "These are the 16 teams chosen as pre-qualified for the final rounds.<br><small>Selection available till  ";
-
-$words['choose-qualy']['AR'] = "Arriesgá quiénes serán los 16 preclasificados del torneo.<br><small>Tenés hasta el ";
-$words['choose-qualy']['MX'] = "Arriesga quiénes serán los 16 preclasificados del torneo.<br><small>Tienes hasta el ";
-$words['choose-qualy']['PR'] = "Arrisque quem serão os 16 pré-classificados do torneio.<br><small>Tem até o ";
-$words['choose-qualy']['US'] = "Select the 16 teams that will qualify for the final rounds.<br><small>Selection available till  ";
-
-$words['to-select-qualy']['AR'] = "para seleccionar a los preclasificados";
-$words['to-select-qualy']['MX'] = "para seleccionar a los preclasificados";
-$words['to-select-qualy']['PR'] = "para selecionar os pré - qualificados";
-$words['to-select-qualy']['US'] = "to select pre-qualified teams";
-
 $words['Grupo']['AR'] = "Grupo";
 $words['Grupo']['MX'] = "Grupo";
 $words['Grupo']['PR'] = "Grupo";
@@ -446,45 +342,15 @@ $words['Nombre']['MX'] = "Nombre";
 $words['Nombre']['PR'] = "Nome";
 $words['Nombre']['US'] = "Name";
 
-$words['Departamento']['AR'] = "Departamento";
-$words['Departamento']['MX'] = "Departamento";
-$words['Departamento']['PR'] = "Departamento";
-$words['Departamento']['US'] = "Departament";
-
-$words['Sucursal']['AR'] = "Sucursal";
-$words['Sucursal']['MX'] = "Sucursal";
-$words['Sucursal']['PR'] = "Filial";
-$words['Sucursal']['US'] = "Branch";
-
 $words['Liga General']['AR'] = "Liga General";
 $words['Liga General']['MX'] = "Liga General";
 $words['Liga General']['PR'] = "Tabela Geral";
 $words['Liga General']['US'] = "General League";
 
-$words['Liga']['AR'] = "Liga";
-$words['Liga']['MX'] = "Liga";
-$words['Liga']['PR'] = "Liga";
-$words['Liga']['US'] = "League";
-
-$words['CREAR LIGA']['AR'] = "Crear Liga";
-$words['CREAR LIGA']['MX'] = "Crear Liga";
-$words['CREAR LIGA']['PR'] = "Crear Liga";
-$words['CREAR LIGA']['US'] = "Create League";
-
-$words['Liga de amigos']['AR'] = "Liga de amigos";
-$words['Liga de amigos']['MX'] = "Liga de amigos";
-$words['Liga de amigos']['PR'] = "Liga de amigos";
-$words['Liga de amigos']['US'] = "Friends league";
-
 $words['Puesto']['AR'] = "Puesto";
 $words['Puesto']['MX'] = "Puesto";
 $words['Puesto']['PR'] = "Posição";
 $words['Puesto']['US'] = "Ranking";
-
-$words['Pre Clasificados']['AR'] = "Pre Clasificados";
-$words['Pre Clasificados']['MX'] = "Pre Clasificados";
-$words['Pre Clasificados']['PR'] = "Pré Classificados";
-$words['Pre Clasificados']['US'] = "Pre Qualified";
 
 $words['pre-qualy-label']['AR'] = "PC";
 $words['pre-qualy-label']['MX'] = "PC";
@@ -644,10 +510,9 @@ $words['account-confirmed']['MX'] = "<h4>&iexcl;Cuenta confirmada!</h4><br><br><
 $words['account-confirmed']['PR'] = "<h4>&iexcl;Conta confirmada!</h4><br><br><a class='btn btn-primary btn-block' href='[[link_url]]pronosticos'>Ingresar</a>";
 $words['account-confirmed']['US'] = "<h4>&iexcl;Account confirmed!</h4><br><br><a class='btn btn-primary btn-block' href='[[link_url]]pronosticos'>Enter</a>";
 
-$words['support-email']['AR'] = "Si tenés alguna duda o problema podés escribir a <a href='mailto:info@prode2018.com'><b>info@prode2018.com</b></a>";
-$words['support-email']['MX'] = "Si tienes alguna duda o inquietud puedes escribir a <a href='mailto:info@prode2018.com'><b>info@prode2018.com</b></a>";
-$words['support-email']['PR'] = "Se você tiver dúvidas ou problemas, pode escrever para <a href='mailto:info@prode2018.com'><b>info@prode2018.com</b></a>";
-$words['support-email']['US'] = "Any questions or issues please send us an email to <a href='mailto:info@prode2018.com'><b>info@prode2018.com</b></a>";
+$words['support-email']['AR'] = "Asistencia al cliente: <a href='mailto:info@prode2018.com'><b>info@prode2018.com</b></a>";
+$words['support-email']['PR'] = "Suporte ao cliente: <a href='mailto:info@prode2018.com'><b>info@prode2018.com</b></a>";
+$words['support-email']['US'] = "Customer assistance: <a href='mailto:info@prode2018.com'><b>info@prode2018.com</b></a>";
 
 $words['Nickname']['AR'] = "Apodo";
 $words['Nickname']['MX'] = "Apodo";
@@ -655,90 +520,11 @@ $words['Nickname']['PR'] = "Apelido";
 $words['Nickname']['US'] = "Nickname";
 // enviado
 
-$words['LIGA INTER SUCURSALES']['AR'] = "LIGA INTER SUCURSALES";
-$words['LIGA INTER SUCURSALES']['MX'] = "LIGA INTER SUCURSALES";
-$words['LIGA INTER SUCURSALES']['PR'] = "LIGA INTERFILIAIS";
-$words['LIGA INTER SUCURSALES']['US'] = "INTER BRANCH LEAGUE";
-
-$words['create-friends-list']['AR'] = "<h2>Creá tu liga de amigos</h2><small>Elegí un nombre para tu liga</small>";
-$words['create-friends-list']['MX'] = "<h2>Creá tu liga de amigos</h2><small>Elige un nombre para tu liga</small>";
-$words['create-friends-list']['PR'] = "<h2>Creá tu liga de amigos</h2><small>Elegí un nombre para tu liga</small>";
-$words['create-friends-list']['US'] = "<h2>Create your friends league</h2><small>Choose a name for your league</small>";
-
-$words['Nombre de liga']['AR'] = "Nombre de liga";
-$words['Nombre de liga']['MX'] = "Nombre de liga";
-$words['Nombre de liga']['PR'] = "Nombre de liga";
-$words['Nombre de liga']['US'] = "League name";
-
-$words['existent-league']['AR'] = "Ya existe una liga con el nombre $1. Por favor elije otro.";
-$words['existent-league']['MX'] = "Ya existe una liga con el nombre $1. Por favor elije otro.";
-$words['existent-league']['PR'] = "Ya existe una liga con  el nombre $1. Por favor elije otro.";
-$words['existent-league']['US'] = "There is an existing league with the name $1. Please choose another.";
 
 $words['register-login-email']['AR'] = "Ingresá con los siguientes datos:";
 $words['register-login-email']['MX'] = "Ingresa con los siguientes datos:";
 $words['register-login-email']['PR'] = "Ingresá con los siguientes datos:";
 $words['register-login-email']['US'] = "Log in with the following credentials:";
-
-$words['league-created']['AR'] = "<h4>&iexcl;Tu liga fue creada con éxito!</h4><small>Ahora falta que tus amigos se suscriban a ella.</small>";
-$words['league-created']['MX'] = "<h4>&iexcl;Tu liga ha sido creada con éxito!</h4><small>Ahora falta que tus amigos se suscriban a ella.</small>";
-$words['league-created']['PR'] = "<h4>&iexcl;Tu liga fue creada con éxito!</h4><small>Ahora falta que tus amigos se suscriban a ella.</small>";
-$words['league-created']['US'] = "<h4>&iexcl;Your league is created!</h4><small>Now tell your friends to subscribe to it.</small>";
-
-$words['UNIRSE A UNA LIGA']['AR'] = "UNITE A UNA LIGA";
-$words['UNIRSE A UNA LIGA']['MX'] = "UNETE A UNA LIGA";
-$words['UNIRSE A UNA LIGA']['PR'] = "UNIRSE A UNA LIGA";
-$words['UNIRSE A UNA LIGA']['US'] = "JOIN A LEAGUE";
-
-$words['Unirse a la liga']['AR'] = "Unirse a la liga";
-$words['Unirse a la liga']['MX'] = "Unirse a la liga";
-$words['Unirse a la liga']['PR'] = "Unirse a la liga";
-$words['Unirse a la liga']['US'] = "Join league";
-
-$words['join-league-msg']['AR'] = "<h2>Unite a la liga de tus amigos</h2><small>Selecciona tu liga</small>";
-$words['join-league-msg']['MX'] = "<h2>Unete a la liga de tus amigos</h2><small>Selecciona tu liga</small>";
-$words['join-league-msg']['PR'] = "<h2>Unite a la liga de tus amigos</h2><small>Selecciona tu liga</small>";
-$words['join-league-msg']['US'] = "<h2>Join your friends league</h2><small>Select your league</small>";
-
-$words['Lista de ligas']['AR'] = "Lista de ligas";
-$words['Lista de ligas']['MX'] = "Lista de ligas";
-$words['Lista de ligas']['PR'] = "Lista de ligas";
-$words['Lista de ligas']['US'] = "League's list";
-
-$words['no-friends-league']['AR'] = "<h2>No hay liga de amigos por el momento</h2><small>Podés crear tu liga <a href='[[link_url]]crear-liga-de-amigos'>acá</a>";
-$words['no-friends-league']['MX'] = "<h2>No hay liga de amigos por el momento</h2><small>Puedes crear tu liga <a href='[[link_url]]crear-liga-de-amigos'>aquí</a>";
-$words['no-friends-league']['PR'] = "<h2>No hay liga de amigos por el momento</h2><small>Podés crear tu liga <a href='[[link_url]]crear-liga-de-amigos'>acá</a>";
-$words['no-friends-league']['US'] = "<h2>There are no friends list</h2><small>You can create your league <a href='[[link_url]]crear-liga-de-amigos'>here</a>";
-
-$words['league-notify-join']['AR'] = "<h4>Ya se envió una solicitud a $1</h4><small>Deberá aceptarte para que formes parte de su liga.</small>";
-$words['league-notify-join']['MX'] = "<h4>Ya se envió una solicitud a $1</h4><small>Deberá aceptarte para que formes parte de su liga.</small>";
-$words['league-notify-join']['PR'] = "<h4>Ya se envió una solicitud a $1</h4><small>Deberá aceptarte para que formes parte de su liga.</small>";
-$words['league-notify-join']['US'] = "<h4>$1 has been notified of your subscription</h4><small>He'll have to acept before you can play in his league.</small>";
-
-$words['Creador']['AR'] = "Creador";
-$words['Creador']['MX'] = "Creador";
-$words['Creador']['PR'] = "Creador";
-$words['Creador']['US'] = "Creator";
-
-$words['non-existent-league']['AR'] = "No existe la liga seleccionada. Por favor vuelva a intentarlo.";
-$words['non-existent-league']['MX'] = "No existe la liga seleccionada. Por favor vuelve a intentarlo.";
-$words['non-existent-league']['PR'] = "No existe la liga seleccionada. Por favor vuelva a intentarlo.";
-$words['non-existent-league']['US'] = "The league chosen doesn't exist. Please try again.";
-
-$words['already-in-league']['AR'] = "Ya estás anotado en esta liga";
-$words['already-in-league']['MX'] = "Ya estás anotado en esta liga";
-$words['already-in-league']['PR'] = "Ya estás anotado en esta liga";
-$words['already-in-league']['US'] = "You are subscribed to this league";
-
-$words['wait-for-league-confirm']['AR'] = "Tenés que esperar a que el moderador te acepte";
-$words['wait-for-league-confirm']['MX'] = "Debes esperar a que el moderador te acepte";
-$words['wait-for-league-confirm']['PR'] = "Debes esperar a que el moderador te acepte";
-$words['wait-for-league-confirm']['US'] = "Please wait for the moderator to accept you";
-
-$words['league-participants']['AR'] = "<h2>Participantes de la liga</h2>";
-$words['league-participants']['MX'] = "<h2>Participantes de la liga</h2>";
-$words['league-participants']['PR'] = "<h2>Participantes de la liga</h2>";
-$words['league-participants']['US'] = "<h2>League participants</h2>";
 
 $words['Aceptar']['AR'] = "Aceptar";
 $words['Aceptar']['MX'] = "Aceptar";
@@ -760,50 +546,6 @@ $words['ver posiciones']['MX'] = "ver posiciones";
 $words['ver posiciones']['PR'] = "ver posiciones";
 $words['ver posiciones']['US'] = "view positions";
 
-$words['mejor-desc']['AR'] = "Se otorga a quienes logren la mayor cantidad de puntos en cada fecha";
-$words['mejor-desc']['MX'] = "Se otorga a quienes logren la mayor cantidad de puntos en cada fecha";
-$words['mejor-desc']['PR'] = "Quem marcar mais pontos em cada rodada";
-$words['mejor-desc']['US'] = "Awarded to those who gain the most points in each machtday";
-
-$words['peor-desc']['AR'] = "Se otorga a quienes logren la menor cantidad de puntos en cada fecha";
-$words['peor-desc']['MX'] = "Se otorga a quienes logren la menor cantidad de puntos en cada fecha";
-$words['peor-desc']['PR'] = "Quem marcar a menor quantidade de pontos em cada rodada";
-$words['peor-desc']['US'] = "Awarded to those who gain the least points in each machtday";
-
-$words['anti-desc']['AR'] = "Se otorga a quienes logren la mayor cantidad de 0-0 en la fase grupos";
-$words['anti-desc']['MX'] = "Se otorga a quienes logren la mayor cantidad de 0-0 en la fase grupos";
-$words['anti-desc']['PR'] = "O que acertar a maior quantidade de 0-0 na fase de grupos.";
-$words['anti-desc']['US'] = "Awarded to those who gain the most 0-0 results in the group phase";
-
-$words['king-desc']['AR'] = "Se otorga a quienes acierten al menos 5 resultados de cada grupo";
-$words['king-desc']['MX'] = "Se otorga a quienes acierten al menos 5 resultados de cada grupo";
-$words['king-desc']['PR'] = "Quem acertar ao menos 5 resultados por grupo";
-$words['king-desc']['US'] = "Awarded to those who predict correctly at least 5 results of each group";
-
-$words['jogo-desc']['AR'] = "Se otorga a quienes acierten la mayor cantidad de partidos de 5 goles (totales) o más en la fase de grupos";
-$words['jogo-desc']['MX'] = "Se otorga a quienes acierten la mayor cantidad de partidos de 5 goles (totales) o más en la fase de grupos";
-$words['jogo-desc']['PR'] = "Quem acertar a maior quantidade de partidas com 5 gols (no total) ou mais na fase de grupos.";
-$words['jogo-desc']['US'] = "Awarded to those who predict the most games in the Group Phase with 5 goals at least";
-
-$words['super-desc']['AR'] = "Se otorga a quienes logren la mayor cantidad de puntos en los partidos de la fase de grupos de Argentina";
-$words['super-desc']['MX'] = "Se otorga a quienes logren la mayor cantidad de puntos en los partidos de la fase de grupos de México";
-$words['super-desc']['PR'] = "Se otorga a quienes logren la mayor cantidad de puntos en los partidos de la fase de grupos de Argentina";
-$words['super-desc']['US'] = "Se otorga a quienes logren la mayor cantidad de puntos en los partidos de la fase de grupos de Argentina";
-
-$words['tortuga-desc']['AR'] = "Se otorga a quienes olviden cargar alguna o todas sus predicciones";
-$words['tortuga-desc']['MX'] = "Se otorga a quienes olviden cargar alguna o todas sus predicciones";
-$words['tortuga-desc']['PR'] = "Perderá 5 pontos aquele que esquecer de inserir algum palpite";
-$words['tortuga-desc']['US'] = "Awarded to those who forget to submit one or several predictions on time";
-
-$words['vende-desc']['AR'] = "Se otorga a quienes logren la mayor cantidad de puntos en los partidos de la fase de grupos de Brasil e Inglaterra";
-$words['vende-desc']['MX'] = "Se otorga a quienes logren la mayor cantidad de puntos en los partidos de la fase de grupos de EE.UU.";
-$words['vende-desc']['PR'] = "Se otorga a quienes logren la mayor cantidad de puntos en los partidos de la fase de grupos de Brasil e Inglaterra";
-$words['vende-desc']['US'] = "Se otorga a quienes logren la mayor cantidad de puntos en los partidos de la fase de grupos de Brasil e Inglaterra";
-
-$words['vidente-desc']['AR'] = "Se otorga a quienes en base a sus predicciones acierten por lo menos 12 de los 16 clasificados a octavos de final";
-$words['vidente-desc']['MX'] = "Se otorga a quienes en base a sus predicciones acierten por lo menos 12 de los 16 clasificados a octavos de final";
-$words['vidente-desc']['PR'] = "Aquele que com base em seus palpites acertar ao menos 12 das 16 seleções classificadas para as oitavas de final.";
-$words['vidente-desc']['US'] = "Awarded to those who predict correctly at least 12 of the 16 teams that will go through the Group Phase";
 
 $words['politica-privacidad']['AR'] = "Aviso de privacidad";
 $words['politica-privacidad']['MX'] = "Aviso de privacidad";
@@ -968,8 +710,6 @@ $words['empty-wall']['AR'] = "Nada aquí. Se el primero en comentar!";
 $words['empty-wall']['MX'] = "Nada aquí. Se el primero en comentar!";
 $words['empty-wall']['PR'] = "Nada aqui. Seja o primeiro a comentar!";
 $words['empty-wall']['US'] = "Nothing here. Be the first to comment!";
-
-
 
 
 

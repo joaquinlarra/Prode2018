@@ -50,87 +50,71 @@
                      <div class="clearfix"></div>
                  </div>
                  <div class="panel-body">
-                    <div class="row">
-                         <div class="col-md-12">
-                    	    <div class="alert alert-danger" id="error" style="display:none"></div>
-                            </div>
-                    	<div class="<?= $this->company_model->register && !$no_company ? "col-md-6 col-sm-6" : "col-md-12"?>">
-                            <form method="POST" id="login-form" class="form-signin ajax_form" action="<?=$link_url.'front_user/login'?>" accept-charset="UTF-8">
-                                <label><?= lang('login')?><br></label>
-                                <div class="form-group" style="margin-bottom:15px; text-align:left">
-                                <input type="text"  placeholder="<?= lang("Email")?>" id="username" class="form-control" name="username">
-                                </div>
-                                <div class="form-group" style=" text-align:left">
-                                <input type="password" id="password" class="form-control" name="password" placeholder="<?= lang("Contraseña")?>">
-                                </div>
-                                <div class="form-group checkbox">
-                                    <label>
-                                        <input name="remember_me" id="remember_me" type="checkbox" value="remember-me"> <?= lang("Guardar sesión")?>
-                                    </label>
-                                </div>
-                                    <button type="submit" name="submit" class="btn btn-green btn-block"><?= lang("Ingresar")?></button>
-                            <br><a class="pull-right" href="<?= $link_url?>olvide-mi-clave"><?= lang('olvide-clave')?></a>
-                            </form>
-                            
-                            <?
-                            if($this->company_model->tyc_doc)
-							{
-							 ?><br><a class="pull-right" href="<?= $this->company_model->tyc_doc?>" target="_blank"><?= lang('politica-privacidad')?></a><?	
-							}
-							?>
 
-                        </div>
+                     <?if($no_company){
+                         echo '<div class="row"><h4>'.lang("Debes ingresar a tu URL propia (TUGRUPO.prode2018.com)")."</h4></div>";
+                         
+                     }
+                     else
+                     {?>
 
-                        <div class="col-md-6 col-sm-6">
-                            <label><?= lang("code-register")?></label>
-
-                            <div align="center">
-                                <div class="row">
-                                    <div class="col-md-12">
-                                        <div class="alert alert-danger" id="company-code-error" style="display:none"></div>
+                         <div class="row">
+                             <div class="col-md-12">
+                                <div class="alert alert-danger" id="error" style="display:none"></div>
+                                </div>
+                            <div class="<?= $this->company_model->register && !$no_company ? "col-md-6 col-sm-6" : "col-md-12"?>">
+                                <form method="POST" id="login-form" class="form-signin ajax_form" action="<?=$link_url.'front_user/login'?>" accept-charset="UTF-8">
+                                    <label><?= lang('login')?><br></label>
+                                    <div class="form-group" style="margin-bottom:15px; text-align:left">
+                                    <input type="text"  placeholder="<?= lang("Email")?>" id="username" class="form-control" name="username">
                                     </div>
-                                </div>
-                                <div class="row">
-                                    <form method="POST" id="check-code" class="form-horizontal form-inline form-code ajax_form" action="<?=$link_url.'check-code'?>" accept-charset="UTF-8" role="form">
-
-                                        <br ><div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-                                            <input type="text" id="code" class="form-control" name="code"  placeholder="<?= lang('# codigo')?>">
-                                        </div>
-                                        <br >
-                                        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 ">
-                                            <button type="submit" name="submit" class="btn btn-green btn-block pull-left"><?= lang("register-button")?></button>
-                                        </div>
-                                    </form>
-                                </div>
-                            </div>
-
-                            <!--<form method="POST" id="register-form" class="form-signin ajax_form" action="<?= $link_url.'front_user/register'?>" accept-charset="UTF-8">
-                                <div id="error" style="display:none" class="alert alert-danger"></div>
-                                <?
-                                if(!$this->company_model->register_domain)
-                                {
-                                    ?>
                                     <div class="form-group" style=" text-align:left">
-                                        <input type="text" id="email" class="form-control" name="email" placeholder="email">
+                                    <input type="password" id="password" class="form-control" name="password" placeholder="<?= lang("Contraseña")?>">
                                     </div>
-                                <?
-                                }
-                                else
-                                {
-                                ?>
-                                    <div class="input-group" style="margin-bottom:25px;">
-                                        <input type="text" id="email" class="form-control" name="email" placeholder="email">
-                                        <span class="input-group-addon">@<?= $this->company_model->register_domain?></span>
+                                    <div class="form-group checkbox">
+                                        <label>
+                                            <input name="remember_me" id="remember_me" type="checkbox" value="remember-me"> <?= lang("Guardar sesión")?>
+                                        </label>
                                     </div>
-                                <?
-                                }
-                                ?>
-                                <button type="submit" name="submit" class="btn btn-green btn-block"><?= lang("Registrarse")?></button>
-                            </form>-->
-                        </div>
+                                        <button type="submit" name="submit" class="btn btn-green btn-block"><?= lang("Ingresar")?></button>
+                                <br><a class="pull-right" href="<?= $link_url?>olvide-mi-clave"><?= lang('olvide-clave')?></a>
+                                </form>
 
-                    </div>
-                    
+                                <?
+                                if($this->company_model->tyc_doc)
+                                {
+                                 ?><br><a class="pull-right" href="<?= $this->company_model->tyc_doc?>" target="_blank"><?= lang('politica-privacidad')?></a><?
+                                }
+                                ?>
+
+                            </div>
+
+                            <div class="col-md-6 col-sm-6">
+                                <label><?= lang("code-register")?></label>
+
+                                <div align="center">
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <div class="alert alert-danger" id="company-code-error" style="display:none"></div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <form method="POST" id="check-code" class="form-horizontal form-inline form-code ajax_form" action="<?=$link_url.'check-code'?>" accept-charset="UTF-8" role="form">
+
+                                            <br ><div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                                                <input type="text" id="code" class="form-control" name="code"  placeholder="<?= lang('# codigo')?>">
+                                            </div>
+                                            <br >
+                                            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 ">
+                                                <button type="submit" name="submit" class="btn btn-green btn-block pull-left"><?= lang("register-button")?></button>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    <? } ?>
                 </div>
              </div>
 		</div>
