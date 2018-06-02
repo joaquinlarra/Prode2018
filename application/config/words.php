@@ -296,117 +296,94 @@ $words['Guardando...']['US'] = "Saving...";
 
 
 $words['no-players']['AR'] = "No hay posiciones por el momento";
-$words['no-players']['MX'] = "No hay posiciones por el momento";
 $words['no-players']['PR'] = "Não existe uma classificação atual";
 $words['no-players']['US'] = "There are no rankings to show";
 
 $words['subject-registro']['AR'] = "Completá tu registro a Prode 2018";
-$words['subject-registro']['MX'] = "Completá tu registro a Prode 2018";
 $words['subject-registro']['PR'] = "Preencha os seus dados para cadastrares no Prode 2018";
 $words['subject-registro']['US'] = "Complete your Prode 2018 suscription";
 
 $words['body-registro']['AR'] = "Hola $1,<br><br>Confirmá tu cuenta de Prode2018 haciendo click en el siguiente enlace.<br><br>";
-$words['body-registro']['MX'] = "Hola $1,<br><br>Confirma tu cuenta de Prode2018 haciendo click en el siguiente enlace.<br><br>";
 $words['body-registro']['PR'] = "Oí $1,<br><br>Verifique a sua conta no Prode2018 fazendo clique no seguinte link.<br><br>";
 $words['body-registro']['US'] = "Hi $1,<br><br>Confirm your Prode2018 account by following the link.<br><br>";
 
 $words['body-creation']['AR'] = "Hola $1,<br><br>Ya tenes tu prode creado. Invita a tus amigos utilizando el siguiente enlace.<br><br>";
-$words['body-creation']['MX'] = "Hola $1,<br><br>Ya tenes tu prode creado. Invita a tus amigos utilizando el siguiente enlace.<br><br>";
 $words['body-creation']['PR'] = "Oí $1,<br><br>Você já tem seu prode criado. Convide seus amigos com o seguinte link.<br><br>";
 $words['body-creation']['US'] = "Hi $1,<br><br>You already have your created prode. Invite your friends with the following link.<br><br>";
 
 $words['invalid-captcha']['AR'] = "Captcha inválido.";
-$words['invalid-captcha']['MX'] = "Captcha inválido.";
 $words['invalid-captcha']['PR'] = "Captcha inválido.";
 $words['invalid-captcha']['US'] = "Invalid captcha.";
 
 $words['complete-bets']['AR'] = "Indicá junto a cada equipo la cantidad de goles que crees va a anotar.";
-$words['complete-bets']['MX'] = "Indica junto a cada equipo la cantidad de goles que crees va a anotar.";
 $words['complete-bets']['PR'] = "Coloque junto a cada país os gols que você acredita que cada equipe irá marcar.";
 $words['complete-bets']['US'] = "Select the amount of goals for each match.";
 
 $words['Recuperá tu clave']['AR'] = "Recuperá tu contraseña";
-$words['Recuperá tu clave']['MX'] = "Recupera tu contraseña";
 $words['Recuperá tu clave']['PR'] = "Recuperar a senha";
 $words['Recuperá tu clave']['US'] = "Password recovery";
 
 $words['recover-pass-desc']['AR'] = "Te enviaremos un email con el cual podrás modificar la contraseña.";
-$words['recover-pass-desc']['MX'] = "Te enviaremos un email con el cual podrás modificar la contraseña.";
 $words['recover-pass-desc']['PR'] = "Te enviaremos um e-mail com qual poderá mudar sua contra-senha.";
 $words['recover-pass-desc']['US'] = "An email will be sent to change password.";
 
 $words['Recuperar password']['AR'] = "Recuperar contraseña";
-$words['Recuperar password']['MX'] = "Recuperar contraseña";
 $words['Recuperar password']['PR'] = "Recupere a sua senha";
 $words['Recuperar password']['US'] = "Recover password";
 
 $words['no-account']['AR'] = "No existe una cuenta con ese ";
-$words['no-account']['MX'] = "No existe una cuenta con ese ";
 $words['no-account']['PR'] = "Não foi encontrada nenhuma conta com esse ";
 $words['no-account']['US'] = "No account found with this ";
 
-$words['no-email']['AR'] = "Esta cuenta no tiene un email guardado. Por favor contáctese con su coordinador local de [[company_name]] para un cambio de contraseña manual.";
-$words['no-email']['MX'] = "Esta cuenta no tiene un email guardado. Por favor contáctese con con su coordinador local de [[company_name]] para un cambio de contraseña manual.";
-$words['no-email']['PR'] = "Esta conta não tem um email salvo. Por favor, entre em contato com seu coordenador local de [[company_name]] para mudar manualmente a sua contra-senha.";
-$words['no-email']['US'] = "There is no email associated with this account. Please contact your local coordinator at [[company_name]] for a manual password change.";
+$words['no-email']['AR'] = "Esta cuenta no tiene un email guardado. Por favor contáctese con info@prode2018.com para un cambio de contraseña manual.";
+$words['no-email']['PR'] = "Esta conta não tem um email salvo. Por favor, entre em contato com info@prode2018.com para mudar manualmente a sua contra-senha.";
+$words['no-email']['US'] = "There is no email associated with this account. Please contact info@prode2018.com for a manual password change.";
 
 $words['olvide-clave']['AR'] = "Olvidé mi contraseña";
-$words['olvide-clave']['MX'] = "Olvidé mi contraseña";
 $words['olvide-clave']['PR'] = "Esqueci minha senha";
 $words['olvide-clave']['US'] = "Forgot my password";
 
 $words['email-sent']['AR'] = "Se envió un email a $1 desde info@prode2018.com. Chequeá que no esté en spam  y clickeá en el link que aparece allí para recuperar tu contraseña";
-$words['email-sent']['MX'] = "Se envió un email a $1 desde info@prode2018.com. Checa que no esté en spam  y clickeá en el link que aparece allí para recuperar tu contraseña";
 $words['email-sent']['PR'] = "Um e-mail foi enviado a $1 desde info@prode2018.com. Confira a sua pasta de spam e clique no link para recuperar sua senha";
 $words['email-sent']['US'] = "Sent email to $1 from info@prode2018.com. Check the message hasn't arrived at spam folder and Click on the recover link to recover your password";
 
-$words['no-record-found']['AR'] = "No se encontró una cuenta con ese $1. Por favor contáctase con su coordinador local  de  [[company_name]]";
-$words['no-record-found']['MX'] = "No se encontró una cuenta con ese $1. Por favor contáctase con su coordinador local  de  [[company_name]]";
-$words['no-record-found']['PR'] = "A conta com esse $1 não foi encontrada. Por favor, entre em contado com seu administrador local de  [[company_name]]";
-$words['no-record-found']['US'] = "No record found with this $1. Please contact your local coordinator at [[company_name]]";
+$words['no-record-found']['AR'] = "No se encontró una cuenta con ese $1.<br>Pedí el CODIGO DE REGISTRO al Admin del grupo.";
+$words['no-record-found']['PR'] = "A conta com esse $1 não foi encontrada. Eu pedi o CODIGO DE REGISTRO ao Admin do grupo.";
+$words['no-record-found']['US'] = "No record found with this $1. Get the REGISTRATION CODE from your group Admin.";
 
 $words['incorrect-login']['AR'] = "$1 o contraseña incorrecta";
-$words['incorrect-login']['MX'] = "$1 o contraseña incorrecta";
 $words['incorrect-login']['PR'] = "$1 o senha incorreta";
 $words['incorrect-login']['US'] = "$1 or password incorrect";
 
 $words['recover-password-email']['AR'] = "Hola $1,<br><br>Clickee el link siguiente para recuperar su contraseña.<br><br>";
-$words['recover-password-email']['MX'] = "Hola $1,<br><br>Clickee el link siguiente para para recuperar su contraseña.<br><br>";
 $words['recover-password-email']['PR'] = "Oí $1,<br><br>CClique no seguinte link para recuperar sua senha.<br><br>";
 $words['recover-password-email']['US'] = "Hi $1,<br><br>Click on the next link to recover your password.<br><br>";
 
 $words['recover-password-email-2']['AR'] = "Si usted no pidió cambio de contraseña no haga click en el link.<br><br>Prode 2018 <br>--";
-$words['recover-password-email-2']['MX'] = "Si usted no pidió cambio de contraseña no haga click en el link.<br><br>Prode 2018 <br>--";
 $words['recover-password-email-2']['PR'] = "Se você não solicitou a mudança de senha, não clique no link.<br><br>Prode 2018 <br>--";
 $words['recover-password-email-2']['US'] = "If you didn't request for a password recovery ignore the link.<br><br>Prode 2018 <br>--";
 
 $words['recover-failure']['AR'] = "&iexcl;Expiró el cambio de contraseña!";
-$words['recover-failure']['MX'] = "&iexcl;Expiró el cambio de contraseña!";
 $words['recover-failure']['PR'] = "&iexcl;Expirou a mudança de senha!";
 $words['recover-failure']['US'] = "&iexcl;Password change has expired!";
 
 $words['recover-failure-contact']['AR'] = "Por favor haga <a href='[[link_url]]olvide-mi-clave'>cambio de contraseña</a> devuelta o contáctese con su coordinador local de [[company_name]]";
-$words['recover-failure-contact']['MX'] = "Por favor haga <a href='[[link_url]]olvide-mi-clave'>cambio de contraseña</a> devuelta o contáctese con su coordinador local de [[company_name]]";
 $words['recover-failure-contact']['PR'] = "Por favor <a href='[[link_url]]olvide-mi-clave'>mude de novo sua  senha </a> ou entre em contato com seu coordenador local de [[company_name]]";
 $words['recover-failure-contact']['US'] = "Please <a href='[[link_url]]olvide-mi-clave'>recover password</a> again or contact your local coordinator at [[company_name]]";
 
 $words['complete-login']['AR'] = "<h4>&iexcl;El pedido de cambio de contaseña fue exitoso!</h4><br><small>Ahora podés elegir tu nueva contraseña</small>";
-$words['complete-login']['MX'] = "<h4>&iexcl;El pedido de cambio de contaseña fue exitoso!</h4><br><small>Ahora puedes elegir tu nueva contraseña</small>";
 $words['complete-login']['PR'] = "<h4>&iexcl;O pedido de mudança de senha foi realizado com sucesso!</h4><br><small>Ahora puedes elegir tu nueva contraseña</small>";
 $words['complete-login']['US'] = "<h4>&iexcl;Password change request successful!</h4><br><small>Now you can set your new password</small>";
 
 $words['Cambiar contraseña']['AR'] = "Cambiar contraseña";
-$words['Cambiar contraseña']['MX'] = "Cambiar contraseña";
 $words['Cambiar contraseña']['PR'] = "Mudar senha";
 $words['Cambiar contraseña']['US'] = "Change password";
 
 $words['Guardar cambios']['AR'] = "Guardar cambios";
-$words['Guardar cambios']['MX'] = "Guardar cambios";
 $words['Guardar cambios']['PR'] = "Salvar mudanças";
 $words['Guardar cambios']['US'] = "Save changes";
 
 $words['Instrucciones']['AR'] = "Instrucciones";
-$words['Instrucciones']['MX'] = "Instrucciones";
 $words['Instrucciones']['PR'] = "Instruções";
 $words['Instrucciones']['US'] = "Instructions";
 
@@ -426,9 +403,9 @@ $words['account-confirmed']['AR'] = "<h4>&iexcl;Cuenta confirmada!</h4><br><br><
 $words['account-confirmed']['PR'] = "<h4>&iexcl;Conta confirmada!</h4><br><br><a class='btn btn-primary btn-block' href='[[link_url]]pronosticos'>Ingresar</a>";
 $words['account-confirmed']['US'] = "<h4>&iexcl;Account confirmed!</h4><br><br><a class='btn btn-primary btn-block' href='[[link_url]]pronosticos'>Enter</a>";
 
-$words['support-email']['AR'] = "Asistencia al cliente: <a href='mailto:info@prode2018.com'><b>info@prode2018.com</b></a>";
-$words['support-email']['PR'] = "Suporte ao cliente: <a href='mailto:info@prode2018.com'><b>info@prode2018.com</b></a>";
-$words['support-email']['US'] = "Customer assistance: <a href='mailto:info@prode2018.com'><b>info@prode2018.com</b></a>";
+$words['support-email']['AR'] = "Asistencia al jugador: <a href='mailto:info@prode2018.com'><b>info@prode2018.com</b></a>";
+$words['support-email']['PR'] = "Suporte ao jugador: <a href='mailto:info@prode2018.com'><b>info@prode2018.com</b></a>";
+$words['support-email']['US'] = "Player assistance: <a href='mailto:info@prode2018.com'><b>info@prode2018.com</b></a>";
 
 $words['Nickname']['AR'] = "Apodo";
 $words['Nickname']['PR'] = "Apelido";

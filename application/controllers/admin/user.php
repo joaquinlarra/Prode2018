@@ -12,6 +12,43 @@ class User extends ADMIN_Controller
 		
 	}
 
+    public function create_dummy($company_id, $total)
+    {
+        $this->load->model("user_model");
+        for($i = 0; $i < $total ; $i++)
+        {
+            $this->user_model->set_field('email',$i.$i."@testaccount.com");
+            $this->user_model->set_field('displayname',$i."K".$i);
+            $this->user_model->set_field('fullname',$i.$i."-name");
+            $this->user_model->set_field('company_id',$company_id);
+            $this->user_model->create();
+            var_dump("Created: ".$this->user_model->email);
+        }
+    }
+
+    public function delete_dummy($company_id, $total)
+    {
+        $this->load->model("user_model");
+        $total = (int)$total;
+
+        for($i = 0; $i < $total ; $i++)
+        {
+            $sql = "SELECT user_id FROM bitauth_users WHERE email = '".$i.$i."@testaccount.com' AND company_id = '".(int)$company_id."'";
+            $user_row = $this->db->query($sql)->row();
+            if($user_row->user_id)
+            {
+                $this->user_model->set_id($user_row->user_id);
+                $this->user_model->delete();
+                var_dump("deleted: ".$this->user_model->email);
+            }
+            else
+            {
+                var_dump("not found: ".$this->user_model->email);
+            }
+
+        }
+    }
+
     public function update_users()
     {
         $sql = "SELECT user_id FROM bitauth_users";
