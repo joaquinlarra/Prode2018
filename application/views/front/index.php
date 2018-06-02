@@ -14,9 +14,10 @@
 					?><img src="<?=$this->company_model->main_image?>" border="0" style="max-height:150px;max-width: 100%;" /><?
 				}
 				?><br>
-            <h1 class="hidden-sm hidden-xs">Prode <?= $this->company_model->name?></h1>
-            <h3 class="visible-sm visible-xs">Prode <?= $this->company_model->name?></h3>
-
+            <? if($this->company_model->name):?>
+                <h1 class="hidden-sm hidden-xs">Prode <?= $this->company_model->name?></h1>
+                <h3 class="visible-sm visible-xs">Prode <?= $this->company_model->name?></h3>
+            <? endif; ?>
             <br>
         </div>
     </div>
