@@ -27,24 +27,19 @@
 
                      <div class="pull-right" style="font-size: 13px">
                          <div class="dropdown">
-                         <?
-                         if($this->company_model->multi_lang){
-                             $lang = $this->bitauth->user_language == "AR"? "ES" : ($this->bitauth->user_language == "US" ? "EN" :$this->bitauth->user_language);
-                             ?>
-                             <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-                                 <?= strtoupper($lang)?>
-                                 <!-- <span class="glyphicon glyphicon-user"> -->
-                                 <span class="caret"></span>
-                                 Idioma / Language
-                             </button>
-                             <ul class="dropdown-menu" role="menu">
-                                 <li><a href="<?= $link_url?>cambiar-idioma/AR">ESPAÑOL (ES)</a></li>
-                                 <li><a href="<?= $link_url?>cambiar-idioma/PR">PORTUGUES (PR)</a></li>
-                                 <li><a href="<?= $link_url?>cambiar-idioma/US">ENGLISH (EN)</a></li>
-                             </ul>
-                             <?
-                         }
-                         ?>
+                         <? $lang = $this->bitauth->user_language == "AR"? "ES" : ($this->bitauth->user_language == "US" ? "EN" :$this->bitauth->user_language); ?>
+                         <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                             <?= strtoupper($lang)?>
+                             <!-- <span class="glyphicon glyphicon-user"> -->
+                             <span class="caret"></span>
+                             Idioma / Language
+                         </button>
+                         <ul class="dropdown-menu" role="menu">
+                             <li><a href="<?= $link_url?>cambiar-idioma/AR">ESPAÑOL (ES)</a></li>
+                             <li><a href="<?= $link_url?>cambiar-idioma/PR">PORTUGUES (PR)</a></li>
+                             <li><a href="<?= $link_url?>cambiar-idioma/US">ENGLISH (EN)</a></li>
+                         </ul>
+
                          </div>
                      </div>
                      <div class="clearfix"></div>
@@ -52,7 +47,7 @@
                  <div class="panel-body">
 
                      <?if($no_company){
-                         echo '<div class="row"><h4>'.lang("Debes ingresar a tu URL propia (TUGRUPO.prode2018.com)")."</h4></div>";
+                         echo '<div class="row"><h4 align="center">'.lang("wrong-url")."</h4></div>";
                          
                      }
                      else

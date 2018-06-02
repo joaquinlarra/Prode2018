@@ -5,7 +5,7 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Free coming soon template with jQuery countdown">
+  <meta name="description" content="Jugá al prode con tus amigos o empresa">
 
   <title>Jugá al Prode este mundial 2018</title>
 
@@ -18,12 +18,6 @@
   <!-- siimple style -->
   <link href="<?=$link_url?>assets_fe/landing/assets/css/style.css" rel="stylesheet">
 
-  <!-- =======================================================
-    Theme Name: WeBuild
-    Theme URL: https://bootstrapmade.com/free-bootstrap-coming-soon-template-countdwon/
-    Author: BootstrapMade
-    Author URL: https://bootstrapmade.com
-  ======================================================= -->
 </head>
 
 <body>
@@ -46,11 +40,11 @@
                       <h4><b>Fácil e intuitivo.</b>
                           <div align="center" style="margin: 20px 0px"><b>1.</b> Creás Grupo <b>2.</b> Elegís Tamaño <b>3.</b> Ya estás jugando!</div>
 
-                              <span class="glyphicon glyphicon-ok" style="color:forestgreen"></span> Dominio propio: <b>migrupo</b>.prode2018.com </br>
-                              <span class="glyphicon glyphicon-ok" style="color:forestgreen"></span> Multilenguaje: Español, Inglés, Portugués </br>
-                              <span class="glyphicon glyphicon-ok" style="color:forestgreen"></span> Mobile Friendly</br>
-                              <span class="glyphicon glyphicon-ok" style="color:forestgreen"></span> Customizable: subile tus logos, ponele tus colores.</br>
-                              <span class="glyphicon glyphicon-ok" style="color:forestgreen"></span> Soporte x mail</br>
+                          <span class="glyphicon glyphicon-ok" style="color:forestgreen"></span> <b>Dominio propio:</b> http://<em><span style="color:orange">tu-nombre</span></em>.prode2018.com </br>
+                              <span class="glyphicon glyphicon-ok" style="color:forestgreen"></span> <b>Multilenguaje:</b> Español, Inglés, Portugués </br>
+                              <span class="glyphicon glyphicon-ok" style="color:forestgreen"></span> <b>Mobile Friendly</b></br>
+                                  <span class="glyphicon glyphicon-ok" style="color:forestgreen"></span> <b>Customizable:</b> subile tus logos, ponele tus colores.</br>
+                                      <span class="glyphicon glyphicon-ok" style="color:forestgreen"></span> <b>Soporte x mail</b></br>
 
                       </h4>
                   </div>
