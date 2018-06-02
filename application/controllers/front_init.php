@@ -78,7 +78,12 @@ class Front_init extends CI_Controller
                 'name' => array(	'label' => lang('Nombre'),
                     'type' => 'text',
                     'validation' => 'required',
-                    'visibility' => 'edit_company'
+                    'visibility' => 'edit_company|create_company'
+                ),
+                'namespace' => array(	'label' => lang('URL'),
+                    'type' => 'text',
+                    'validation' => 'required',
+                    'visibility' => 'edit_company|create_company'
                 ),
                 'main_image' => array(	'label' => 'Logo',
                                 'type' => 'image',
@@ -282,7 +287,7 @@ class Front_init extends CI_Controller
 									if($row->user_id)
                                     {
                                         $output['valid'] = false;
-                                        $output['error'] = lang("Ya existe un usuario con ese email. si olvidaste tu contraseña clickea <a href='".$this->data['link_url']."olvide-mi-clave'>aca</a>");
+                                        $output['error'] = lang("email-exist");
                                         echo json_encode($output);
                                         return;
                                     }
@@ -293,7 +298,24 @@ class Front_init extends CI_Controller
 									$this->load->model("admin/company_model","form_model");
 									$this->form_model->get($this->company_model->company_id);
 									break;
-				case 'edit_profile':
+                case 'create_company':
+                                    /* register company utils */
+                                    $this->load->model("admin/company_model","form_model");
+                                    $sql = "SELECT company_id FROM companies where namespace = '".addslashes($this->data['post']['namespace'])."'";
+                                    $row = $this->db->query($sql)->row();
+                                    if($row->company_id)
+                                    {
+                                        $output['valid'] = false;
+                                        $output['error'] = lang("company-exist");
+                                        echo json_encode($output);
+                                        return;
+                                    }
+                                    $this->form_model->set_field('namespace',$this->data['post']['namespace']);
+                                    $this->form_model->set_field('',$this->data['post']['namespace']);
+                                    break;
+
+
+                case 'edit_profile':
 									$this->load->model("user_model","form_model");
 									$this->form_model->get($this->bitauth->user_id);
 									break;				

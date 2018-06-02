@@ -375,9 +375,13 @@ $words['complete-login']['AR'] = "<h4>&iexcl;El pedido de cambio de contaseña f
 $words['complete-login']['PR'] = "<h4>&iexcl;O pedido de mudança de senha foi realizado com sucesso!</h4><br><small>Ahora puedes elegir tu nueva contraseña</small>";
 $words['complete-login']['US'] = "<h4>&iexcl;Password change request successful!</h4><br><small>Now you can set your new password</small>";
 
-$words['Cambiar contraseña']['AR'] = "Cambiar contraseña";
-$words['Cambiar contraseña']['PR'] = "Mudar senha";
-$words['Cambiar contraseña']['US'] = "Change password";
+$words['email-exist']['AR'] = "Ya existe un usuario con ese email. si olvidaste tu contraseña clickea <a href='".$this->data['link_url']."olvide-mi-clave'>aca</a>";
+$words['email-exist']['PR'] = "Já existe um usuário com esse email, se você esqueceu sua senha, clique <a href='".$this->data['link_url']."olvide-mi-clave'>aqui</a>";
+$words['email-exist']['US'] = "There is already a user with that email, if you forgot your password, click <a href='".$this->data['link_url']."olvide-mi-clave'>aca</a>";
+
+$words['company-exist']['AR'] = "Ya existe un grupo con esa URL. Por favor elije otra";
+$words['company-exist']['PR'] = "Um grupo com esse URL já existe. Por favor, escolha outro";
+$words['company-exist']['US'] = "A group with that URL already exists. Please choose another";
 
 $words['Guardar cambios']['AR'] = "Guardar cambios";
 $words['Guardar cambios']['PR'] = "Salvar mudanças";
