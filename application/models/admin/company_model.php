@@ -12,7 +12,6 @@ class Company_model extends Simple_data_model
 								'namespace',
 								'username_field',
 								'branch_name',
-								'bio',
 								'multi_lang',
 								'register',
 								'how_to_text',
