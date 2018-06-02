@@ -31,8 +31,9 @@
           </h2>
           <h2 class="subtitle">Participá del mundial con tus amigos con la <b>app del prode.</b></h2>
           <br><br>
-          <a href="http://demo.prode2018.com/" target="_blank" class="btn btn-warning"><b>PROBA LA DEMO</b></a><br>
-          <div id="countdown"></div>
+          <a href="http://demo.prode2018.com/" target="_blank" class="btn btn-warning" style="font-size:30px;margin-right: 10px"><b>PROBÁ LA DEMO</b></a>
+             <span style="color: #ffffff; font-weight: bold">CODIGO DE REGISTRO : 042</span>
+            <div id="countdown"></div>
         </div>
           <div class="col-md-8 col-sm-12 col-md-offset-2">
               <div class="panel panel-primary">
@@ -41,11 +42,9 @@
                           <div align="center" style="margin: 20px 0px"><b>1.</b> Creás Grupo <b>2.</b> Elegís Tamaño <b>3.</b> Ya estás jugando!</div>
 
                           <span class="glyphicon glyphicon-ok" style="color:forestgreen"></span> <b>Dominio propio:</b> http://<em><span style="color:orange">tu-nombre</span></em>.prode2018.com </br>
-                              <span class="glyphicon glyphicon-ok" style="color:forestgreen"></span> <b>Multilenguaje:</b> Español, Inglés, Portugués </br>
-                              <span class="glyphicon glyphicon-ok" style="color:forestgreen"></span> <b>Mobile Friendly</b></br>
-                                  <span class="glyphicon glyphicon-ok" style="color:forestgreen"></span> <b>Customizable:</b> subile tus logos, ponele tus colores.</br>
-                                      <span class="glyphicon glyphicon-ok" style="color:forestgreen"></span> <b>Soporte x mail</b></br>
-
+                          <span class="glyphicon glyphicon-ok" style="color:forestgreen"></span> <b>Multilenguaje:</b> Español, Inglés, Portugués </br>
+                          <span class="glyphicon glyphicon-ok" style="color:forestgreen"></span> <b>Mobile Friendly</b></br>
+                          <span class="glyphicon glyphicon-ok" style="color:forestgreen"></span> <b>Customizable:</b> subile tus logos, ponele tus colores.</br>
                       </h4>
                   </div>
               </div>

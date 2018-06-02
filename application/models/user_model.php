@@ -89,7 +89,15 @@ class User_model extends Simple_data_model
 			$this->db->query($sql);	
 		}
 
-		$sql = "UPDATE scores SET username = '".$this->fullname."', company_id = '".$this->company_id."', company = '".$this->company."' WHERE user_id = '".$this->get_id()."'";
+		if($this->hide_stats)
+        {
+            $sql = "DELETE FROM scores WHERE user_id ='".$this->get_id()."'";
+        }
+        else
+        {
+            $sql = "UPDATE scores SET username = '" . $this->fullname . "', company_id = '" . $this->company_id . "', company = '" . $this->company . "' WHERE user_id = '" . $this->get_id() . "'";
+
+        }
 
 		$this->db->query($sql);
         $sql = "UPDATE wall SET username = '".$this->displayname."' WHERE user_id = '".$this->get_id()."'";
