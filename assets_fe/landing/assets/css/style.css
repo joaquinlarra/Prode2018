@@ -155,7 +155,7 @@ form.signup input.form-control:focus {
 #wrapper {
   text-align: center;
   padding: 5% 0 0 0;
-  background: url(../img/background-russia-2018.png);
+  background: url(../img/background-russia-2018.png) repeat-y;
   background-size: cover;
 }
 
@@ -261,4 +261,40 @@ p.copyright {
 .credits a {
   color: #fff;
   margin-bottom: 10px;
+}
+
+#outer-box {
+  display: block;
+  position: relative;
+  padding-top: 15px;
+}
+/* line 9, ../sass/style.scss */
+#outer-box img {
+  width: 300px;
+  height: auto;
+}
+/* line 14, ../sass/style.scss */
+#outer-box #inner-box {
+  background: darkred;
+  height: 100%;
+  width: 100%;
+  opacity: 0;
+  top: 0;
+  left: 0;
+  position: absolute;
+  padding: 0;
+  transition: opacity .5s;
+}
+/* line 25, ../sass/style.scss */
+#outer-box #inner-box p {
+  color: #fff;
+  line-height: 250px;
+  text-align: center;
+  font-size: 40px;
+  font-weight: bold;
+}
+/* line 34, ../sass/style.scss */
+#outer-box:hover #inner-box {
+  opacity: .9;
+  transition: opacity .5s;
 }

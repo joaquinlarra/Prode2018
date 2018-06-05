@@ -37,28 +37,28 @@ class Front_init extends CI_Controller
                 'email' => array('label' => lang('Email'),
                                 'type' => 'text',
                                 'validation' => 'valid_email|required',
-                                'visibility' => 'profile|edit_profile|first_login|register'
+                                'visibility' => 'profile|edit_profile|register|create_company'
                 ),
 
                 'displayname' => array(	'label' => lang('Apodo'),
                                     'type' => 'text',
                                     'validation' => 'required',
-                                    'visibility' => 'profile|edit_profile|first_login|register'
+                                    'visibility' => 'profile|edit_profile|register'
                                     ),
                 'fullname' => array(	'label' => lang('Nombre Completo'),
                                     'type' => 'text',
                                     'validation' => 'required',
-                                    'visibility' => 'profile|edit_profile|first_login|register'
+                                    'visibility' => 'profile|edit_profile|register'
                                     ),
                 'password' => array('label' => lang('Contraseña'),
                                 'type' => 'password',
                                 'validation' => 'required|matches[passconf]',
-                                'visibility' => 'profile|first_login|register|forgot_pass'
+                                'visibility' => 'profile|register|forgot_pass'
                                 ),
                 'passconf' => array('label' => lang('Repetir contraseña'),
                                 'type' => 'password',
                                 'validation' => 'required',
-                                'visibility' => 'profile|first_login|register|forgot_pass'
+                                'visibility' => 'profile|register|forgot_pass'
                                 ),
 
                 'user_language'=> array(	'label' => lang('Idioma'),
@@ -82,7 +82,7 @@ class Front_init extends CI_Controller
                 ),
                 'namespace' => array(	'label' => lang('URL'),
                     'type' => 'text',
-                    'validation' => 'required',
+                    'validation' => 'required|alpha_dash',
                     'visibility' => 'edit_company|create_company'
                 ),
                 'main_image' => array(	'label' => 'Logo',
@@ -143,7 +143,7 @@ class Front_init extends CI_Controller
 
 	protected function load_company()
 	{
-		$this->company_id = $this->session->userdata('company_id');
+		$this->company_id = $this->session->userdata('companys_id');
 		
 		$this->company_model->get($this->company_id);
 		$this->company = $this->company_model->name;		
@@ -306,12 +306,35 @@ class Front_init extends CI_Controller
                                     if($row->company_id)
                                     {
                                         $output['valid'] = false;
-                                        $output['error'] = lang("company-exist");
+                                        $output['errors']['namespace'] = lang("company-exist");
                                         echo json_encode($output);
                                         return;
                                     }
                                     $this->form_model->set_field('namespace',$this->data['post']['namespace']);
-                                    $this->form_model->set_field('',$this->data['post']['namespace']);
+                                    $this->form_model->set_field('name',$this->data['post']['name']);
+                                    $this->form_model->set_field('active',0);
+                                    $this->form_model->set_field('confirm_email',0);
+                                    $this->form_model->set_field('email_owners',$this->data['post']['email']);
+
+                                    $recaptcha_url = 'https://www.google.com/recaptcha/api/siteverify';
+                                    $recaptcha_data = array('secret' => '6LdLQ10UAAAAAHABetZeBog0_2YDuWGPd1L_5upF', 'response' => $_POST['g-recaptcha-response'], 'remoteip' => $_SERVER['REMOTE_ADDR']);
+
+                                $options = array(
+                                    'http' => array(
+                                        'header'  => "Content-type: application/x-www-form-urlencoded\r\n",
+                                        'method'  => 'POST',
+                                        'content' => http_build_query($recaptcha_data)
+                                    )
+                                );
+                                    $context  = stream_context_create($options);
+                                    $result = file_get_contents($recaptcha_url, false, $context);
+                                    if ($result === FALSE) {
+
+                                        $output['valid'] = false;
+                                        $output['errors']['recaptcha'] = lang("Captcha Inválido");
+                                    }
+
+
                                     break;
 
 
@@ -390,6 +413,10 @@ class Front_init extends CI_Controller
                                             {
                                                 $output['valid'] = 1;
                                             }
+                                            break;
+                        case 'create_company':
+                            $output['message'] = lang("<div align='center'><h3><span class='glyphicon glyphicon-ok-circle' style='color: limegreen; font-size: 140px'></span><br> TU GRUPO YA ESTA CREADO.</h3><br><h4><span class='glyphicon glyphicon-arrow-down'></span> Elegí el tamaño y empezá a jugar! <span class='glyphicon glyphicon-arrow-down'></span></h4></div>");
+                            break;
 					}
 					
 					$this->post_validate_save();

@@ -421,7 +421,7 @@ class Home extends Front_init
 	public function promo_landing()
 	{
 
-		$this->load->view("front/promo-landing.php");
+		$this->load->view("front/promo-landing.php", $this->data);
 	}
 
 	public function checkout($prode)

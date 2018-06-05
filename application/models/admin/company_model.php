@@ -36,21 +36,6 @@ class Company_model extends Simple_data_model
 								);	
 	public function post_save()
 	{
-		if(!$this->default_user_id)
-		{
-			$this->load->model("user_model","default_user_model");
-			$this->default_user_model->set_field("username",$this->namespace);
-			$this->default_user_model->set_field("fullname",$this->name);
-			$this->default_user_model->set_field("password",$this->namespace."1010");
-			$this->default_user_model->set_field("company_id",$this->get_id());
-			$this->default_user_model->set_field("company",$this->name);
-			$this->default_user_model->set_field("active",1);
-			$this->default_user_model->set_field("enabled",1);
-			$this->default_user_model->set_field("group_id",2);
-			$this->default_user_model->create();
-			$this->set_field("default_user_id",$this->default_user_model->get_id());
-
-		}
         $this->set_field("register_code",$this->generate_register_code());
         $this->update();
     }
