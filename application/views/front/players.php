@@ -1,6 +1,6 @@
 ﻿<? include(dirname(__FILE__)."/common/header.php")?>
 <div id="section-header" class="container-fluid">
-    <h1 class="container">
+    <div class="container">
         <div class="row">
             <div class="col-md-12">
                 <h1>
@@ -12,7 +12,7 @@
                     }
                     else
                     {
-                        ?><span style="color:red"><?= $total_players?>/<?= $total_player_slots?></span> Total</h1></div><?
+                        ?><span style="color:red"><?= $total_players?>/<?= $total_player_slots?></span> Total</div></div><?
                     }
                 ?>
                 </h1>
