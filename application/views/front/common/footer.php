@@ -751,8 +751,6 @@
                                 $("#page-message").html("<div class='alert alert-danger'>"+data.message+"</div>");
                             }
                         });
-
-
                 }
 
             });

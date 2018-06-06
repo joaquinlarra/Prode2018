@@ -281,7 +281,7 @@ class Home extends Front_init
         $this->redirect_admin();
         $sql = "SELECT u.email, u.fullname, u.user_id, DATE_FORMAT(u.date_created,'%d/%m/%Y') AS date_joined, CONCAT(u.user_id,'||',MD5(CONCAT(u.user_id,'".$this->data['salt']."',u.email))) AS player_code, COUNT(p.prognostic_id) AS total_prognostics
                 FROM bitauth_users AS u LEFT JOIN prognostics AS p ON (p.user_id = u.user_id)
-              WHERE u.company_id = '".$this->company_id."' AND hide_stats = 0 AND deleted = 0 GROUP BY u.user_id ORDER BY u.fullname ASC";
+              WHERE u.company_id = '".$this->company_id."' AND hide_stats = 0 AND deleted = 0 AND u.group_id = '3' GROUP BY u.user_id ORDER BY u.fullname ASC";
 
         $result = $this->db->query($sql);
         $this->data['players'] = $result->result_array();
