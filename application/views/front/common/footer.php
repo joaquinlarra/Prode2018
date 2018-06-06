@@ -345,6 +345,8 @@
         </script>
         <?
     }
+
+
 	if($section == 'recover_password')
 	{
 	?>
@@ -727,6 +729,39 @@
 			?>
             </script>
 		<?
-	}?>    
+	}
+    if($section == 'players_list')
+    {
+        ?>
+        <script>
+            $('.delete-player').click(function () {
+                if (confirm("<?= lang("sure-delete-player")?>"))
+                {
+                    $.ajax({url: "<?= $link_url?>home/delete_player/"+encodeURI($(this).attr("player-code"))})
+                        .done(function( data ) {
+                            data = JSON.parse(data);
+
+                            if(data.valid)
+                            {
+                                $("#page-message").html("<div class='alert alert-success'><?= lang('player-deleted')?>: "+$(this).attr('email')+"</div>");
+                                $("#delete-"+data.id).parent().parent().slideUp();
+                            }
+                            else
+                            {
+                                $("#page-message").html("<div class='alert alert-danger'>"+data.message+"</div>");
+                            }
+                        });
+
+
+                }
+
+            });
+
+
+
+        </script>
+        <?
+    }
+    ?>
   </body>
 </html>

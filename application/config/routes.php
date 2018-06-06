@@ -52,6 +52,7 @@ $route['usuario/editar-perfil'] = "usuario/editar_perfil";
 $route['muro'] = "home/wall";
 $route['muro/(:num)'] = "home/wall/$1";
 $route['mi-cuenta'] = "home/profile/";
+$route['jugadores'] = "home/players/";
 $route['perfil/(:num)/(:any)'] = "home/profile/$1/$2";
 $route['editar-cuenta'] = "home/edit_profile/";
 //$route['empresa/(:any)'] = "home/company/$1";

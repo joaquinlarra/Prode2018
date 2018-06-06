@@ -289,7 +289,7 @@ function get_file_icon($ext)
 
 function strtolower_es($string)
 {
-	$low=array("Á" => "á", "É" => "é", "Í" => "í", "Ó" => "ó", "Ú" => "ú", "Ü" => "ü", "Ñ" => "ñ");
+	$low=array("Á" => "á", "É" => "é", "Í" => "í", "Ó" => "ó", "Ú" => "ú", "Ü" => "ü", "Ñ" => "ñ", "Õ" => "õ");
 	return strtolower(strtr($string,$low));
 }
 

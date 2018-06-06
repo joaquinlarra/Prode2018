@@ -32,7 +32,8 @@ class Company_model extends Simple_data_model
 								'creator_id',
 								'creator_name',
                                 'register_code',
-                                'fonts_url'
+                                'fonts_url',
+                                'total_player_slots'
 								);	
 	public function post_save()
 	{
