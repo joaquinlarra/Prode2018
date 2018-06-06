@@ -1,8 +1,10 @@
 ﻿<? include(dirname(__FILE__)."/common/header.php")?>
 <div id="section-header" class="container-fluid">
-    <div class="container">
+    <h1 class="container">
         <div class="row">
-            <div class="col-md-12"><><?= lang("Jugadores")?> :
+            <div class="col-md-12">
+                <h1>
+                <?= lang("Jugadores")?> :
                     <?
                     if($total_players <= $total_player_slots)
                     {
@@ -12,7 +14,9 @@
                     {
                         ?><span style="color:red"><?= $total_players?>/<?= $total_player_slots?></span> Total</h1></div><?
                     }
-                    ?>
+                ?>
+                </h1>
+            </div>
         </div>
     </div>
 </div>
