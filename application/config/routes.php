@@ -68,8 +68,8 @@ $route['cambiar-idioma/(:any)'] = "home/language/$1";
 $route['check-company-availability'] = "home/check_company_availability";
 $route['check-code'] = "home/validate_code";
 $route['checkout/(:any)/(:num)'] = "home/checkout/$1/$2";
-$route['payment-failure/(:num)'] = "home/payment_failure/$2";
-$route['payment-success/(:num)'] = "home/payment_success/$1";
+$route['payment-failure/(:any)'] = "home/payment_failure/$2";
+$route['payment-success/(:any)'] = "home/payment_success/$1";
 
 
 $route['posiciones'] = "home/scores/0";
