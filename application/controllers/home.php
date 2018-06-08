@@ -462,7 +462,7 @@ class Home extends Front_init
 				break;
 		}
 
-		$company_id = url_encode(base64_encode($company_id));
+		$company_id = urlencode(base64_encode($company_id));
 
 		$preference_data = array (
 			"items" => array (
@@ -486,7 +486,7 @@ class Home extends Front_init
 	}
 
 	public function payment_success($company_id) {
-		$company_id = url_decode(base64_decode($company_id));
+		$company_id = urldecode(base64_decode($company_id));
 		$this->company_model->get($company_id);
 		$this->set_company();
 		$this->data['company_url'] = $this->company_model->get_url().'/?register_code='.$this->company_model->register_code;
