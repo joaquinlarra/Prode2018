@@ -56,7 +56,7 @@
               <div class="panel panel-primary">
                   <div class="panel-body" style="text-align: left; padding: 0px 30px 20px 30px">
                       <h2 align="center" style="margin-bottom: 20px"><b>CREÁ TU GRUPO</b></h2>
-                          <form class="ajax-form" id="company-form" method="post" action="<?= $link_url.'home/validate_contact_form/create_company'?>" enctype="multipart/form-data">
+                            <form class="ajax-form" id="company-form" method="post" action="<?= $link_url.'home/validate_contact_form/create_company'?>" enctype="multipart/form-data">
                               <div class="row" id="profile-info">
                                   <div id="contact_success" class="alert alert-success" style="display: none"></div>
                                   <div class="clearfix"></div>
@@ -92,7 +92,7 @@
                                   <div class="clearfix"></div>
                                   <input class="btn btn-primary btn-block" type="submit" value="<?= lang("Crear Grupo")?>">
                               </div>
-                          </form>
+                            </form>
                       </h4>
                   </div>
               </div>
@@ -112,7 +112,7 @@
                       </table>
                   </div>
                   <div class="panel-footer">
-                    <a class="btn btn-orange" href="<?=site_url().'checkout/15PERSONAS'?>">COMPRAR</a>
+                    <a class="btn btn-orange checkout" href="<?=site_url().'checkout/15PERSONAS'?>">COMPRAR</a>
                   </div>
               </div>
           </div>
@@ -126,7 +126,7 @@
               </div>
             </div>
             <div class="panel-footer">
-              <a class="btn btn-orange" href="<?=site_url().'checkout/25PERSONAS'?>">COMPRAR</a>
+              <a class="btn btn-orange checkout" href="<?=site_url().'checkout/25PERSONAS'?>">COMPRAR</a>
             </div>
           </div>
         </div>
@@ -140,7 +140,7 @@
               </div>
             </div>
             <div class="panel-footer">
-                <a class="btn btn-orange" href="<?=site_url().'checkout/50PERSONAS'?>">COMPRAR</a>
+                <a class="btn btn-orange checkout" href="<?=site_url().'checkout/50PERSONAS'?>">COMPRAR</a>
               </div>
             </div>
         </div>
@@ -154,7 +154,7 @@
               </div>
             </div>
             <div class="panel-footer">
-              <a class="btn btn-orange" href="<?=site_url().'checkout/100PERSONAS'?>">COMPRAR</a>
+              <a class="btn btn-orange checkout" href="<?=site_url().'checkout/100PERSONAS'?>">COMPRAR</a>
             </div>
           </div>
         </div>
@@ -168,7 +168,7 @@
                       </div>
                   </div>
                   <div class="panel-footer">
-                    <a class="btn btn-orange" href="<?=site_url().'checkout/400PERSONAS'?>">COMPRAR</a>
+                    <a class="btn btn-orange checkout" href="<?=site_url().'checkout/400PERSONAS'?>">COMPRAR</a>
                   </div>
               </div>
           </div>
@@ -182,7 +182,7 @@
                       </div>
                   </div>
                   <div class="panel-footer">
-                    <a class="btn btn-orange" href="<?=site_url().'checkout/1000PERSONAS'?>">COMPRAR</a>
+                    <a class="btn btn-orange checkout" href="<?=site_url().'checkout/1000PERSONAS'?>">COMPRAR</a>
                   </div>
               </div>
           </div>
@@ -192,6 +192,7 @@
         </div>
     </div>
   </div>
+  <input type="hidden" id="company_id" value="" />
   <div class="container-fluid" id="bg-footer" style="padding:30px;0px; line-height: 30px; background-color: #000000; color: #ffffff">
           <div class="col-md-12">
               <div class="pull-left">
@@ -205,6 +206,14 @@
   <script src="<?= $link_url?>assets_common/js/jquery.form.js"></script>
     <script src="https://www.google.com/recaptcha/api.js?onload=onloadCallback&render=explicit" async defer></script>
     <script type="text/javascript">
+    const COMPANY_ID = null
+    $(document).ready(function(){
+        $('.checkout').click(function(event){
+            event.preventDefault();
+            url = $(this).attr('href') + '/' + $('#company_id').val()
+            window.location.href = url
+        })
+    })
     $('#countdown').countdown('2018/06/14 12:00:00', function (event) {
       $(this).html(event.strftime('Faltan %D días %H:%M:%S hrs'));
     });
@@ -225,6 +234,7 @@
             $('#company-form').html(data.message);
             $('#company-form').fadeIn();
             $('#inner-box').hide();
+            $('#company_id').val(data.company_id)
         }
         else
         {

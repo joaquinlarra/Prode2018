@@ -52,7 +52,6 @@ $route['usuario/editar-perfil'] = "usuario/editar_perfil";
 $route['muro'] = "home/wall";
 $route['muro/(:num)'] = "home/wall/$1";
 $route['mi-cuenta'] = "home/profile/";
-$route['jugadores'] = "home/players/";
 $route['perfil/(:num)/(:any)'] = "home/profile/$1/$2";
 $route['editar-cuenta'] = "home/edit_profile/";
 //$route['empresa/(:any)'] = "home/company/$1";
@@ -68,7 +67,9 @@ $route['confirmar-cuenta/(:any)'] = "home/confirm_account/$1";
 $route['cambiar-idioma/(:any)'] = "home/language/$1";
 $route['check-company-availability'] = "home/check_company_availability";
 $route['check-code'] = "home/validate_code";
-$route['checkout/(:any)'] = "home/checkout/$1";
+$route['checkout/(:any)/(:num)'] = "home/checkout/$1/$2";
+$route['payment-failure/(:num)'] = "home/payment_failure/$2";
+$route['payment-success/(:num)'] = "home/payment_success/$1";
 
 
 $route['posiciones'] = "home/scores/0";
@@ -77,8 +78,6 @@ $route['posiciones/(:any)/(:num)'] = "home/scores/$1/0/0/$2";
 $route['posiciones/(:any)/(:any)/(:any)/(:num)'] = "home/scores/$1/$2/$3/$4";
 
 $route['posiciones/(:num)/(:any)/'] = "home/scores/$1/$2";
-
-
 
 $route['admin/olvide-la-clave'] = "admin/user/forgot_password/";
 $route['admin/generame-la-clave/(:any)'] = "admin/user/recover_password/$1";

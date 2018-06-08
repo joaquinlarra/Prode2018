@@ -51,18 +51,9 @@ class Front_user extends Front_init
 				// Login
 				if($this->bitauth->login($this->input->post('username'), $this->input->post('password'), $this->input->post('remember_me'),array(),NULL, $this->company_model->get_id()))
 				{
-                    if($this->bitauth->deleted)
-                    {
-                        $this->bitauth->logout();
-                        $out['error'] = lang("account-deleted");
-                    }
-                    else
-                    {
-                        $this->session->set_userdata('user_id', $this->bitauth->user_id);
-                        $this->session->set_userdata('username', $this->bitauth->username);
-                        $out['valid'] = true;
-                    }
-
+					$this->session->set_userdata('user_id', $this->bitauth->user_id);	
+					$this->session->set_userdata('username', $this->bitauth->username);
+					$out['valid'] = true;
 				}
 				else
 				{

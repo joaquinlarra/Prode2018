@@ -48,7 +48,6 @@ class User_model extends Simple_data_model
 								'enabled',
                                 'last_login',
                                 'hide_stats',
-                                'deleted',
                                 'date_created');
 
     protected $db_fields_type = array(
@@ -98,11 +97,6 @@ class User_model extends Simple_data_model
         {
             $sql = "UPDATE scores SET username = '" . $this->fullname . "', company_id = '" . $this->company_id . "', company = '" . $this->company . "' WHERE user_id = '" . $this->get_id() . "'";
 
-        }
-
-        if($this->deleted)
-        {
-            $sql = "DELETE FROM scores WHERE user_id ='".$this->get_id()."'";
         }
 
 		$this->db->query($sql);

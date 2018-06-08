@@ -6,7 +6,6 @@ class Front_init extends CI_Controller
 		parent::__construct();
 		$this->config->load('words');
 		$this->data['link_url'] = base_url();
-		$this->data['salt'] = "-1&9sxx+hd a}p{li#-sssalt";
 		date_default_timezone_set('America/Argentina/Buenos_Aires');
 		$this->data['today'] = $this->today = date("Y-m-d H:i:s");
 		$this->load->model("admin/company_model","company_model");
@@ -141,14 +140,6 @@ class Front_init extends CI_Controller
 		}
 
 	}
-
-	protected function redirect_admin()
-    {
-        if(!$this->company_model->is_company_admin($this->bitauth->email))
-        {
-            redirect($this->data['link_url']."pronosticos");
-        }
-    }
 
 	protected function load_company()
 	{
@@ -423,7 +414,8 @@ class Front_init extends CI_Controller
                                                 $output['valid'] = 1;
                                             }
                                             break;
-                        case 'create_company':
+												case 'create_company':
+														$output['company_id'] = $this->form_model->get_id();
                             $output['message'] = lang("<div align='center'><h3><span class='glyphicon glyphicon-ok-circle' style='color: limegreen; font-size: 140px'></span><br> TU GRUPO YA ESTA CREADO.</h3><br><h4><span class='glyphicon glyphicon-arrow-down'></span> Elegí el tamaño y empezá a jugar! <span class='glyphicon glyphicon-arrow-down'></span></h4></div>");
                             break;
 					}

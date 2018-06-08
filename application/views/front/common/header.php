@@ -115,7 +115,6 @@
                                     {
                                         ?>
                                     <li <? if($section=='edit_company'){?>class="active"<? } ?>><a href="<?=$link_url?>editar-grupo"><?= lang('EDITAR GRUPO')?></a>
-                                    <li <? if($section=='players'){?>class="active"<? } ?>><a href="<?=$link_url?>jugadores"><?= lang('LISTA DE JUGADORES')?></a>
                                         <?
                                     }
                                     ?>

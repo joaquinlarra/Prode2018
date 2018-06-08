@@ -44,14 +44,20 @@ class Home extends Front_init
 
 	public function edit_company()
 	{
-        $this->redirect_admin();
+        if(!$this->company_model->is_company_admin($this->bitauth->email))
+        {
+            redirect($this->data['link_url']."pronosticos");
+        }
 	    $this->data['section'] = "edit_company";
 		$this->load->view("front/edit_company.php", $this->data);
 	}
 
     public function view_company()
     {
-        $this->redirect_admin();
+        if(!$this->company_model->is_company_admin($this->bitauth->email))
+        {
+            redirect($this->data['link_url']."pronosticos");
+        }
         $this->data['section'] = "view_company";
         $this->load->view("front/view_company.php", $this->data);
     }
@@ -275,53 +281,6 @@ class Home extends Front_init
 		$this->load->view("front/profile_edit.php",$this->data);
 	}
 
-    public function players()
-    {
-        $this->data['section'] = "players_list";
-        $this->redirect_admin();
-        $sql = "SELECT u.email, u.fullname, u.user_id, DATE_FORMAT(u.date_created,'%d/%m/%Y') AS date_joined, CONCAT(u.user_id,'||',MD5(CONCAT(u.user_id,'".$this->data['salt']."',u.email))) AS player_code, COUNT(p.prognostic_id) AS total_prognostics
-                FROM bitauth_users AS u LEFT JOIN prognostics AS p ON (p.user_id = u.user_id)
-              WHERE u.company_id = '".$this->company_id."' AND hide_stats = 0 AND deleted = 0 AND u.group_id = '3' GROUP BY u.user_id ORDER BY u.fullname ASC";
-
-        $result = $this->db->query($sql);
-        $this->data['players'] = $result->result_array();
-        $this->data['total_players'] = $result->num_rows();
-        $this->data['total_player_slots'] = $this->company_model->total_player_slots;
-
-        $this->load->view("front/players.php",$this->data);
-
-    }
-
-
-    public function delete_player($player_code)
-    {
-        $output['valid'] = false;
-        $player_code = explode("||",urldecode($player_code));
-        $player_id = $player_code[0];
-        $input_player_salt = $player_code[1];
-
-        $sql = "SELECT user_id, email FROM bitauth_users WHERE user_id = '".(int)$player_id."'";
-        $player = $this->db->query($sql)->row();
-
-        $real_player_salt = md5($player->user_id.$this->data['salt'].$player->email);
-
-        if($real_player_salt == $input_player_salt)
-        {
-            $sql = "UPDATE bitauth_users SET deleted = 1 WHERE user_id = '".(int)$player_id."'";
-            $this->db->query($sql);
-            $sql = "DELETE FROM scores WHERE user_id = '".(int)$player_id."'";
-            $this->db->query($sql);
-            $output['id'] = (int)$player_id;
-            $output['valid'] = true;
-        }
-        else
-        {
-            $output['error'] = lang('Código de usuario incorrecto');
-
-        }
-        echo json_encode($output);
-        return;
-    }
 	public function scores($type = "", $id = "", $name = "",$offset = 0)
 	{
 		if($this->session->userdata('user-first-login'))
@@ -465,7 +424,7 @@ class Home extends Front_init
 		$this->load->view("front/promo-landing.php", $this->data);
 	}
 
-	public function checkout($prode)
+	public function checkout($prode, $company_id)
 	{
 		$CI = &get_instance();
 		$CI->config->load("mercadopago", TRUE);
@@ -503,6 +462,8 @@ class Home extends Front_init
 				break;
 		}
 
+		$company_id = url_encode(base64_encode($company_id));
+
 		$preference_data = array (
 			"items" => array (
 					array (
@@ -511,12 +472,32 @@ class Home extends Front_init
 							"currency_id" => "ARS",
 							"unit_price" => $amount
 					)
-			)
+				),
+				"back_urls" => array(
+					"success" => base_url()."payment-success/".$company_id,
+					"failure" => base_url()."payment-failure/".$company_id,
+					"pending" => base_url()."payment-pending/".$company_id
+				),
 		);
-		
+
 		$data['preference'] = $this->mercadopago->create_preference($preference_data);
-		
+
 		$this->load->view("front/checkout/mercadopago.php", $data );
+	}
+
+	public function payment_success($company_id) {
+		$company_id = url_decode(base64_decode($company_id));
+		$this->company_model->get($company_id);
+		$this->set_company();
+		$this->data['company_url'] = $this->company_model->get_url().'/?register_code='.$this->company_model->register_code;
+		$this->data['register_code'] = $this->company_model->register_code;
+		$this->session->set_userdata('validated_register_code', $this->company_model->register_code);
+
+		$this->load->view("front/checkout/payment_success", $this->data);
+	}
+
+	public function payment_failure($company_id) {
+		$this->load->view("front/checkout/payment_failure", $this->data);
 	}
 
 }

@@ -18,6 +18,9 @@
                 <h1 class="hidden-sm hidden-xs">Prode <?= $this->company_model->name?></h1>
                 <h3 class="visible-sm visible-xs">Prode <?= $this->company_model->name?></h3>
             <? endif; ?>
+            <? if($this->session->userdata('validated_register_code')): ?>
+                <div class="warning alert-warning" style="">TU CÓDIGO DE REGISTRO ES: <?=$this->session->userdata('validated_register_code')?></div>
+            <? endif; ?>
             <br>
         </div>
     </div>
