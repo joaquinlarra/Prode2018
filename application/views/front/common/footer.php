@@ -345,6 +345,8 @@
         </script>
         <?
     }
+
+
 	if($section == 'recover_password')
 	{
 	?>
@@ -619,7 +621,7 @@
 					$("#middle-col-"+match_id).html('<small><?= lang('Guardando...')?></div><div class="spinner"><div class="double-bounce1"></div><div class="double-bounce2"></div></div>');
 					
 					setTimeout(function() {
-						$("#middle-col-"+match_id).html('<span>'+message+'</span><br><span class="btn btn-success btn-edit-match" match_id="'+match_id+'" onclick="enable_match('+match_id+')"><?= lang('editar')?></span>');				
+						$("#middle-col-"+match_id).html('<span>'+message+'</span><br><span class="btn btn-info btn-edit-match" match_id="'+match_id+'" onclick="enable_match('+match_id+')"><?= lang('editar')?></span>');
 					}, 1100);
 					
 				}
@@ -727,6 +729,37 @@
 			?>
             </script>
 		<?
-	}?>    
+	}
+    if($section == 'players_list')
+    {
+        ?>
+        <script>
+            $('.delete-player').click(function () {
+                if (confirm("<?= lang("sure-delete-player")?>"))
+                {
+                    $.ajax({url: "<?= $link_url?>home/delete_player/"+encodeURI($(this).attr("player-code"))})
+                        .done(function( data ) {
+                            data = JSON.parse(data);
+
+                            if(data.valid)
+                            {
+                                $("#page-message").html("<div class='alert alert-success'><?= lang('player-deleted')?>: "+$(this).attr('email')+"</div>");
+                                $("#delete-"+data.id).parent().parent().slideUp();
+                            }
+                            else
+                            {
+                                $("#page-message").html("<div class='alert alert-danger'>"+data.message+"</div>");
+                            }
+                        });
+                }
+
+            });
+
+
+
+        </script>
+        <?
+    }
+    ?>
   </body>
 </html>

@@ -6,6 +6,7 @@ class Front_init extends CI_Controller
 		parent::__construct();
 		$this->config->load('words');
 		$this->data['link_url'] = base_url();
+		$this->data['salt'] = "-1&9sxx+hd a}p{li#-sssalt";
 		date_default_timezone_set('America/Argentina/Buenos_Aires');
 		$this->data['today'] = $this->today = date("Y-m-d H:i:s");
 		$this->load->model("admin/company_model","company_model");
@@ -140,6 +141,14 @@ class Front_init extends CI_Controller
 		}
 
 	}
+
+	protected function redirect_admin()
+    {
+        if(!$this->company_model->is_company_admin($this->bitauth->email))
+        {
+            redirect($this->data['link_url']."pronosticos");
+        }
+    }
 
 	protected function load_company()
 	{

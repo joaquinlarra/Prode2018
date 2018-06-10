@@ -74,22 +74,38 @@ class Match_model extends Simple_data_model
 			return;
 		}
 		
+		$this->update_teams();
 		$sql = "SELECT * FROM scores_update WHERE match_id = '".$this->get_id()."'";
 		$match_loaded = $this->db->query($sql)->num_rows();
 		
 		if($match_loaded)
 		{
-			return;	
+            $this->load->helper('url');
+            redirect('/admin/scores/update_scores');
 		}
 		else
 		{
 			$sql = "INSERT INTO scores_update(match_id, state, name) VALUES ('".$this->get_id()."','start', '".$this->team1_name." vs ".$this->team2_name."')";
-			vd($sql);
 			$this->db->query($sql);
+            $this->load->helper('url');
+            redirect('/admin/scores/update_scores');
 		}
 
 	}
-	
+
+	public function update_teams()
+    {
+        $post = $this->input->post() ? $this->input->post() : array();
+        $this->load->model('admin/team_model');
+        $this->team_model->get($post['team1_id'] ? $post['team1_id'] : $this->team1_id);
+        $this->team_model->update_stats();
+
+        $this->load->model('admin/team_model');
+        $this->team_model->get($post['team2_id'] ? $post['team2_id'] : $this->team2_id);
+        $this->team_model->update_stats();
+    }
+
+
 	public function no_complete()
 	{
 		$today = date("Y-m-d H:i:s");

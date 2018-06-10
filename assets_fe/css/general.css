@@ -1095,3 +1095,10 @@ user-found td:hover {
 .btn-group{
   display: flex;
 }
+
+.delete-player
+{
+  cursor: hand !important;
+  background: none !important;
+  border: 0px !important;
+}

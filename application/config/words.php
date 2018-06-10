@@ -13,6 +13,10 @@ $words['Muro']['AR'] = "Muro";
 $words['Muro']['PR'] = "Postagens";
 $words['Muro']['US'] = "Wall";
 
+$words['account-deleted']['AR'] = "Esta cuenta está suspendida. Comuníquese con su admin";
+$words['account-deleted']['PR'] = "Esta conta está suspensa. Comunique-se com seu administrador";
+$words['account-deleted']['US'] = "This account is suspended. Please contact your admin";
+
 $words['Cómo jugar']['AR'] = "CÓMO JUGAR";
 $words['Cómo jugar']['PR'] = "CÓMO SE JOGA";
 $words['Cómo jugar']['US'] = "HOW TO PLAY";
@@ -20,6 +24,14 @@ $words['Cómo jugar']['US'] = "HOW TO PLAY";
 $words['Badges']['AR'] = "Medallas";
 $words['Badges']['PR'] = "Medalhas";
 $words['Badges']['US'] = "Badges";
+
+$words['Fecha de registro']['AR'] = "Fecha de registro";
+$words['Fecha de registro']['PR'] = "Data de registro";
+$words['Fecha de registro']['US'] = "Register date";
+
+$words['LISTA DE JUGADORES']['AR'] = "LISTA DE JUGADORES";
+$words['LISTA DE JUGADORES']['PR'] = "LISTA DE JOGADORES";
+$words['LISTA DE JUGADORES']['US'] = "PLAYERS LIST";
 
 $words['Mi cuenta']['AR'] = "Mi cuenta";
 $words['Mi cuenta']['PR'] = "Minha conta";
@@ -41,6 +53,18 @@ $words['Imagen Premios']['US'] = "Prices Image";
 $words['Premios']['AR'] = "Premios";
 $words['Premios']['PR'] = "Prêmios";
 $words['Premios']['US'] = "Prizes";
+
+$words['Acciones']['AR'] = "Acciones";
+$words['Acciones']['PR'] = "Ações";
+$words['Acciones']['US'] = "Actions";
+
+$words['sure-delete-player']['AR'] = "Seguro que quiere borrar el jugador?";
+$words['sure-delete-player']['PR'] = "Certamente você quer apagar o jogador?";
+$words['sure-delete-player']['US'] = "Sure you want to delete the player?";
+
+$words['player-deleted']['AR'] = "Jugador borrado";
+$words['player-deleted']['PR'] = "Jogador eliminado";
+$words['player-deleted']['US'] = "Player deleted";
 
 
 $words['Imagen Fondo']['AR'] = "Imagen Fondo";

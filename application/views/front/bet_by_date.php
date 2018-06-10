@@ -57,7 +57,7 @@
 		$no_complete = 0;
 		$no_complete = minDiff($match['date_played'],$today) < 0 ? true : false;
 		$match_ended = false;
-		if(($match['result'] != -2) && $no_complete)
+		if(($match['result'] != -2) || $no_complete)
 		{
 			$match_ended = true;
 			$match_asserted = $matches_completed[$match['match_id']]['result'] == $match['result'] ? true: false;
@@ -76,22 +76,10 @@
 			}
 		}
 		
-		$bets = explode("|",$match['bet']);
-		if(count($bets) == 3)
-		{
-			$bets = get_bet_percentage($bets);
-		}
-		
-		
-		
 		$match_code = get_match_code($match['match_id'], $match_ended);
 		if($match_ended)
 		{
 			$match_result = '<span class="match-result"><span class="'.$result_class1.'">'.$match['team1_goals'].'</span>-<span class="'.$result_class2.'">'. $match['team2_goals'].'</span></span>';
-		}
-		else
-		{
-			$match_result =  $bets[0].'% '. $bets[1].'% '.$bets[2].'%';
 		}
 
 		$date = get_date($match['date_played']);
@@ -152,13 +140,29 @@
             	<?
 				if($match_ended)
 				{
-					echo $match['team1_goals']." - ".$match['team2_goals'];	
+                    if($matches_completed[$match['match_id']]['result_match'])
+                    {
+                        $display = '<span class="glyphicon glyphicon-plus-sign" style="color: limegreen;"></span>';
+                    }
+                    else
+                    {
+                        if($matches_completed[$match['match_id']]['exact_result_match'])
+                        {
+                            $display = '<span class="glyphicon glyphicon-plus-sign" style="color: limegreen;"></span><span class="glyphicon glyphicon-plus-sign" style="color: limegreen;  font-size:18px"></span>';
+                        }
+                        else
+                        {
+                            $display = '<span class="glyphicon glyphicon-remove-sign" style="color: red;"></span>';
+                        }
+                    }
+
+					echo "<span style=' font-size:18px'>".$match['team1_goals']." - ".$match['team2_goals']."<br>".$display."</span>";
 				}
 				else
 				{
 					if($match_completed && !$no_complete)
 					{
-						?><span><?= $matches_completed[$match['match_id']]['bet_message']?></span><br><span class="btn btn-success btn-edit-match" match_id="<?= $match['match_id']?>"><?= lang("editar")?></span><?	
+						?><span><?= $matches_completed[$match['match_id']]['bet_message']?></span><br><span class="btn btn-info btn-edit-match" match_id="<?= $match['match_id']?>"><?= lang("editar")?></span><?
 					}
 					else
 					{
@@ -181,49 +185,6 @@
                 <input <?= $no_complete || $match_completed ? "disabled='disabled'" : ""?> type="number" placeholder="?" min="0" max="20" maxlength="1" id="input-goals-2-<?= $match['match_id']?>" match_id="<?= $match['match_id']?>" class="form-control input-goals" value="<?= isset($matches_completed[$match['match_id']]['team2_goals']) ? $matches_completed[$match['match_id']]['team2_goals'] : ""?>" name="match[<?= $match['match_id']?>][team2]">
             </td>
         </tr>
-		<!--
-        <tr class="stats-info" style="background:none">
-        	<td colspan="2" class="hidden-xs"></td>
-           	<?
-            if($match_ended)
-			{
-				$display = "";
-				if($matches_completed[$match['match_id']]['result_match'])
-				{
-					$display = '<span class="badge" style="background-color: #16994F">R</span>';	
-				}
-				else
-				{
-					if($matches_completed[$match['match_id']]['exact_result_match'])
-					{
-						$display = '<span class="badge" style="background-color: #16bb4F">RE</span>';	
-					}
-					else
-					{
-						$display = '<span class="glyphicon glyphicon-remove-sign" style="color: #D43C30; font-size:18px"></span>';	
-					}
-				}
-				
-				
-				?>
-				<td colspan="5" class="bet-col" style="border-right: 0px;"> <?= $display?></td>
-				<?		
-			}
-			else
-			{
-				//NO BETS
-				/*
-				?>
-				<td colspan="2" class="bet-col" title="<?= lang("Gana")?> <?= $match['team1_name']?>"><?= $bets[0] ? "%".$bets[0]: "-"?></td>
-                <td class="bet-col" title="<?= lang("Empate")?>"><?= $bets[1] ? "%".$bets[1]: "-"?></td>
-                <td colspan="2" class="bet-col" title="<?= lang("Gana")?> <?= $match['team2_name']?>"><?= $bets[2] ? "%".$bets[2]: "-"?></td>
-				<?
-				*/				
-			}
-			?>
-            
-        </tr>
-		-->
         <?
 		}
 		?>
