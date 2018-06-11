@@ -499,6 +499,55 @@ class Front_init extends CI_Controller
 		$this->email->send();
 			
 	}
+    protected function send_buy_email()
+    {
+        $this->load->library('email');
+
+        $config['protocol'] = 'mail';
+        $config['charset'] = 'utf-8';
+        $config['mailtype'] = 'html';
+
+        $this->email->initialize($config);
+
+        $this->email->from('info@prode2018.com', 'Prode 2018');
+
+        $this->email->to('info@prode2018.com');
+
+        $this->email->subject("COMPRA PRODE");
+
+
+        $body= "COMPRARON PRODE ".($this->data['company_url'] ? $this->data['company_url'] : "SIN EMPRESA");
+
+        $this->email->message($body);
+
+        $this->email->send();
+
+    }
+
+    protected function send_payment_failure_email()
+    {
+        $this->load->library('email');
+
+        $config['protocol'] = 'mail';
+        $config['charset'] = 'utf-8';
+        $config['mailtype'] = 'html';
+
+        $this->email->initialize($config);
+
+        $this->email->from('info@prode2018.com', 'Prode 2018');
+
+        $this->email->to('info@prode2018.com');
+
+        $this->email->subject("COMPRA PRODE");
+
+
+        $body= "COMPRARON PRODE ".($this->data['company_url'] ? $this->data['company_url'] : "SIN EMPRESA");
+
+        $this->email->message($body);
+
+        $this->email->send();
+    }
+
 
 	protected function get_confirm_code($id)
 	{

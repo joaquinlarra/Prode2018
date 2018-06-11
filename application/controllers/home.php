@@ -527,18 +527,33 @@ class Home extends Front_init
 	}
 
 	public function payment_success($company_id) {
-		$company_id = urldecode(base64_decode($company_id));
-		$this->company_model->get($company_id);
-		$this->set_company();
-		$this->data['company_url'] = $this->company_model->get_url().'/?register_code='.$this->company_model->register_code;
-		$this->data['register_code'] = $this->company_model->register_code;
-		$this->session->set_userdata('validated_register_code', $this->company_model->register_code);
+
+	    if($company_id)
+        {
+            $company_id = base64_decode(urldecode($company_id));
+            $this->company_model->get($company_id);
+            $this->set_company();
+            $this->data['company_url'] = $this->company_model->get_url().'/home/'.$this->company_model->register_code;
+            $this->data['register_code'] = $this->company_model->register_code;
+            $this->session->set_userdata('validated_register_code', $this->company_model->register_code);
+        }
+
+        $this->send_buy_email();
+
 
 		$this->load->view("front/checkout/payment_success", $this->data);
 	}
 
 	public function payment_failure($company_id) {
-		$this->load->view("front/checkout/payment_failure", $this->data);
+        if($company_id)
+        {
+            $company_id = base64_decode(urldecode($company_id));
+            $this->company_model->get($company_id);
+            $this->set_company();
+            $this->data['company_url'] = $this->company_model->get_url();
+        }
+        $this->send_payment_failure_email();
+	    $this->load->view("front/checkout/payment_failure", $this->data);
 	}
 
 }
