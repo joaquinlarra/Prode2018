@@ -29,9 +29,16 @@
         </div>
         <div class="col-md-12">
           <h1><b>Activaste tu prode<br><br>Tu código de registro es:</b></h1>
-          <h1 style="font-size:68px; color: red;"><?=$register_code?></h1>
-          <h1 style="text-transform: uppercase; font-size:32px;">Registrate con este código y compartilo con tus invitados</h1><br><br><br>
-          <a href="<?=$company_url?>" target="_blank" class="btn btn-warning" style="font-size:30px;margin-right: 10px"><b>IR AL PRODE</b></a>
+          <?
+          if($register_code)
+          { ?>
+
+            <h1 style="font-size:68px; color: red;"><?=$register_code?></h1>
+            <h1 style="text-transform: uppercase; font-size:32px;">Registrate con este código y compartilo con tus invitados</h1><br><br><br>
+            <a href="<?=$company_url?>" target="_blank" class="btn btn-warning" style="font-size:30px;margin-right: 10px"><b>IR AL PRODE</b></a>
+          <?
+          }
+          ?>
         </div>
       </div><br><br><br><br><br><br>
     </div>
