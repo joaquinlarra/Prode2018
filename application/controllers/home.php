@@ -5,6 +5,7 @@ class Home extends Front_init
 	public function __construct()
 	{	
 		parent::__construct();
+		$this->data['page_title'] = "Prode ".$this->company_model->name;
 	}
 	
 	public function index()
@@ -16,6 +17,7 @@ class Home extends Front_init
 	public function comprar()
 	{
 		$this->data['section'] = "comprar";
+        $this->data['page_title'] = "Comprar - ".$this->data['page_title'];
 		$this->load->view("front/comprar.php", $this->data);
 	}
 	
@@ -28,6 +30,7 @@ class Home extends Front_init
 	
 	public function complete_register()
 	{
+        $this->data['page_title'] = lang("Completar registro")." - ".$this->data['page_title'];
         if (!$this->is_company_available($this->session->userdata('register_code')))
         {
             redirect('/');
@@ -324,7 +327,8 @@ class Home extends Front_init
     }
 	public function scores($type = "", $id = "", $name = "",$offset = 0)
 	{
-		if($this->session->userdata('user-first-login'))
+
+	    if($this->session->userdata('user-first-login'))
 		{
 			$this->data['user_first_login'] = true;
 			$this->session->unset_userdata('user-first-login');

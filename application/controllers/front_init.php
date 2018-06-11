@@ -590,9 +590,10 @@ class Front_init extends CI_Controller
 	public function validate_code()
 	{
 		$this->data['post'] = $this->input->post();
+        $this->data['post']['code'] = trim($this->data['post']['code']);
 
 		$this->form_validation->set_rules('code', 'code', 'alpha_dash');
-		
+
 		if (empty($this->data['post']['code'])) {
 			$data['valid'] = 0;
 			$data['message'] = lang("No ingresaste ningún código");
