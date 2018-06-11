@@ -1,7 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title><?=$page_title?></title>
+      <!-- Global site tag (gtag.js) - Google Analytics -->
+      <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120712390-1"></script>
+      <script>
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+
+          gtag('config', 'UA-120712390-1');
+      </script>
+
+      <title><?=$page_title?></title>
       <?php header('Access-Control-Allow-Origin: *'); ?>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" /> 
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
