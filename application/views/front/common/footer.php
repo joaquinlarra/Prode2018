@@ -652,21 +652,37 @@
 
                 if(result > -2)
                 {
-                    $.ajax({url: "<?= $link_url?>front_user/auto_save/"+match_code+"/"+match_id+"/"+goals1+"/"+goals2+"/"+result});
-                    var message = "<?= lang('Guardado')?>";
-                    if(result == -1)
-                    {
-                        message = "<?= lang("Gana")?> <b>"+$("#match-name-"+match_id+"-1").html()+"</b>";
-                    }
-                    if(result == 0)
-                    {
-                        message = "<?= lang("Empate")?>";
-                    }
-                    if(result == 1)
-                    {
-                        message = "Gana <b>"+$("#match-name-"+match_id+"-2").html()+"</b>";
-                    }
-                    disable_match(match_id,message);
+                    $.get("<?= $link_url?>front_user/auto_save/"+match_code+"/"+match_id+"/"+goals1+"/"+goals2+"/"+result,
+                        function(data){
+
+                        data = JSON.parse(data);
+                        if(data.valid)
+                        {
+                            var message = "<?= lang('Guardado')?>";
+                            if(result == -1)
+                            {
+                                message = "<?= lang("Gana")?> <b>"+$("#match-name-"+match_id+"-1").html()+"</b>";
+                            }
+                            if(result == 0)
+                            {
+                                message = "<?= lang("Empate")?>";
+                            }
+                            if(result == 1)
+                            {
+                                message = "Gana <b>"+$("#match-name-"+match_id+"-2").html()+"</b>";
+                            }
+                        }
+                        else
+                        {
+                            message = "<?= lang('Error')?>";
+                        }
+
+                        disable_match(match_id,message);
+                    });
+
+
+
+
                 }
             });
 

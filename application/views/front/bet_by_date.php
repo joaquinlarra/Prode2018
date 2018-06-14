@@ -79,7 +79,14 @@
 		$match_code = get_match_code($match['match_id'], $match_ended);
 		if($match_ended)
 		{
-			$match_result = '<span class="match-result"><span class="'.$result_class1.'">'.$match['team1_goals'].'</span>-<span class="'.$result_class2.'">'. $match['team2_goals'].'</span></span>';
+			if($match['result'] != -2)
+            {
+                $match_result = '<span class="match-result"><span class="'.$result_class1.'">'.$match['team1_goals'].'</span>-<span class="'.$result_class2.'">'. $match['team2_goals'].'</span></span>';
+            }
+            else
+            {
+                $match_result = '<span class="match-result"><span class="glyphicon glyphicon-time"></span></span>';
+            }
 		}
 
 		$date = get_date($match['date_played']);
@@ -155,8 +162,16 @@
                             $display = '<span class="glyphicon glyphicon-remove-sign" style="color: red;"></span>';
                         }
                     }
+                    if($match['result'] != -2)
+                    {
+                        echo "<span style=' font-size:18px'>".$match['team1_goals']." - ".$match['team2_goals']."<br>".$display."</span>";
+                    }
+                    else
+                    {
+                        echo '<span class="match-result"><span class="glyphicon glyphicon-time"></span></span>';
+                    }
 
-					echo "<span style=' font-size:18px'>".$match['team1_goals']." - ".$match['team2_goals']."<br>".$display."</span>";
+
 				}
 				else
 				{
