@@ -467,7 +467,7 @@ function get_date($date)
 	$meses['AR'] = array("Enero","Febrero","Marzo","Abril","Mayo","Junio","Julio","Agosto","Septiembre","Octubre","Noviembre","Diciembre");
 	$dias['MX'] = array("Domingo","Lunes","Martes","Miercoles","Jueves","Viernes","Sábado");
 	$meses['MX'] = array("Enero","Febrero","Marzo","Abril","Mayo","Junio","Julio","Agosto","Septiembre","Octubre","Noviembre","Diciembre");
-	$dias['US'] = array("Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Sunday");
+	$dias['US'] = array("Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday");
 	$meses['US'] = array("January","February","March","April","May","June","July","August","September","October","November","December");
 
 	$dias['PR'] = array("Domingo","Segunda-feira","Terça-Feira","Quarta-Feira","Quinta-Feira","Sexta-Feira","Sábado");
