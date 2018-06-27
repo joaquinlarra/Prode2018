@@ -710,15 +710,7 @@
                                     var message = "<?= lang('Guardado')?>";
                                     if(result == -1)
                                     {
-										if($("#match-name-"+match_id+"-1").html() !== undefined)
-										{
-											message = "<?= lang("Gana")?> <b>"+$("#match-name-"+match_id+"-1").html()+"</b>";
-										}
-										else
-										{
-											message = "<span class='glyphycon glyphycon-arrow-left'></span>";
-										}
-                                        
+                                        message = "<?= lang("Gana")?> <b>"+$("#match-name-"+match_id+"-1").html()+"</b>";
                                     }
                                     if(result == 0)
                                     {
@@ -726,16 +718,7 @@
                                     }
                                     if(result == 1)
                                     {
-										
-										if($("#match-name-"+match_id+"-1").html() !== undefined)
-										{
-											message = "Gana <b>"+$("#match-name-"+match_id+"-2").html()+"</b>";
-										}
-										else
-										{
-											message = "<span class='glyphycon glyphycon-arrow-right'><span>";
-										}
-                                        
+                                        message = "Gana <b>"+$("#match-name-"+match_id+"-2").html()+"</b>";
                                     }
                                 }
                                 else
