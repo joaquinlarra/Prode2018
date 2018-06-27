@@ -1,11 +1,12 @@
-			<tr class="stats-mobile">
+			
+			<tr class="stats-mobile hidden-sm hidden-xs">
 				<td colspan="<?= $colspan?>">	
 				<div>
 				<small><?= lang("no confirmado")?></small>
 				</div>
 				</td>
 			</tr>
-			<tr  class="matchrow">
+			<tr  class="matchrow hidden-sm hidden-xs">
 				<td class="input-match">
 					<input disabled='disabled' type="text" maxlength="1"  class="form-control input-goals" >				
 				</td>
