@@ -20,9 +20,4 @@
 					<input disabled='disabled' type="text" maxlength="1"  class="form-control input-goals" >
 				</td>
 			</tr>
-			<tr class="stats-info" style="background:none">
-                <td colspan="2" class="bet-col" title="<?= lang("Gana")?>">-</td>
-                <td class="bet-col" title="<?= lang("Empate")?>">-</td>
-                <td colspan="2" class="bet-col" style="border-right:0px" title="<?= lang("Gana")?>">-</td>
-			</tr>
-			<tr class="finals-separator"><td colspan="5"></td></tr>
+			<tr class="finals-separator hidden-sm hidden-xs"><td colspan="5"></td></tr>

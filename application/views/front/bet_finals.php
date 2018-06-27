@@ -39,7 +39,7 @@
 		<?	
 	}
 	?>
-        <div class="col-md-12">
+        <div class="col-md-12" style="padding: 0px;">
             <div class="panel panel-primary finals-panel">
                 <div class="panel-body">
                     <form action="<?= $link_url?>home/validate_matches_form/" method="post" enctype="multipart/form-data" id="prognostics-form">
@@ -83,7 +83,7 @@
                         ?>
                         </table>
                         <h2>3er y 4to puesto</h2>
-                        <table class="table pull-left zone-table table-responsive table-condensed full-width">
+                        <table class="table pull-left zone-table table-responsive table-condensed full-width col3y4-table">
                         <?
                         $phase = "3y4";
                         include(dirname(__FILE__)."/common/finals_col.php");

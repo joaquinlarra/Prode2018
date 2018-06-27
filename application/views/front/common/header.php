@@ -26,7 +26,7 @@
 	<link href="<?=$link_url?>assets_fe/css/theme.min.css" rel="stylesheet">
 	<link href="<?=$link_url?>assets_fe/css/fonts.css" rel="stylesheet">
     <link href="<?=$link_url?>assets_fe/css/spinner.css" rel="stylesheet">
-    <link href="<?=$link_url?>assets_fe/css/general.css" rel="stylesheet">
+    <link href="<?=$link_url?>assets_fe/css/general.css?2" rel="stylesheet">
     <?
 	if($this->company_model->bg_image)
 	{

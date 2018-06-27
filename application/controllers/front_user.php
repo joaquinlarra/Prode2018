@@ -17,7 +17,11 @@ class Front_user extends Front_init
 			echo json_encode($out);
 			return;	
 		}
-		
+
+        $team1_goals = (int)$team1_goals;
+        $team2_goals = (int)$team2_goals;
+		$result = $team1_goals > $team2_goals ? -1 : ($team1_goals == $team2_goals ? 0 : 1);
+
 		$sql = "REPLACE INTO prognostics (tournament_id, tournament_date, company_id,tournament, match_id, matchname, user_id, team1_goals, team2_goals, result, username, date_created)
 				VALUES ('".$this->match_model->tournament_id."','".$this->match_model->tournament_date."','".$this->company_id."','".$this->match_model->tournament."','".$this->match_model->match_id."','".$this->match_model->matchname()."','".(int)$this->user_id."','".(int)$team1_goals."','".(int)$team2_goals."','".(int)$result."','".$this->username."',NOW())";
 		$this->db->query($sql);

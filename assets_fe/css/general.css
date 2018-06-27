@@ -577,7 +577,7 @@ h6 {
 }
 
 .zone-table .middle-col {
-  background: #dfdfdf;
+  background:aliceblue;
   text-align: center;
   font-size: 11px;
   vertical-align: middle;
@@ -594,6 +594,9 @@ h6 {
 .zone-table .stats-info {
   background: #f1f1f1;
   color: #fff;
+}
+.zone-table .matchrow {
+  background: blanchedalmond;
 }
 
 .zone-table .bet-col {
@@ -824,6 +827,7 @@ h6 {
 .zone-table .stats-mobile {
   color: #1a68b2;
   text-align: center;
+  background: #E5E5E5;
 }
 
 .zone-table tr,
@@ -1018,7 +1022,12 @@ user-found td:hover {
   height: 10px;
 }
 
-@media (min-width: 768px) {
+@media (min-width: 992px) {
+  
+  .stats-mobile td {
+    border: 0px !important;
+  }
+  
   .col-4tos,
   .col-semi {
     padding-right: 10px !important;
@@ -1039,27 +1048,40 @@ user-found td:hover {
   }
 
   .col-4tos .stats-mobile div {
-    margin-top: 68px;
+    margin-top: 41px;
   }
+
+  .col-8vos .finals-separator {
+    height: 0px;
+    background: #E5E5E5;
+  }
+
 
   .col-4tos .finals-separator {
     height: 73px;
+    background: #E5E5E5;
   }
 
   .col-semi .stats-mobile div {
-    margin-top: 199px;
+    margin-top: 149px;
   }
 
   .col-semi .finals-separator {
-    height: 199px;
+    height: 169px;
+    background: #E5E5E5;
+  }
+  .col3y4-table .finals-separator {
+    display: none;
+   
   }
 
   .col-finals .finals-table .stats-mobile div {
-    margin-top: 440px;
+    margin-top: 350px;
   }
 
   .col-finals .finals-table .finals-separator {
     height: 257px;
+    background: #E5E5E5;
   }
 }
 

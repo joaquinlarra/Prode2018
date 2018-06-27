@@ -171,25 +171,6 @@ class Home extends Front_init
 		$this->load->view("front/wall.php",$this->data);
 	}
 
-	public function bet_by_date()
-	{
-		$this->data['phase'] = "initial";
-		$sql = "SELECT * FROM matches WHERE phase = 'zone' ORDER BY date_played ASC";
-		$this->data['matches'] = $this->db->query($sql)->result_array();
-
-		$sql = "SELECT * FROM prognostics WHERE user_id = '".$this->user_id."'";
-		$matches_completed = $this->db->query($sql)->result_array();
-		foreach($matches_completed as $match)
-		{
-			$this->data['matches_completed'][$match['match_id']] = $match; 	
-		}
-        $sql = "SELECT * FROM matches WHERE phase = 'zone' ORDER BY zone ASC, match_id ASC";
-        $this->data['matches_zone'] = $this->db->query($sql)->result_array();
-
-		$this->get_teams_positions();
-		$this->load->view("front/bet_by_date.php",$this->data);				
-	}
-
 	public function prognostics($phase = "",$saved = "")
 	{
 		$this->redirect_login();
@@ -219,14 +200,33 @@ class Home extends Front_init
 							break;
 		}
 	}
-	
+
+	public function bet_by_date()
+	{
+		$this->data['phase'] = "initial";
+		$sql = "SELECT * FROM matches WHERE phase = 'zone' ORDER BY date_played ASC";
+		$this->data['matches'] = $this->db->query($sql)->result_array();
+
+		$sql = "SELECT * FROM prognostics WHERE user_id = '".$this->user_id."'";
+		$matches_completed = $this->db->query($sql)->result_array();
+		foreach($matches_completed as $match)
+		{
+			$this->data['matches_completed'][$match['match_id']] = $match; 	
+		}
+        $sql = "SELECT * FROM matches WHERE phase = 'zone' ORDER BY zone ASC, match_id ASC";
+        $this->data['matches_zone'] = $this->db->query($sql)->result_array();
+
+		$this->get_teams_positions();
+		$this->load->view("front/bet_by_date.php",$this->data);				
+	}
+		
 	public function bet_finals()
 	{
 		$this->data['phase'] = "final";
 
 		$sql = "SELECT * FROM matches WHERE phase != 'zone' ORDER BY phase_order ASC";
 		$matches = $this->db->query($sql)->result_array();
-		
+
 		foreach($matches as $match)
 		{
 			$this->data['matches'][$match['phase']][$match['phase_order']] = $match;	
