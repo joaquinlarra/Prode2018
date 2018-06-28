@@ -92,19 +92,7 @@
                         </table>
                         <div class="clearfix"></div>
                     </div> 
-                    <?
-                    if($section == "bet_completed")
-                    {
-                        ?><div class="clearfix"></div>
-                        <a href="<?= $link_url?>pronosticos" class="btn btn-primary btn-lg btn-block"><?= lang("editar")?></a><?	
-                    }
-                    else
-                    {
-                        ?>
-                        <div class="clearfix"></div>
-                        <button type="button" class="btn btn-primary btn-lg btn-block" id="submit-btn"><?= lang("Guardar")?></button><?
-                    }
-                    ?>
+                    
                     </form>
                 </div>
             </div>
