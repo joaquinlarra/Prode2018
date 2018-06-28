@@ -43,7 +43,9 @@
 							<tr class="<?= $player['user_id'] && ($player['user_id'] == $marked_user_id) ? "user-found" : ""?>">
                             	<td class="scores-position"><?= $i ?>°</td>
                                 <?
-                                echo $player['username'] ? "<td>".$player['username']."</td>" : "";
+
+                                $yellow_card = $player['badges'] == 'yellow_card' ? "<img src='".$link_url."assets_fe/img/yellow-card.png' title='Yellow card (-5 pts)' width='25px'>" : "";
+                                echo $player['username'] ? "<td>".$player['username']." ".$yellow_card."</td>" : "";
 								?>
                                 <td align="right"><b style="font-size:17px"><?= (int)$player['points']?></b></td>
                                 <td align="right"><?= (int)$player['results']?></td>

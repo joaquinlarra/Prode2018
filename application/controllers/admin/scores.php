@@ -80,6 +80,24 @@ class Scores extends ADMIN_Controller
         echo json_encode($this->data);
 	}
 
+	public function apply_badges()
+    {
+
+       $yellowcard_ids =  "99,123,133,139,171,175,195,212,219,238,266,298";
+
+       if($yellowcard_ids)
+       {
+           $yellowcard_ids = explode(",",$yellowcard_ids);
+
+           foreach($yellowcard_ids as $user_id)
+           {
+               $sql = "UPDATE scores SET badges = CONCAT(badges,'yellow_card'), points = points - 5  WHERE user_id = '".$user_id."'";
+               $this->db->query($sql);
+           }
+       }
+
+    }
+
 	public function close_scores()
 	{
 		$sql = "UPDATE scores_update SET state = 'finish' WHERE match_id = '".$this->match_model->get_id()."'";
