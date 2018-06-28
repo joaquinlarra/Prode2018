@@ -85,7 +85,7 @@ class Scores extends ADMIN_Controller
 	public function apply_badges()
     {
 
-       $yellowcard_ids =  "99,123,133,139,171,175,195,212,219,238,266,298";
+       $yellowcard_ids =  "99,123,133,139,195,212,219,238,298";
        if($yellowcard_ids)
        {
            $yellowcard_ids = explode(",",$yellowcard_ids);
