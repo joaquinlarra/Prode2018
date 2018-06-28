@@ -68,6 +68,8 @@ class Scores extends ADMIN_Controller
 			
 			$sql = "UPDATE scores SET points = results*3 + exact_results*5 ";
 			$this->db->query($sql);
+
+			$this->apply_badges();
 			$this->log_scores("<span style='color:green'>Generación de puntos OK. Comenzando cierre...</span>");
 			$this->close_scores();
 		}
@@ -84,14 +86,13 @@ class Scores extends ADMIN_Controller
     {
 
        $yellowcard_ids =  "99,123,133,139,171,175,195,212,219,238,266,298";
-
        if($yellowcard_ids)
        {
            $yellowcard_ids = explode(",",$yellowcard_ids);
 
            foreach($yellowcard_ids as $user_id)
            {
-               $sql = "UPDATE scores SET badges = CONCAT(badges,'yellow_card'), points = points - 5  WHERE user_id = '".$user_id."'";
+               $sql = "UPDATE scores SET badges = 'yellow_card', points = points - 5  WHERE user_id = '".$user_id."'";
                $this->db->query($sql);
            }
        }
