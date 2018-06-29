@@ -123,7 +123,7 @@
         	<td colspan="<?= $colspan?>">
 				<b><?
 				$zone = explode(" ",$match['zone']);
-				echo lang('Grupo')." ".$match['zone'][1];?></b>
+				echo lang('Grupo')." ".$zone[1];?></b>
             	<?= $this->session->userdata('lang') == 'MX' ? (int)(dateFormat($match['date_played'],"G")-2):dateFormat($match['date_played'],"G")?>:<?= dateFormat($match['date_played'],"i")?>hs
             </td>
         </tr>
@@ -131,7 +131,7 @@
             <td class="zone-info hidden-xs">
 			<?
 				$zone = explode(" ",$match['zone']);
-				echo lang('Grupo')." ".$match['zone'][1];?>
+				echo lang('Grupo')." ".$zone[1];?>
 				<div class="date-info">
 				<b><?= $this->session->userdata('lang') == 'MX' ? (int)(dateFormat($match['date_played'],"G")-2):dateFormat($match['date_played'],"G")?>:<?= dateFormat($match['date_played'],"i")?>hs</b>
 				<br><i><?= $match['location']?></i>
