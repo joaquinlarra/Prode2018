@@ -121,7 +121,9 @@
         <input type="hidden" name="match[<?= $match['match_id']?>][matchname]" value="<?= $zone?>: <?= $match['team1_abbr_name']?> vs <?= $match['team2_abbr_name']?>">
         <tr class="visible-xs stats-mobile">
         	<td colspan="<?= $colspan?>">
-            	<b><?= strtoupper($match['zone'])?></b>
+				<b><?
+				$zone = explode(" ",$match['zone']);
+				echo lang('Grupo')." ".$match['zone'][1]?></b>
             	<?= $this->session->userdata('lang') == 'MX' ? (int)(dateFormat($match['date_played'],"G")-2):dateFormat($match['date_played'],"G")?>:<?= dateFormat($match['date_played'],"i")?>hs
             </td>
         </tr>
