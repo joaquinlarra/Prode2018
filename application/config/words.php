@@ -160,6 +160,10 @@ $words['Campeón']['AR'] = "Campeón";
 $words['Campeón']['PR'] = "Campeão";
 $words['Campeón']['US'] = "Champion";
 
+$words['3er y 4to puesto']['AR'] = "3er y 4to puesto";
+$words['3er y 4to puesto']['PR'] = "3º e 4º lugar";
+$words['3er y 4to puesto']['US'] = "3rd y 4th place";
+
 $words['Tercero']['AR'] = "Tercero";
 $words['Tercero']['PR'] = "Terceiro";
 $words['Tercero']['US'] = "3rd place";

@@ -82,7 +82,7 @@
                 
                         ?>
                         </table>
-                        <h2>3er y 4to puesto</h2>
+                        <h2><?= lang("3er y 4to puesto")?></h2>
                         <table class="table pull-left zone-table table-responsive table-condensed full-width col3y4-table">
                         <?
                         $phase = "3y4";
