@@ -129,7 +129,9 @@
         </tr>
         <tr id="matchrow-<?= $match['match_id']?>" match-code="<?= $match_code?>" class="matchrow" zone="<?= $zone?>" matchname="<?= $match['team1_abbr_name']?> vs <?= $match['team2_abbr_name']?>">
             <td class="zone-info hidden-xs">
-            	<?= strtoupper($match['zone'])?>
+			<?
+				$zone = explode(" ",$match['zone']);
+				echo lang('Grupo')." ".$match['zone'][1];?>
 				<div class="date-info">
 				<b><?= $this->session->userdata('lang') == 'MX' ? (int)(dateFormat($match['date_played'],"G")-2):dateFormat($match['date_played'],"G")?>:<?= dateFormat($match['date_played'],"i")?>hs</b>
 				<br><i><?= $match['location']?></i>
